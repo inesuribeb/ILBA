@@ -1,0 +1,16 @@
+/* =============================================
+   Sección Imagen / Video
+   ============================================= */
+
+   .home-img-video {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.home-img-video__media {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}

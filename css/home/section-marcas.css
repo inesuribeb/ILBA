@@ -1,0 +1,57 @@
+/* =============================================
+   Nuestras Marcas — marquee infinito
+   ============================================= */
+
+   .home-marcas {
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    /* border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0; */
+}
+
+.home-marcas__track {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    white-space: nowrap;
+    animation: marquee 30s linear infinite;
+    will-change: transform;
+}
+
+.home-marcas__track:hover {
+    animation-play-state: paused;
+}
+
+.home-marcas__item {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+}
+
+.home-marcas__item img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.home-marcas__item img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+@keyframes marquee {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@media ( prefers-reduced-motion: reduce ) {
+    .home-marcas__track {
+        animation: none;
+    }
+}
