@@ -47,3 +47,4 @@ function ilba_enqueue_assets() {
 }
 add_action( 'wp_enqueue_scripts', 'ilba_enqueue_assets' );
 
+wp_enqueue_style( 'ilba-header', get_stylesheet_directory_uri() . '/css/header/header.css' );

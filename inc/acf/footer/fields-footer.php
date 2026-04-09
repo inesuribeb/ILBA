@@ -26,6 +26,16 @@ acf_add_local_field_group( array(
             'type'  => 'text',
         ),
 
+        // --- DIRECCIÓN ---
+        array(
+            'key'          => 'field_footer_direccion',
+            'label'        => 'Dirección',
+            'name'         => 'footer_direccion',
+            'type'         => 'textarea',
+            'rows'         => 3,
+            'instructions' => 'Los saltos de línea se respetarán en el frontend.',
+        ),
+
         // --- HORARIO ---
         array(
             'key'          => 'field_footer_horario',
@@ -33,7 +43,7 @@ acf_add_local_field_group( array(
             'name'         => 'footer_horario',
             'type'         => 'textarea',
             'rows'         => 3,
-            'instructions' => 'Ej: Lunes - Sábado, 10am - 6pm',
+            'instructions' => 'Los saltos de línea se respetarán en el frontend.',
         ),
 
         // --- DESCRIPCIÓN ---
@@ -105,14 +115,14 @@ acf_add_local_field_group( array(
     ),
 
     'location' => array(
-    array(
         array(
-            'param'    => 'page',
-            'operator' => '==',
-            'value'    => '81',
+            array(
+                'param'    => 'page',
+                'operator' => '==',
+                'value'    => '81',
+            ),
         ),
     ),
-),
 
     'menu_order'            => 10,
     'position'              => 'normal',

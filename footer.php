@@ -7,6 +7,7 @@
 $footer_page_id = url_to_postid( home_url( '/footer/' ) );
 $email          = get_field( 'footer_email',       $footer_page_id );
 $telefono       = get_field( 'footer_telefono',    $footer_page_id );
+$direccion = get_field( 'footer_direccion', $footer_page_id );
 $horario        = get_field( 'footer_horario',     $footer_page_id );
 $descripcion    = get_field( 'footer_descripcion', $footer_page_id );
 
@@ -53,6 +54,9 @@ for ( $i = 1; $i <= 4; $i++ ) {
                     <?php endif; ?>
                 </div>
                 <div class="footer__contacto-col">
+                <p class="footer__direccion">
+    <?php echo wp_kses_post( nl2br( esc_html( $direccion ) ) ); ?>
+</p>
                     <?php if ( $horario ) : ?>
                         <p class="footer__horario"><?php echo nl2br( esc_html( $horario ) ); ?></p>
                     <?php endif; ?>

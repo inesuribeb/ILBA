@@ -109,6 +109,12 @@
     opacity: 0.5;
 }
 
+.footer__direccion{
+    font-size: 15px;
+    color: var(--dark-color);
+    margin: 0;
+    line-height: 1.6;
+}
 .footer__horario {
     font-size: 15px;
     color: var(--dark-color);
