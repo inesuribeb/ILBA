@@ -71,8 +71,12 @@
 }
 
 .home-hero__titulo {
-    color: #fff;
+    color: var(--light-color);
     margin: 0;
+
+    font-family: var(--sans-serif);
+    font-size: 24px;
+    max-width: 600px;
 }
 
 /* --- CTAs --- */

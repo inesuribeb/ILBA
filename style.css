@@ -3,3 +3,47 @@ Theme Name: Ilba Theme
 Template: twentytwentyfour
 Version: 1.0.0
 */
+
+@font-face {
+    font-family: 'Ilba-font';
+    src: url('fonts/ABCDiatype-Light_Trial.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Ilba-font';
+    src: url('fonts/ABCDiatype-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+*{
+    font-family: var(--sans-serif);
+    font-weight: 400;
+    color: var(--dark-color);
+}
+
+:root {
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-display: swap;
+
+    --dark-color: #313437;
+    --medium-blue: #536568;
+    --light-color: #FBFBFB;
+    --light-color-2: #F8F7F4;
+    --beige-color: #CEC6B1;
+    --brown-color: #3F2B1C;
+    --light-combination: #CBD0D3;
+    --contrast-combination: #58615C;
+
+    --sans-serif: 'Ilba-font', sans-serif;
+    --serif: ;
+
+}
