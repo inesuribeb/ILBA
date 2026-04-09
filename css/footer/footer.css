@@ -7,7 +7,8 @@
     flex-direction: column;
     padding: 48px 24px 24px;
     justify-content: space-between;
-    height: 90vh;
+    height: 100vh;
+    margin-top: 10vh;
     box-sizing: border-box;
     /* border-top: 1px solid var(--dark-color); */
 }
