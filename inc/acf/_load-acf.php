@@ -19,4 +19,6 @@ require_once get_stylesheet_directory() . '/inc/acf/home/fields-home-servicios.p
 require_once get_stylesheet_directory() . '/inc/acf/home/fields-home-img-video.php';
 
 
+/*FOOTER*/
+require_once get_stylesheet_directory() . '/inc/acf/footer/fields-footer.php';
 

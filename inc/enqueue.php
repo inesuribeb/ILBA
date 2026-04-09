@@ -33,6 +33,10 @@ function ilba_enqueue_assets() {
             true
         );
 
+        // footer
+        wp_enqueue_style( 'ilba-footer', get_stylesheet_directory_uri() . '/css/footer/footer.css' );
+
+
     }
 
     // --- CPTs ---
@@ -42,3 +46,4 @@ function ilba_enqueue_assets() {
 
 }
 add_action( 'wp_enqueue_scripts', 'ilba_enqueue_assets' );
+

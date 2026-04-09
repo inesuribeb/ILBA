@@ -20,9 +20,17 @@ Version: 1.0.0
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'Ilba-serif';
+    src: url('fonts/CheltenhamPro-Light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
 *{
     font-family: var(--sans-serif);
-    font-weight: 400;
+    font-weight: 500;
     color: var(--dark-color);
 }
 
@@ -44,6 +52,6 @@ Version: 1.0.0
     --contrast-combination: #58615C;
 
     --sans-serif: 'Ilba-font', sans-serif;
-    --serif: ;
+    --serif: 'Ilba-serif';
 
 }

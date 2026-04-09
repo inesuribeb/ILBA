@@ -1,0 +1,223 @@
+/* =============================================
+   Footer
+   ============================================= */
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    padding: 48px 24px 24px;
+    justify-content: space-between;
+    height: 90vh;
+    box-sizing: border-box;
+    /* border-top: 1px solid var(--dark-color); */
+}
+
+/* --- Bloque superior --- */
+
+.footer__top {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    height: 80vh;
+}
+
+/* Columna izquierda */
+
+.footer__top-izq {
+    flex: 0 0 40%;
+    /* flex: 40%; */
+    /* flex-shrink: 0; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 48px;
+    border-top: 1px solid var(--dark-color);
+
+}
+
+.footer__logo {
+    flex: 1;
+    font-size: 34px;
+    letter-spacing: -3%;
+    font-family: var(--serif);
+    margin: 0;
+    /* font-weight: 400; */
+    padding-top: 1rem;
+}
+
+/* .footer__descripcion {
+    flex: 1;
+    font-size: 16px;
+    color: var(--dark-color);
+    margin: 0;
+    line-height: 1.6;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 1rem;
+} */
+
+.footer__descripcion-wrapper {
+    flex: 1;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 1rem;
+}
+
+.footer__descripcion {
+    font-size: 15px;
+    color: var(--dark-color);
+    margin: 0;
+    line-height: 1.4;
+    max-width: 450px;
+}
+
+
+/* Columna derecha */
+
+.footer__top-der {
+    flex: 0 0 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+/* Fila 1: contacto */
+
+.footer__contacto {
+    flex: 1;
+    /* flex: 60%; */
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+    border-top: 1px solid var(--dark-color);
+    padding-top: 1rem;
+}
+
+.footer__contacto-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.footer__link {
+    font-size: 15px;
+    color: var(--dark-color);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.footer__link:hover {
+    opacity: 0.5;
+}
+
+.footer__horario {
+    font-size: 15px;
+    color: var(--dark-color);
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Fila 2: navegación */
+
+.footer__nav {
+    flex: 1;
+
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 1rem;
+}
+
+.footer__nav-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer__nav-titulo {
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0 0 8px 0;
+    color: var(--dark-color);
+}
+
+.footer__nav-link {
+    font-size: 15px;
+    color: var(--dark-color);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+    display: block;
+}
+
+.footer__nav-link:hover {
+    opacity: 0.5;
+}
+
+/* --- Bloque inferior --- */
+
+.footer__bottom {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 1rem;
+}
+
+.footer__copyright {
+    flex: 0 0 40%;
+    font-size: 15px;
+    color: var(--dark-color);
+    margin: 0;
+}
+
+.footer__creditos-wrapper {
+    flex: 0 0 60%;
+    position: relative;
+    display: inline-block;
+    padding-left: 1.5rem;
+}
+
+.footer__creditos {
+    font-size: 15px;
+    color: var(--dark-color);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.footer__creditos-tooltip {
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 0;
+    background: var(--medium-blue);
+    color: var(--light-color);
+    font-size: 15px;
+    padding: 10px 16px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+.footer__creditos-wrapper::after {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    width: 100%;
+    height: 8px; /* mismo valor que el gap */
+}
+
+.footer__creditos-wrapper:hover .footer__creditos-tooltip {
+    opacity: 1;
+    pointer-events: auto; /* ← permite hover sobre el tooltip */
+}
+
+.footer__creditos-tooltip a {
+    color: var(--light-color);
+    text-decoration: underline;
+}
+
+.footer__creditos-tooltip a:hover {
+    opacity: 0.7;
+}
