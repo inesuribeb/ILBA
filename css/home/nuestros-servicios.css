@@ -9,9 +9,6 @@
     overflow: hidden;
     gap: 2rem;
     padding: 48px 0px 48px 24px;
-    /* padding: 48px 24px; */
-
-
 }
 
 /* --- Columna tag (10%) --- */
@@ -50,9 +47,7 @@
     display: flex;
     border-top: 1px solid #e0e0e0;
     padding-top: 1rem;
-
     flex-direction: column;
-    /* padding: 48px; */
     overflow: hidden;
 }
 
@@ -72,27 +67,45 @@
     scrollbar-width: none;
     gap: 0;
 } */
+
+.home-servicios__cards-wrapper {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+}
+
 .home-servicios__cards {
     display: flex;
     flex-direction: row;
     flex: 1;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scrollbar-width: none;
+    /* overflow: hidden;  */
     gap: 0;
-    /* margin-right: -24px; */
+    will-change: transform;
 }
 
 .home-servicios__cards::-webkit-scrollbar {
     display: none;
 }
 
-.home-servicios__card {
+/* .home-servicios__card {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     min-width: 260px;
     flex: 1;
+    border-left: 1px solid #e0e0e0;
+    padding: 24px 24px 0 24px;
+    overflow: hidden;
+} */
+
+
+.home-servicios__card {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 0 0 320px; /* ancho fijo */
+    width: 320px;
     border-left: 1px solid #e0e0e0;
     padding: 24px 24px 0 24px;
     overflow: hidden;

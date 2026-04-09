@@ -19,6 +19,7 @@ $secciones = ilba_get_secciones_menu();
     <div class="home-servicios__col-main">
 
         <h2 class="home-servicios__titulo"><?php echo esc_html( $titulo ); ?></h2>
+        <div class="home-servicios__cards-wrapper">
 
         <div class="home-servicios__cards">
             <?php foreach ( $secciones as $key => $seccion ) : ?>
@@ -41,6 +42,7 @@ $secciones = ilba_get_secciones_menu();
                     </div>
                 </div>
             <?php endforeach; ?>
+        </div>
         </div>
 
     </div>

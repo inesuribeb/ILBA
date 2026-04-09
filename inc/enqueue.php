@@ -25,6 +25,14 @@ function ilba_enqueue_assets() {
             true // ← carga en el footer, importante
         );
 
+        wp_enqueue_script(
+            'ilba-cards-servicios',
+            get_stylesheet_directory_uri() . '/js/home/cards-servicios.js',
+            array(),
+            null,
+            true
+        );
+
     }
 
     // --- CPTs ---

@@ -5,7 +5,7 @@
    .home-clinica {
     display: flex;
     flex-direction: row;
-    height: 100vh;
+    /* height: 100vh; */
     /* overflow: hidden; */
     gap: 2rem;
     padding: 48px 0 48px 24px;
@@ -13,27 +13,7 @@
 
 /* --- Columna tag (15%) --- */
 
-/* .home-clinica__col-tag {
-    width: 15%;
-    flex-shrink: 0;
-    border-top: 1px solid #e0e0e0;
-    padding-top: 1rem;
-    display: flex;
-    align-items: flex-start;
-} */
 .home-clinica__col-tag {
-    /* width: 15%;
-    flex-shrink: 0;
-    border-top: 1px solid #e0e0e0;
-    padding-top: 1rem;
-    display: flex;
-    align-items: flex-start;
-    position: sticky;
-    top: 0;
-    align-self: flex-start;
-    height: 100vh;
-
-    position: relative;  */
     width: 15%;
     flex-shrink: 0;
     border-top: 1px solid #e0e0e0;
@@ -74,8 +54,9 @@
 
 .home-clinica__img-vertical {
     flex-shrink: 0;
-    width: 50%;
+    width: 55%;
     overflow: hidden;
+    aspect-ratio: 4 / 5;
 }
 
 .home-clinica__img-vertical img {
