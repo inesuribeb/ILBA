@@ -5,32 +5,46 @@
    .header {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    padding: 20px 24px;
-    /* gap:3rem; */
+    align-items: flex-end;
+    padding: 10px 24px;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 100;
     background: var(--light-color);
+    height: 13vh;
+    /* transition: height 0.3s ease; */
+    transition: height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* --- Logo (15%) --- */
+.header.is-scrolled {
+    height: auto;
+}
+
+/* --- Logo (18%) --- */
 
 .header__logo {
     flex: 0 0 18%;
 }
 
 .header__logo-link {
-    font-family: var(--serif);
-    font-size: 36px;
+    font-size: 90px;
     color: var(--dark-color);
     text-decoration: none;
     line-height: 1;
+    /* transition: font-size 0.3s ease; */
+    display: block;
+
+    transition: font-size 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
-/* --- Nav (85%) --- */
+.header.is-scrolled .header__logo-link {
+    font-size: 36px;
+}
+
+/* --- Nav (82%) --- */
 
 .header__nav {
     flex: 0 0 82%;
@@ -53,7 +67,7 @@
 }
 
 .header__nav-link {
-    font-size: 15px;
+    font-size: 14px;
     color: var(--dark-color);
     text-decoration: none;
     transition: opacity 0.2s ease;
