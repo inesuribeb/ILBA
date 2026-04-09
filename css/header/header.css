@@ -48,6 +48,8 @@
 
 .header.is-scrolled .header__logo-link {
     font-size: 36px;
+    transform: translateY(2px);
+
 }
 
 /* --- Nav (82%) --- */
