@@ -1,0 +1,90 @@
+/* =============================================
+   Beauty & Medical — Info
+   ============================================= */
+
+   .bm-info {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    padding: 48px 0 0px 24px;
+}
+
+/* --- Columna imagen estática (15%) --- */
+
+.bm-info__col-imagen {
+    flex: 0 0 15%;
+    overflow: hidden;
+    aspect-ratio: 4 / 5;
+    align-self: flex-start;
+}
+
+.bm-info__col-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* --- Columna principal (85%) --- */
+
+.bm-info__col-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding-right: 48px;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 1rem;
+}
+
+/* --- Descripción --- */
+
+.bm-info__descripcion {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.6;
+    max-width: 600px;
+}
+
+/* --- Características --- */
+
+.bm-info__caracteristicas {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.bm-info__caracteristica {
+    font-size: 14px;
+    color: #444;
+    padding: 12px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.bm-info__caracteristica:first-child {
+    border-top: 1px solid #e0e0e0;
+}
+
+/* --- Imágenes --- */
+
+.bm-info__imagenes {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.bm-info__imagen {
+    flex: 1;
+    overflow: hidden;
+    aspect-ratio: 4 / 5;
+}
+
+.bm-info__imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
