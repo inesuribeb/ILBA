@@ -106,24 +106,25 @@
 
     .pr-info__imagen {
         flex: none;
+        padding-top: 2rem;
         width: 100%;
         aspect-ratio: 1 / 1;
     }
 
     .pr-info__content {
-        padding: 40px 24px;
+        padding: 40px 24px 100px 24px;
         gap: 32px;
     }
 
     .pr-info__descripcion {
-        font-size: 16px;
+        font-size: 20px;
     }
 
     .pr-info__indicados-titulo {
-        font-size: 16px;
+        font-size: 18px;
     }
 
     .pr-info__indicados-lista li {
-        font-size: 14px;
+        font-size: 16px;
     }
 }

@@ -214,7 +214,7 @@
         background: none;
         border: none;
         color: #fff;
-        font-size: 15px;
+        font-size: 16px;
         font-family: inherit;
         cursor: pointer;
         display: flex;
@@ -224,9 +224,11 @@
     }
 
     .pr-hero__movil-btn svg {
-        width: 18px;
-        height: 18px;
+        width: 14px;
+        height: 14px;
         transition: transform 0.3s ease;
+        color: var(--light-color);
+    stroke: var(--light-color);
     }
 
     .pr-hero__movil-btn[aria-expanded="true"] svg {
@@ -237,7 +239,7 @@
     .pr-hero__movil-nav {
         display: none;
         flex-direction: column;
-        gap: 4px;
+        gap: 2px;
         position: absolute;
         top: calc( 100% + 12px );
         left: 0;
@@ -253,12 +255,32 @@
         font-size: 15px;
         color: rgba(255,255,255,0.7);
         text-decoration: none;
-        padding: 6px 0;
-        border-bottom: 1px solid rgba(255,255,255,0.2);
+        padding: 0;
         transition: color 0.2s ease;
+        display: flex;
+        align-items: center;
+        gap: 0;
     }
-
-    .pr-hero__movil-nav-link.is-active,
+    
+    .pr-hero__movil-nav-link::before {
+        content: '';
+        display: none;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #fff;
+        flex-shrink: 0;
+    }
+    
+    .pr-hero__movil-nav-link.is-active {
+        color: #fff;
+        gap: 8px;
+    }
+    
+    .pr-hero__movil-nav-link.is-active::before {
+        display: block;
+    }
+    
     .pr-hero__movil-nav-link:hover {
         color: #fff;
     }
@@ -286,10 +308,11 @@
         left: 0;
         right: 0;
         height: 7vh;
-        background: #fff;
-        color: #000;
+        background: transparent;
+        color: var(--light-color);
         text-decoration: none;
         font-size: 15px;
         z-index: 10;
+        border-top: 1px solid var(--light-color);
     }
 }
