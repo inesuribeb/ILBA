@@ -8,14 +8,31 @@ $subtitulo    = get_field( 'pr_subtitulo' );
 $img_hero     = get_field( 'pr_imagen_hero' );
 $contacto_url = get_permalink( get_page_by_path( 'contacto' ) );
 
-$protocolos_nav = array(
-    array( 'titulo' => 'Maternidad',     'url' => get_permalink( get_page_by_path( 'maternidad',     OBJECT, 'protocolos' ) ) ),
-    array( 'titulo' => 'Oncológico',     'url' => get_permalink( get_page_by_path( 'oncologico',     OBJECT, 'protocolos' ) ) ),
-    array( 'titulo' => 'Peso Saludable', 'url' => get_permalink( get_page_by_path( 'peso-saludable', OBJECT, 'protocolos' ) ) ),
-    array( 'titulo' => 'Menopausia',     'url' => get_permalink( get_page_by_path( 'menopausia',     OBJECT, 'protocolos' ) ) ),
-    array( 'titulo' => 'Longevidad',     'url' => get_permalink( get_page_by_path( 'longevidad',     OBJECT, 'protocolos' ) ) ),
+$slugs_nav = array(
+    'Maternidad'     => 'protocolo-maternidad',
+    'Oncológico'     => 'protocolo-oncologico',
+    'Peso Saludable' => 'protocolo-peso-saludable',
+    'Menopausia'     => 'protocolo-menopausia',
+    'Longevidad'     => 'protocolo-longevidad',
 );
+
+$protocolos_nav = array();
+foreach ( $slugs_nav as $titulo_nav => $slug ) {
+    $page = get_posts( array(
+        'name'        => $slug,
+        'post_type'   => 'protocolos',
+        'post_status' => 'publish',
+        'numberposts' => 1,
+    ) );
+    $protocolos_nav[] = array(
+        'titulo' => $titulo_nav,
+        'url'    => $page ? get_permalink( $page[0]->ID ) : '#',
+    );
+}
+
 $current_url = get_permalink( get_the_ID() );
+
+
 ?>
 
 <section class="pr-hero">
@@ -31,7 +48,7 @@ $current_url = get_permalink( get_the_ID() );
 
     <div class="pr-hero__layout">
 
-        <!-- Columna izquierda: nav -->
+        <!-- Columna izquierda: nav (solo desktop) -->
         <div class="pr-hero__nav">
             <?php foreach ( $protocolos_nav as $item ) :
                 $is_active = $current_url === $item['url'];
@@ -60,5 +77,30 @@ $current_url = get_permalink( get_the_ID() );
         </div>
 
     </div>
+
+    <!-- Nav móvil -->
+    <div class="pr-hero__movil-top">
+        <button class="pr-hero__movil-btn" aria-expanded="false">
+            + Protocolos
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+            </svg>
+        </button>
+        <div class="pr-hero__movil-nav">
+            <?php foreach ( $protocolos_nav as $item ) :
+                $is_active = $current_url === $item['url'];
+            ?>
+                <a href="<?php echo esc_url( $item['url'] ); ?>"
+                   class="pr-hero__movil-nav-link <?php echo $is_active ? 'is-active' : ''; ?>">
+                    <?php echo esc_html( $item['titulo'] ); ?>
+                </a>
+            <?php endforeach; ?>
+        </div>
+    </div>
+
+    <!-- CTA fijo abajo móvil -->
+    <a href="<?php echo esc_url( $contacto_url ); ?>" class="pr-hero__cta-movil">
+        Pide cita
+    </a>
 
 </section>

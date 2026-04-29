@@ -51,7 +51,7 @@ function ilba_enqueue_assets() {
         wp_enqueue_style( 'ilba-pr-info', get_stylesheet_directory_uri() . '/css/protocolos/info.css' );
         wp_enqueue_style( 'ilba-pr-formulario', get_stylesheet_directory_uri() . '/css/protocolos/formulario.css' );
 
-        // wp_enqueue_script( 'ilba-pr-scroll', get_stylesheet_directory_uri() . '/js/protocolos/scroll-horizontal.js', array(), null, true );
+        wp_enqueue_script( 'ilba-pr-desplegable', get_stylesheet_directory_uri() . '/js/protocolos/desplegable.js', array(), null, true );
     }
 
     if ( is_singular( 'aparatologia' ) ) {

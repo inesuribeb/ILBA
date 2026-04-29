@@ -45,7 +45,7 @@
 
     padding-bottom: 48px; */
     gap: 24px;
-    padding: 160px 24px 48px 24px;
+    padding: 160px 24px 24px 24px;
 }
 
 /* Columna izquierda nav (15%) */
@@ -56,18 +56,19 @@
     flex-direction: column;
     justify-content: flex-start;
     /* padding: 0px 24px 48px 24px; */
+    padding-top: 0.75rem;
     border-top: 1.5px solid rgba(255,255,255,0.3);
-    gap: 4px;
+    gap: 0px;
 }
 
 .pr-hero__nav-link {
     display: flex;
     align-items: center;
-    gap: 8px;
-    font-size: 13px;
+    gap: 0; /* ← sin gap por defecto */
+    font-size: 15px;
     color: rgba(255,255,255,0.6);
     text-decoration: none;
-    padding: 4px 0;
+    padding: 2px 0;
     transition: color 0.2s ease;
 }
 
@@ -76,16 +77,20 @@
     color: #fff;
 }
 
+.pr-hero__nav-link.is-active {
+    gap: 8px; /* ← gap solo al activo */
+}
+
 .pr-hero__nav-dot {
-    width: 6px;
-    height: 6px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
-    background: rgba(255,255,255,0.4);
     flex-shrink: 0;
-    transition: background 0.2s ease;
+    display: none;
 }
 
 .pr-hero__nav-link.is-active .pr-hero__nav-dot {
+    display: block;
     background: #fff;
 }
 
@@ -93,6 +98,7 @@
 
 .pr-hero__content {
     border-top: 1.5px solid rgba(255,255,255,0.3);
+    padding-top: 0.75rem;
 
     flex: 1;
     display: flex;
@@ -103,10 +109,11 @@
 
 .pr-hero__subtitulo {
     margin: 0;
-    font-size: 15px;
+    font-size: 20px;
     max-width: 500px;
-    line-height: 1.4;
+    line-height: 1.2;
     color: #fff;
+    font-family: var(--serif);
 
     /* padding-top: 60px; */
 }
@@ -124,19 +131,165 @@
     transform: translate(-50%, -50%);
     text-align: center;
     width: 80%;
+    font-size: 62px;
 }
 
 .pr-hero__cta {
     display: inline-block;
-    font-size: 15px;
+    font-size: 18px;
     color: #fff;
     text-decoration: none;
     border-bottom: 1px solid #fff;
-    padding-bottom: 2px;
+    padding-bottom: 1px;
     align-self: flex-start;
     transition: opacity 0.2s ease;
 }
 
 .pr-hero__cta:hover {
     opacity: 0.7;
+}
+
+
+
+
+
+
+
+
+
+
+/* Móvil: ocultar en desktop */
+.pr-hero__movil-top,
+.pr-hero__cta-movil {
+    display: none;
+}
+
+@media ( max-width: 1024px ) {
+
+    /* Ocultar nav desktop */
+    .pr-hero__nav {
+        display: none;
+    }
+
+    /* Ocultar cta y subtitulo desktop */
+    .pr-hero__cta,
+    .pr-hero__subtitulo {
+        display: none;
+    }
+
+    /* Layout en móvil */
+    .pr-hero__layout {
+        padding: 0;
+        gap: 0;
+    }
+
+    .pr-hero__content {
+        border-top: none;
+    }
+
+    /* Título centrado */
+    .pr-hero__titulo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 85%;
+        font-size: 28px;
+    }
+
+    /* Botón + Protocolos arriba */
+    .pr-hero__movil-top {
+        display: block;
+        position: absolute;
+        top: 18vh;
+        left: 24px;
+        right: 24px;
+        border-top: 1.5px solid rgba(255,255,255,0.5);
+        padding-top: 1.5rem;
+        z-index: 10;
+    }
+
+    .pr-hero__movil-btn {
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 15px;
+        font-family: inherit;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 0;
+    }
+
+    .pr-hero__movil-btn svg {
+        width: 18px;
+        height: 18px;
+        transition: transform 0.3s ease;
+    }
+
+    .pr-hero__movil-btn[aria-expanded="true"] svg {
+        transform: rotate(45deg);
+    }
+
+    /* Nav desplegable — flota sin ocupar espacio */
+    .pr-hero__movil-nav {
+        display: none;
+        flex-direction: column;
+        gap: 4px;
+        position: absolute;
+        top: calc( 100% + 12px );
+        left: 0;
+        right: 0;
+        z-index: 10;
+    }
+
+    .pr-hero__movil-nav.is-open {
+        display: flex;
+    }
+
+    .pr-hero__movil-nav-link {
+        font-size: 15px;
+        color: rgba(255,255,255,0.7);
+        text-decoration: none;
+        padding: 6px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+        transition: color 0.2s ease;
+    }
+
+    .pr-hero__movil-nav-link.is-active,
+    .pr-hero__movil-nav-link:hover {
+        color: #fff;
+    }
+
+    /* Subtítulo sobre el CTA fijo */
+    .pr-hero__subtitulo {
+        display: block;
+        position: absolute;
+        bottom: calc( 7vh + 30px );
+        left: 24px;
+        right: 24px;
+        font-size: 24px;
+        line-height: 1.2;
+        color: rgba(255,255,255,0.8);
+        margin: 0;
+    }
+
+    /* CTA fijo abajo a sangre */
+    .pr-hero__cta-movil {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 7vh;
+        background: #fff;
+        color: #000;
+        text-decoration: none;
+        font-size: 15px;
+        z-index: 10;
+    }
 }
