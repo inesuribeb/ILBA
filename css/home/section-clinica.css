@@ -130,3 +130,62 @@
     object-fit: cover;
     display: block;
 }
+
+
+@media ( max-width: 1024px ) {
+
+    .home-clinica {
+        flex-direction: column;
+        padding: 40px 0 40px 24px;
+        gap: 1.5rem;
+        overflow: hidden; 
+    }
+
+    .home-clinica__col-tag {
+        width: 100%;
+        border-top: 1px solid #e0e0e0;
+        padding-top: 1rem;
+    }
+
+    .home-clinica__col-main {
+        width: 100%;
+        flex-direction: column;
+        gap: 2rem;
+        padding-right: 24px;
+        box-sizing: border-box; /* ← */
+
+    }
+
+    /* Imagen vertical full width */
+    .home-clinica__img-vertical {
+        width: 100%;
+        aspect-ratio: 4 / 5;
+        box-sizing: border-box; /* ← */
+
+    }
+
+    /* Content: texto a la izq, img horizontal a la der */
+    .home-clinica__content {
+        position: static;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 1rem;
+        padding-right: 0;
+    }
+
+    .home-clinica__content-top {
+        flex: 1;
+    }
+
+    .home-clinica__titulo {
+        font-size: 22px;
+    }
+
+    /* Imagen horizontal como columna derecha */
+    .home-clinica__img-horizontal {
+        flex-shrink: 0;
+        width: 42%;
+        aspect-ratio: 4 / 5;
+        align-self: flex-end;
+    }
+}

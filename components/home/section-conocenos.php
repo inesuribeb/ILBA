@@ -1,8 +1,4 @@
 <?php
-/**
- * Home component: Conócenos
- */
-
 $tag            = get_field( 'home_conocenos_tag' );
 $titulo         = get_field( 'home_conocenos_titulo' );
 $descripcion    = get_field( 'home_conocenos_descripcion' );
@@ -22,25 +18,55 @@ $img_cuadrada   = get_field( 'home_conocenos_img_cuadrada' );
 
     <div class="home-conocenos__col-main">
 
-        <div class="home-conocenos__texto">
-            <?php if ( $titulo ) : ?>
-                <h2 class="home-conocenos__titulo"><?php echo esc_html( $titulo ); ?></h2>
-            <?php endif; ?>
+        <!-- Hero móvil: img_cuadrada + overlay + tag + título -->
+        <?php if ( $img_cuadrada ) : ?>
+            <div class="home-conocenos__hero">
+                <img src="<?php echo esc_url( $img_cuadrada['url'] ); ?>"
+                     alt="<?php echo esc_attr( $img_cuadrada['alt'] ); ?>">
+                <div class="home-conocenos__hero-overlay"></div>
+                <div class="home-conocenos__hero-content">
+                    <?php if ( $tag ) : ?>
+                        <span class="home-conocenos__tag"><?php echo esc_html( $tag ); ?></span>
+                    <?php endif; ?>
+                    <?php if ( $titulo ) : ?>
+                        <h2 class="home-conocenos__titulo"><?php echo esc_html( $titulo ); ?></h2>
+                    <?php endif; ?>
+                </div>
+            </div>
+        <?php endif; ?>
 
-            <?php if ( $descripcion ) : ?>
-                <p class="home-conocenos__descripcion"><?php echo esc_html( $descripcion ); ?></p>
-            <?php endif; ?>
+        <!-- Fila: texto izq + img_vertical der -->
+        <div class="home-conocenos__texto-fila">
 
-            <?php if ( $cta_texto && $cta_link ) : ?>
-                <a href="<?php echo esc_url( $cta_link ); ?>" class="home-conocenos__cta">
-                    <?php echo esc_html( $cta_texto ); ?>
-                </a>
-            <?php endif; ?>
-        </div>
+            <div class="home-conocenos__texto">
+                <?php if ( $titulo ) : ?>
+                    <h2 class="home-conocenos__titulo home-conocenos__titulo--main"><?php echo esc_html( $titulo ); ?></h2>
+                <?php endif; ?>
 
-        <div class="home-conocenos__imagenes">
+                <?php if ( $descripcion ) : ?>
+                    <p class="home-conocenos__descripcion"><?php echo esc_html( $descripcion ); ?></p>
+                <?php endif; ?>
+
+                <?php if ( $cta_texto && $cta_link ) : ?>
+                    <a href="<?php echo esc_url( $cta_link ); ?>" class="home-conocenos__cta">
+                        <?php echo esc_html( $cta_texto ); ?>
+                    </a>
+                <?php endif; ?>
+            </div>
+
             <?php if ( $img_vertical ) : ?>
                 <div class="home-conocenos__img-vertical">
+                    <img src="<?php echo esc_url( $img_vertical['url'] ); ?>"
+                         alt="<?php echo esc_attr( $img_vertical['alt'] ); ?>">
+                </div>
+            <?php endif; ?>
+
+        </div>
+
+        <!-- Imágenes desktop -->
+        <div class="home-conocenos__imagenes">
+            <?php if ( $img_vertical ) : ?>
+                <div class="home-conocenos__img-vertical--desktop">
                     <img src="<?php echo esc_url( $img_vertical['url'] ); ?>"
                          alt="<?php echo esc_attr( $img_vertical['alt'] ); ?>">
                 </div>

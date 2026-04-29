@@ -14,3 +14,16 @@
     object-fit: cover;
     display: block;
 }
+
+
+@media ( max-width: 1024px ) {
+    .home-img-video {
+        height: 70vh;
+    }
+}
+
+@media ( max-width: 768px ) {
+    .home-img-video {
+        height: 70vh;
+    }
+}

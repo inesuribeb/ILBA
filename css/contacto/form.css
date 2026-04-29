@@ -1,0 +1,296 @@
+/* =============================================
+   Contacto — Form
+   ============================================= */
+
+   .ct-form-section {
+    display: flex;
+    flex-direction: row;
+    gap: 8rem;
+    padding: 80px 60px 80px 60px;
+    box-sizing: border-box;
+}
+
+/* --- Info lateral --- */
+
+.ct-form-section__info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.ct-info__item {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    padding: 7px 0;
+    border-bottom: 1px solid #e0e0e08d;
+    /* border-bottom: 1px solid var(--light-color); */
+}
+
+.ct-info__item:first-child {
+    /* border-top: 1px solid var(--dark-color); */
+    border-top: 1px solid var(--light-color);
+}
+
+.ct-info__label {
+    font-size: 15px;
+    /* color: #999; */
+    /* color: var(--dark-color); */
+    color: var(--light-color);
+
+    flex: 0 0 200px;
+}
+
+.ct-info__valor {
+    font-size: 15px;
+    /* color: var(--dark-color); */
+    color: var(--light-color);
+
+    text-decoration: none;
+    line-height: 1.5;
+    margin: 0;
+}
+
+a.ct-info__valor:hover {
+    opacity: 0.6;
+}
+
+/* --- Formulario CF7 --- */
+
+.ct-form-section__form {
+    flex: 1;
+}
+
+.ct-form-section__form .wpcf7-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.ct-form-section__form input::placeholder,
+.ct-form-section__form textarea::placeholder {
+    color: #e0e0e08d;/* ajusta la opacidad */
+}
+
+/* Primera fila: nombre + apellidos */
+.ct-form-section__form .wpcf7-form p:first-child {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0.75rem;
+}
+
+/* Inputs */
+.ct-form-section__form input[type="text"],
+.ct-form-section__form input[type="email"],
+.ct-form-section__form select,
+.ct-form-section__form textarea,
+.ct-form-section__form input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    /* border: 1px solid var(--dark-color); */
+    border: 1px solid var(--light-color);
+    background: transparent;
+    font-size: 15px;
+    /* color: var(--dark-color); */
+    color: var(--light-color);
+
+    outline: none;
+    font-family: inherit;
+    border-radius: 0;
+    -webkit-appearance: none;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease;
+}
+
+.ct-form-section__form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Select arrow */
+.ct-form-section__form select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23333' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 40px;
+    cursor: pointer;
+}
+
+/* Submit */
+.ct-form-section__form input[type="submit"],
+.ct-form-section__form .wpcf7-submit {
+    width: 100%;
+    padding: 10px;
+    background: var(--light-color);
+    color: #6C1415;
+    border: none;
+    font-size: 15px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    border-radius: 0;
+    display: block;
+}
+
+/* .ct-form-section__form input[type="submit"]:hover,
+.ct-form-section__form .wpcf7-submit:hover {
+    background: #111;
+} */
+
+.ct-form-section__form .wpcf7-form p {
+    margin: 0;
+}
+
+/* File input */
+.ct-form-section__form input[type="file"] {
+    cursor: pointer;
+    color: #e0e0e08d;;
+}
+
+
+
+
+
+
+/* File input custom */
+.ct-file-wrapper {
+    position: relative;
+    /* border: 1px solid var(--dark-color); */
+    border: 1px solid var(--light-color);
+
+    padding: 8px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.ct-file-wrapper input[type="file"] {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    border: none;
+    padding: 0;
+}
+
+.ct-file-label {
+    font-size: 15px;
+    /* color: var(--dark-color); */
+    color: #e0e0e08d;
+
+    pointer-events: none;
+}
+
+.ct-file-icon {
+    width: 16px;
+    height: 16px;
+    pointer-events: none;
+    /* color: var(--dark-color); */
+    color: var(--light-color) !important;
+
+}
+
+
+
+
+
+
+
+/* Select custom */
+.ct-select-wrapper {
+    position: relative;
+    /* border: 1px solid var(--dark-color); */
+    border: 1px solid var(--light-color);
+
+    cursor: pointer;
+    user-select: none;
+}
+
+.ct-select-wrapper select {
+    display: none;
+}
+
+.ct-select-trigger {
+    padding: 8px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+    /* color: var(--dark-color); */
+    color: var(--light-color);
+
+}
+
+.ct-select-trigger span {
+    color: #e0e0e08d;
+}
+
+.ct-select-wrapper.has-value .ct-select-trigger {
+    color: var(--light-color);
+}
+.ct-select-trigger svg {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.2s ease;
+    color: var(--light-color);
+}
+
+.ct-select-wrapper.is-open .ct-select-trigger svg {
+    transform: rotate(180deg);
+}
+
+.ct-select-options {
+    display: none;
+    flex-direction: column;
+    /* border: 1px solid var(--dark-color); */
+    border: 1px solid var(--light-color);
+
+    position: absolute;
+    top: calc( 100% - 1px );
+    left: -1px;
+    right: -1px;
+    /* background: var(--light-color); */
+    background: #6C1415;
+
+    z-index: 10;
+}
+
+.ct-select-wrapper.is-open .ct-select-options {
+    display: flex;
+}
+
+.ct-select-option {
+    padding: 8px 12px;
+    font-size: 15px;
+    /* color: var(--dark-color); */
+    color: var(--light-color);
+
+    border-bottom: 1px solid #e0e0e08d;
+    transition: opacity 0.2s ease;
+}
+
+.ct-select-option:last-child {
+    border-bottom: none;
+}
+
+.ct-select-option:hover {
+    opacity: 0.6;
+}
+
+.ct-select-option.is-selected {
+    font-weight: 500;
+}
+
+
+
+.ct-file-icon,
+.ct-file-icon path,
+.ct-select-trigger svg,
+.ct-select-trigger svg path {
+    color: var(--light-color);
+    stroke: var(--light-color);
+}

@@ -1,0 +1,129 @@
+/* =============================================
+   Servicios — Tratamientos
+   ============================================= */
+
+.sv-tratamientos {
+    padding: 48px 48px 48px 0;
+}
+
+.sv-tratamientos__header {
+    border-top: 1px solid #e0e0e0;
+    padding-top: 1rem;
+    margin-bottom: 48px;
+}
+
+.sv-tratamientos__subtitulo {
+    margin: 0;
+}
+
+.sv-tratamientos__lista {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+/* --- Card tratamiento --- */
+
+.sv-tr {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    padding: 48px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.sv-tr:first-child {
+    border-top: 1px solid #e0e0e0;
+}
+
+/* --- Columna izquierda --- */
+
+.sv-tr__izq {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.sv-tr__titulo {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+/* --- Acordeones --- */
+
+.sv-tr__acordeones {
+    display: flex;
+    flex-direction: column;
+}
+
+.sv-tr__acordeon {
+    border-top: 1px solid #e0e0e0;
+}
+
+.sv-tr__acordeon:last-child {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.sv-tr__acordeon-btn {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 12px 0;
+    text-align: left;
+    font-size: 14px;
+    color: #444;
+    cursor: pointer;
+    display: block;
+    transition: opacity 0.2s ease;
+}
+
+.sv-tr__acordeon-btn:hover {
+    opacity: 0.6;
+}
+
+.sv-tr__acordeon-btn--link {
+    text-decoration: none;
+    display: block;
+    padding: 12px 0;
+    font-size: 14px;
+    color: #444;
+    transition: opacity 0.2s ease;
+}
+
+.sv-tr__acordeon-btn--link:hover {
+    opacity: 0.6;
+}
+
+.sv-tr__acordeon-content {
+    display: none;
+    padding: 0 0 16px 0;
+}
+
+.sv-tr__acordeon-content.is-open {
+    display: block;
+}
+
+.sv-tr__acordeon-content p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* --- Imagen --- */
+
+.sv-tr__imagen {
+    flex: 0 0 45%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    align-self: flex-start;
+}
+
+.sv-tr__imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}

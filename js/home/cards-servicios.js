@@ -4,7 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const cards     = Array.from( container.querySelectorAll('.home-servicios__card') );
     const cardCount = cards.length;
-    const cardWidth = 320; // mismo valor que el CSS
+    // const cardWidth = 320; 
+    const cardWidth = cards[0].getBoundingClientRect().width;
+
 
     cards.forEach( card => {
         const clone = card.cloneNode(true);

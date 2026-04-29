@@ -1,0 +1,111 @@
+/* =============================================
+   Aparatología — Descripción
+   ============================================= */
+
+   .ap-descripcion {
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+    padding: 80px 48px 80px 24px;
+    background-color: #B3BEC5;
+    align-items: flex-start;
+}
+
+/* --- Izquierda --- */
+
+.ap-descripcion__izq {
+    flex: 1;
+}
+
+.ap-descripcion__texto {
+    margin: 0;
+    font-size: 20px;
+    line-height: 1.4;
+    color: var(--dark-color);
+    /* max-width: 480px; */
+}
+
+/* --- Derecha --- */
+
+.ap-descripcion__der {
+    flex: 1;
+}
+
+/* --- Acordeones --- */
+
+.ap-acordeones {
+    display: flex;
+    flex-direction: column;
+}
+
+.ap-acordeon {
+    border-bottom: 1px solid rgba(45, 45, 45, 0.25);
+}
+
+.ap-acordeon:first-child {
+    border-top: 1px solid rgba(45, 45, 45, 0.25);
+}
+
+.ap-acordeon__btn {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 16px 0;
+    text-align: left;
+    font-size: 20px;
+    color: var(--dark-color);
+    cursor: pointer;
+    display: block;
+    font-family: inherit;
+    transition: opacity 0.2s ease;
+}
+
+.ap-acordeon__btn:hover {
+    opacity: 0.6;
+}
+
+.ap-acordeon__content {
+    display: none;
+    padding: 0 0 16px 0;
+}
+
+.ap-acordeon__content.is-open {
+    display: block;
+}
+
+.ap-acordeon__content p {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--dark-color);
+}
+
+@media ( max-width: 1024px ) {
+
+    .ap-descripcion {
+        flex-direction: column;
+        padding: 60px 24px;
+        gap: 2rem;
+        padding-top: 0;
+        border: none;
+    }
+
+    .ap-descripcion__izq,
+    .ap-descripcion__der {
+        flex: none;
+        width: 100%;
+    }
+
+    .ap-descripcion__texto {
+        font-size: 24px;
+    }
+
+    .ap-acordeon__btn {      
+        font-size: 24px;
+    }
+
+    .ap-acordeon__content p {
+        font-size: 24px;
+        padding-top: 1rem;
+    }
+}

@@ -22,3 +22,8 @@ require_once get_stylesheet_directory() . '/inc/acf/home/fields-home-img-video.p
 /*FOOTER*/
 require_once get_stylesheet_directory() . '/inc/acf/footer/fields-footer.php';
 
+/*SOMOS*/
+require_once get_stylesheet_directory() . '/inc/acf/somos/fields-somos.php';
+
+/*CONTACTO*/
+require_once get_stylesheet_directory() . '/inc/acf/contacto/fields-contacto.php';

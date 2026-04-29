@@ -1,0 +1,87 @@
+/* =============================================
+   Servicios — Layout
+   ============================================= */
+
+   .sv-layout {
+    display: flex;
+    flex-direction: row;
+}
+
+/* --- Sidebar izquierda (15%) --- */
+
+.sv-layout__sidebar {
+    flex: 0 0 15%;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 24px;
+    /* border-right: 1px solid #e0e0e0; */
+    align-self: flex-start;
+    overflow-y: auto;
+}
+
+.sv-sidebar__top {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.sv-sidebar__imagen {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+}
+
+.sv-sidebar__imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* --- Nav lateral --- */
+
+.sv-sidebar__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.sv-sidebar__nav-link {
+    font-size: 16px;
+    color: #888;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    display: block;
+}
+
+.sv-sidebar__nav-link:hover {
+    color: var(--dark-color);
+}
+
+.sv-sidebar__nav-link.is-active {
+    color: var(--dark-color);
+    font-weight: 500;
+}
+
+/* --- Contenido derecho (85%) --- */
+
+.sv-layout__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+
+
+
+@media ( max-width: 1024px ) {
+    .sv-layout__sidebar {
+        display: none;
+    }
+}

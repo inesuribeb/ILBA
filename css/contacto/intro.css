@@ -1,0 +1,84 @@
+/* =============================================
+   Contacto — Intro
+   ============================================= */
+
+   .ct-intro {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    height: 85vh;
+    /* padding: 48px 24px; */
+    padding-top: 25vh;
+    box-sizing: border-box;
+    /* margin-top: 20vh; */
+    /* padding-top: 30vh; */
+
+    /* background-color: var(--contrast-combination);
+    background-color: var(--medium-blue); */
+
+}
+
+/* --- Foto (izquierda) --- */
+
+.ct-intro__foto-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.ct-intro__foto {
+    aspect-ratio: 4 / 5;
+    height: 100%;
+    overflow: hidden;
+}
+
+.ct-intro__foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* --- Contenido (derecha) --- */
+
+.ct-intro__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    justify-content: center;
+
+    gap: 24px;
+    padding-bottom: 8px;
+}
+
+.ct-intro__titulo {
+    margin: 0;
+    font-family: var(--serif);
+
+    color: var(--light-color);
+}
+
+.ct-intro__subtitulo {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.2;
+    color: var(--dark-color);
+    max-width: 300px;
+
+    color: var(--light-color)
+
+}
+
+/* =============================================
+   Contacto — Form
+   ============================================= */
+
+.ct-form-section {
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+    padding: 80px 48px 80px 24px;
+    /* border-top: 1px solid #e0e0e0; */
+}

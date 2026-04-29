@@ -1,0 +1,209 @@
+/* =============================================
+   Servicios — Tratamientos
+   ============================================= */
+
+   .sv-tratamientos {
+    padding: 48px 24px 48px 0;
+}
+
+.sv-tratamientos__header {
+    border-top: 1px solid #e0e0e0;
+    padding-top: 1rem;
+    margin-bottom: 48px;
+}
+
+.sv-tratamientos__subtitulo {
+    margin: 0;
+    font-family: var(--sans-serif);
+    font-weight: 400;
+    line-height: 1;
+    font-size: 28px;
+    padding-bottom: 2rem;
+    color: var(--dark-color);
+}
+
+.sv-tratamientos__lista {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+/* --- Card tratamiento --- */
+
+.sv-tr {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    padding: 48px 0;
+    /* border-bottom: 1px solid #e0e0e0; */
+
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.sv-tr.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* .sv-tr:first-child {
+    border-top: 1px solid #e0e0e0;
+} */
+
+/* --- Columna izquierda --- */
+
+.sv-tr__izq {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 82px;
+}
+
+.sv-tr__titulo {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 400;
+    font-family: var(--sans-serif);
+}
+
+/* --- Acordeones --- */
+
+.sv-tr__acordeones {
+    display: flex;
+    flex-direction: column;
+}
+
+.sv-tr__acordeon {
+    border-bottom: 1px solid var(--dark-color);
+}
+
+/* .sv-tr__acordeon:last-child {
+    border-bottom: 1px solid var(--dark-color);
+} */
+
+.sv-tr__acordeon-btn {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 12px 0;
+    text-align: left;
+    font-size: 16px;
+    color: var(--dark-color);
+    cursor: pointer;
+    display: block;
+    transition: opacity 0.2s ease;
+}
+
+.sv-tr__acordeon-btn:hover {
+    opacity: 0.6;
+}
+
+.sv-tr__acordeon-btn--link {
+    text-decoration: none;
+    display: block;
+    padding: 12px 0;
+    font-size: 16px;
+    color: var(--dark-color);
+    transition: opacity 0.2s ease;
+}
+
+.sv-tr__acordeon-btn--link:hover {
+    opacity: 0.6;
+}
+
+.sv-tr__acordeon-content {
+    display: none;
+    padding: 0 0 16px 0;
+}
+
+.sv-tr__acordeon-content.is-open {
+    display: block;
+}
+
+.sv-tr__acordeon-content p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--dark-color);
+}
+
+/* --- Imagen --- */
+
+.sv-tr__imagen {
+    flex: 0 0 45%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    align-self: flex-start;
+}
+
+.sv-tr__imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+
+
+
+
+.sv-tratamientos__tag-movil {
+    display: none;
+    font-size: 18px;
+    color: var(--dark-color);
+}
+
+@media ( max-width: 1024px ) {
+
+    .sv-tratamientos {
+        padding: 40px 24px;
+    }
+
+    .sv-tratamientos__tag-movil {
+        display: block;
+        padding-bottom: 1.5rem;
+    }
+
+    .sv-tratamientos__header {
+        border-top: 1.5px solid var(--dark-color);
+    }
+
+    .sv-tratamientos__subtitulo {
+        font-size: 26px;
+        padding-bottom: 0;
+        line-height: 1.2;
+        padding-bottom: 2rem;
+    }
+
+    /* Card en columna: título, imagen, acordeones */
+    .sv-tr {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 32px 0;
+        border-top: 1px solid #e0e0e0;
+    }
+
+    .sv-tr__izq {
+        gap: 1.5rem;
+        order: 1; /* título primero */
+    }
+
+    .sv-tr__titulo {
+        font-size: 22px;
+
+    }
+
+    .sv-tr__imagen {
+        flex: none;
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        order: 0; /* imagen después del título */
+        align-self: auto;
+    }
+
+    .sv-tr__acordeones {
+        order: 2;
+    }
+}

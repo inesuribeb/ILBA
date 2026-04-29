@@ -1,0 +1,9 @@
+/* =============================================
+   Protocolos — Layout simple
+   ============================================= */
+ 
+   .single-protocolos {
+    display: flex;
+    flex-direction: column;
+}
+ 

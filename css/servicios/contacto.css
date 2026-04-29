@@ -1,0 +1,83 @@
+/* =============================================
+   Servicios — Contacto
+   ============================================= */
+
+   .sv-contacto {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.sv-contacto__bg {
+    position: absolute;
+    inset: 0;
+}
+
+/* .sv-contacto__bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+} */
+.sv-contacto__bg img {
+    width: 100%;
+    height: 160%; /* más alta para que haya margen de movimiento */
+    object-fit: cover;
+    display: block;
+    will-change: transform;
+}
+
+.sv-contacto__content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    text-align: center;
+    padding: 48px;
+}
+
+.sv-contacto__titulo {
+    margin: 0;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: 400;
+    line-height: 1.2;
+    font-size: 48px;
+}
+
+.sv-contacto__cta {
+    font-size: 18px;
+    color: var(--dark-color);
+    text-decoration: none;
+    border-bottom: 1px solid var(--dark-color);
+    padding-bottom: 2px;
+    transition: opacity 0.2s ease;
+}
+
+.sv-contacto__cta:hover {
+    opacity: 0.5;
+}
+
+
+
+
+
+@media ( max-width: 1024px ) {
+
+    .sv-contacto {
+        height: 100vh;
+    }
+
+    .sv-contacto__titulo {
+        font-size: 32px;
+    }
+
+    .sv-contacto__content {
+        padding: 14px;
+    }
+}

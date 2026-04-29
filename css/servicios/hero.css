@@ -1,0 +1,109 @@
+/* =============================================
+   Servicios — Hero
+   ============================================= */
+
+.sv-hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.sv-hero__bg {
+    position: absolute;
+    inset: 0;
+    /* padding-right: 24px; */
+}
+
+.sv-hero__bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.sv-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top,
+            rgba(0, 0, 0, 0.5) 0%,
+            rgba(0, 0, 0, 0.1) 50%,
+            rgba(0, 0, 0, 0) 100%);
+}
+
+.sv-hero__content {
+    position: absolute;
+    bottom: 48px;
+    left: 24px;
+    right: 48px;
+}
+
+.sv-hero__titulo {
+    color: #fff;
+    margin: 0;
+    font-family: var(--sans-serif);
+    font-weight: 300;
+    line-height: 1;
+    font-size: 40px;
+    max-width: 800px;
+}
+
+
+
+@media (max-width: 1024px) {
+
+    .sv-hero {
+        position: relative;
+        height: auto;
+        min-height: unset;
+        padding-top: 18vh;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+
+        /* border-top: 1.5px solid var(--dark-color); */
+    }
+
+    .sv-hero__bg {
+        /* position: relative;
+        inset: auto;
+        width: 100%;
+        aspect-ratio: 4 / 5;
+        overflow: hidden; */
+
+        position: relative;
+        inset: auto;
+        width: 100%;
+        aspect-ratio: 4 / 5;
+        overflow: hidden;
+        padding: 0 24px;
+        box-sizing: border-box;
+
+    }
+
+
+
+    .sv-hero__bg img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .sv-hero__overlay {
+        display: none;
+    }
+
+    .sv-hero__content {
+        position: static;
+        order: -1;
+        padding: 0 24px 24px 24px;
+    }
+
+    .sv-hero__titulo {
+        color: var(--dark-color);
+        font-size: 28px;
+        font-weight: 400;
+        border-top: 1.5px solid var(--dark-color);
+        padding-top: 1.5rem;
+    }
+}

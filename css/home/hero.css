@@ -115,10 +115,24 @@
 /* --- Responsive --- */
 
 @media ( max-width: 768px ) {
+
+    .home-hero__mitad--der {
+        display: none;
+    }
+
+    .home-hero__mitad--izq {
+        width: 100%;
+    }
+
     .home-hero__content {
         bottom: 32px;
         left: 24px;
         right: 24px;
+        gap: 40px;
+    }
+
+    .home-hero__titulo {
+        font-size: 22px;
     }
 
     .home-hero__cta {

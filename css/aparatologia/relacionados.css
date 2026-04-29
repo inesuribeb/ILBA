@@ -1,0 +1,123 @@
+/* =============================================
+   Aparatología — Relacionados
+   ============================================= */
+
+   .ap-relacionados {
+    display: flex;
+    flex-direction: column;
+    background-color: #B3BEC5;
+
+}
+
+/* --- Header --- */
+
+.ap-relacionados__header {
+    padding: 80px 48px 48px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.ap-relacionados__titulo {
+    margin: 0;
+    font-size: clamp(1.3rem, 2.3vw, 2rem);
+    font-weight: 400;
+    line-height: 1.2;
+    font-family: var(--sans-serif);
+    text-align: center;
+    color: var(--dark-color);
+
+}
+
+.ap-relacionados__subtitulo {
+    margin: 0;
+    font-size: 15px;
+    color: var(--dark-color);
+    text-align: center;
+    text-decoration: underline;
+}
+
+/* --- Grid --- */
+
+.ap-relacionados__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* --- Card --- */
+
+.ap-relacionados__card {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    text-decoration: none;
+    display: block;
+}
+
+.ap-relacionados__card-bg {
+    position: absolute;
+    inset: 0;
+}
+
+.ap-relacionados__card-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.ap-relacionados__card:hover .ap-relacionados__card-bg img {
+    transform: scale(1.03);
+}
+
+.ap-relacionados__card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.5) 0%,
+        rgba(0, 0, 0, 0) 50%
+    );
+}
+
+.ap-relacionados__card-content {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    right: 24px;
+}
+
+.ap-relacionados__card-titulo {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+}
+
+
+@media ( max-width: 1024px ) {
+
+    .ap-relacionados__header {
+        /* border-top: 1.5px solid var(--dark-color); */
+        padding: 50px 24px 40px 24px;
+    }
+
+    .ap-relacionados__titulo {
+        border-top: 1.5px solid var(--dark-color);
+        padding-top: 1.5rem;
+        text-align: left;
+        font-size: clamp(1.2rem, 4vw, 1.6rem);
+        font-size: 24px;
+        font-weight: 500;
+    }
+
+    .ap-relacionados__subtitulo {
+        text-align: left;
+        font-size: 22px;
+    }
+
+    .ap-relacionados__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

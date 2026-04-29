@@ -1,0 +1,79 @@
+/* =============================================
+   Aparatología — Hero
+   ============================================= */
+
+   .ap-hero {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    min-height: 100vh;
+    padding: 80px 48px 80px 24px;
+    gap: 4rem;
+    background-color: #B3BEC5;
+}
+
+/* --- Imagen silueteada --- */
+
+.ap-hero__imagen {
+    flex: 0 0 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ap-hero__imagen img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+/* --- Título --- */
+
+.ap-hero__content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ap-hero__titulo {
+    margin: 0;
+}
+
+
+@media ( max-width: 1024px ) {
+
+    .ap-hero {
+        flex-direction: column-reverse;
+        min-height: unset; /* ← cancela el 100vh */
+        height: auto;
+        padding: 18vh 24px 40px 24px;
+        gap: 2rem;
+        align-items: flex-start;
+        overflow: hidden;
+    }
+
+    .ap-hero__imagen {
+        border-bottom: 1.5px solid var(--dark-color);
+
+        flex: none;
+        width: 100%;
+        align-self: center;
+        padding-top: 1rem;
+        padding-bottom: 3rem;
+    }
+
+    .ap-hero__content {
+        border-top: 1.5px solid var(--dark-color);
+
+        flex: none;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .ap-hero__titulo {
+        padding-top: 5rem;
+    }
+}

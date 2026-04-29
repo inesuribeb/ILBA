@@ -1,0 +1,85 @@
+/* =============================================
+   Protocolos — Info
+   ============================================= */
+
+   .pr-info {
+    display: flex;
+    flex-direction: row;
+    background: #000;
+    color: #fff;
+    min-height: 100vh;
+}
+
+/* --- Imagen (15%) --- */
+
+.pr-info__imagen {
+    flex: 0 0 30%;
+    overflow: hidden;
+}
+
+.pr-info__imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* --- Contenido (70%) --- */
+
+.pr-info__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 48px;
+    padding: 80px 80px 80px 64px;
+}
+
+.pr-info__descripcion {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 700px;
+}
+
+/* --- Indicados --- */
+
+.pr-info__indicados {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.pr-info__indicados-titulo {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.pr-info__indicados-lista {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.pr-info__indicados-lista li {
+    font-size: 15px;
+    color: rgba(255,255,255,0.8);
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.pr-info__indicados-lista li::before {
+    content: '—';
+    color: rgba(255,255,255,0.4);
+    flex-shrink: 0;
+}
+
+.pr-info__indicados-lista li:first-child {
+    border-top: 1px solid rgba(255,255,255,0.15);
+}

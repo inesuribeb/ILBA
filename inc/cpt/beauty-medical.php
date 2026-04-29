@@ -39,5 +39,7 @@ function ilba_register_cpt_beauty_medical() {
     );
 
     register_post_type( 'beauty_medical', $args );
+    // register_post_type( '', $args );
+
 }
 add_action( 'init', 'ilba_register_cpt_beauty_medical' );

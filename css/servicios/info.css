@@ -1,0 +1,252 @@
+/* =============================================
+   Servicios — Info (Qué es y qué no es)
+   ============================================= */
+
+   .sv-info {
+    /* padding: 48px 24px 48px 0; */
+    padding: 48px 0px 48px 0;
+
+}
+
+.sv-info__col-main {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 1rem;
+    /* padding-left: 24px; */
+}
+
+/* --- Subtítulo --- */
+
+.sv-info__subtitulo {
+    margin: 0;
+    font-family: var(--sans-serif);
+    font-weight: 400;
+    line-height: 1;
+    font-size: 28px;
+    padding-bottom: 2rem;
+    color: var(--dark-color);
+
+    padding: 0px 24px 0px 0;
+
+
+}
+
+/* --- Descripción --- */
+
+.sv-info__descripcion {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.4;
+    /* max-width: 600px; */
+    padding-bottom: 4rem;
+    color: var(--dark-color);
+
+    padding: 0px 24px 0px 0;
+
+
+}
+
+/* --- Bottom: CTA + Características en fila --- */
+
+.sv-info__bottom {
+    display: flex;
+    flex-direction: row;
+    gap: 8rem;
+    align-items: flex-start;
+
+    padding: 0px 24px 0px 0;
+
+}
+
+.sv-info__cta-wrapper {
+    flex-shrink: 0;
+}
+
+.sv-info__cta {
+    display: inline-block;
+    font-size: 18px;
+    color: var(--dark-color);
+    text-decoration: none;
+    border-bottom: 1px solid var(--dark-color);
+    padding-bottom: 2px;
+    transition: opacity 0.2s ease;
+    white-space: nowrap;
+    padding-top: 0.75rem;
+}
+
+.sv-info__cta:hover {
+    opacity: 0.5;
+}
+
+/* --- Características --- */
+
+.sv-info__caracteristicas {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    max-width: 800px;
+}
+
+.sv-info__caracteristica {
+    font-size: 18px;
+    color: var(--dark-color);
+    padding: 10px 0;
+    border-bottom: 1px solid var(--dark-color);
+}
+
+/* .sv-info__caracteristica:first-child {
+    border-top: 1px solid #e0e0e0;
+} */
+
+/* --- Fotos --- */
+
+.sv-info__fotos {
+    padding-top: 8rem;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+}
+
+.sv-info__fotos::-webkit-scrollbar {
+    display: none;
+}
+
+.sv-info__foto {
+    flex: 0 0 40%;
+    flex-shrink: 0;
+    overflow: hidden;
+    aspect-ratio: 4 / 5;
+    scroll-snap-align: start;
+}
+
+.sv-info__foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Tag solo visible en móvil */
+.sv-info__tag-movil {
+    display: none;
+    font-size: 18px;
+    color: var(--dark-color);
+    padding-bottom: 1.5rem;
+}
+
+@media ( max-width: 1024px ) {
+
+    .sv-info {
+        /* padding: 40px 24px; */
+        padding: 40px 0px;
+        border: none;
+
+    }
+
+    .sv-info__tag-movil {
+        display: block;
+        padding: 0px 0px;
+        border-top: 1.5px solid var(--dark-color);
+        margin: 0 24px 0 24px;
+        padding-top: 1rem;
+    }
+
+    .sv-info__col-main {
+        gap: 24px;
+        /* overflow: visible; */
+        /* border-top: 1.5px solid var(--dark-color); */
+    }
+
+    .sv-info__subtitulo {
+        padding: 0px 24px;
+
+        font-size: 26px;
+        padding-bottom: 0;
+        line-height: 1.2;
+        padding-bottom: 2rem;
+
+
+    }
+
+    .sv-info__descripcion {
+        padding: 0px 24px;
+
+        font-size: 20px;
+        line-height: 1.5;
+        padding-bottom: 4rem;
+    }
+
+    /* Características arriba, CTA abajo */
+    .sv-info__bottom {
+        padding: 0px 24px;
+
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .sv-info__caracteristicas {
+        order: -1;
+        max-width: none;
+        width: 100%;
+    }
+
+    .sv-info__caracteristica {
+        font-size: 20px;
+        border-bottom: 1px solid var(--dark-color);
+        border-top: none;
+    }
+
+    .sv-info__caracteristica:first-child {
+        border-top: none;
+    }
+
+    .sv-info__cta-wrapper {
+        padding-top: 2rem;
+        padding-bottom: 4rem;
+    }
+
+    .sv-info__cta {
+        font-size: 24px;
+    }
+    
+
+    /* Fotos: 1 entera y trozo de la segunda */
+    .sv-info__foto {
+        flex: 0 0 80vw;
+    }
+
+    /* Quita el padding-top en móvil si es mucho */
+    .sv-info__fotos {
+        padding-top: 2rem;
+        padding-left: 0;
+    }
+
+    .sv-info__foto:first-child {
+        margin-left: 24px;
+    }
+
+
+
+   
+
+
+}

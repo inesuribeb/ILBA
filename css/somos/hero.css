@@ -1,0 +1,30 @@
+/* =============================================
+   Somos — Hero
+   ============================================= */
+
+   .somos-hero {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.somos-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+@media ( max-width: 1024px ) {
+    .somos-hero {
+        height: auto;
+        /* padding-top: 10rem; */
+        padding-top: 18vh;
+
+    }
+
+    .somos-hero img {
+        aspect-ratio: 16 / 9;
+        height: auto;
+    }
+}

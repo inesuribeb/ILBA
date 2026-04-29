@@ -1,0 +1,141 @@
+/* =============================================
+   Somos — Prensa
+   ============================================= */
+
+   .somos-prensa {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    padding: 48px 0 48px 24px;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* --- Columna tag (15%) --- */
+
+.somos-prensa__col-tag {
+    width: 15%;
+    flex-shrink: 0;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 1rem;
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+}
+
+.somos-prensa__tag {
+    font-size: 16px;
+}
+
+/* --- Columna principal (85%) --- */
+
+.somos-prensa__col-main {
+    width: 85%;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 1rem;
+    overflow: hidden;
+    display: flex;
+    align-items: stretch;
+}
+
+/* --- Cards scroll horizontal nativo --- */
+
+.somos-prensa__cards {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    height: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    cursor: grab;
+    align-items: flex-start;
+}
+
+.somos-prensa__cards::-webkit-scrollbar {
+    display: none;
+}
+
+.somos-prensa__cards:active {
+    cursor: grabbing;
+}
+
+/* --- Card --- */
+
+.somos-prensa__card {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--dark-color);
+    width: 340px;
+    transition: opacity 0.2s ease;
+}
+
+.somos-prensa__card:hover {
+    opacity: 0.7;
+}
+
+.somos-prensa__card-imagen {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    background: transparent;
+}
+
+.somos-prensa__card-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.somos-prensa__card-titulo {
+    margin: 0;
+    font-size: 24px;
+    line-height: 1.4;
+    color: var(--dark-color);
+}
+
+
+
+@media ( max-width: 1024px ) {
+
+    .somos-prensa {
+        flex-direction: column;
+        height: auto;
+        padding: 40px 0 40px 24px;
+        gap: 1rem;
+        overflow: hidden;
+    }
+
+    .somos-prensa__col-tag {
+        width: 100%;
+    }
+
+    .somos-prensa__tag {
+        font-size: 20px;
+    }
+
+    .somos-prensa__col-main {
+        width: 100%;
+        height: 60vh;
+        overflow: hidden;
+        border-top: none;
+    }
+
+    .somos-prensa__cards {
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+    }
+
+    .somos-prensa__card {
+        scroll-snap-align: start;
+        width: 70vw;
+    }
+
+    .somos-prensa__card-titulo {
+        font-size: 28px;
+    }
+}

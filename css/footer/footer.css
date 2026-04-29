@@ -228,3 +228,136 @@
 .footer__creditos-tooltip a:hover {
     opacity: 0.7;
 }
+
+
+
+
+/* =============================================
+   Footer — Responsive
+   ============================================= */
+
+/* --- Tablet (768px – 1024px) --- */
+@media ( max-width: 1024px ) {
+
+    .footer {
+        height: auto;
+        min-height: 100vh;
+        padding: 40px 24px 24px;
+    }
+
+    .footer__top {
+        height: auto;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .footer__top-izq,
+    .footer__top-der {
+        flex: none;
+        width: 100%;
+    }
+
+    .footer__top-izq {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 2rem;
+    }
+
+    .footer__logo {
+        flex: 0 0 auto;
+        font-size: 28px;
+        padding-top: 1rem;
+    }
+
+    .footer__descripcion-wrapper {
+        flex: 1;
+        border-top: none;
+        /* border-left: 1px solid #e0e0e0; */
+        padding-top: 0;
+        padding-left: 0rem;
+    }
+
+    .footer__contacto,
+    .footer__nav {
+        flex-direction: row;
+    }
+}
+
+/* --- Móvil (< 768px) --- */
+@media ( max-width: 767px ) {
+
+    .footer {
+        height: auto;
+        min-height: auto;
+        padding: 40px 24px 24px;
+        gap: 2.5rem;
+    }
+
+    /* Top: columna única */
+    .footer__top {
+        flex-direction: column;
+        height: auto;
+        gap: 2.5rem;
+    }
+
+    .footer__top-izq,
+    .footer__top-der {
+        flex: none;
+        width: 100%;
+    }
+
+    /* Logo + descripción en columna */
+    .footer__top-izq {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .footer__logo {
+        font-size: 28px;
+    }
+
+    .footer__descripcion-wrapper {
+        border-top: 1px solid #e0e0e0;
+        padding-top: 1rem;
+    }
+
+    /* Contacto en columna */
+    .footer__contacto {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    /* Nav en 2 columnas (se mantiene row, los títulos agrupan) */
+    .footer__nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+
+    .footer__nav-col {
+        flex: 1 1 40%;
+    }
+
+    /* Bottom en columna */
+    .footer__bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+
+    .footer__copyright,
+    .footer__creditos-wrapper {
+        flex: none;
+        width: 100%;
+    }
+
+    .footer__creditos-wrapper {
+        padding-left: 0;
+    }
+
+    /* Tooltip hacia arriba pero ajustado a móvil */
+    .footer__creditos-tooltip {
+        white-space: normal;
+        max-width: 280px;
+    }
+}
