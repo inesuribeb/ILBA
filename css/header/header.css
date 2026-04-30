@@ -54,36 +54,3 @@
 
 }
 
-/* --- Nav (82%) --- */
-
-.header__nav {
-    flex: 0 0 82%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.header__nav-izq {
-    display: flex;
-    align-items: center;
-}
-
-.header__nav-der {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 2rem;
-}
-
-.header__nav-link {
-    font-size: 15px;
-    color: var(--dark-color);
-    text-decoration: none;
-    transition: opacity 0.2s ease;
-    font-weight: 500;
-}
-
-.header__nav-link:hover {
-    opacity: 0.5;
-}

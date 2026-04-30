@@ -9,31 +9,6 @@ function ilba_get_secciones_menu() {
     $ap  = '/aparatologia/';
     $bm  = '/beauty_medical/';
 
-    // Coger imágenes hero de cada protocolo
-    $slugs_protocolos = array(
-        'maternidad'     => 'protocolo-maternidad',
-        'oncologico'     => 'protocolo-oncologico',
-        'peso-saludable' => 'protocolo-peso-saludable',
-        'menopausia'     => 'protocolo-menopausia',
-        'longevidad'     => 'protocolo-longevidad',
-    );
-
-    $imagenes_protocolos = array();
-    foreach ( $slugs_protocolos as $key => $slug ) {
-        $post = get_posts( array(
-            'name'        => $slug,
-            'post_type'   => 'protocolos',
-            'post_status' => 'publish',
-            'numberposts' => 1,
-        ) );
-        if ( $post ) {
-            $img = get_field( 'pr_imagen_hero', $post[0]->ID );
-            $imagenes_protocolos[ $key ] = $img ? $img['url'] : $dir . 'wellness.PNG';
-        } else {
-            $imagenes_protocolos[ $key ] = $dir . 'wellness.PNG';
-        }
-    }
-
     return array(
 
         'beauty' => array(
@@ -152,35 +127,34 @@ function ilba_get_secciones_menu() {
         ),
 
         'wellness' => array(
-            'titulo'        => 'Wellness',
-            'imagen'        => $dir . 'wellness.PNG',
-            'url'           => '#',
-            'tipo'          => 'wellness',
-            'protocolos'    => array(
+            'titulo'   => 'Wellness',
+            'imagen'   => $dir . 'wellness.PNG',
+            'url'      => '#',
+            'columnas' => array(
                 array(
                     'titulo' => 'Maternidad',
                     'url'    => '/protocolos/protocolo-maternidad/',
-                    'imagen' => $imagenes_protocolos['maternidad'],
+                    'items'  => array(),
                 ),
                 array(
                     'titulo' => 'Oncológico',
                     'url'    => '/protocolos/protocolo-oncologico/',
-                    'imagen' => $imagenes_protocolos['oncologico'],
+                    'items'  => array(),
                 ),
                 array(
                     'titulo' => 'Peso saludable',
                     'url'    => '/protocolos/protocolo-peso-saludable/',
-                    'imagen' => $imagenes_protocolos['peso-saludable'],
+                    'items'  => array(),
                 ),
                 array(
                     'titulo' => 'Menopausia',
                     'url'    => '/protocolos/protocolo-menopausia/',
-                    'imagen' => $imagenes_protocolos['menopausia'],
+                    'items'  => array(),
                 ),
                 array(
                     'titulo' => 'Longevidad',
                     'url'    => '/protocolos/protocolo-longevidad/',
-                    'imagen' => $imagenes_protocolos['longevidad'],
+                    'items'  => array(),
                 ),
             ),
         ),

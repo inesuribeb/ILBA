@@ -219,7 +219,10 @@
 }
 
 @media ( max-width: 1024px ) {
-
+    .home-conocenos__texto--desktop {
+        display: none;
+    }
+    
     .home-conocenos {
         flex-direction: column;
         padding: 0;

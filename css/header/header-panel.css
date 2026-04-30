@@ -1,0 +1,330 @@
+/* =============================================
+   Header — Panel desplegable
+   ============================================= */
+
+/* .header__panel {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--light-color);
+    flex-direction: row;
+    z-index: 99;
+}
+
+.header__panel.is-open {
+    display: flex;
+} */
+
+/* --- Nav izquierda (flex 1) --- */
+
+/* .header__panel-nav {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+    padding: 48px 24px 48px 24px;
+    align-items: flex-start;
+}
+
+.header__panel-columna {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.header__panel-col-titulo {
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--dark-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.header__panel-col-titulo:hover {
+    opacity: 0.5;
+}
+
+.header__panel-items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.header__panel-items li {
+    margin: 0;
+    padding: 0;
+}
+
+.header__panel-item-link {
+    font-size: 15px;
+    color: var(--dark-color);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.header__panel-item-link:hover {
+    opacity: 0.5;
+} */
+
+/* --- Imagen derecha (flex 1) --- */
+
+/* .header__panel-imagen {
+    flex: 1;
+    overflow: hidden;
+    max-height: 60vh;
+}
+
+.header__panel-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+} */
+
+
+
+/* --- Nav (82%) --- */
+
+/* .header__nav {
+    flex: 0 0 82%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__nav-izq {
+    display: flex;
+    align-items: center;
+}
+
+.header__nav-der {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+}
+
+.header__nav-link {
+    font-size: 15px;
+    color: var(--dark-color);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+    font-weight: 500;
+}
+
+.header__nav-link:hover {
+    opacity: 0.5;
+}
+
+
+.header__panel-fila {
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+    width: 100%;
+}
+
+.header__panel-fila+.header__panel-fila {
+    border-top: 1px solid #e0e0e0;
+    margin-top: 24px;
+    padding-top: 24px;
+} */
+
+
+
+
+/* =============================================
+   Header — Panel desplegable
+   ============================================= */
+
+   .header__panel {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--light-color);
+    flex-direction: row;
+    z-index: 99;
+}
+
+.header__panel.is-open {
+    display: flex;
+}
+
+/* --- Nav izquierda --- */
+
+.header__panel-nav {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 48px 24px;
+    gap: 0;
+}
+
+.header__panel-fila {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 0;
+}
+
+.header__panel-fila + .header__panel-fila {
+    border-top: 1px solid #e0e0e0;
+    margin-top: 32px;
+    padding-top: 32px;
+}
+
+/* .header__panel-columna {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+} */
+.header__panel-columna {
+    flex: 0 0 33.333%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.header__panel-col-titulo {
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--dark-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.header__panel-col-titulo:hover {
+    opacity: 0.5;
+}
+
+.header__panel-items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.header__panel-items li {
+    margin: 0;
+    padding: 0;
+}
+
+.header__panel-item-link {
+    font-size: 15px;
+    color: var(--dark-color);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.header__panel-item-link:hover {
+    opacity: 0.5;
+}
+
+/* --- Imagen derecha --- */
+
+.header__panel-imagen {
+    flex: 1;
+    overflow: hidden;
+    max-height: 60vh;
+}
+
+.header__panel-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* --- Nav links --- */
+
+.header__nav {
+    flex: 0 0 82%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__nav-izq {
+    display: flex;
+    align-items: center;
+}
+
+.header__nav-der {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+}
+
+.header__nav-link {
+    font-size: 15px;
+    color: var(--dark-color);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+    font-weight: 500;
+}
+
+.header__nav-link:hover {
+    opacity: 0.5;
+}
+
+
+
+
+
+
+
+
+
+/* --- Wellness --- */
+
+.header__panel-nav--wellness {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0;
+}
+
+.header__panel-wellness-label {
+    flex: 0 0 33.333%;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #aaa;
+    font-weight: 500;
+    padding-top: 2px;
+}
+
+.header__panel-wellness-links {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.header__panel-wellness-link {
+    font-size: 15px;
+    color: var(--dark-color);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+    display: block;
+}
+
+.header__panel-wellness-link:hover {
+    opacity: 0.5;
+}

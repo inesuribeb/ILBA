@@ -1,4 +1,8 @@
 <?php
+/**
+ * Home component: Conócenos
+ */
+
 $tag            = get_field( 'home_conocenos_tag' );
 $titulo         = get_field( 'home_conocenos_titulo' );
 $descripcion    = get_field( 'home_conocenos_descripcion' );
@@ -35,14 +39,27 @@ $img_cuadrada   = get_field( 'home_conocenos_img_cuadrada' );
             </div>
         <?php endif; ?>
 
-        <!-- Fila: texto izq + img_vertical der -->
+        <!-- Texto desktop — oculto en móvil -->
+        <div class="home-conocenos__texto home-conocenos__texto--desktop">
+            <?php if ( $titulo ) : ?>
+                <h2 class="home-conocenos__titulo"><?php echo esc_html( $titulo ); ?></h2>
+            <?php endif; ?>
+
+            <?php if ( $descripcion ) : ?>
+                <p class="home-conocenos__descripcion"><?php echo esc_html( $descripcion ); ?></p>
+            <?php endif; ?>
+
+            <?php if ( $cta_texto && $cta_link ) : ?>
+                <a href="<?php echo esc_url( $cta_link ); ?>" class="home-conocenos__cta">
+                    <?php echo esc_html( $cta_texto ); ?>
+                </a>
+            <?php endif; ?>
+        </div>
+
+        <!-- Fila: texto izq + img_vertical der — solo móvil -->
         <div class="home-conocenos__texto-fila">
 
             <div class="home-conocenos__texto">
-                <?php if ( $titulo ) : ?>
-                    <h2 class="home-conocenos__titulo home-conocenos__titulo--main"><?php echo esc_html( $titulo ); ?></h2>
-                <?php endif; ?>
-
                 <?php if ( $descripcion ) : ?>
                     <p class="home-conocenos__descripcion"><?php echo esc_html( $descripcion ); ?></p>
                 <?php endif; ?>
