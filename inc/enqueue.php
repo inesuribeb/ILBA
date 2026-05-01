@@ -7,9 +7,12 @@ function ilba_enqueue_assets() {
 
     // --- Header y footer (todas las páginas) ---
     wp_enqueue_style( 'ilba-header', get_stylesheet_directory_uri() . '/css/header/header.css' );
+    wp_enqueue_style( 'ilba-header-mobile', get_stylesheet_directory_uri() . '/css/header/header-mobile.css' );
     wp_enqueue_style( 'ilba-header-panel', get_stylesheet_directory_uri() . '/css/header/header-panel.css' );
     wp_enqueue_style( 'ilba-footer', get_stylesheet_directory_uri() . '/css/footer/footer.css' );
     wp_enqueue_script( 'ilba-header', get_stylesheet_directory_uri() . '/js/header/header.js', array(), null, true );
+    wp_enqueue_script( 'ilba-header-mobile', get_stylesheet_directory_uri() . '/js/header/header-mobile.js', array(), null, true );
+
 
     // --- Home ---
     if ( is_front_page() ) {

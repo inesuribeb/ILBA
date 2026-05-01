@@ -1,0 +1,277 @@
+/* =============================================
+   Header Mobile
+   ============================================= */
+
+   .header-mobile {
+    display: none;
+}
+
+@media ( max-width: 1024px ) {
+
+    /* Ocultar header desktop */
+    .header {
+        display: none;
+    }
+
+    .header-mobile {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 24px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        background: transparent;
+    }
+
+    .header-mobile__izq {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0;
+        border: 1px solid var(--dark-color);
+    }
+
+    .header-mobile__tienda {
+        font-size: 18px;
+        color: var(--dark-color);
+        text-decoration: none;
+        padding: 8px 16px;
+        border-right: 1px solid var(--dark-color);
+    }
+
+    .header-mobile__menu-btn {
+        background: none;
+        border: none;
+        font-size: 18px;
+        color: var(--dark-color);
+        font-family: inherit;
+        cursor: pointer;
+        padding: 8px 16px;
+    }
+
+    .header-mobile__logo {
+        display: flex;
+        align-items: center;
+    }
+
+    .header-mobile__logo-link {
+        font-family: var(--serif);
+        font-size: 70px;
+        color: var(--dark-color);
+        text-decoration: none;
+        line-height: 1;
+        letter-spacing: -0.15rem;
+    }
+
+    .header-mobile__der {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0;
+        border: 1px solid var(--dark-color);
+    }
+}
+
+
+
+
+
+/* --- Panel menú móvil --- */
+
+.header-mobile__menu {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 99;
+    background: var(--light-color);
+    flex-direction: column;
+    /* padding-top: 70px; */
+    padding-top: 18vh;
+
+}
+
+.header-mobile__menu.is-open {
+    display: flex;
+}
+
+.header-mobile__contenido {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Panel 1 y 2 */
+.header-mobile__panel-1,
+.header-mobile__panel-2 {
+    display: none;
+    flex-direction: column;
+    height: 100%;
+}
+
+.header-mobile__panel-1.is-active,
+.header-mobile__panel-2.is-active {
+    display: flex;
+}
+
+/* Panel scroll */
+.header-mobile__panel-scroll {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+/* Nav */
+.header-mobile__nav {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #e0e0e0;
+}
+
+.header-mobile__nav-item {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.header-mobile__nav-btn {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 16px 0;
+    font-size: 20px;
+    color: var(--dark-color);
+    font-family: inherit;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    text-decoration: none;
+}
+
+.header-mobile__nav-btn svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+/* Imagen */
+.header-mobile__imagen {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 5 / 4;
+    overflow: hidden;
+    margin-top: 8rem;
+
+}
+
+.header-mobile__imagen-item {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.header-mobile__imagen-item.is-active {
+    opacity: 1;
+}
+
+/* Panel 2 */
+.header-mobile__panel-2-header {
+    padding: 16px 24px 0 24px;
+    flex-shrink: 0;
+}
+
+.header-mobile__back-btn {
+    background: none;
+    /* border: 1px solid var(--dark-color); */
+    border: none;
+    font-size: 15px;
+    color: var(--dark-color);
+    font-family: inherit;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 0px;
+}
+
+.header-mobile__back-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+.header-mobile__nav-item--titulo .header-mobile__nav-link--titulo {
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+    color: var(--dark-color);
+    text-decoration: none;
+}
+
+.header-mobile__nav-item--titulo .header-mobile__nav-link--titulo svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.header-mobile__nav-item--aparato {
+    border-bottom: none;
+}
+
+.header-mobile__nav-item--aparato .header-mobile__nav-link {
+    padding: 8px 0;
+    font-size: 15px;
+    color: #888;
+    display: block;
+    text-decoration: none;
+}
+
+/* Bottom */
+.header-mobile__bottom {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem 24px;
+    border-top: 1px solid #e0e0e0;
+    flex-shrink: 0;
+}
+
+.header-mobile__bottom-link {
+    flex: 1;
+    font-size: 15px;
+    color: var(--dark-color);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.header-mobile__bottom-link:nth-child(1) { text-align: left; }
+.header-mobile__bottom-link:nth-child(2) { text-align: center; }
+.header-mobile__bottom-link:nth-child(3) { text-align: right; }
+
+.header-mobile__bottom-link:hover {
+    opacity: 0.5;
+}
+
+/* Sin subrayado general */
+.header-mobile a {
+    text-decoration: none;
+}
+
+
+
+.header-mobile__panel-2 .header-mobile__nav-link {
+    text-decoration: none;
+    padding: 12px 0;
+    display: block;
+}

@@ -97,8 +97,8 @@ for ( $i = 1; $i <= 4; $i++ ) {
                         <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'legal' ) ) ); ?>" class="footer__nav-link">Legal</a>
                         <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'privacidad' ) ) ); ?>" class="footer__nav-link">Privacidad</a>
                         <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'cookies' ) ) ); ?>" class="footer__nav-link">Cookies</a>
-                        <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'compras' ) ) ); ?>" class="footer__nav-link">Compras</a>
-                        <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'devoluciones' ) ) ); ?>" class="footer__nav-link">Devoluciones</a>
+                        <!-- <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'compras' ) ) ); ?>" class="footer__nav-link">Compras</a>
+                        <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'devoluciones' ) ) ); ?>" class="footer__nav-link">Devoluciones</a> -->
                     </nav>
                 </div>
             </div>
