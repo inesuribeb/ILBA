@@ -6,7 +6,7 @@ require_once get_stylesheet_directory() . '/inc/acf/fields-beauty-medical.php';
 require_once get_stylesheet_directory() . '/inc/acf/fields-servicios.php';
 require_once get_stylesheet_directory() . '/inc/acf/fields-protocolos.php';
 require_once get_stylesheet_directory() . '/inc/acf/fields-aparatologia.php';
-// require_once get_stylesheet_directory() . '/inc/acf/fields-eventos.php';
+require_once get_stylesheet_directory() . '/inc/acf/fields-eventos.php';
 require_once get_stylesheet_directory() . '/inc/acf/fields-equipo-medico.php';
 
 

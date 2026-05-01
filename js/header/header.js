@@ -1,24 +1,3 @@
-// document.addEventListener('DOMContentLoaded', () => {
-//     const header = document.querySelector('.header');
-//     if ( ! header ) return;
-
-//     let ticking = false;
-
-//     window.addEventListener('scroll', () => {
-//         if ( ! ticking ) {
-//             requestAnimationFrame(() => {
-//                 if ( window.scrollY > 10 ) {
-//                     header.classList.add('is-scrolled');
-//                 } else {
-//                     header.classList.remove('is-scrolled');
-//                 }
-//                 ticking = false;
-//             });
-//             ticking = true;
-//         }
-//     });
-// });
-
 document.addEventListener('DOMContentLoaded', () => {
     const header = document.querySelector('.header');
     if (!header) return;
@@ -73,7 +52,6 @@ document.addEventListener('DOMContentLoaded', () => {
         panel.addEventListener('mouseleave', closePanel);
     });
 
-
     // --- Wellness: cambio de imagen en hover ---
     const wellnessLinks = document.querySelectorAll('.header__panel-wellness-link');
     const wellnessImg = document.querySelector('.header__panel-wellness-img');
@@ -90,6 +68,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 wellnessImg.src = defaultSrc;
             });
         });
+    }
+
+    // --- Header light cuando el hero es visible ---
+    const hero = document.querySelector('.bm-hero');
+    if ( hero ) {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                header.classList.toggle( 'header--light', entry.isIntersecting );
+            },
+            { threshold: 0 }
+        );
+        observer.observe( hero );
     }
 
 });

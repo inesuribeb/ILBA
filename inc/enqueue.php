@@ -79,5 +79,13 @@ function ilba_enqueue_assets() {
         wp_enqueue_script( 'ilba-ct-contactform', get_stylesheet_directory_uri() . '/js/contacto/contactform.js', array(), null, true );
     }
 
+    if ( is_singular( 'eventos' ) ) {
+        wp_enqueue_style( 'ilba-ev-layout', get_stylesheet_directory_uri() . '/css/eventos/layout.css' );
+        wp_enqueue_style( 'ilba-ev-hero',   get_stylesheet_directory_uri() . '/css/eventos/hero.css' );
+        wp_enqueue_style( 'ilba-ev-modal',  get_stylesheet_directory_uri() . '/css/eventos/modal.css' );
+        wp_enqueue_style( 'ilba-ev-intro',  get_stylesheet_directory_uri() . '/css/eventos/intro.css' );
+        wp_enqueue_style( 'ilba-ev-seccion2', get_stylesheet_directory_uri() . '/css/eventos/seccion2.css' );
+    }
+
 }
 add_action( 'wp_enqueue_scripts', 'ilba_enqueue_assets' );

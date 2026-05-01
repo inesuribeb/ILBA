@@ -9,13 +9,39 @@ function ilba_get_secciones_menu() {
     $ap  = '/aparatologia/';
     $bm  = '/beauty_medical/';
 
+    // Coger imágenes hero de cada protocolo
+    $slugs_protocolos = array(
+        'maternidad'     => 'protocolo-maternidad',
+        'oncologico'     => 'protocolo-oncologico',
+        'peso-saludable' => 'protocolo-peso-saludable',
+        'menopausia'     => 'protocolo-menopausia',
+        'longevidad'     => 'protocolo-longevidad',
+    );
+
+    $imagenes_protocolos = array();
+    foreach ( $slugs_protocolos as $key => $slug ) {
+        $post = get_posts( array(
+            'name'        => $slug,
+            'post_type'   => 'protocolos',
+            'post_status' => 'publish',
+            'numberposts' => 1,
+        ) );
+        if ( $post ) {
+            $img = get_field( 'pr_imagen_hero', $post[0]->ID );
+            $imagenes_protocolos[ $key ] = $img ? $img['url'] : $dir . 'wellness.PNG';
+        } else {
+            $imagenes_protocolos[ $key ] = $dir . 'wellness.PNG';
+        }
+    }
+
     return array(
 
         'beauty' => array(
-            'titulo'   => 'Beauty',
-            'imagen'   => $dir . 'beauty.PNG',
-            'url'      => '#',
-            'columnas' => array(
+            'titulo'      => 'Beauty',
+            'descripcion' => 'Tratamientos de belleza facial, corporal y micropigmentación para realzar tu mejor versión.',
+            'imagen'      => $dir . 'beauty.PNG',
+            'url'         => '#',
+            'columnas'    => array(
                 array(
                     'titulo' => 'Faciales',
                     'url'    => $bm . 'beauty-facial/',
@@ -46,10 +72,11 @@ function ilba_get_secciones_menu() {
         ),
 
         'medical' => array(
-            'titulo'   => 'Medical',
-            'imagen'   => $dir . 'medical.jpg',
-            'url'      => '#',
-            'columnas' => array(
+            'titulo'      => 'Medical',
+            'descripcion' => 'Tratamientos médico-estéticos faciales, corporales y capilares con tecnología de vanguardia.',
+            'imagen'      => $dir . 'medical.jpg',
+            'url'         => '#',
+            'columnas'    => array(
                 array(
                     'titulo' => 'Faciales',
                     'url'    => $bm . 'medical-faciales/',
@@ -81,10 +108,11 @@ function ilba_get_secciones_menu() {
         ),
 
         'salud' => array(
-            'titulo'   => 'Salud',
-            'imagen'   => $dir . 'salud.jpg',
-            'url'      => '#',
-            'filas'    => array(
+            'titulo'      => 'Salud',
+            'descripcion' => 'Servicios médicos especializados para tu bienestar integral.',
+            'imagen'      => $dir . 'salud.jpg',
+            'url'         => '#',
+            'filas'       => array(
                 array(
                     array(
                         'titulo' => 'Ginecología',
@@ -127,34 +155,36 @@ function ilba_get_secciones_menu() {
         ),
 
         'wellness' => array(
-            'titulo'   => 'Wellness',
-            'imagen'   => $dir . 'wellness.PNG',
-            'url'      => '#',
-            'columnas' => array(
+            'titulo'      => 'Wellness',
+            'descripcion' => 'Protocolos personalizados para cada etapa de tu vida.',
+            'imagen'      => $dir . 'wellness.PNG',
+            'url'         => '#',
+            'tipo'        => 'wellness',
+            'protocolos'  => array(
                 array(
                     'titulo' => 'Maternidad',
                     'url'    => '/protocolos/protocolo-maternidad/',
-                    'items'  => array(),
+                    'imagen' => $imagenes_protocolos['maternidad'],
                 ),
                 array(
                     'titulo' => 'Oncológico',
                     'url'    => '/protocolos/protocolo-oncologico/',
-                    'items'  => array(),
+                    'imagen' => $imagenes_protocolos['oncologico'],
                 ),
                 array(
                     'titulo' => 'Peso saludable',
                     'url'    => '/protocolos/protocolo-peso-saludable/',
-                    'items'  => array(),
+                    'imagen' => $imagenes_protocolos['peso-saludable'],
                 ),
                 array(
                     'titulo' => 'Menopausia',
                     'url'    => '/protocolos/protocolo-menopausia/',
-                    'items'  => array(),
+                    'imagen' => $imagenes_protocolos['menopausia'],
                 ),
                 array(
                     'titulo' => 'Longevidad',
                     'url'    => '/protocolos/protocolo-longevidad/',
-                    'items'  => array(),
+                    'imagen' => $imagenes_protocolos['longevidad'],
                 ),
             ),
         ),

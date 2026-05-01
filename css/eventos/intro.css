@@ -1,0 +1,53 @@
+/* =============================================
+   Eventos — Intro
+   ============================================= */
+
+   .ev-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 24px;
+    gap: 60px;
+}
+
+.ev-intro__descripcion {
+    margin: 0;
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    line-height: 1.5;
+    text-align: center;
+    max-width: 700px;
+}
+
+.ev-intro__imagen {
+    width: 40%;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+}
+
+.ev-intro__imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+
+@media ( max-width: 1024px ) {
+
+    .ev-intro {
+        padding: 40px 24px;
+        gap: 32px;
+        align-items: flex-start;
+    }
+
+    .ev-intro__descripcion {
+        text-align: left;
+        font-size: clamp(1rem, 4vw, 1.2rem);
+    }
+
+    .ev-intro__imagen {
+        width: 70%;
+        align-self: center;
+    }
+}

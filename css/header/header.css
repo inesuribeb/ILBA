@@ -20,7 +20,13 @@
 }
 
 .header:hover {
+    /* color: var(--dark-color); */
     background: var(--light-color);
+}
+
+.header:hover .header__nav-link,
+.header:hover .header__logo-link {
+    color: var(--dark-color);
 }
 
 .header.is-scrolled {
@@ -54,3 +60,28 @@
 
 }
 
+.header__nav-izq {
+    visibility: hidden;
+}
+
+
+
+
+
+/*particularidades*/
+.page-contacto .header__nav-link,
+.page-contacto .header__logo-link {
+    color: var(--light-color);
+}
+
+
+.single-protocolos .header__nav-link,
+.single-protocolos .header__logo-link {
+    color: var(--light-color);
+}
+
+
+.header--light .header__nav-link,
+.header--light .header__logo-link {
+    color: var(--light-color);
+}

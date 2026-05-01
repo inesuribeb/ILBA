@@ -361,3 +361,40 @@
         max-width: 280px;
     }
 }
+
+
+
+
+
+
+
+
+/*page-contacto*/
+/* .page-contacto .footer {
+    background: var(--dark-color);
+} */
+.page-contacto .footer__logo,
+.page-contacto .footer__descripcion,
+.page-contacto .footer__link,
+.page-contacto .footer__direccion,
+.page-contacto .footer__horario,
+.page-contacto .footer__nav-titulo,
+.page-contacto .footer__nav-link,
+.page-contacto .footer__copyright,
+.page-contacto .footer__creditos {
+    color: var(--light-color);
+}
+.page-contacto .footer__top-izq,
+.page-contacto .footer__contacto {
+    border-top-color: var(--light-color);
+}
+.page-contacto .footer__descripcion-wrapper,
+.page-contacto .footer__nav,
+.page-contacto .footer__bottom {
+    border-top-color: rgba(255,255,255,0.2);
+}
+
+
+
+
+

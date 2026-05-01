@@ -23,3 +23,15 @@ require_once get_stylesheet_directory() . '/inc/config/secciones-menu.php';
 require_once get_stylesheet_directory() . '/inc/enqueue.php';
 
 add_filter( 'show_admin_bar', '__return_false' );
+
+
+add_filter( 'body_class', function( $classes ) {
+    if ( is_page() ) {
+        $page = get_queried_object();
+        if ( $page ) {
+            $classes[] = 'page-' . $page->post_name; // slug
+            $classes[] = 'page-id-' . $page->ID;     // id (WordPress ya lo añade, pero por si acaso)
+        }
+    }
+    return $classes;
+});

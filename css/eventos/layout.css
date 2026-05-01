@@ -1,0 +1,8 @@
+/* =============================================
+   Eventos — Layout
+   ============================================= */
+
+   .single-eventos {
+    display: flex;
+    flex-direction: column;
+}

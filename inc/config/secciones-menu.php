@@ -9,7 +9,6 @@ function ilba_get_secciones_menu() {
     $ap  = '/aparatologia/';
     $bm  = '/beauty_medical/';
 
-    // Coger imágenes hero de cada protocolo
     $slugs_protocolos = array(
         'maternidad'     => 'protocolo-maternidad',
         'oncologico'     => 'protocolo-oncologico',
@@ -37,10 +36,12 @@ function ilba_get_secciones_menu() {
     return array(
 
         'beauty' => array(
-            'titulo'   => 'Beauty',
-            'imagen'   => $dir . 'beauty.PNG',
-            'url'      => '#',
-            'columnas' => array(
+            'titulo'      => 'Beauty',
+            'descripcion' => 'Tratamientos de belleza facial, corporal y micropigmentación para realzar tu mejor versión.',
+            'imagen'      => $dir . 'beauty2.png',
+            'imagen_sv'   => $dir . 'beauty.PNG',
+            'url'         => '#',
+            'columnas'    => array(
                 array(
                     'titulo' => 'Faciales',
                     'url'    => $bm . 'beauty-facial/',
@@ -71,10 +72,12 @@ function ilba_get_secciones_menu() {
         ),
 
         'medical' => array(
-            'titulo'   => 'Medical',
-            'imagen'   => $dir . 'medical.jpg',
-            'url'      => '#',
-            'columnas' => array(
+            'titulo'      => 'Medical',
+            'descripcion' => 'Tratamientos médico-estéticos faciales, corporales y capilares con tecnología de vanguardia.',
+            'imagen'      => $dir . 'medical2.jpg',
+            'imagen_sv'   => $dir . 'medical.jpg',
+            'url'         => '#',
+            'columnas'    => array(
                 array(
                     'titulo' => 'Faciales',
                     'url'    => $bm . 'medical-faciales/',
@@ -106,10 +109,12 @@ function ilba_get_secciones_menu() {
         ),
 
         'salud' => array(
-            'titulo'   => 'Salud',
-            'imagen'   => $dir . 'salud.jpg',
-            'url'      => '#',
-            'filas'    => array(
+            'titulo'      => 'Salud',
+            'descripcion' => 'Servicios médicos especializados para tu bienestar integral.',
+            'imagen'      => $dir . 'salud.jpg',
+            'imagen_sv'   => $dir . 'salud.jpg',
+            'url'         => '#',
+            'filas'       => array(
                 array(
                     array(
                         'titulo' => 'Ginecología',
@@ -152,11 +157,13 @@ function ilba_get_secciones_menu() {
         ),
 
         'wellness' => array(
-            'titulo'        => 'Wellness',
-            'imagen'        => $dir . 'wellness.PNG',
-            'url'           => '#',
-            'tipo'          => 'wellness',
-            'protocolos'    => array(
+            'titulo'      => 'Wellness',
+            'descripcion' => 'Protocolos personalizados para cada etapa de tu vida.',
+            'imagen'      => $dir . 'wellness4.png',
+            'imagen_sv'   => $dir . 'wellness.PNG',
+            'url'         => '#',
+            'tipo'        => 'wellness',
+            'protocolos'  => array(
                 array(
                     'titulo' => 'Maternidad',
                     'url'    => '/protocolos/protocolo-maternidad/',

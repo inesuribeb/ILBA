@@ -4,6 +4,12 @@ Template: twentytwentyfour
 Version: 1.0.0
 */
 
+html {
+    overflow-y: scroll;
+    overscroll-behavior-y: none;
+}
+
+
 @font-face {
     font-family: 'Ilba-font';
     src: url('fonts/ABCDiatype-Light-Trial.otf') format('opentype');

@@ -1,0 +1,95 @@
+/* =============================================
+   Eventos — Sección 2
+   ============================================= */
+
+   .ev-seccion2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 24px;
+    gap: 48px;
+}
+
+.ev-seccion2__subtitulo {
+    margin: 0;
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    text-align: center;
+    max-width: 700px;
+}
+
+.ev-seccion2__imagenes {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+    width: 80%;
+}
+
+.ev-seccion2__imagen {
+    flex: 1;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+}
+
+.ev-seccion2__imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.ev-seccion2__texto {
+    text-align: center;
+    max-width: 600px;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.ev-seccion2__texto p {
+    margin: 0 0 0.5rem 0;
+}
+
+.ev-seccion2__cta {
+    display: inline-block;
+    font-size: 15px;
+    color: var(--dark-color);
+    text-decoration: none;
+    border-bottom: 1px solid var(--dark-color);
+    padding-bottom: 2px;
+    transition: opacity 0.2s ease;
+}
+
+.ev-seccion2__cta:hover {
+    opacity: 0.5;
+}
+
+
+
+@media ( max-width: 1024px ) {
+
+    .ev-seccion2 {
+        padding: 40px 24px;
+        gap: 32px;
+        align-items: flex-start;
+    }
+
+    .ev-seccion2__subtitulo {
+        text-align: left;
+        font-size: clamp(1.3rem, 5vw, 2rem);
+    }
+
+    .ev-seccion2__imagenes {
+        width: 100%;
+    }
+
+    .ev-seccion2__texto {
+        text-align: left;
+        max-width: none;
+    }
+
+    .ev-seccion2__cta {
+        align-self: flex-end;
+    }
+}
