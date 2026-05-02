@@ -1,4 +1,4 @@
 .page-contacto {
-    background-color: #6C1415;
-    /* background-color: var(--brown-color); */
+    /* background-color: #6C1415; */
+    background-color: var(--brown-color);
 }
