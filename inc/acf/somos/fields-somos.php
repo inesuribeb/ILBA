@@ -167,6 +167,15 @@ acf_add_local_field_group( array(
         // ARTÍCULOS DE PRENSA
         // =============================================
         array(
+            'key'   => 'field_somos_historia',
+            'label' => 'Historia de ILBA',
+            'name'  => 'somos_historia',
+            'type'  => 'textarea',
+            'rows'  => 6,
+        ),
+
+
+        array(
             'key'     => 'field_somos_msg_prensa',
             'label'   => '',
             'name'    => '',
