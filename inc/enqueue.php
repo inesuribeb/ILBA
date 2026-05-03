@@ -75,6 +75,9 @@ function ilba_enqueue_assets() {
         wp_enqueue_style( 'ilba-somos-equipo', get_stylesheet_directory_uri() . '/css/somos/equipo.css' );
         wp_enqueue_style( 'ilba-somos-clinica', get_stylesheet_directory_uri() . '/css/somos/clinica.css' );
         wp_enqueue_style( 'ilba-somos-prensa', get_stylesheet_directory_uri() . '/css/somos/prensa.css' );
+
+        wp_enqueue_script( 'ilba-somos-vermas', get_stylesheet_directory_uri() . '/js/somos/somos.js', array(), null, true );
+
     }
 
     if ( is_page( 'contacto' ) ) {

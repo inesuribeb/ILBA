@@ -40,13 +40,21 @@ acf_add_local_field_group( array(
         ),
 
         // --- LINK ASOCIADO ---
-        array(
-            'key'          => 'field_em_link',
-            'label'        => 'Link asociado',
-            'name'         => 'em_link',
-            'type'         => 'url',
-            'instructions' => 'Ej: perfil LinkedIn, página personal, etc.',
-        ),
+        // array(
+        //     'key'          => 'field_em_link',
+        //     'label'        => 'Link asociado',
+        //     'name'         => 'em_link',
+        //     'type'         => 'url',
+        //     'instructions' => 'Ej: perfil LinkedIn, página personal, etc.',
+        // ),
+        // --- LINK ASOCIADO ---
+array(
+    'key'          => 'field_em_link',
+    'label'        => 'Link asociado',
+    'name'         => 'em_link',
+    'type'         => 'text',
+    'instructions' => 'Escribe solo el slug, sin barras. Ej: somos, beauty/facial',
+),
 
     ),
 
