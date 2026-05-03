@@ -7,13 +7,8 @@ $secciones    = ilba_get_secciones_menu();
 $contacto_url = get_permalink( get_page_by_path( 'contacto' ) );
 $somos_url    = get_permalink( get_page_by_path( 'somos' ) );
 
-$evento = get_posts( array(
-    'post_type'   => 'eventos',
-    'post_status' => 'publish',
-    'numberposts' => 1,
-) );
-$evento_url    = $evento ? get_permalink( $evento[0]->ID ) : '#';
-$evento_titulo = $evento ? get_the_title( $evento[0]->ID ) : 'Evento';
+$evento_url = get_post_type_archive_link( 'eventos' );
+
 ?>
 
 <header class="header-mobile">
@@ -134,7 +129,7 @@ $evento_titulo = $evento ? get_the_title( $evento[0]->ID ) : 'Evento';
     <!-- Bottom fijo — siempre en la misma posición -->
     <div class="header-mobile__bottom">
         <a href="<?php echo esc_url( $contacto_url ); ?>" class="header-mobile__bottom-link">Contáctanos</a>
-        <a href="<?php echo esc_url( $evento_url ); ?>" class="header-mobile__bottom-link">Evento</a>
+        <a href="<?php echo esc_url( $evento_url ); ?>" class="header-mobile__bottom-link">Eventos</a>
         <a href="<?php echo esc_url( $somos_url ); ?>" class="header-mobile__bottom-link">Somos</a>
     </div>
 

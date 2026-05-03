@@ -84,7 +84,7 @@
 .home-hero__ctas {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 5px;
     flex-wrap: wrap;
 }
 
@@ -100,19 +100,15 @@
 
 .home-hero__cta  {
     margin: 0;
-    font-size: 15px;
     color: var(--dark-color);
     text-align: center;
-    /* text-decoration: underline; */
     background-color: transparent !important;
     width: fit-content;
     display: inline-block;
-    font-size: 18px;
-    /* color: #fff; */
+    font-size: 20px;
     text-decoration: none;
     border-bottom: 1px solid var(--dark-color);
     padding-bottom: 1px;
-    /* align-self: flex-start; */
     transition: opacity 0.2s ease;
     letter-spacing: -1px;
 }

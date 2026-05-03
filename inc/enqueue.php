@@ -96,5 +96,9 @@ function ilba_enqueue_assets() {
         wp_enqueue_style( 'ilba-ev-seccion2', get_stylesheet_directory_uri() . '/css/eventos/seccion2.css' );
     }
 
+    if ( is_post_type_archive( 'eventos' ) ) {
+        wp_enqueue_style( 'ilba-page-eventos', get_stylesheet_directory_uri() . '/css/eventos/eventos.css' );
+    }
+
 }
 add_action( 'wp_enqueue_scripts', 'ilba_enqueue_assets' );

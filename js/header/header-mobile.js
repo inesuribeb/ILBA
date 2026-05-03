@@ -8,17 +8,30 @@ document.addEventListener( 'DOMContentLoaded', () => {
     const panel1 = document.querySelector( '.header-mobile__panel-1' );
 
     // --- Toggle menú ---
-    btn.addEventListener( 'click', () => {
-        const isOpen = menu.classList.toggle( 'is-open' );
-        btn.setAttribute( 'aria-expanded', isOpen );
-        label.textContent = isOpen ? 'Cerrar' : 'Menú';
+    // btn.addEventListener( 'click', () => {
+    //     const isOpen = menu.classList.toggle( 'is-open' );
+    //     btn.setAttribute( 'aria-expanded', isOpen );
+    //     label.textContent = isOpen ? 'Cerrar' : 'Menú';
 
-        // Al abrir siempre muestra panel 1
-        if ( isOpen ) {
-            document.querySelectorAll( '.header-mobile__panel-2' ).forEach( p => p.classList.remove( 'is-active' ) );
-            panel1.classList.add( 'is-active' );
-        }
-    });
+    //     // Al abrir siempre muestra panel 1
+    //     if ( isOpen ) {
+    //         document.querySelectorAll( '.header-mobile__panel-2' ).forEach( p => p.classList.remove( 'is-active' ) );
+    //         panel1.classList.add( 'is-active' );
+    //     }
+    // });
+    const headerMobile = document.querySelector( '.header-mobile' );
+
+btn.addEventListener( 'click', () => {
+    const isOpen = menu.classList.toggle( 'is-open' );
+    btn.setAttribute( 'aria-expanded', isOpen );
+    label.textContent = isOpen ? 'Cerrar' : 'Menú';
+    headerMobile.classList.toggle( 'menu-abierto', isOpen );
+
+    if ( isOpen ) {
+        document.querySelectorAll( '.header-mobile__panel-2' ).forEach( p => p.classList.remove( 'is-active' ) );
+        panel1.classList.add( 'is-active' );
+    }
+});
 
     // --- Abrir panel 2 ---
     document.querySelectorAll( '.header-mobile__nav-btn[data-seccion]' ).forEach( navBtn => {

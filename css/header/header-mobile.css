@@ -275,3 +275,48 @@
     padding: 12px 0;
     display: block;
 }
+
+
+
+
+
+
+
+
+/* Light en contacto y protocolos (single) */
+.page-contacto .header-mobile__logo-link,
+.page-contacto .header-mobile__menu-btn,
+.single-protocolos .header-mobile__logo-link,
+.single-protocolos .header-mobile__menu-btn {
+    color: var(--light-color);
+}
+
+.page-contacto .header-mobile__der,
+.single-protocolos .header-mobile__der {
+    border-color: var(--light-color);
+}
+
+/* Cuando el menú está abierto, vuelve a dark */
+.page-contacto .header-mobile.menu-abierto .header-mobile__logo-link,
+.page-contacto .header-mobile.menu-abierto .header-mobile__menu-btn,
+.single-protocolos .header-mobile.menu-abierto .header-mobile__logo-link,
+.single-protocolos .header-mobile.menu-abierto .header-mobile__menu-btn {
+    color: var(--dark-color);
+}
+
+.page-contacto .header-mobile.menu-abierto .header-mobile__der,
+.single-protocolos .header-mobile.menu-abierto .header-mobile__der {
+    border-color: var(--dark-color);
+}
+
+
+
+.page-contacto .header-mobile__menu-label,
+.single-protocolos .header-mobile__menu-label {
+    color: var(--light-color);
+}
+
+.page-contacto .header-mobile.menu-abierto .header-mobile__menu-label,
+.single-protocolos .header-mobile.menu-abierto .header-mobile__menu-label {
+    color: var(--dark-color);
+}
