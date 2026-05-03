@@ -106,14 +106,27 @@
 }
 
 .home-clinica__cta {
-    display: inline-block;
+    /* display: inline-block;
     font-size: 14px;
-    /* color: #000; */
     text-decoration: none;
     border-bottom: 1px solid #000;
     padding-bottom: 2px;
     align-self: flex-start;
+    transition: opacity 0.2s ease; */
+
+    margin: 0;
+    font-size: 15px;
+    color: var(--dark-color);
+    text-align: center;
+    background-color: transparent !important;
+    width: fit-content;
+    display: inline-block;
+    font-size: 18px;
+    text-decoration: none;
+    border-bottom: 1px solid var(--dark-color);
+    padding-bottom: 1px;
     transition: opacity 0.2s ease;
+    letter-spacing: -1px;
 }
 
 .home-clinica__cta:hover {

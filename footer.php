@@ -7,7 +7,7 @@
 $footer_page_id = url_to_postid( home_url( '/footer/' ) );
 $email          = get_field( 'footer_email',       $footer_page_id );
 $telefono       = get_field( 'footer_telefono',    $footer_page_id );
-$direccion = get_field( 'footer_direccion', $footer_page_id );
+$direccion      = get_field( 'footer_direccion',   $footer_page_id );
 $horario        = get_field( 'footer_horario',     $footer_page_id );
 $descripcion    = get_field( 'footer_descripcion', $footer_page_id );
 
@@ -30,10 +30,10 @@ for ( $i = 1; $i <= 4; $i++ ) {
         <div class="footer__top-izq">
             <p class="footer__logo">ILBA International</p>
             <?php if ( $descripcion ) : ?>
-        <div class="footer__descripcion-wrapper">
-            <p class="footer__descripcion"><?php echo esc_html( $descripcion ); ?></p>
-        </div>
-    <?php endif; ?>
+                <div class="footer__descripcion-wrapper">
+                    <p class="footer__descripcion"><?php echo esc_html( $descripcion ); ?></p>
+                </div>
+            <?php endif; ?>
         </div>
 
         <!-- Columna derecha: dos filas -->
@@ -54,9 +54,18 @@ for ( $i = 1; $i <= 4; $i++ ) {
                     <?php endif; ?>
                 </div>
                 <div class="footer__contacto-col">
-                <p class="footer__direccion">
-    <?php echo wp_kses_post( nl2br( esc_html( $direccion ) ) ); ?>
-</p>
+                    <?php if ( $direccion ) : ?>
+                        <a
+                            class="footer__link"
+                            href="https://www.google.com/maps/search/?api=1&query=<?= urlencode( $direccion ) ?>"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <p class="footer__direccion">
+                                <?= wp_kses_post( nl2br( esc_html( $direccion ) ) ) ?>
+                            </p>
+                        </a>
+                    <?php endif; ?>
                     <?php if ( $horario ) : ?>
                         <p class="footer__horario"><?php echo nl2br( esc_html( $horario ) ); ?></p>
                     <?php endif; ?>
@@ -111,14 +120,14 @@ for ( $i = 1; $i <= 4; $i++ ) {
     <div class="footer__bottom">
         <p class="footer__copyright">© ILBA International <?php echo date( 'Y' ); ?>. Todos los derechos reservados</p>
         <div class="footer__creditos-wrapper">
-    <span class="footer__creditos">Créditos</span>
-    <div class="footer__creditos-tooltip">
-        Diseñado por 
-        <a href="https://virgulillaestudio.com/" target="_blank" rel="noopener noreferrer">Virgulilla Estudio</a> 
-        y 
-        <a href="https://estudio.inesuribe.es/" target="_blank" rel="noopener noreferrer">Estudio Ines Uribe</a>
-    </div>
-</div>
+            <span class="footer__creditos">Créditos</span>
+            <div class="footer__creditos-tooltip">
+                Diseñado por
+                <a href="https://virgulillaestudio.com/" target="_blank" rel="noopener noreferrer">Virgulilla Estudio</a>
+                y
+                <a href="https://estudio.inesuribe.es/" target="_blank" rel="noopener noreferrer">Estudio Ines Uribe</a>
+            </div>
+        </div>
     </div>
 
 </footer>

@@ -50,7 +50,7 @@ $img_cuadrada   = get_field( 'home_conocenos_img_cuadrada' );
             <?php endif; ?>
 
             <?php if ( $cta_texto && $cta_link ) : ?>
-                <a href="<?php echo esc_url( $cta_link ); ?>" class="home-conocenos__cta">
+                <a href="<?php echo esc_url( home_url( $cta_link ) ); ?>" class="home-conocenos__cta">
                     <?php echo esc_html( $cta_texto ); ?>
                 </a>
             <?php endif; ?>
@@ -65,7 +65,7 @@ $img_cuadrada   = get_field( 'home_conocenos_img_cuadrada' );
                 <?php endif; ?>
 
                 <?php if ( $cta_texto && $cta_link ) : ?>
-                    <a href="<?php echo esc_url( $cta_link ); ?>" class="home-conocenos__cta">
+                    <a href="<?php echo esc_url( home_url( $cta_link ) ); ?>" class="home-conocenos__cta">
                         <?php echo esc_html( $cta_texto ); ?>
                     </a>
                 <?php endif; ?>

@@ -15,10 +15,11 @@
 /* --- Imagen silueteada --- */
 
 .ap-hero__imagen {
-    flex: 0 0 40%;
+    flex: 1;
     display: flex;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
+    justify-content: flex-end;
 }
 
 .ap-hero__imagen img {

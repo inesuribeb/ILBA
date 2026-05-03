@@ -59,12 +59,12 @@ $cta2_link  = get_field( 'home_hero_cta2_link' );
         <?php if ( ( $cta1_texto && $cta1_link ) || ( $cta2_texto && $cta2_link ) ) : ?>
             <div class="home-hero__ctas">
                 <?php if ( $cta1_texto && $cta1_link ) : ?>
-                    <a href="<?php echo esc_url( $cta1_link ); ?>" class="home-hero__cta home-hero__cta--primario">
+                    <a href="<?php echo esc_url( home_url( $cta1_link ) ); ?>" class="home-hero__cta home-hero__cta--primario">
                         <?php echo esc_html( $cta1_texto ); ?>
                     </a>
                 <?php endif; ?>
                 <?php if ( $cta2_texto && $cta2_link ) : ?>
-                    <a href="<?php echo esc_url( $cta2_link ); ?>" class="home-hero__cta home-hero__cta--secundario">
+                    <a href="<?php echo esc_url( home_url( $cta2_link ) ); ?>" class="home-hero__cta home-hero__cta--secundario">
                         <?php echo esc_html( $cta2_texto ); ?>
                     </a>
                 <?php endif; ?>

@@ -88,3 +88,44 @@
 .header--light .header__logo-link {
     color: var(--light-color);
 }
+
+
+
+
+
+.header--light .header__nav-der .header__nav-link {
+    color: var(--light-color);
+}
+.header--light:hover .header__nav-link,
+.header--light:hover .header__logo-link {
+    color: var(--dark-color);
+}
+.header--light .header__logo-link {
+    color: var(--dark-color);
+}
+
+
+
+
+/* BM: todo blanco */
+.header--light-bm .header__nav-link,
+.header--light-bm .header__logo-link {
+    color: var(--light-color);
+}
+
+/* Home: solo nav der en blanco, logo dark */
+.header--light-home .header__nav-der .header__nav-link {
+    color: var(--light-color);
+}
+
+.header--light-home .header__logo-link {
+    color: var(--dark-color);
+}
+
+/* Hover en ambos casos vuelve a dark */
+.header--light-bm:hover .header__nav-link,
+.header--light-bm:hover .header__logo-link,
+.header--light-home:hover .header__nav-link,
+.header--light-home:hover .header__logo-link {
+    color: var(--dark-color);
+}

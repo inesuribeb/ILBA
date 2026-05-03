@@ -55,6 +55,8 @@
 .ap-relacionados__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid var(--dark-color);
+    border-left: 1px solid var(--dark-color);
 }
 
 /* --- Card --- */
@@ -65,7 +67,9 @@
     overflow: hidden;
     text-decoration: none;
     display: block;
-    border: 1px solid var(--dark-color);
+    /* border: 1px solid var(--dark-color); */
+    border-right: 1px solid var(--dark-color);
+    border-bottom: 1px solid var(--dark-color);
 
 }
 

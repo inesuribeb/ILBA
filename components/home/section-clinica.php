@@ -36,7 +36,7 @@ $img_horizontal = get_field( 'home_clinica_img_horizontal' );
                 <?php endif; ?>
 
                 <?php if ( $cta_texto && $cta_link ) : ?>
-                    <a href="<?php echo esc_url( $cta_link ); ?>" class="home-clinica__cta">
+                    <a href="<?php echo esc_url( home_url( $cta_link ) ); ?>" class="home-clinica__cta">
                         <?php echo esc_html( $cta_texto ); ?>
                     </a>
                 <?php endif; ?>

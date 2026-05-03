@@ -28,18 +28,32 @@ acf_add_local_field_group( array(
         ),
 
         // --- CTA ---
-        array(
-            'key'   => 'field_home_clinica_cta_texto',
-            'label' => 'CTA — Texto',
-            'name'  => 'home_clinica_cta_texto',
-            'type'  => 'text',
-        ),
-        array(
-            'key'   => 'field_home_clinica_cta_link',
-            'label' => 'CTA — Link',
-            'name'  => 'home_clinica_cta_link',
-            'type'  => 'url',
-        ),
+        // array(
+        //     'key'   => 'field_home_clinica_cta_texto',
+        //     'label' => 'CTA — Texto',
+        //     'name'  => 'home_clinica_cta_texto',
+        //     'type'  => 'text',
+        // ),
+        // array(
+        //     'key'   => 'field_home_clinica_cta_link',
+        //     'label' => 'CTA — Link',
+        //     'name'  => 'home_clinica_cta_link',
+        //     'type'  => 'url',
+        // ),
+        // --- CTA ---
+array(
+    'key'   => 'field_home_clinica_cta_texto',
+    'label' => 'CTA — Texto',
+    'name'  => 'home_clinica_cta_texto',
+    'type'  => 'text',
+),
+array(
+    'key'          => 'field_home_clinica_cta_link',
+    'label'        => 'CTA — Slug',
+    'name'         => 'home_clinica_cta_link',
+    'type'         => 'text',
+    'instructions' => 'Escribe solo el slug, sin barras. Ej: somos, beauty/facial',
+),
 
         // --- IMAGEN VERTICAL ---
         array(

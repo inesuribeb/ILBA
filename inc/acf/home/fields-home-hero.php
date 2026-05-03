@@ -105,34 +105,65 @@ acf_add_local_field_group( array(
         ),
 
         // CTA 1
-        array(
-            'key'          => 'field_home_hero_cta1_texto',
-            'label'        => 'CTA 1 — Texto',
-            'name'         => 'home_hero_cta1_texto',
-            'type'         => 'text',
-            'instructions' => 'Deja vacío si no quieres mostrar este CTA.',
-        ),
-        array(
-            'key'   => 'field_home_hero_cta1_link',
-            'label' => 'CTA 1 — Link',
-            'name'  => 'home_hero_cta1_link',
-            'type'  => 'url',
-        ),
+        // array(
+        //     'key'          => 'field_home_hero_cta1_texto',
+        //     'label'        => 'CTA 1 — Texto',
+        //     'name'         => 'home_hero_cta1_texto',
+        //     'type'         => 'text',
+        //     'instructions' => 'Deja vacío si no quieres mostrar este CTA.',
+        // ),
+        // array(
+        //     'key'   => 'field_home_hero_cta1_link',
+        //     'label' => 'CTA 1 — Link',
+        //     'name'  => 'home_hero_cta1_link',
+        //     'type'  => 'url',
+        // ),
 
         // CTA 2
-        array(
-            'key'          => 'field_home_hero_cta2_texto',
-            'label'        => 'CTA 2 — Texto',
-            'name'         => 'home_hero_cta2_texto',
-            'type'         => 'text',
-            'instructions' => 'Deja vacío si no quieres mostrar este CTA.',
-        ),
-        array(
-            'key'   => 'field_home_hero_cta2_link',
-            'label' => 'CTA 2 — Link',
-            'name'  => 'home_hero_cta2_link',
-            'type'  => 'url',
-        ),
+        // array(
+        //     'key'          => 'field_home_hero_cta2_texto',
+        //     'label'        => 'CTA 2 — Texto',
+        //     'name'         => 'home_hero_cta2_texto',
+        //     'type'         => 'text',
+        //     'instructions' => 'Deja vacío si no quieres mostrar este CTA.',
+        // ),
+        // array(
+        //     'key'   => 'field_home_hero_cta2_link',
+        //     'label' => 'CTA 2 — Link',
+        //     'name'  => 'home_hero_cta2_link',
+        //     'type'  => 'url',
+        // ),
+        // CTA 1
+array(
+    'key'          => 'field_home_hero_cta1_texto',
+    'label'        => 'CTA 1 — Texto',
+    'name'         => 'home_hero_cta1_texto',
+    'type'         => 'text',
+    'instructions' => 'Deja vacío si no quieres mostrar este CTA.',
+),
+array(
+    'key'          => 'field_home_hero_cta1_link',
+    'label'        => 'CTA 1 — Slug',
+    'name'         => 'home_hero_cta1_link',
+    'type'         => 'text',
+    'instructions' => 'Escribe solo el slug, sin barras. Ej: beauty, protocolos/hidrafacial',
+),
+
+// CTA 2
+array(
+    'key'          => 'field_home_hero_cta2_texto',
+    'label'        => 'CTA 2 — Texto',
+    'name'         => 'home_hero_cta2_texto',
+    'type'         => 'text',
+    'instructions' => 'Deja vacío si no quieres mostrar este CTA.',
+),
+array(
+    'key'          => 'field_home_hero_cta2_link',
+    'label'        => 'CTA 2 — Slug',
+    'name'         => 'home_hero_cta2_link',
+    'type'         => 'text',
+    'instructions' => 'Escribe solo el slug, sin barras. Ej: beauty, protocolos/hidrafacial',
+),
 
     ),
 
