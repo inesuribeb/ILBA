@@ -87,10 +87,10 @@ for ( $i = 1; $i <= 4; $i++ ) {
                 <div class="footer__nav-col">
                     <p class="footer__nav-titulo">Tratamientos</p>
                     <nav>
-                        <a href="#" class="footer__nav-link">Beauty</a>
-                        <a href="#" class="footer__nav-link">Medical</a>
-                        <a href="#" class="footer__nav-link">Salud</a>
-                        <a href="#" class="footer__nav-link">Wellness</a>
+                    <a href="<?= esc_url( home_url( 'beauty_medical/beauty-facial/' ) ) ?>" class="footer__nav-link">Beauty</a>
+                    <a href="<?= esc_url( home_url( 'beauty_medical/medical-faciales/' ) ) ?>" class="footer__nav-link">Medical</a>
+                        <!-- <a href="#" class="footer__nav-link">Salud</a>
+                        <a href="#" class="footer__nav-link">Wellness</a> -->
                     </nav>
                 </div>
                 <div class="footer__nav-col">
