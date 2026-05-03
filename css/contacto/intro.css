@@ -5,7 +5,7 @@
    .ct-intro {
     display: flex;
     flex-direction: row;
-    gap: 2rem;
+    gap: 4rem;
     height: 70vh;
     /* padding: 48px 24px; */
     padding-top: 25vh;
@@ -56,17 +56,18 @@
 .ct-intro__titulo {
     margin: 0;
     font-family: var(--serif);
-
+    letter-spacing: -1.5px;
     color: var(--light-color);
 }
 
 .ct-intro__subtitulo {
     margin: 0;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.2;
     color: var(--dark-color);
     max-width: 300px;
-
+    letter-spacing: -1px;
+    font-weight: 300;
     color: var(--light-color)
 
 }

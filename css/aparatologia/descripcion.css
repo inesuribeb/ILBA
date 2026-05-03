@@ -5,8 +5,8 @@
    .ap-descripcion {
     display: flex;
     flex-direction: row;
-    gap: 4rem;
-    padding: 80px 48px 80px 24px;
+    gap: 8rem;
+    padding: 80px 60px 80px 60px;
     background-color: #B3BEC5;
     align-items: flex-start;
 }
@@ -19,8 +19,9 @@
 
 .ap-descripcion__texto {
     margin: 0;
-    font-size: 20px;
-    line-height: 1.4;
+    font-size: 22px;
+    line-height: 1.2;
+    letter-spacing: -1px;
     color: var(--dark-color);
     /* max-width: 480px; */
 }
@@ -39,20 +40,21 @@
 }
 
 .ap-acordeon {
-    border-bottom: 1px solid rgba(45, 45, 45, 0.25);
+    border-bottom: 1px solid var(--dark-color);
 }
 
-.ap-acordeon:first-child {
+/* .ap-acordeon:first-child {
     border-top: 1px solid rgba(45, 45, 45, 0.25);
-}
+} */
 
 .ap-acordeon__btn {
     width: 100%;
     background: none;
     border: none;
-    padding: 16px 0;
+    padding: 8px 0;
     text-align: left;
     font-size: 20px;
+    letter-spacing: -1px;
     color: var(--dark-color);
     cursor: pointer;
     display: block;
@@ -75,8 +77,10 @@
 
 .ap-acordeon__content p {
     margin: 0;
+    padding-top: 2rem;
     font-size: 18px;
-    line-height: 1.6;
+    line-height: 1.2;
+    letter-spacing: -1px;
     color: var(--dark-color);
 }
 

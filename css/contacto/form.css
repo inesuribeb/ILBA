@@ -5,7 +5,7 @@
    .ct-form-section {
     display: flex;
     flex-direction: row;
-    gap: 8rem;
+    gap: 4rem;
     padding: 140px 60px 80px 60px;
     box-sizing: border-box;
 }
@@ -37,6 +37,7 @@
     /* color: #999; */
     /* color: var(--dark-color); */
     color: var(--light-color);
+    letter-spacing: -1px;
 
     flex: 0 0 200px;
 }
@@ -45,6 +46,7 @@
     font-size: 15px;
     /* color: var(--dark-color); */
     color: var(--light-color);
+    letter-spacing: -1px;
 
     text-decoration: none;
     line-height: 1.5;
@@ -94,6 +96,7 @@ a.ct-info__valor:hover {
     font-size: 15px;
     /* color: var(--dark-color); */
     color: var(--light-color);
+    letter-spacing: -1px;
 
     outline: none;
     font-family: inherit;
@@ -123,9 +126,12 @@ a.ct-info__valor:hover {
     width: 100%;
     padding: 10px;
     background: var(--light-color);
-    color: #6C1415;
+    /* color: #6C1415; */
+    color: var(--brown-color);
     border: none;
     font-size: 15px;
+    letter-spacing: -1px;
+
     font-family: inherit;
     cursor: pointer;
     transition: background 0.2s ease;
@@ -221,6 +227,8 @@ a.ct-info__valor:hover {
     align-items: center;
     font-size: 15px;
     /* color: var(--dark-color); */
+    letter-spacing: -1px;
+
     color: var(--light-color);
 
 }
@@ -254,8 +262,8 @@ a.ct-info__valor:hover {
     left: -1px;
     right: -1px;
     /* background: var(--light-color); */
-    background: #6C1415;
-
+    /* background: #6C1415; */
+    background: var(--brown-color);
     z-index: 10;
 }
 
@@ -268,6 +276,7 @@ a.ct-info__valor:hover {
     font-size: 15px;
     /* color: var(--dark-color); */
     color: var(--light-color);
+    letter-spacing: -1px;
 
     border-bottom: 1px solid #e0e0e08d;
     transition: opacity 0.2s ease;

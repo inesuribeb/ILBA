@@ -39,6 +39,9 @@
 
 .ap-hero__titulo {
     margin: 0;
+    font-family: var(--serif);
+    max-width: 75%;
+    line-height: 1;
 }
 
 
