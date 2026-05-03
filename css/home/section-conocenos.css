@@ -32,6 +32,8 @@
 
 .home-conocenos__tag {
     font-size: 16px;
+    letter-spacing: -1px;
+
 }
 
 /* --- Columna principal (85%) --- */
@@ -58,15 +60,18 @@
 .home-conocenos__titulo {
     margin: 0;
     font-family: var(--sans-serif);
-    font-size: 30px;
+    font-size: 32px;
+    letter-spacing: -2px;
+
 }
 
 .home-conocenos__descripcion {
     margin: 0;
-    font-size: 15px;
-    line-height: 1.6;
+    font-size: 16px;
+    line-height: 1.4;
     /* color: #444; */
     max-width: 650px;
+    color: var(--dark-color);
 }
 
 .home-conocenos__cta {

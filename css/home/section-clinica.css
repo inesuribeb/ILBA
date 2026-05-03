@@ -31,6 +31,8 @@
 
 .home-clinica__tag {
     font-size: 16px;
+    letter-spacing: -1px;
+
     /* color: var(); */
     /* letter-spacing: 0.08em; */
 }
@@ -98,7 +100,9 @@
 .home-clinica__titulo {
     margin: 0;
     font-family: var(--sans-serif);
-    font-size: 30px;
+    font-size: 32px;
+    letter-spacing: -2px;
+
 }
 
 .home-clinica__cta {

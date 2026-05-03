@@ -29,6 +29,9 @@
     color: var(--dark-color);
 }
 
+.header__nav-link {
+    letter-spacing: -1px;
+}
 .header.is-scrolled {
     height: auto;
 }

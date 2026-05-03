@@ -68,6 +68,8 @@
     margin: 0;
     line-height: 1.4;
     max-width: 450px;
+    letter-spacing: -1px;
+
 }
 
 
@@ -104,6 +106,8 @@
     color: var(--dark-color);
     text-decoration: none;
     transition: opacity 0.2s ease;
+    letter-spacing: -1px;
+
 }
 
 .footer__link:hover {
@@ -115,12 +119,16 @@
     color: var(--dark-color);
     margin: 0;
     line-height: 1.6;
+    letter-spacing: -1px;
+
 }
 .footer__horario {
     font-size: 15px;
     color: var(--dark-color);
     margin: 0;
     line-height: 1.6;
+    letter-spacing: -1px;
+
 }
 
 /* Fila 2: navegación */
@@ -133,6 +141,8 @@
     gap: 0;
     border-top: 1px solid #e0e0e0;
     padding-top: 1rem;
+    letter-spacing: -1px;
+
 }
 
 .footer__nav-col {
@@ -147,6 +157,8 @@
     font-weight: 500;
     margin: 0 0 8px 0;
     color: var(--dark-color);
+    letter-spacing: -1px;
+
 }
 
 .footer__nav-link {
@@ -155,6 +167,8 @@
     text-decoration: none;
     transition: opacity 0.2s ease;
     display: block;
+    letter-spacing: -1px;
+
 }
 
 .footer__nav-link:hover {
@@ -176,6 +190,8 @@
     font-size: 15px;
     color: var(--dark-color);
     margin: 0;
+    letter-spacing: -1px;
+
 }
 
 .footer__creditos-wrapper {
@@ -190,6 +206,8 @@
     color: var(--dark-color);
     text-decoration: underline;
     cursor: pointer;
+    letter-spacing: -1px;
+
 }
 
 .footer__creditos-tooltip {
@@ -223,6 +241,8 @@
 .footer__creditos-tooltip a {
     color: var(--light-color);
     text-decoration: underline;
+    letter-spacing: -1px;
+
 }
 
 .footer__creditos-tooltip a:hover {
