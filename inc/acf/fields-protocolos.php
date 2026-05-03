@@ -92,22 +92,165 @@ acf_add_local_field_group( array(
         ),
 
         // --- QUÉ INCLUYE: SERVICIOS RELACIONADOS ---
-        array(
-            'key'           => 'field_pr_servicios',
-            'label'         => '¿Qué incluye el protocolo? — Servicios',
-            'name'          => 'pr_servicios',
-            'type'          => 'relationship',
-            'instructions'  => 'Selecciona los servicios que forman parte de este protocolo.',
-            'post_type'     => array(
-                0 => 'servicios',
-            ),
-            'filters'       => array(
-                0 => 'search',
-            ),
-            'return_format' => 'object',
-            'min'           => 0,
-            'max'           => 0,
-        ),
+        // array(
+        //     'key'           => 'field_pr_servicios',
+        //     'label'         => '¿Qué incluye el protocolo? — Servicios',
+        //     'name'          => 'pr_servicios',
+        //     'type'          => 'relationship',
+        //     'instructions'  => 'Selecciona los servicios que forman parte de este protocolo.',
+        //     'post_type'     => array(
+        //         0 => 'servicios',
+        //     ),
+        //     'filters'       => array(
+        //         0 => 'search',
+        //     ),
+        //     'return_format' => 'object',
+        //     'min'           => 0,
+        //     'max'           => 0,
+        // ),
+        // --- CARD SERVICIO 1 ---
+array(
+    'key'   => 'field_pr_srv_1_titulo',
+    'label' => 'Servicio 1 — Título',
+    'name'  => 'pr_srv_1_titulo',
+    'type'  => 'text',
+),
+array(
+    'key'           => 'field_pr_srv_1_imagen',
+    'label'         => 'Servicio 1 — Imagen',
+    'name'          => 'pr_srv_1_imagen',
+    'type'          => 'image',
+    'return_format' => 'array',
+    'preview_size'  => 'medium',
+),
+array(
+    'key'          => 'field_pr_srv_1_texto',
+    'label'        => 'Servicio 1 — Texto',
+    'name'         => 'pr_srv_1_texto',
+    'type'         => 'textarea',
+    'rows'         => 4,
+    'new_lines'    => 'br',
+),
+
+// --- CARD SERVICIO 2 ---
+array(
+    'key'   => 'field_pr_srv_2_titulo',
+    'label' => 'Servicio 2 — Título',
+    'name'  => 'pr_srv_2_titulo',
+    'type'  => 'text',
+),
+array(
+    'key'           => 'field_pr_srv_2_imagen',
+    'label'         => 'Servicio 2 — Imagen',
+    'name'          => 'pr_srv_2_imagen',
+    'type'          => 'image',
+    'return_format' => 'array',
+    'preview_size'  => 'medium',
+),
+array(
+    'key'       => 'field_pr_srv_2_texto',
+    'label'     => 'Servicio 2 — Texto',
+    'name'      => 'pr_srv_2_texto',
+    'type'      => 'textarea',
+    'rows'      => 4,
+    'new_lines' => 'br',
+),
+
+// --- CARD SERVICIO 3 ---
+array(
+    'key'   => 'field_pr_srv_3_titulo',
+    'label' => 'Servicio 3 — Título',
+    'name'  => 'pr_srv_3_titulo',
+    'type'  => 'text',
+),
+array(
+    'key'           => 'field_pr_srv_3_imagen',
+    'label'         => 'Servicio 3 — Imagen',
+    'name'          => 'pr_srv_3_imagen',
+    'type'          => 'image',
+    'return_format' => 'array',
+    'preview_size'  => 'medium',
+),
+array(
+    'key'       => 'field_pr_srv_3_texto',
+    'label'     => 'Servicio 3 — Texto',
+    'name'      => 'pr_srv_3_texto',
+    'type'      => 'textarea',
+    'rows'      => 4,
+    'new_lines' => 'br',
+),
+
+// --- CARD SERVICIO 4 ---
+array(
+    'key'   => 'field_pr_srv_4_titulo',
+    'label' => 'Servicio 4 — Título',
+    'name'  => 'pr_srv_4_titulo',
+    'type'  => 'text',
+),
+array(
+    'key'           => 'field_pr_srv_4_imagen',
+    'label'         => 'Servicio 4 — Imagen',
+    'name'          => 'pr_srv_4_imagen',
+    'type'          => 'image',
+    'return_format' => 'array',
+    'preview_size'  => 'medium',
+),
+array(
+    'key'       => 'field_pr_srv_4_texto',
+    'label'     => 'Servicio 4 — Texto',
+    'name'      => 'pr_srv_4_texto',
+    'type'      => 'textarea',
+    'rows'      => 4,
+    'new_lines' => 'br',
+),
+
+// --- CARD SERVICIO 5 ---
+array(
+    'key'   => 'field_pr_srv_5_titulo',
+    'label' => 'Servicio 5 — Título',
+    'name'  => 'pr_srv_5_titulo',
+    'type'  => 'text',
+),
+array(
+    'key'           => 'field_pr_srv_5_imagen',
+    'label'         => 'Servicio 5 — Imagen',
+    'name'          => 'pr_srv_5_imagen',
+    'type'          => 'image',
+    'return_format' => 'array',
+    'preview_size'  => 'medium',
+),
+array(
+    'key'       => 'field_pr_srv_5_texto',
+    'label'     => 'Servicio 5 — Texto',
+    'name'      => 'pr_srv_5_texto',
+    'type'      => 'textarea',
+    'rows'      => 4,
+    'new_lines' => 'br',
+),
+
+// --- CARD SERVICIO 6 ---
+array(
+    'key'   => 'field_pr_srv_6_titulo',
+    'label' => 'Servicio 6 — Título',
+    'name'  => 'pr_srv_6_titulo',
+    'type'  => 'text',
+),
+array(
+    'key'           => 'field_pr_srv_6_imagen',
+    'label'         => 'Servicio 6 — Imagen',
+    'name'          => 'pr_srv_6_imagen',
+    'type'          => 'image',
+    'return_format' => 'array',
+    'preview_size'  => 'medium',
+),
+array(
+    'key'       => 'field_pr_srv_6_texto',
+    'label'     => 'Servicio 6 — Texto',
+    'name'      => 'pr_srv_6_texto',
+    'type'      => 'textarea',
+    'rows'      => 4,
+    'new_lines' => 'br',
+),
 
         // =============================================
         // APARTADO FORMULARIO

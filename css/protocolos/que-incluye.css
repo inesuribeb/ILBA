@@ -1,0 +1,333 @@
+/* ================================================
+   Protocolo — Servicios
+   ================================================ */
+
+   /* .pr-servicios {
+    padding: 100px 0;
+    background-color: black;
+}
+
+.pr-servicios__titulo {
+    font-size: 32px;
+    text-align: center;
+    font-weight: 300;
+    letter-spacing: -2px;
+    margin: 0 0 48px;
+    padding: 0 40px;
+    color: var(--light-color);
+    font-family: var(--sans-serif);
+}
+
+.pr-servicios__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+}
+
+.pr-srv-card {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.pr-srv-card__imagen {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.pr-srv-card:hover .pr-srv-card__imagen {
+    transform: scale(1.04);
+}
+
+.pr-srv-card__imagen--placeholder {
+    background-color: #c8bfb8;
+}
+
+.pr-srv-card__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.55) 0%,
+        rgba(0, 0, 0, 0.1) 40%,
+        rgba(0, 0, 0, 0) 70%
+    );
+    transition: background 0.45s ease, backdrop-filter 0.45s ease;
+    -webkit-backdrop-filter: blur(0px);
+    backdrop-filter: blur(0px);
+}
+
+.pr-srv-card:hover .pr-srv-card__overlay {
+    background: rgba(255, 255, 255, 0.35);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+.pr-srv-card__info-default {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    right: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 2;
+}
+
+.pr-srv-card:hover .pr-srv-card__info-default {
+    opacity: 0;
+    transform: translateY(8px);
+}
+
+.pr-srv-card__nombre {
+    font-size: 30px;
+    font-weight: 300;
+    color: #fff;
+    letter-spacing: -1px;
+    line-height: 1.2;
+    font-family: var(--serif);
+}
+
+.pr-srv-card__info-hover {
+    position: absolute;
+    inset: 0;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: opacity 0.35s ease 0.05s, transform 0.35s ease 0.05s;
+    z-index: 2;
+}
+
+.pr-srv-card:hover .pr-srv-card__info-hover {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.pr-srv-card__descripcion {
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--light-color);
+    line-height: 1;
+    letter-spacing: -1px;
+    margin: 0;
+} */
+
+/* RESPONSIVE */
+/* @media (max-width: 900px) {
+    .pr-servicios__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 560px) {
+    .pr-servicios__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pr-servicios__titulo {
+        padding: 0 20px;
+        margin-bottom: 32px;
+    }
+
+    .pr-srv-card__info-default {
+        bottom: 20px;
+        left: 20px;
+        right: 20px;
+    }
+
+    .pr-srv-card__info-hover {
+        padding: 20px;
+    }
+} */
+
+
+
+/* ================================================
+   Protocolo — Servicios
+   ================================================ */
+
+   .pr-servicios {
+    padding: 100px 0;
+    background-color: black;
+}
+
+.pr-servicios__titulo {
+    font-size: 32px;
+    text-align: center;
+    font-weight: 300;
+    letter-spacing: -2px;
+    margin: 0 0 48px;
+    padding: 0 40px;
+    color: var(--light-color);
+    font-family: var(--sans-serif);
+}
+
+/* --- GRID NORMAL (≤ 3 cards) --- */
+.pr-servicios__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+}
+
+/* --- GRID SCROLL (> 3 cards) --- */
+.pr-servicios__grid--scroll {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+    gap: 2px;
+    /* Muestra 3 cards completas + trozo de la 4ª */
+    padding-right: calc((100vw / 3) * 0.4);
+}
+
+.pr-servicios__grid--scroll::-webkit-scrollbar {
+    display: none; /* Chrome / Safari */
+}
+
+.pr-servicios__grid--scroll .pr-srv-card {
+    flex: 0 0 calc((100% - (2px * 2)) / 2.8);
+    scroll-snap-align: start;
+    aspect-ratio: 4 / 5;
+}
+
+/* CARD */
+.pr-srv-card {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.pr-srv-card__imagen {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.pr-srv-card:hover .pr-srv-card__imagen {
+    transform: scale(1.04);
+}
+
+.pr-srv-card__imagen--placeholder {
+    background-color: #c8bfb8;
+}
+
+.pr-srv-card__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.55) 0%,
+        rgba(0, 0, 0, 0.1) 40%,
+        rgba(0, 0, 0, 0) 70%
+    );
+    transition: background 0.45s ease, backdrop-filter 0.45s ease;
+    -webkit-backdrop-filter: blur(0px);
+    backdrop-filter: blur(0px);
+}
+
+.pr-srv-card:hover .pr-srv-card__overlay {
+    background: rgba(255, 255, 255, 0.35);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+.pr-srv-card__info-default {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    right: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 2;
+}
+
+.pr-srv-card:hover .pr-srv-card__info-default {
+    opacity: 0;
+    transform: translateY(8px);
+}
+
+.pr-srv-card__nombre {
+    font-size: 30px;
+    font-weight: 300;
+    color: #fff;
+    letter-spacing: -1px;
+    line-height: 1.2;
+    font-family: var(--serif);
+}
+
+.pr-srv-card__info-hover {
+    position: absolute;
+    inset: 0;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: opacity 0.35s ease 0.05s, transform 0.35s ease 0.05s;
+    z-index: 2;
+}
+
+.pr-srv-card:hover .pr-srv-card__info-hover {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.pr-srv-card__descripcion {
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--light-color);
+    line-height: 1;
+    letter-spacing: -1px;
+    margin: 0;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .pr-servicios__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .pr-servicios__grid--scroll .pr-srv-card {
+        flex: 0 0 calc((100% - 2px) / 2.4);
+    }
+}
+
+@media (max-width: 560px) {
+    .pr-servicios__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pr-servicios__grid--scroll .pr-srv-card {
+        flex: 0 0 85vw;
+    }
+
+    .pr-servicios__titulo {
+        padding: 0 20px;
+        margin-bottom: 32px;
+    }
+
+    .pr-srv-card__info-default {
+        bottom: 20px;
+        left: 20px;
+        right: 20px;
+    }
+
+    .pr-srv-card__info-hover {
+        padding: 20px;
+    }
+}

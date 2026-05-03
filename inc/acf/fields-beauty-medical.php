@@ -139,28 +139,178 @@ acf_add_local_field_group( array(
             'preview_size'  => 'medium',
         ),
 
-        // --- APARTADO TRATAMIENTOS ---
+        // --- TRATAMIENTO 1 ---
         array(
-            'key'   => 'field_bm_tratamientos_titulo',
-            'label' => 'Tratamientos - Título del apartado',
-            'name'  => 'bm_tratamientos_titulo',
-            'type'  => 'text',
-            'instructions' => 'Ej: "Nuestros tratamientos faciales" o "Nuestros tratamientos corporales"',
-        ),
-        array(
-            'key'      => 'field_bm_tratamientos_descripcion',
-            'label'    => 'Tratamientos - Descripción',
-            'name'     => 'bm_tratamientos_descripcion',
-            'type'     => 'textarea',
-            'rows'     => 4,
-        ),
-        array(
-            'key'           => 'field_bm_tratamientos_imagen',
-            'label'         => 'Tratamientos - Imagen',
-            'name'          => 'bm_tratamientos_imagen',
-            'type'          => 'image',
+            'key'   => 'field_bm_trat_1_imagen',
+            'label' => 'Tratamiento 1 - Imagen',
+            'name'  => 'bm_trat_1_imagen',
+            'type'  => 'image',
             'return_format' => 'array',
             'preview_size'  => 'medium',
+        ),
+        array(
+            'key'   => 'field_bm_trat_1_titulo',
+            'label' => 'Tratamiento 1 - Título',
+            'name'  => 'bm_trat_1_titulo',
+            'type'  => 'text',
+        ),
+        array(
+            'key'   => 'field_bm_trat_1_subtitulo',
+            'label' => 'Tratamiento 1 - Subtítulo',
+            'name'  => 'bm_trat_1_subtitulo',
+            'type'  => 'text',
+        ),
+        array(
+            'key'   => 'field_bm_trat_1_texto',
+            'label' => 'Tratamiento 1 - Texto',
+            'name'  => 'bm_trat_1_texto',
+            'type'  => 'textarea',
+            'rows'  => 3,
+        ),
+
+        // --- TRATAMIENTO 2 ---
+        array(
+            'key'   => 'field_bm_trat_2_imagen',
+            'label' => 'Tratamiento 2 - Imagen',
+            'name'  => 'bm_trat_2_imagen',
+            'type'  => 'image',
+            'return_format' => 'array',
+            'preview_size'  => 'medium',
+        ),
+        array(
+            'key'   => 'field_bm_trat_2_titulo',
+            'label' => 'Tratamiento 2 - Título',
+            'name'  => 'bm_trat_2_titulo',
+            'type'  => 'text',
+        ),
+        array(
+            'key'   => 'field_bm_trat_2_subtitulo',
+            'label' => 'Tratamiento 2 - Subtítulo',
+            'name'  => 'bm_trat_2_subtitulo',
+            'type'  => 'text',
+        ),
+        array(
+            'key'   => 'field_bm_trat_2_texto',
+            'label' => 'Tratamiento 2 - Texto',
+            'name'  => 'bm_trat_2_texto',
+            'type'  => 'textarea',
+            'rows'  => 3,
+        ),
+
+        // --- TRATAMIENTO 3 ---
+        array(
+            'key'   => 'field_bm_trat_3_imagen',
+            'label' => 'Tratamiento 3 - Imagen',
+            'name'  => 'bm_trat_3_imagen',
+            'type'  => 'image',
+            'return_format' => 'array',
+            'preview_size'  => 'medium',
+        ),
+        array(
+            'key'   => 'field_bm_trat_3_titulo',
+            'label' => 'Tratamiento 3 - Título',
+            'name'  => 'bm_trat_3_titulo',
+            'type'  => 'text',
+        ),
+        array(
+            'key'   => 'field_bm_trat_3_subtitulo',
+            'label' => 'Tratamiento 3 - Subtítulo',
+            'name'  => 'bm_trat_3_subtitulo',
+            'type'  => 'text',
+        ),
+        array(
+            'key'   => 'field_bm_trat_3_texto',
+            'label' => 'Tratamiento 3 - Texto',
+            'name'  => 'bm_trat_3_texto',
+            'type'  => 'textarea',
+            'rows'  => 3,
+        ),
+
+        // --- TRATAMIENTO 4 ---
+        array(
+            'key'   => 'field_bm_trat_4_imagen',
+            'label' => 'Tratamiento 4 - Imagen',
+            'name'  => 'bm_trat_4_imagen',
+            'type'  => 'image',
+            'return_format' => 'array',
+            'preview_size'  => 'medium',
+        ),
+        array(
+            'key'   => 'field_bm_trat_4_titulo',
+            'label' => 'Tratamiento 4 - Título',
+            'name'  => 'bm_trat_4_titulo',
+            'type'  => 'text',
+        ),
+        array(
+            'key'   => 'field_bm_trat_4_subtitulo',
+            'label' => 'Tratamiento 4 - Subtítulo',
+            'name'  => 'bm_trat_4_subtitulo',
+            'type'  => 'text',
+        ),
+        array(
+            'key'   => 'field_bm_trat_4_texto',
+            'label' => 'Tratamiento 4 - Texto',
+            'name'  => 'bm_trat_4_texto',
+            'type'  => 'textarea',
+            'rows'  => 3,
+        ),
+
+        // --- TRATAMIENTO 5 ---
+        array(
+            'key'   => 'field_bm_trat_5_imagen',
+            'label' => 'Tratamiento 5 - Imagen',
+            'name'  => 'bm_trat_5_imagen',
+            'type'  => 'image',
+            'return_format' => 'array',
+            'preview_size'  => 'medium',
+        ),
+        array(
+            'key'   => 'field_bm_trat_5_titulo',
+            'label' => 'Tratamiento 5 - Título',
+            'name'  => 'bm_trat_5_titulo',
+            'type'  => 'text',
+        ),
+        array(
+            'key'   => 'field_bm_trat_5_subtitulo',
+            'label' => 'Tratamiento 5 - Subtítulo',
+            'name'  => 'bm_trat_5_subtitulo',
+            'type'  => 'text',
+        ),
+        array(
+            'key'   => 'field_bm_trat_5_texto',
+            'label' => 'Tratamiento 5 - Texto',
+            'name'  => 'bm_trat_5_texto',
+            'type'  => 'textarea',
+            'rows'  => 3,
+        ),
+
+        // --- TRATAMIENTO 6 ---
+        array(
+            'key'   => 'field_bm_trat_6_imagen',
+            'label' => 'Tratamiento 6 - Imagen',
+            'name'  => 'bm_trat_6_imagen',
+            'type'  => 'image',
+            'return_format' => 'array',
+            'preview_size'  => 'medium',
+        ),
+        array(
+            'key'   => 'field_bm_trat_6_titulo',
+            'label' => 'Tratamiento 6 - Título',
+            'name'  => 'bm_trat_6_titulo',
+            'type'  => 'text',
+        ),
+        array(
+            'key'   => 'field_bm_trat_6_subtitulo',
+            'label' => 'Tratamiento 6 - Subtítulo',
+            'name'  => 'bm_trat_6_subtitulo',
+            'type'  => 'text',
+        ),
+        array(
+            'key'   => 'field_bm_trat_6_texto',
+            'label' => 'Tratamiento 6 - Texto',
+            'name'  => 'bm_trat_6_texto',
+            'type'  => 'textarea',
+            'rows'  => 3,
         ),
 
     ),

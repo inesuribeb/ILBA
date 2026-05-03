@@ -31,6 +31,8 @@ function ilba_enqueue_assets() {
     if ( is_singular( 'beauty_medical' ) ) {
         wp_enqueue_style( 'ilba-bm-hero', get_stylesheet_directory_uri() . '/css/beauty-medical/hero.css' );
         wp_enqueue_style( 'ilba-bm-info', get_stylesheet_directory_uri() . '/css/beauty-medical/info.css' );
+        wp_enqueue_style( 'ilba-bm-tratamientos', get_stylesheet_directory_uri() . '/css/beauty-medical/tratamientos.css' );
+
         wp_enqueue_script( 'ilba-bm-sticky-img', get_stylesheet_directory_uri() . '/js/beauty-medical/sticky-img.js', array(), null, true );
 
 
@@ -53,6 +55,7 @@ function ilba_enqueue_assets() {
         wp_enqueue_style( 'ilba-pr-layout', get_stylesheet_directory_uri() . '/css/protocolos/layout.css' );
         wp_enqueue_style( 'ilba-pr-hero',   get_stylesheet_directory_uri() . '/css/protocolos/hero.css' );
         wp_enqueue_style( 'ilba-pr-info', get_stylesheet_directory_uri() . '/css/protocolos/info.css' );
+        wp_enqueue_style( 'ilba-pr-queincluye', get_stylesheet_directory_uri() . '/css/protocolos/que-incluye.css' );
         wp_enqueue_style( 'ilba-pr-formulario', get_stylesheet_directory_uri() . '/css/protocolos/formulario.css' );
 
         wp_enqueue_script( 'ilba-pr-desplegable', get_stylesheet_directory_uri() . '/js/protocolos/desplegable.js', array(), null, true );

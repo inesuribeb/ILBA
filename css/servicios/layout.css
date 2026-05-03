@@ -30,7 +30,7 @@
 }
 
 .sv-sidebar__imagen {
-    width: 100%;
+    width: 80%;
     aspect-ratio: 4 / 5;
     overflow: hidden;
 }
@@ -57,6 +57,8 @@
     text-decoration: none;
     transition: color 0.2s ease;
     display: block;
+    letter-spacing: -1px;
+
 }
 
 .sv-sidebar__nav-link:hover {

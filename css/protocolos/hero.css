@@ -65,7 +65,8 @@
     display: flex;
     align-items: center;
     gap: 0; /* ← sin gap por defecto */
-    font-size: 15px;
+    font-size: 16px;
+    letter-spacing: -1px;
     color: rgba(255,255,255,0.6);
     text-decoration: none;
     padding: 2px 0;
@@ -109,11 +110,12 @@
 
 .pr-hero__subtitulo {
     margin: 0;
-    font-size: 20px;
+    font-size: 22px;
     max-width: 500px;
     line-height: 1.2;
     color: #fff;
     font-family: var(--serif);
+    letter-spacing: -1px;
 
     /* padding-top: 60px; */
 }
@@ -131,7 +133,9 @@
     transform: translate(-50%, -50%);
     text-align: center;
     width: 80%;
-    font-size: 62px;
+    font-size: 65px;
+    letter-spacing: -2px;
+
 }
 
 .pr-hero__cta {
@@ -143,6 +147,8 @@
     padding-bottom: 1px;
     align-self: flex-start;
     transition: opacity 0.2s ease;
+    letter-spacing: -1px;
+
 }
 
 .pr-hero__cta:hover {

@@ -42,9 +42,10 @@
 .pr-info__descripcion {
     margin: 0;
     font-size: 20px;
-    line-height: 1.6;
+    line-height: 1.4;
     max-width: 700px;
     color: var(--light-color);
+    letter-spacing: -1px;
 
 }
 
@@ -59,6 +60,7 @@
 .pr-info__indicados-titulo {
     margin: 0;
     font-size: 18px;
+    letter-spacing: -1px;
     font-weight: 400;
     color: var(--light-color);
 
@@ -74,12 +76,12 @@
 }
 
 .pr-info__indicados-lista li {
-    font-size: 15px;
+    font-size: 18px;
     color: var(--light-color);
     padding: 7px 0;
     /* border-bottom: 1px solid rgba(255,255,255,0.15); */
     border-bottom: 1px solid var(--light-color);
-
+letter-spacing: -1px;
     display: flex;
     align-items: center;
     gap: 12px;
