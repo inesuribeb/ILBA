@@ -1,0 +1,145 @@
+/* =============================================
+   Archive Pages — Grid compartido
+   ============================================= */
+
+   .archive-page {
+    display: flex;
+    flex-direction: column;
+    padding-top: 25vh;
+    /* align-items: center; */
+}
+
+/* Header */
+.archive-page__header {
+    padding: 48px 24px 60px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.archive-page__titulo {
+    /* font-size: clamp(2.5rem, 6vw, 6rem); */
+    font-size: 60px;
+    font-weight: 300;
+    letter-spacing: -2px;
+    line-height: 1;
+    margin: 0;
+    font-family: var(--serif);
+    align-self: center;
+}
+
+/* Grid: 3 columnas por defecto */
+.archive-page__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+}
+
+/* Card */
+.archive-card {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    text-decoration: none;
+    display: block;
+    background-color: #e8e4e0;
+}
+
+/* Imagen */
+.archive-card__imagen {
+    position: absolute;
+    inset: 0;
+    background-color: #e8e4e0;
+}
+
+.archive-card__imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.archive-card:hover .archive-card__imagen img {
+    transform: scale(1.04);
+}
+
+/* Silueta: contain en vez de cover */
+.archive-card__imagen--silueta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.archive-card__imagen--silueta img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+.archive-card--aparatologia:hover .archive-card__imagen--silueta img {
+    transform: scale(1.04);
+}
+
+/* Overlay gradiente */
+.archive-card__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.55) 0%,
+        rgba(0, 0, 0, 0.1) 40%,
+        rgba(0, 0, 0, 0) 70%
+    );
+    transition: background 0.3s ease;
+}
+
+.archive-card:hover .archive-card__overlay {
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.65) 0%,
+        rgba(0, 0, 0, 0.15) 50%,
+        rgba(0, 0, 0, 0) 80%
+    );
+}
+
+/* Info: título abajo izquierda */
+.archive-card__info {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    right: 24px;
+    z-index: 2;
+}
+
+.archive-card__titulo {
+    font-size: clamp(1.1rem, 1.8vw, 1.6rem);
+    font-weight: 300;
+    color: #fff;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+    font-family: var(--serif);
+}
+
+/* RESPONSIVE */
+@media ( max-width: 900px ) {
+    .archive-page__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media ( max-width: 560px ) {
+    .archive-page__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .archive-page__titulo {
+        font-size: 2.5rem;
+        letter-spacing: -2px;
+    }
+
+    .archive-card__info {
+        bottom: 20px;
+        left: 20px;
+        right: 20px;
+    }
+}

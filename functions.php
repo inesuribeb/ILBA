@@ -35,3 +35,32 @@ add_filter( 'body_class', function( $classes ) {
     }
     return $classes;
 });
+
+
+// --- Beauty & Medical: rewrites y permalink personalizado ---
+
+function ilba_beauty_medical_rewrites() {
+    $categorias = array( 'beauty', 'medical' );
+
+    foreach ( $categorias as $cat ) {
+        add_rewrite_rule(
+            '^' . $cat . '/([^/]+)/?$',
+            'index.php?post_type=beauty_medical&name=$matches[1]',
+            'top'
+        );
+    }
+}
+add_action( 'init', 'ilba_beauty_medical_rewrites' );
+
+function ilba_beauty_medical_permalink( $url, $post ) {
+    if ( $post->post_type !== 'beauty_medical' ) return $url;
+
+    $categoria = get_field( 'bm_categoria', $post->ID );
+
+    if ( $categoria ) {
+        return home_url( $categoria . '/' . $post->post_name . '/' );
+    }
+
+    return $url;
+}
+add_filter( 'post_type_link', 'ilba_beauty_medical_permalink', 10, 2 );

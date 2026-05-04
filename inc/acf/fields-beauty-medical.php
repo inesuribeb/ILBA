@@ -35,11 +35,27 @@ acf_add_local_field_group( array(
                 'facial'            => 'Facial',
                 'corporal'          => 'Corporal',
                 'micropigmentacion' => 'Micropigmentación',
+                'tricologia'        => 'Tricología',
             ),
             'default_value' => '',
             'allow_null'    => 0,
             'required'      => 1,
         ),
+
+        // array(
+        //     'key'           => 'field_bm_subcategoria',
+        //     'label'         => 'Subcategoría',
+        //     'name'          => 'bm_subcategoria',
+        //     'type'          => 'select',
+        //     'choices'       => array(
+        //         'facial'            => 'Facial',
+        //         'corporal'          => 'Corporal',
+        //         'micropigmentacion' => 'Micropigmentación',
+        //     ),
+        //     'default_value' => '',
+        //     'allow_null'    => 0,
+        //     'required'      => 1,
+        // ),
 
         // --- HERO ---
         array(
