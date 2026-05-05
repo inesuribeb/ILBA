@@ -135,7 +135,7 @@ function ilba_get_secciones_menu() {
                         'titulo' => 'Vascular',
                         'url'    => '/servicios/vascular/',
                         'items'  => array(
-                            array( 'titulo' => 'Vasculize', 'url' => $ap . 'vasculaze/' ),
+                            array( 'titulo' => 'Vasculaze', 'url' => $ap . 'vasculaze/' ),
                         ),
                     ),
                 ),
