@@ -204,7 +204,7 @@
         padding: 0px 24px;
 
         font-size: 20px;
-        line-height: 1.5;
+        line-height: 1.2;
         padding-bottom: 4rem;
     }
 
@@ -220,12 +220,16 @@
         order: -1;
         max-width: none;
         width: 100%;
+
     }
 
     .sv-info__caracteristica {
         font-size: 20px;
+        line-height: 1.2;
         border-bottom: 1px solid var(--dark-color);
         border-top: none;
+        padding: 6px 0;
+
     }
 
     .sv-info__caracteristica:first-child {
@@ -237,8 +241,12 @@
         padding-bottom: 4rem;
     }
 
+    .sv-info__tag-movil {
+        letter-spacing: -1px;
+    }
+
     .sv-info__cta {
-        font-size: 24px;
+        font-size: 22px;
     }
     
 

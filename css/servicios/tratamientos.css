@@ -213,4 +213,9 @@
     .sv-tr__acordeones {
         order: 2;
     }
+
+    .sv-tr__acordeon-content p {
+        font-size: 17px;
+        
+    }    
 }
