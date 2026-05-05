@@ -57,7 +57,7 @@ if ( empty( $tratamientos ) ) return;
 
                 <div class="bm-trat-card__info-hover">
                     <?php if ( $trat['texto'] ) : ?>
-                        <p class="bm-trat-card__descripcion"><?= esc_html( $trat['texto'] ) ?></p>
+                        <p class="bm-trat-card__descripcion"><?= wp_kses_post( nl2br( esc_html( $trat['texto'] ) ) ) ?></p>
                     <?php endif; ?>
                     <a href="/contacto" class="bm-trat-card__cta">Saber más</a>
                 </div>
