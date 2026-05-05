@@ -13,7 +13,7 @@ $tratamientos = get_field( 'ap_tratamientos' );
 
     <div class="ap-descripcion__izq">
         <?php if ( $descripcion ) : ?>
-            <p class="ap-descripcion__texto"><?php echo esc_html( $descripcion ); ?></p>
+            <p class="ap-descripcion__texto"><?php echo wp_kses_post( nl2br( esc_html( $descripcion ) ) ); ?></p>
         <?php endif; ?>
     </div>
 
@@ -24,7 +24,7 @@ $tratamientos = get_field( 'ap_tratamientos' );
                 <div class="ap-acordeon">
                     <button class="ap-acordeon__btn">¿Para qué sirve?</button>
                     <div class="ap-acordeon__content">
-                        <p><?php echo esc_html( $para_que ); ?></p>
+                        <p><?php echo wp_kses_post( nl2br( esc_html( $para_que ) ) ); ?></p>
                     </div>
                 </div>
             <?php endif; ?>
@@ -33,7 +33,7 @@ $tratamientos = get_field( 'ap_tratamientos' );
                 <div class="ap-acordeon">
                     <button class="ap-acordeon__btn">¿Cómo funciona?</button>
                     <div class="ap-acordeon__content">
-                        <p><?php echo esc_html( $como ); ?></p>
+                        <p><?php echo wp_kses_post( nl2br( esc_html( $como ) ) ); ?></p>
                     </div>
                 </div>
             <?php endif; ?>
@@ -42,7 +42,7 @@ $tratamientos = get_field( 'ap_tratamientos' );
                 <div class="ap-acordeon">
                     <button class="ap-acordeon__btn">¿En qué tratamientos lo utilizamos?</button>
                     <div class="ap-acordeon__content">
-                        <p><?php echo esc_html( $tratamientos ); ?></p>
+                        <p><?php echo wp_kses_post( nl2br( esc_html( $tratamientos ) ) ); ?></p>
                     </div>
                 </div>
             <?php endif; ?>
