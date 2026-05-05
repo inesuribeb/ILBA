@@ -170,8 +170,9 @@
         gap: 2rem;
         padding-right: 24px;
         box-sizing: border-box; /* ← */
-
+        border-top: none;
     }
+
 
     /* Imagen vertical full width */
     .home-clinica__img-vertical {
@@ -196,6 +197,7 @@
 
     .home-clinica__titulo {
         font-size: 22px;
+        letter-spacing: -1px;
     }
 
     /* Imagen horizontal como columna derecha */
