@@ -40,6 +40,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 150);
     };
 
+     // --- Prevenir clic en secciones sin página ---
+     secciones.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+        });
+    });
+
     secciones.forEach(link => {
         link.addEventListener('mouseenter', () => {
             openPanel(link.dataset.seccion);
