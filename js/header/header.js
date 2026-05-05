@@ -77,34 +77,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Header light cuando el hero es visible ---
-    // const hero = document.querySelector('.bm-hero');
-    // if ( hero ) {
-    //     const observer = new IntersectionObserver(
-    //         ([entry]) => {
-    //             header.classList.toggle( 'header--light', entry.isIntersecting );
-    //         },
-    //         { threshold: 0 }
-    //     );
-    //     observer.observe( hero );
-    // }
-
-    // --- Header light cuando el hero de home es visible ---
-    // if ( document.body.classList.contains( 'home' ) ) {
-    //     header.classList.add( 'header--light' );
-
-    //     const homeHero = document.querySelector( '.home-hero' );
-    //     if ( homeHero ) {
-    //         const observer = new IntersectionObserver(
-    //             ([entry]) => {
-    //                 header.classList.toggle( 'header--light', entry.isIntersecting );
-    //             },
-    //             { threshold: 0 }
-    //         );
-    //         observer.observe( homeHero );
-    //     }
-    // }
-
     // --- Header light cuando el hero BM es visible (todo blanco) ---
 const hero = document.querySelector('.bm-hero');
 if ( hero ) {

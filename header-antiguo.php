@@ -39,9 +39,6 @@
                     <?php echo esc_html( $seccion['titulo'] ); ?>
                 </a>
             <?php endforeach; ?>
-            <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'somos' ) ) ); ?>" class="header__nav-link">
-    Somos
-</a>
             <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'contacto' ) ) ); ?>" class="header__nav-link">
                 Contáctanos
             </a>
@@ -85,9 +82,6 @@
                                     <div class="header__panel-columna">
                                         <a href="<?php echo esc_url( $columna['url'] ); ?>" class="header__panel-col-titulo">
                                             <?php echo esc_html( $columna['titulo'] ); ?>
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-                                            </svg>
                                         </a>
                                         <?php if ( ! empty( $columna['items'] ) ) : ?>
                                             <ul class="header__panel-items">
@@ -111,9 +105,6 @@
                                 <div class="header__panel-columna">
                                     <a href="<?php echo esc_url( $columna['url'] ); ?>" class="header__panel-col-titulo">
                                         <?php echo esc_html( $columna['titulo'] ); ?>
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-                                        </svg>
                                     </a>
                                     <?php if ( ! empty( $columna['items'] ) ) : ?>
                                         <ul class="header__panel-items">

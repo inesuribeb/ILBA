@@ -43,7 +43,7 @@ function ilba_get_secciones_menu() {
             'url'         => '#',
             'columnas'    => array(
                 array(
-                    'titulo' => 'Faciales',
+                    'titulo' => 'Tratamientos faciales',
                     'url'    => $bm . 'beauty-facial/',
                     'items'  => array(
                         array( 'titulo' => 'Observ de Silton',              'url' => $ap . 'observ-de-silton/' ),
@@ -54,7 +54,7 @@ function ilba_get_secciones_menu() {
                     ),
                 ),
                 array(
-                    'titulo' => 'Corporales',
+                    'titulo' => 'Tratamientos corporales',
                     'url'    => $bm . 'beauty-corporal/',
                     'items'  => array(
                         array( 'titulo' => 'Evolvex',                  'url' => $ap . 'evolvex/' ),
@@ -79,7 +79,7 @@ function ilba_get_secciones_menu() {
             'url'         => '#',
             'columnas'    => array(
                 array(
-                    'titulo' => 'Faciales',
+                    'titulo' => 'Tratamientos faciales',
                     'url'    => $bm . 'medical-faciales/',
                     'items'  => array(
                         array( 'titulo' => 'Thermage by Soltan Medical', 'url' => $ap . 'thermage-by-soltan-medical/' ),
@@ -90,7 +90,7 @@ function ilba_get_secciones_menu() {
                     ),
                 ),
                 array(
-                    'titulo' => 'Corporales',
+                    'titulo' => 'Tratamientos corporales',
                     'url'    => $bm . 'medical-corporales/',
                     'items'  => array(
                         array( 'titulo' => 'Thermage by Soltan Medical', 'url' => $ap . 'thermage-by-soltan-medical/' ),
