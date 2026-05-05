@@ -71,9 +71,9 @@ $current_url = get_permalink( get_the_ID() );
                 <h1 class="pr-hero__titulo"><?php echo esc_html( $titulo ); ?></h1>
             <?php endif; ?>
 
-            <a href="<?php echo esc_url( $contacto_url ); ?>" class="pr-hero__cta">
-                Pide cita
-            </a>
+            <a href="#pr-formulario" class="pr-hero__cta">
+    Pide cita
+</a>
         </div>
 
     </div>
@@ -99,8 +99,8 @@ $current_url = get_permalink( get_the_ID() );
     </div>
 
     <!-- CTA fijo abajo móvil -->
-    <a href="<?php echo esc_url( $contacto_url ); ?>" class="pr-hero__cta-movil">
-        Pide cita
-    </a>
+    <a href="#pr-formulario" class="pr-hero__cta-movil">
+    Pide cita
+</a>
 
 </section>
