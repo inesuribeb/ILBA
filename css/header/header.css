@@ -129,3 +129,9 @@
 .header--light-home:hover .header__logo-link {
     color: var(--dark-color);
 }
+
+
+.page-somos .header__nav-link,
+.page-somos .header__logo-link {
+    color: var(--light-color);
+}
