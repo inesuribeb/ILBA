@@ -129,6 +129,14 @@ for ( $i = 1; $i <= 4; $i++ ) {
             </div>
         </div>
     </div>
+    <!-- Botón flotante WhatsApp -->
+<a href="https://wa.me/34679789560"
+   class="footer__whatsapp"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Contactar por WhatsApp">
+    <img src="<?= esc_url( get_stylesheet_directory_uri() . '/images/whatsicon2.png' ) ?>" alt="WhatsApp">
+</a>
 
 </footer>
 
