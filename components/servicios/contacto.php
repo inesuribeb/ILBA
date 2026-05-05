@@ -7,9 +7,7 @@
 $contacto_url = get_permalink( get_page_by_path( 'contacto' ) );
 
 // Imagen — cambiar el ID por el de la imagen subida en Media
-$imagen_id  = 0; // TODO: poner el ID de la imagen desde Media
-// $imagen_url = $imagen_id ? wp_get_attachment_image_url( $imagen_id, 'full' ) : '';
-$imagen_url = 'http://ilba.local/wp-content/uploads/2026/04/ai_ingrediens-3.png';
+$imagen_url = get_stylesheet_directory_uri() . '/images/espera2.webp';
 ?>
 
 <section class="sv-contacto" id="sv-contacto">
