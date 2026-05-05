@@ -220,9 +220,11 @@
 }
 
 .header-mobile__nav-item--titulo .header-mobile__nav-link--titulo svg {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     flex-shrink: 0;
+    transform: translateY(4px); /* ← aquí */
+
 }
 
 .header-mobile__nav-item--aparato {
