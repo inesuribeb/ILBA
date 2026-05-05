@@ -8,6 +8,7 @@
     gap: 80px;
     padding: 80px 60px 80px 60px;
     align-items: flex-start;
+    background-color: black;
 }
 
 /* --- Izquierda --- */
@@ -22,11 +23,12 @@
 
 .pr-formulario__titulo {
     margin: 0;
-    /* font-size: clamp(1.5rem, 2.5vw, 2.2rem); */
     font-size: 32px;
     letter-spacing: -2px;
     font-weight: 400;
-    color: var(--dark-color);
+    /* color: var(--dark-color); */
+    color: var(--light-color);
+
     line-height: 1.2;
     font-family: var(--sans-serif);
 }
@@ -35,7 +37,8 @@
     margin: 0;
     font-size: 18px;
     line-height: 1.4;
-    color: var(--dark-color);
+    /* color: var(--dark-color); */
+    color: var(--light-color);
     max-width: 450px;
     letter-spacing: -1px;
 }
@@ -63,10 +66,6 @@
     gap: 0.75rem;
 }
 
-/* .pr-form__row--dos .pr-form__input:first-child {
-    border-right: none;
-} */
-
 /* --- Inputs --- */
 
 .pr-form__input,
@@ -78,7 +77,8 @@
     background: transparent;
     font-size: 15px;
     letter-spacing: -1px;
-    color: var(--dark-color);
+    /* color: var(--dark-color); */
+    color: var(--light-color);
     outline: none;
     font-family: inherit;
     transition: border-color 0.2s ease;
@@ -86,15 +86,12 @@
     -webkit-appearance: none;
 }
 
-/* .pr-form__input:focus,
-.pr-form__select:focus,
-.pr-form__textarea:focus {
-    border-color: var(--dark-color);
-} */
 
 .pr-form__input::placeholder,
 .pr-form__textarea::placeholder {
-    color: #aaa;
+    /* color: #aaa; */
+    color: #c9c9c9;
+
 }
 
 /* .pr-form__row + .pr-form__row .pr-form__input,
@@ -127,6 +124,7 @@
     padding: 8px;
     background: #2d2d2d;
     color: #fff;
+
     border: none;
     font-size: 15px;
     font-family: inherit;
