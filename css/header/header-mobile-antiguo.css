@@ -7,6 +7,14 @@
 }
 
 @media ( max-width: 1024px ) {
+    /* .header-mobile__menu.is-open ~ .footer__whatsapp,
+    body.menu-abierto .footer__whatsapp {
+        display: none;
+    }
+
+    .footer__whatsapp {
+        display: none;
+    } */
 
     /* Ocultar header desktop */
     .header {
@@ -88,7 +96,7 @@
     display: none;
     position: fixed;
     inset: 0;
-    z-index: 99;
+    z-index: 201;
     background: var(--light-color);
     flex-direction: column;
     justify-content: space-between;
@@ -222,7 +230,7 @@
     display: none;
     position: fixed;
     inset: 0;
-    z-index: 101;
+    z-index: 202;
     background: var(--light-color);
     flex-direction: column;
 }
