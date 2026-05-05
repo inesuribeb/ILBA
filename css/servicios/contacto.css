@@ -59,6 +59,7 @@
     border-bottom: 1px solid var(--dark-color);
     padding-bottom: 2px;
     transition: opacity 0.2s ease;
+    letter-spacing: -1px;
 }
 
 .sv-contacto__cta:hover {
