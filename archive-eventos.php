@@ -48,7 +48,7 @@ usort( $anteriores, fn( $a, $b ) => $b['ts'] - $a['ts'] );
 
     <!-- FLEX 1: Título -->
     <div class="page-eventos__header">
-        <h1 class="page-eventos__titulo">Eventos ILBA Internatttional</h1>
+        <h1 class="page-eventos__titulo">Eventos ILBA InternaTional</h1>
     </div>
 
     <!-- FLEX 2: Secciones -->
