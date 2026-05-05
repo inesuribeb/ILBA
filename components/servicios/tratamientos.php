@@ -27,9 +27,9 @@ if ( empty( $tratamientos ) ) return;
 <section class="sv-tratamientos" id="sv-tratamientos">
 
     <div class="sv-tratamientos__header">
-    <span class="sv-tratamientos__tag-movil">Tratamientos</span>
+        <span class="sv-tratamientos__tag-movil">Tratamientos</span>
 
-    <?php if ( $subtitulo ) : ?>
+        <?php if ( $subtitulo ) : ?>
             <h2 class="sv-tratamientos__subtitulo"><?php echo esc_html( $subtitulo ); ?></h2>
         <?php endif; ?>
     </div>
@@ -47,7 +47,7 @@ if ( empty( $tratamientos ) ) return;
                             <div class="sv-tr__acordeon">
                                 <button class="sv-tr__acordeon-btn">¿Qué es?</button>
                                 <div class="sv-tr__acordeon-content">
-                                    <p><?php echo esc_html( $tr['que_es'] ); ?></p>
+                                    <p><?php echo nl2br( wp_kses_post( $tr['que_es'] ) ); ?></p>
                                 </div>
                             </div>
                         <?php endif; ?>
@@ -56,7 +56,7 @@ if ( empty( $tratamientos ) ) return;
                             <div class="sv-tr__acordeon">
                                 <button class="sv-tr__acordeon-btn">Beneficios</button>
                                 <div class="sv-tr__acordeon-content">
-                                    <p><?php echo esc_html( $tr['beneficios'] ); ?></p>
+                                    <p><?php echo nl2br( wp_kses_post( $tr['beneficios'] ) ); ?></p>
                                 </div>
                             </div>
                         <?php endif; ?>
@@ -65,7 +65,7 @@ if ( empty( $tratamientos ) ) return;
                             <div class="sv-tr__acordeon">
                                 <button class="sv-tr__acordeon-btn">¿Cuándo está indicado?</button>
                                 <div class="sv-tr__acordeon-content">
-                                    <p><?php echo esc_html( $tr['indicado'] ); ?></p>
+                                    <p><?php echo nl2br( wp_kses_post( $tr['indicado'] ) ); ?></p>
                                 </div>
                             </div>
                         <?php endif; ?>
