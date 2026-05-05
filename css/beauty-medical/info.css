@@ -109,11 +109,19 @@
     }
 
     .bm-info {
-        padding: 40px 24px;
+        padding: 30px 24px;
     }
 
     .bm-info__col-main {
         padding-right: 0;
+    }
+
+    .bm-info__descripcion {
+        margin: 0;
+        font-size: 22px;
+        line-height: 1.2;
+        padding-bottom: 3rem;
+        letter-spacing: -1px;
     }
 
     .bm-info__caracteristicas {
@@ -121,7 +129,10 @@
     }
 
     .bm-info__caracteristica {
-        font-size: 22px;
+        font-size: 20px;
+        padding: 6px 0;
+        line-height: 1.2;
+
     }
 
     .bm-info__imagenes {
