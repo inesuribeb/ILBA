@@ -12,8 +12,10 @@
 .sv-layout__sidebar {
     flex: 0 0 15%;
     position: sticky;
-    top: 0;
-    height: 100vh;
+    /* top: 0;
+    height: 100vh; */
+    top: 80px;
+    height: calc(100vh - 120px);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
