@@ -64,3 +64,26 @@ function ilba_beauty_medical_permalink( $url, $post ) {
     return $url;
 }
 add_filter( 'post_type_link', 'ilba_beauty_medical_permalink', 10, 2 );
+
+
+// --- CF7: opciones dinámicas ACF en formulario de protocolos ---
+add_filter( 'wpcf7_form_elements', function( $html ) {
+    if ( ! is_singular( 'protocolos' ) ) return $html;
+
+    $preguntas = array();
+    for ( $i = 1; $i <= 4; $i++ ) {
+        $pregunta = get_field( 'pr_form_pregunta_' . $i );
+        if ( $pregunta ) $preguntas[] = '<option value="' . esc_attr( $pregunta ) . '">' . esc_html( $pregunta ) . '</option>';
+    }
+
+    if ( empty( $preguntas ) ) return $html;
+
+    $opciones = implode( '', $preguntas );
+    $html = preg_replace(
+        '/(<select[^>]*name="momento"[^>]*>)(.*?)(<\/select>)/s',
+        '$1<option value="" disabled selected>¿En qué momento estás?*</option>' . $opciones . '$3',
+        $html
+    );
+
+    return $html;
+});
