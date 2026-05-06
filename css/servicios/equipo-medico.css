@@ -78,3 +78,42 @@
     letter-spacing: -0.5px;
     color: var(--dark-color);
 }
+
+
+
+@media ( max-width: 1024px ) {
+
+    .sv-equipo-medico {
+        padding: 40px 24px;
+    }
+
+    .sv-equipo-medico__col-main {
+        border-top: none;
+        padding-top: 0;
+    }
+
+    .sv-equipo-medico__grid {
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        gap: 12px;
+        padding-bottom: 8px;
+    }
+
+    .sv-equipo-medico__grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .sv-equipo__card {
+        flex: 0 0 70%;
+        scroll-snap-align: start;
+    }
+}
+
+@media ( max-width: 600px ) {
+    .sv-equipo__card {
+        flex: 0 0 75%;
+    }
+}
