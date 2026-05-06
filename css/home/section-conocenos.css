@@ -289,6 +289,18 @@
         display: none;
     }
 
+    .home-conocenos__titulo{
+        line-height: 1.2;
+        font-size: 24px;
+        letter-spacing: -1px;
+    }
+
+    .home-descripcion{
+        line-height: 1;
+        /* font-size: 24px;
+        letter-spacing: -1px; */
+    }
+
     /* img_vertical a la derecha, anclada abajo */
     .home-conocenos__img-vertical {
         flex-shrink: 0;

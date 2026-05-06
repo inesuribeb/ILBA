@@ -194,6 +194,7 @@
         margin: 0 0 40px 0;
         line-height: 1;
         font-size: 24px;
+        letter-spacing: -1px;
     }
 
     .home-servicios__card {
@@ -204,6 +205,11 @@
 
     .home-servicios__card-titulo {
         font-size: 20px;
+    }
+
+    .home-servicios__card-desc {
+        line-height: 1;
+    
     }
 
     .home-servicios__card-imagen {

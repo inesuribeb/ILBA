@@ -196,7 +196,10 @@
     }
 
     .home-clinica__titulo {
-        font-size: 22px;
+        /* font-size: 22px;
+        letter-spacing: -1px; */
+        line-height: 1.2;
+        font-size: 24px;
         letter-spacing: -1px;
     }
 
