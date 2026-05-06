@@ -74,7 +74,7 @@
 }
 
 
-@media ( max-width: 1024px ) {
+/* @media ( max-width: 1024px ) {
 
     .somos-clinica {
         flex-direction: column;
@@ -107,5 +107,51 @@
 
     .somos-clinica__foto {
         scroll-snap-align: start;
+    }
+} */
+
+
+@media ( max-width: 1024px ) {
+
+    .somos-clinica {
+        flex-direction: column;
+        height: auto;
+        padding: 40px 0 40px 24px;
+        gap: 1rem;
+        overflow: hidden;
+    }
+
+    .somos-clinica__col-tag {
+        width: 100%;
+    }
+
+    .somos-clinica__tag {
+        font-size: 20px;
+    }
+
+    .somos-clinica__col-main {
+        width: 100%;
+        height: 50vh;
+        overflow: hidden;
+        border-top: none;
+    }
+
+    .somos-clinica__fotos {
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x proximity;
+        scroll-behavior: smooth;
+    }
+
+    .somos-clinica__foto {
+        scroll-snap-align: start;
+        width: auto;
+        flex-shrink: 0;
+    }
+
+    .somos-clinica__foto img {
+        height: 100%;
+        width: auto;
+        object-fit: cover;
+        display: block;
     }
 }
