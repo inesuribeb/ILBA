@@ -291,6 +291,7 @@
         padding: 100px 0 30px 0;
     }
 
+
     .bm-tratamientos__grid {
         grid-template-columns: 1fr;
         padding-top: 5px;
@@ -307,19 +308,23 @@
     }
 
     .bm-tratamientos__titulo {
-        padding: 0 10px;
-        margin-bottom: 32px;
+        padding: 0 24px;
+        margin-bottom: 24px;
         text-align: left;
-
+        letter-spacing: -1px;
+        font-size: 24px;
+        line-height: 1.2;
     }
+
+
 
     .bm-trat-card__info-default {
         bottom: 20px;
-        left: 20px;
-        right: 20px;
+        left: 24px;
+        right: 24px;
     }
 
     .bm-trat-card__info-hover {
-        padding: 20px;
+        padding: 24px;
     }
 }
