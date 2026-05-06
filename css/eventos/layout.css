@@ -6,3 +6,41 @@
     display: flex;
     flex-direction: column;
 }
+
+
+.ev-cta-flotante {
+    position: fixed;
+    bottom: 32px;
+    right: 120px;
+    z-index: 50;
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: var(--dark-color);
+    text-decoration: none;
+    font-size: 15px;
+    letter-spacing: -0.5px;
+    padding: 10px 20px;
+    font-family: inherit;
+    transition: opacity 0.2s ease;
+}
+
+.ev-cta-flotante:hover {
+    opacity: 0.8;
+}
+
+@media ( max-width: 1024px ) {
+    .ev-cta-flotante {
+        top: 10vh;
+        bottom: auto; 
+        /* right: 24px; */
+        left: 24px;
+        right: auto;
+        /* bottom: 24px;
+        left: 24px;
+        right: auto; */
+        font-size: 14px;
+        padding: 10px 15px;
+
+    }
+}

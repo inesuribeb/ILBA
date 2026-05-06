@@ -153,7 +153,8 @@
 @media ( max-width: 1024px ) {
 
     .ev-modal {
-        bottom: 24px;
+        bottom: 20px;
+        /* bottom: 70px; */
         left: 24px;
         right: 24px;
         width: auto;
