@@ -43,31 +43,30 @@
     letter-spacing: -1px;
 }
 
+
+
+
+
+
 /* --- Derecha: form --- */
 
-.pr-formulario__der {
+/* .pr-formulario__der {
     flex: 1;
 }
-
 .pr-form {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
 }
-
 .pr-form__row {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     gap: 0.75rem;
 }
-
 .pr-form__row--dos {
     gap: 0.75rem;
 }
-
-/* --- Inputs --- */
-
 .pr-form__input,
 .pr-form__select,
 .pr-form__textarea {
@@ -77,7 +76,6 @@
     background: transparent;
     font-size: 15px;
     letter-spacing: -1px;
-    /* color: var(--dark-color); */
     color: var(--light-color);
     outline: none;
     font-family: inherit;
@@ -85,23 +83,10 @@
     border-radius: 0;
     -webkit-appearance: none;
 }
-
-
 .pr-form__input::placeholder,
 .pr-form__textarea::placeholder {
-    /* color: #aaa; */
     color: #c9c9c9;
-
 }
-
-/* .pr-form__row + .pr-form__row .pr-form__input,
-.pr-form__row + .pr-form__row .pr-form__select,
-.pr-form__row + .pr-form__row .pr-form__textarea {
-    border-top: none;
-} */
-
-/* Select custom arrow */
-
 .pr-form__select {
     cursor: pointer;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23333' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
@@ -109,22 +94,15 @@
     background-position: right 16px center;
     padding-right: 40px;
 }
-
-/* Textarea */
-
 .pr-form__textarea {
     resize: vertical;
     min-height: 160px;
 }
-
-/* Submit */
-
 .pr-form__submit {
     width: 100%;
     padding: 8px;
     background: #2d2d2d;
     color: #fff;
-
     border: none;
     font-size: 15px;
     font-family: inherit;
@@ -134,15 +112,88 @@
     letter-spacing: -1px;
 
 }
-
 .pr-form__submit:hover {
+    background: #111;
+} */
+/* --- Derecha: form --- */
+
+.pr-formulario__der {
+    flex: 1;
+}
+
+.pr-formulario__der .wpcf7-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.pr-formulario__der .ct-form__row {
+    display: flex;
+    flex-direction: row;
+    gap: 0.75rem;
+}
+
+.pr-formulario__der .wpcf7-form-control-wrap {
+    width: 100%;
+}
+
+.pr-formulario__der .wpcf7-text,
+.pr-formulario__der .wpcf7-email,
+.pr-formulario__der .wpcf7-select,
+.pr-formulario__der .wpcf7-textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--dark-color);
+    background: transparent;
+    font-size: 15px;
+    letter-spacing: -1px;
+    color: var(--light-color);
+    outline: none;
+    font-family: inherit;
+    transition: border-color 0.2s ease;
+    border-radius: 0;
+    -webkit-appearance: none;
+}
+
+.pr-formulario__der .wpcf7-text::placeholder,
+.pr-formulario__der .wpcf7-email::placeholder,
+.pr-formulario__der .wpcf7-textarea::placeholder {
+    color: #c9c9c9;
+}
+
+.pr-formulario__der .wpcf7-select {
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23333' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 40px;
+}
+
+.pr-formulario__der .wpcf7-textarea {
+    resize: vertical;
+    min-height: 160px;
+}
+
+.pr-formulario__der .wpcf7-submit {
+    width: 100%;
+    padding: 8px;
+    background: #2d2d2d;
+    color: #fff;
+    border: none;
+    font-size: 15px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    letter-spacing: -1px;
+}
+
+.pr-formulario__der .wpcf7-submit:hover {
     background: #111;
 }
 
 
 
-
-@media ( max-width: 1024px ) {
+/* @media ( max-width: 1024px ) {
 
     .pr-formulario {
         flex-direction: column;
@@ -179,6 +230,39 @@
     .pr-form__input,
     .pr-form__select,
     .pr-form__textarea {
+        box-sizing: border-box;
+    }
+} */
+
+
+
+@media ( max-width: 1024px ) {
+
+    .pr-formulario {
+        flex-direction: column;
+        padding: 60px 24px;
+        gap: 40px;
+    }
+
+    .pr-formulario__izq,
+    .pr-formulario__der {
+        flex: none;
+        width: 100%;
+    }
+
+    .pr-formulario__descripcion {
+        font-size: 16px;
+        max-width: none;
+    }
+
+    .pr-formulario__der .ct-form__row {
+        flex-direction: column;
+    }
+
+    .pr-formulario__der .wpcf7-text,
+    .pr-formulario__der .wpcf7-email,
+    .pr-formulario__der .wpcf7-select,
+    .pr-formulario__der .wpcf7-textarea {
         box-sizing: border-box;
     }
 }
