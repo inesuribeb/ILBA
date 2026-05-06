@@ -72,16 +72,39 @@ $evento_url = get_post_type_archive_link( 'eventos' );
 
                     <?php if ( isset( $seccion['tipo'] ) && $seccion['tipo'] === 'wellness' ) : ?>
                         <?php foreach ( $seccion['protocolos'] as $protocolo ) : ?>
-    <div class="header-mobile__nav-item">
-        <a href="<?php echo esc_url( $protocolo['url'] ); ?>" class="header-mobile__nav-link">
-            Protocolo <?php echo esc_html( $protocolo['titulo'] ); ?>
-        </a>
-    </div>
-<?php endforeach; ?>
+                            <div class="header-mobile__nav-item">
+                                <a href="<?php echo esc_url( $protocolo['url'] ); ?>" class="header-mobile__nav-link">
+                                    Protocolo <?php echo esc_html( $protocolo['titulo'] ); ?>
+                                </a>
+                            </div>
+                        <?php endforeach; ?>
 
                     <?php elseif ( isset( $seccion['filas'] ) ) : ?>
                         <?php foreach ( $seccion['filas'] as $fila ) : ?>
                             <?php foreach ( $fila as $columna ) : ?>
+                                <div class="header-mobile__aparatos-grupo">
+                                    <div class="header-mobile__nav-item header-mobile__nav-item--titulo">
+                                        <a href="<?php echo esc_url( $columna['url'] ); ?>" class="header-mobile__nav-link header-mobile__nav-link--titulo">
+                                            <?php echo esc_html( $columna['titulo'] ); ?>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                    <?php foreach ( $columna['items'] as $item ) : ?>
+                                        <div class="header-mobile__nav-item header-mobile__nav-item--aparato">
+                                            <a href="<?php echo esc_url( $item['url'] ); ?>" class="header-mobile__nav-link">
+                                                <?php echo esc_html( $item['titulo'] ); ?>
+                                            </a>
+                                        </div>
+                                    <?php endforeach; ?>
+                                </div>
+                            <?php endforeach; ?>
+                        <?php endforeach; ?>
+
+                    <?php else : ?>
+                        <?php foreach ( $seccion['columnas'] as $columna ) : ?>
+                            <div class="header-mobile__aparatos-grupo">
                                 <div class="header-mobile__nav-item header-mobile__nav-item--titulo">
                                     <a href="<?php echo esc_url( $columna['url'] ); ?>" class="header-mobile__nav-link header-mobile__nav-link--titulo">
                                         <?php echo esc_html( $columna['titulo'] ); ?>
@@ -97,26 +120,7 @@ $evento_url = get_post_type_archive_link( 'eventos' );
                                         </a>
                                     </div>
                                 <?php endforeach; ?>
-                            <?php endforeach; ?>
-                        <?php endforeach; ?>
-
-                    <?php else : ?>
-                        <?php foreach ( $seccion['columnas'] as $columna ) : ?>
-                            <div class="header-mobile__nav-item header-mobile__nav-item--titulo">
-                                <a href="<?php echo esc_url( $columna['url'] ); ?>" class="header-mobile__nav-link header-mobile__nav-link--titulo">
-                                    <?php echo esc_html( $columna['titulo'] ); ?>
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-                                    </svg>
-                                </a>
                             </div>
-                            <?php foreach ( $columna['items'] as $item ) : ?>
-                                <div class="header-mobile__nav-item header-mobile__nav-item--aparato">
-                                    <a href="<?php echo esc_url( $item['url'] ); ?>" class="header-mobile__nav-link">
-                                        <?php echo esc_html( $item['titulo'] ); ?>
-                                    </a>
-                                </div>
-                            <?php endforeach; ?>
                         <?php endforeach; ?>
                     <?php endif; ?>
 

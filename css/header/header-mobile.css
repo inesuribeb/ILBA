@@ -121,7 +121,7 @@
 .header-mobile__panel-scroll {
     flex: 1;
     overflow-y: auto;
-    padding: 0 24px;
+    padding: 20px 24px;
     display: flex;
     flex-direction: column;
     gap: 0;
@@ -217,6 +217,7 @@
     padding: 16px 0;
     color: var(--dark-color);
     text-decoration: none;
+    /* padding-bottom: 25px; */
 }
 
 .header-mobile__nav-item--titulo .header-mobile__nav-link--titulo svg {
@@ -229,6 +230,7 @@
 
 .header-mobile__nav-item--aparato {
     border-bottom: none;
+    /* padding-top: 20px; */
 }
 
 .header-mobile__nav-item--aparato .header-mobile__nav-link {
@@ -274,12 +276,17 @@
 
 .header-mobile__panel-2 .header-mobile__nav-link {
     text-decoration: none;
-    padding: 12px 0;
+    padding: 4px 0;
     display: block;
 }
 
-
-
+.header-mobile__nav-item--titulo {
+    margin-bottom: 0.75rem;
+}
+.header-mobile__aparatos-grupo {
+    /* padding-top: 1.5rem; */
+    margin-bottom: 1.5rem;
+}
 
 
 
