@@ -45,6 +45,7 @@ function ilba_enqueue_assets() {
         wp_enqueue_style( 'ilba-sv-hero',        $uri . '/css/servicios/hero.css',        array(), filemtime( $dir . '/css/servicios/hero.css' ) );
         wp_enqueue_style( 'ilba-sv-info',        $uri . '/css/servicios/info.css',        array(), filemtime( $dir . '/css/servicios/info.css' ) );
         wp_enqueue_style( 'ilba-sv-tratamientos', $uri . '/css/servicios/tratamientos.css', array(), filemtime( $dir . '/css/servicios/tratamientos.css' ) );
+        wp_enqueue_style( 'ilba-sv-equipo', $uri . '/css/servicios/equipo-medico.css', array(), filemtime( $dir . '/css/servicios/equipo-medico.css' ) );
         wp_enqueue_style( 'ilba-sv-contacto',    $uri . '/css/servicios/contacto.css',    array(), filemtime( $dir . '/css/servicios/contacto.css' ) );
 
         wp_enqueue_script( 'ilba-sv-acordeones',  $uri . '/js/servicios/acordeones.js',  array(), filemtime( $dir . '/js/servicios/acordeones.js' ),  true );
