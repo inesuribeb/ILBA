@@ -16,9 +16,10 @@
     .header-mobile {
         display: flex;
         flex-direction: row;
-        align-items: center;
+        /* align-items: center; */
+        align-items: flex-start;
         justify-content: space-between;
-        padding: 10px 24px;
+        padding: 24px 24px;
         position: fixed;
         top: 0;
         left: 0;
@@ -46,7 +47,7 @@
     .header-mobile__menu-btn {
         background: none;
         border: none;
-        font-size: 18px;
+        font-size: 17px;
         color: var(--dark-color);
         font-family: inherit;
         cursor: pointer;
@@ -60,11 +61,13 @@
 
     .header-mobile__logo-link {
         font-family: var(--serif);
-        font-size: 70px;
+        font-size: 60px;
         color: var(--dark-color);
         text-decoration: none;
         line-height: 1;
-        letter-spacing: -0.15rem;
+        letter-spacing: -5px;
+        transform: translateY(-10px); /* ajusta este valor */
+    display: inline-block;
     }
 
     .header-mobile__der {

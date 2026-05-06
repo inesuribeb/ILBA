@@ -132,6 +132,10 @@
 
 @media ( max-width: 768px ) {
 
+    .home-hero {
+        height: 90vh;
+    }
+
     .home-hero__mitad--der {
         display: none;
     }
