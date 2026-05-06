@@ -31,7 +31,7 @@
 
 @media ( max-width: 1024px ) {
     .ev-cta-flotante {
-        top: 10vh;
+        top: 15vh;
         bottom: auto; 
         /* right: 24px; */
         left: 24px;
