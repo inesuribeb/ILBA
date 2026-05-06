@@ -39,6 +39,35 @@ acf_add_local_field_group( array(
             'required' => 1,
         ),
 
+        // --- CATEGORÍA ---
+        array(
+            'key'     => 'field_em_categoria',
+            'label'   => 'Categoría',
+            'name'    => 'em_categoria',
+            'type'    => 'select',
+            'choices' => array(
+                'sanitaria'      => 'Sanitaria',
+                'enfermera'      => 'Enfermera',
+                'administrativa' => 'Administrativa',
+                'tecnica'        => 'Técnica',
+            ),
+            'default_value' => 'sanitaria',
+            'allow_null'    => 0,
+            'ui'            => 0,
+        ),
+
+        // --- MOSTRAR ---
+        array(
+            'key'           => 'field_em_mostrar',
+            'label'         => 'Mostrar',
+            'name'          => 'em_mostrar',
+            'type'          => 'true_false',
+            'default_value' => 1,
+            'ui'            => 1,
+            'ui_on_text'    => 'Sí',
+            'ui_off_text'   => 'No',
+        ),
+
         // --- LINK ASOCIADO ---
         // array(
         //     'key'          => 'field_em_link',
