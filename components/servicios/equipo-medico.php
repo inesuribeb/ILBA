@@ -22,11 +22,14 @@ $somos_url = get_permalink( get_page_by_path( 'somos' ) );
         <?php endif; ?>
 
         <div class="sv-equipo-medico__grid">
-            <?php foreach ( $equipo as $miembro ) :
-                $foto   = get_field( 'em_foto',  $miembro->ID );
-                $cargo  = get_field( 'em_cargo', $miembro->ID );
-                $nombre = $miembro->post_title;
-            ?>
+        <?php foreach ( $equipo as $miembro ) :
+    $mostrar = get_field( 'em_mostrar', $miembro->ID );
+    if ( ! $mostrar ) continue;
+
+    $foto   = get_field( 'em_foto',  $miembro->ID );
+    $cargo  = get_field( 'em_cargo', $miembro->ID );
+    $nombre = $miembro->post_title;
+?>
                 <a href="<?php echo esc_url( $somos_url ); ?>" class="sv-equipo__card">
 
                     <div class="sv-equipo__foto">
