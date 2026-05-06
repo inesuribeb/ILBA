@@ -11,17 +11,13 @@ if ( empty( $equipo ) ) return;
 
 <section class="sv-equipo-medico" id="sv-equipo-medico">
 
-    <div class="sv-equipo-medico__col-tag">
+    <!-- <div class="sv-equipo-medico__col-tag">
         <span class="sv-equipo-medico__tag">Equipo médico</span>
-    </div>
+    </div> -->
 
     <div class="sv-equipo-medico__col-main">
 
-        <!-- <?php if ( $subtitulo ) : ?>
-            <div class="sv-equipo-medico__header">
-                <h2 class="sv-equipo-medico__subtitulo"><?php echo esc_html( $subtitulo ); ?></h2>
-            </div>
-        <?php endif; ?> -->
+     
 
         <div class="sv-equipo-medico__grid">
             <?php foreach ( $equipo as $miembro ) :
