@@ -21,6 +21,7 @@ document.addEventListener( 'DOMContentLoaded', () => {
 
         if ( isOpen ) {
             document.querySelectorAll( '.header-mobile__panel-2' ).forEach( p => p.classList.remove( 'is-active' ) );
+            panel1.style.transform = '';
             panel1.classList.add( 'is-active' );
         }
     });
@@ -32,6 +33,7 @@ document.addEventListener( 'DOMContentLoaded', () => {
             const panel2 = document.querySelector( `.header-mobile__panel-2[data-panel-2="${key}"]` );
             if ( panel2 ) {
                 panel1.classList.remove( 'is-active' );
+                panel1.style.transform = 'translateX(-30%)';
                 panel2.classList.add( 'is-active' );
             }
         });
@@ -41,6 +43,7 @@ document.addEventListener( 'DOMContentLoaded', () => {
     document.querySelectorAll( '.header-mobile__back-btn' ).forEach( backBtn => {
         backBtn.addEventListener( 'click', () => {
             document.querySelectorAll( '.header-mobile__panel-2' ).forEach( p => p.classList.remove( 'is-active' ) );
+            panel1.style.transform = '';
             panel1.classList.add( 'is-active' );
         });
     });

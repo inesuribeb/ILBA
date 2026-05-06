@@ -85,20 +85,36 @@
 
 /* --- Panel menú móvil --- */
 
-.header-mobile__menu {
+/* .header-mobile__menu {
     display: none;
     position: fixed;
     inset: 0;
     z-index: 99;
     background: var(--light-color);
     flex-direction: column;
-    /* padding-top: 70px; */
     padding-top: 18vh;
-
 }
 
 .header-mobile__menu.is-open {
     display: flex;
+} */
+
+.header-mobile__menu {
+    display: flex;
+    position: fixed;
+    inset: 0;
+    z-index: 99;
+    background: var(--light-color);
+    flex-direction: column;
+    padding-top: 18vh;
+    transform: translateX(100%);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+}
+
+.header-mobile__menu.is-open {
+    transform: translateX(0);
+    pointer-events: all;
 }
 
 .header-mobile__contenido {
@@ -108,12 +124,30 @@
 }
 
 /* Panel 1 y 2 */
-.header-mobile__panel-1,
+/* .header-mobile__panel-1,
 .header-mobile__panel-2 {
     display: none;
     flex-direction: column;
     height: 100%;
+} */
+ /* Panel 1 y 2 */
+.header-mobile__panel-1,
+.header-mobile__panel-2 {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    transform: translateX(100%);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    background: var(--light-color);
 }
+
+.header-mobile__panel-1.is-active,
+.header-mobile__panel-2.is-active {
+    transform: translateX(0);
+}
+
 
 .header-mobile__panel-1.is-active,
 .header-mobile__panel-2.is-active {
