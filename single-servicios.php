@@ -6,6 +6,18 @@
 get_header();
 
 $imagen_estatica = get_field( 'sv_imagen_estatica' );
+
+// --- Comprobar si hay equipo con em_mostrar activo ---
+$equipo_raw = get_field( 'sv_equipo' );
+$tiene_equipo = false;
+if ( ! empty( $equipo_raw ) ) {
+    foreach ( $equipo_raw as $miembro ) {
+        if ( get_field( 'em_mostrar', $miembro->ID ) ) {
+            $tiene_equipo = true;
+            break;
+        }
+    }
+}
 ?>
 
 <main id="main" class="single-servicios">
@@ -22,9 +34,11 @@ $imagen_estatica = get_field( 'sv_imagen_estatica' );
                 <?php endif; ?>
 
                 <nav class="sv-sidebar__nav">
-                    <a href="#sv-info"          class="sv-sidebar__nav-link" data-target="sv-info">Qué es y qué no es</a>
-                    <a href="#sv-tratamientos"  class="sv-sidebar__nav-link" data-target="sv-tratamientos">Tratamientos</a>
-                    <a href="#sv-equipo-medico" class="sv-sidebar__nav-link" data-target="sv-equipo-medico">Equipo médico</a>
+                    <a href="#sv-info"         class="sv-sidebar__nav-link" data-target="sv-info">Qué es y qué no es</a>
+                    <a href="#sv-tratamientos" class="sv-sidebar__nav-link" data-target="sv-tratamientos">Tratamientos</a>
+                    <?php if ( $tiene_equipo ) : ?>
+                        <a href="#sv-equipo-medico" class="sv-sidebar__nav-link" data-target="sv-equipo-medico">Equipo médico</a>
+                    <?php endif; ?>
                 </nav>
             </div>
         </div>
@@ -33,7 +47,9 @@ $imagen_estatica = get_field( 'sv_imagen_estatica' );
             <?php get_template_part( 'components/servicios/hero' ); ?>
             <?php get_template_part( 'components/servicios/info' ); ?>
             <?php get_template_part( 'components/servicios/tratamientos' ); ?>
-            <?php get_template_part( 'components/servicios/equipo-medico' ); ?>
+            <?php if ( $tiene_equipo ) : ?>
+                <?php get_template_part( 'components/servicios/equipo-medico' ); ?>
+            <?php endif; ?>
         </div>
 
     </div>
