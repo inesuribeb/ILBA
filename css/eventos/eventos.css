@@ -145,6 +145,10 @@
         padding-top: 8vh;
     }
 
+    .page-eventos__titulo {
+        font-size: 26px;
+    }
+
     .page-eventos__seccion {
         flex-direction: column;
         gap: 1rem;
