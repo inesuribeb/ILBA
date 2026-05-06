@@ -84,12 +84,16 @@
 @media ( max-width: 1024px ) {
 
     .sv-equipo-medico {
-        padding: 40px 24px;
+        padding: 40px 0;
     }
 
     .sv-equipo-medico__col-main {
         border-top: none;
         padding-top: 0;
+    }
+
+    .sv-equipo-medico__header {
+        padding: 0 24px;
     }
 
     .sv-equipo-medico__grid {
@@ -99,6 +103,7 @@
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
         gap: 12px;
+        padding-left: 24px;
         padding-bottom: 8px;
     }
 
