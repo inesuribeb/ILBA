@@ -152,6 +152,11 @@ function ilba_get_secciones_menu() {
                         'url'    => '/servicios/psicologia/',
                         'items'  => array(),
                     ),
+                    array(
+                        'titulo' => 'Traumatología',
+                        'url'    => '/servicios/traumatologia/',
+                        'items'  => array(),
+                    ),
                 ),
             ),
         ),

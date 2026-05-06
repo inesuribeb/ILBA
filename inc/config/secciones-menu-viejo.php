@@ -9,7 +9,6 @@ function ilba_get_secciones_menu() {
     $ap  = '/aparatologia/';
     $bm  = '/beauty_medical/';
 
-    // Coger imágenes hero de cada protocolo
     $slugs_protocolos = array(
         'maternidad'     => 'protocolo-maternidad',
         'oncologico'     => 'protocolo-oncologico',
@@ -39,11 +38,12 @@ function ilba_get_secciones_menu() {
         'beauty' => array(
             'titulo'      => 'Beauty',
             'descripcion' => 'Tratamientos de belleza facial, corporal y micropigmentación para realzar tu mejor versión.',
-            'imagen'      => $dir . 'beauty.PNG',
+            'imagen'      => $dir . 'beauty2.png',
+            'imagen_sv'   => $dir . 'beauty.PNG',
             'url'         => '#',
             'columnas'    => array(
                 array(
-                    'titulo' => 'Faciales',
+                    'titulo' => 'Tratamientos faciales',
                     'url'    => $bm . 'beauty-facial/',
                     'items'  => array(
                         array( 'titulo' => 'Observ de Silton',              'url' => $ap . 'observ-de-silton/' ),
@@ -54,7 +54,7 @@ function ilba_get_secciones_menu() {
                     ),
                 ),
                 array(
-                    'titulo' => 'Corporales',
+                    'titulo' => 'Tratamientos corporales',
                     'url'    => $bm . 'beauty-corporal/',
                     'items'  => array(
                         array( 'titulo' => 'Evolvex',                  'url' => $ap . 'evolvex/' ),
@@ -74,11 +74,12 @@ function ilba_get_secciones_menu() {
         'medical' => array(
             'titulo'      => 'Medical',
             'descripcion' => 'Tratamientos médico-estéticos faciales, corporales y capilares con tecnología de vanguardia.',
-            'imagen'      => $dir . 'medical.jpg',
+            'imagen'      => $dir . 'medical2.jpg',
+            'imagen_sv'   => $dir . 'medical.jpg',
             'url'         => '#',
             'columnas'    => array(
                 array(
-                    'titulo' => 'Faciales',
+                    'titulo' => 'Tratamientos faciales',
                     'url'    => $bm . 'medical-faciales/',
                     'items'  => array(
                         array( 'titulo' => 'Thermage by Soltan Medical', 'url' => $ap . 'thermage-by-soltan-medical/' ),
@@ -89,7 +90,7 @@ function ilba_get_secciones_menu() {
                     ),
                 ),
                 array(
-                    'titulo' => 'Corporales',
+                    'titulo' => 'Tratamientos corporales',
                     'url'    => $bm . 'medical-corporales/',
                     'items'  => array(
                         array( 'titulo' => 'Thermage by Soltan Medical', 'url' => $ap . 'thermage-by-soltan-medical/' ),
@@ -111,6 +112,7 @@ function ilba_get_secciones_menu() {
             'titulo'      => 'Salud',
             'descripcion' => 'Servicios médicos especializados para tu bienestar integral.',
             'imagen'      => $dir . 'salud.jpg',
+            'imagen_sv'   => $dir . 'salud.jpg',
             'url'         => '#',
             'filas'       => array(
                 array(
@@ -133,7 +135,7 @@ function ilba_get_secciones_menu() {
                         'titulo' => 'Vascular',
                         'url'    => '/servicios/vascular/',
                         'items'  => array(
-                            array( 'titulo' => 'Vasculize', 'url' => $ap . 'vasculaze/' ),
+                            array( 'titulo' => 'Vasculaze', 'url' => $ap . 'vasculaze/' ),
                         ),
                     ),
                 ),
@@ -157,7 +159,8 @@ function ilba_get_secciones_menu() {
         'wellness' => array(
             'titulo'      => 'Wellness',
             'descripcion' => 'Protocolos personalizados para cada etapa de tu vida.',
-            'imagen'      => $dir . 'wellness.PNG',
+            'imagen'      => $dir . 'wellness4.png',
+            'imagen_sv'   => $dir . 'wellness.PNG',
             'url'         => '#',
             'tipo'        => 'wellness',
             'protocolos'  => array(

@@ -259,13 +259,17 @@
     .sv-info__fotos {
         padding-top: 2rem;
         padding-left: 0;
-    }
-
-    .sv-info__foto:first-child {
         margin-left: 24px;
+        /* margin-right: 24px; */
     }
 
+    /* .sv-info__foto:first-child {
+        margin-left: 24px;
+    } */
 
+    .sv-info__foto:last-child {
+        padding-right: 24px;
+    }
 
    
 

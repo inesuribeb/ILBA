@@ -189,6 +189,10 @@
         border-top: none;
     }
 
+    .home-servicios__titulo {
+        margin: 0 0 40px 0;
+    }
+
     .home-servicios__card {
         /* Se ve 1 card entera + ~40px de la siguiente */
         flex: 0 0 calc(100vw - 24px - 64px);
