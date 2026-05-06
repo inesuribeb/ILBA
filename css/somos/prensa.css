@@ -218,7 +218,8 @@
     }
 
     .somos-prensa__lista-item {
-        font-size: 22px;
+        font-size: 20px;
+        line-height: 1.2;
     }
 }
 
