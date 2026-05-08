@@ -20,6 +20,7 @@ document.addEventListener( 'DOMContentLoaded', () => {
         if ( whatsapp ) whatsapp.style.display = isOpen ? 'none' : 'flex';
 
         if ( isOpen ) {
+            headerMobile.classList.remove( 'header-mobile--light-hero' );
             document.querySelectorAll( '.header-mobile__panel-2' ).forEach( p => p.classList.remove( 'is-active' ) );
             panel1.style.transform = '';
             panel1.classList.add( 'is-active' );
@@ -61,4 +62,22 @@ document.addEventListener( 'DOMContentLoaded', () => {
         }, 2000 );
     }
 
-});
+    // --- Light header solo sobre la hero ---
+    const hero = document.querySelector( '.home-hero' );
+
+    if ( hero ) {
+        const observer = new IntersectionObserver(
+            ( entries ) => {
+                entries.forEach( entry => {
+                    if ( ! menu.classList.contains( 'is-open' ) ) {
+                        headerMobile.classList.toggle( 'header-mobile--light-hero', entry.isIntersecting );
+                    }
+                });
+            },
+            { threshold: 0.1 }
+        );
+
+        observer.observe( hero );
+    }
+
+} );
