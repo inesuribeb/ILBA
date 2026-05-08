@@ -77,6 +77,29 @@
         gap: 0;
         border: 1px solid var(--dark-color);
     }
+
+
+    /* Light en home (sobre hero) */
+    .home .header-mobile__logo-link,
+    .home .header-mobile__menu-btn,
+    .home .header-mobile__menu-label {
+        color: var(--light-color);
+    }
+
+    .home .header-mobile__der {
+        border-color: var(--light-color);
+    }
+
+    /* Cuando el menú está abierto, vuelve a dark */
+    .home .header-mobile.menu-abierto .header-mobile__logo-link,
+    .home .header-mobile.menu-abierto .header-mobile__menu-btn,
+    .home .header-mobile.menu-abierto .header-mobile__menu-label {
+        color: var(--dark-color);
+    }
+
+    .home .header-mobile.menu-abierto .header-mobile__der {
+        border-color: var(--dark-color);
+    }
 }
 
 
@@ -366,3 +389,9 @@
 .single-protocolos .header-mobile.menu-abierto .header-mobile__menu-label {
     color: var(--dark-color);
 }
+
+
+
+
+
+
