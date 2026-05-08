@@ -119,7 +119,7 @@
 }
 
 .header--light-home .header__logo-link {
-    color: var(--dark-color);
+    color: var(--light-color);
 }
 
 /* Hover en ambos casos vuelve a dark */
