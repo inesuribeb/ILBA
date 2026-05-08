@@ -46,16 +46,16 @@
 
 /* --- Overlay --- */
 
-/* .home-hero__overlay {
+.home-hero__overlay {
     position: absolute;
     inset: 0;
     background: linear-gradient(
         to top,
         rgba(0, 0, 0, 0.55) 0%,
-        rgba(0, 0, 0, 0.15) 50%,
-        rgba(0, 0, 0, 0) 80%
+        rgba(0, 0, 0, 0.15) 20%,
+        rgba(0, 0, 0, 0) 40%
     );
-} */
+}
 
 /* --- Contenido --- */
 
@@ -71,7 +71,8 @@
 }
 
 .home-hero__titulo {
-    color: var(--dark-color);
+    /* color: var(--dark-color); */
+    color: var(--light-color);
     margin: 0;
     letter-spacing: -1px;
     font-family: var(--sans-serif);
@@ -100,14 +101,16 @@
 
 .home-hero__cta  {
     margin: 0;
-    color: var(--dark-color);
+    /* color: var(--dark-color); */
+    color: var(--light-color);
     text-align: center;
     background-color: transparent !important;
     width: fit-content;
     display: inline-block;
     font-size: 20px;
     text-decoration: none;
-    border-bottom: 1px solid var(--dark-color);
+    /* border-bottom: 1px solid var(--dark-color); */
+    border-bottom: 1px solid var(--light-color);
     padding-bottom: 1px;
     transition: opacity 0.2s ease;
     letter-spacing: -1px;
