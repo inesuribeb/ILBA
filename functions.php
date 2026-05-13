@@ -87,3 +87,17 @@ add_filter( 'wpcf7_form_elements', function( $html ) {
 
     return $html;
 });
+
+// --- CF7: validación custom del campo 'momento' (acepta cualquier valor seleccionado) ---
+// Como las opciones se inyectan dinámicamente desde ACF, CF7 no las conoce y rechaza la validación.
+add_filter( 'wpcf7_validate_select*', function( $result, $tag ) {
+    if ( $tag->name === 'momento' ) {
+        $value = isset( $_POST['momento'] ) ? sanitize_text_field( $_POST['momento'] ) : '';
+
+        if ( empty( $value ) ) {
+            $result->invalidate( $tag, wpcf7_get_message( 'invalid_required' ) );
+        }
+        // Si hay valor, se acepta como válido sin comparar con la lista original del shortcode
+    }
+    return $result;
+}, 20, 2 );
