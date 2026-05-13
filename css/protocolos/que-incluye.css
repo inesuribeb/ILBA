@@ -323,17 +323,17 @@
     }
 
     .pr-servicios__titulo {
-        padding: 0 20px;
+        padding: 0 24px;
         margin-bottom: 32px;
     }
 
     .pr-srv-card__info-default {
         bottom: 20px;
-        left: 20px;
-        right: 20px;
+        left: 24px;
+        right: 24px;
     }
 
     .pr-srv-card__info-hover {
-        padding: 20px;
+        padding: 24px;
     }
 }

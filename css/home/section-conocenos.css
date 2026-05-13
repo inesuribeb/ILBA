@@ -252,6 +252,10 @@
         border-top: 1px solid grey; */
     }
 
+    .home-conocenos__hero-content {
+        padding: 24px;
+    }
+
     .home-conocenos__col-tag {
         display: none;
     }
