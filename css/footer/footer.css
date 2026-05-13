@@ -278,6 +278,22 @@
     opacity: 0.5;
 }
 
+
+/* Enlaces de redes con icono */
+.footer__link--rrss {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.footer__link-icon {
+    width: 14px;
+    height: 14px;
+    object-fit: contain;
+    display: block;
+    flex-shrink: 0;
+}
+
 /* =============================================
    Footer — Responsive
    ============================================= */

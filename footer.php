@@ -23,10 +23,8 @@ for ( $i = 1; $i <= 4; $i++ ) {
 
 <footer class="footer">
 
-    <!-- BLOQUE SUPERIOR -->
     <div class="footer__top">
 
-        <!-- Columna izquierda: logo + descripción -->
         <div class="footer__top-izq">
             <p class="footer__logo">ILBA International</p>
             <?php if ( $descripcion ) : ?>
@@ -36,11 +34,10 @@ for ( $i = 1; $i <= 4; $i++ ) {
             <?php endif; ?>
         </div>
 
-        <!-- Columna derecha: dos filas -->
         <div class="footer__top-der">
 
-            <!-- Fila 1: contacto + RRSS -->
             <div class="footer__contacto">
+
                 <div class="footer__contacto-col">
                     <?php if ( $email ) : ?>
                         <a href="mailto:<?php echo esc_attr( $email ); ?>" class="footer__link">
@@ -53,16 +50,12 @@ for ( $i = 1; $i <= 4; $i++ ) {
                         </a>
                     <?php endif; ?>
                 </div>
+
                 <div class="footer__contacto-col">
                     <?php if ( $direccion ) : ?>
-                        <a
-                            class="footer__link"
-                            href="https://www.google.com/maps/search/?api=1&query=<?= urlencode( $direccion ) ?>"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
+                        <a class="footer__link" href="https://www.google.com/maps/search/?api=1&query=<?php echo urlencode( $direccion ); ?>" target="_blank" rel="noopener noreferrer">
                             <p class="footer__direccion">
-                                <?= wp_kses_post( nl2br( esc_html( $direccion ) ) ) ?>
+                                <?php echo wp_kses_post( nl2br( esc_html( $direccion ) ) ); ?>
                             </p>
                         </a>
                     <?php endif; ?>
@@ -70,30 +63,33 @@ for ( $i = 1; $i <= 4; $i++ ) {
                         <p class="footer__horario"><?php echo nl2br( esc_html( $horario ) ); ?></p>
                     <?php endif; ?>
                 </div>
+
                 <div class="footer__contacto-col">
                     <?php foreach ( $rrss as $red ) : ?>
-                        <a href="<?php echo esc_url( $red['link'] ); ?>"
-                           class="footer__link"
-                           target="_blank"
-                           rel="noopener noreferrer">
+                        <a href="<?php echo esc_url( $red['link'] ); ?>" class="footer__link footer__link--rrss" target="_blank" rel="noopener noreferrer">
+                        <?php if ( strpos( $red['link'], 'instagram.com' ) !== false ) : ?>
+                            <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/images/insta-icon.png' ); ?>" alt="" class="footer__link-icon">
+                            <?php endif; ?>
                             <?php echo esc_html( $red['nombre'] ); ?>
                         </a>
                     <?php endforeach; ?>
                 </div>
+
             </div>
 
-            <!-- Fila 2: navegación -->
             <div class="footer__nav">
+
                 <div class="footer__nav-col">
                     <p class="footer__nav-titulo">Tratamientos</p>
                     <nav>
-                    <a href="<?= esc_url( home_url( 'beauty/beauty-facial/' ) ) ?>" class="footer__nav-link">Estética facial</a>
-                    <a href="<?= esc_url( home_url( 'beauty/beauty-corporal/' ) ) ?>" class="footer__nav-link">Estética corporal</a>
-                    <a href="<?= esc_url( home_url( 'medical/medical-faciales/' ) ) ?>" class="footer__nav-link">Faciales médicos</a>
-                    <a href="<?= esc_url( home_url( 'medical/medical-corporales/' ) ) ?>" class="footer__nav-link">Faciales médicos</a>
-    <a href="<?= esc_url( home_url( 'aparatologia/' ) ) ?>" class="footer__nav-link">Aparatología</a>
+                        <a href="<?php echo esc_url( home_url( 'beauty/beauty-facial/' ) ); ?>" class="footer__nav-link">Estética facial</a>
+                        <a href="<?php echo esc_url( home_url( 'beauty/beauty-corporal/' ) ); ?>" class="footer__nav-link">Estética corporal</a>
+                        <a href="<?php echo esc_url( home_url( 'medical/medical-faciales/' ) ); ?>" class="footer__nav-link">Faciales médicos</a>
+                        <a href="<?php echo esc_url( home_url( 'medical/medical-corporales/' ) ); ?>" class="footer__nav-link">Corporales médicos</a>
+                        <a href="<?php echo esc_url( home_url( 'aparatologia/' ) ); ?>" class="footer__nav-link">Aparatología</a>
                     </nav>
                 </div>
+
                 <div class="footer__nav-col">
                     <p class="footer__nav-titulo">Ilba</p>
                     <nav>
@@ -102,23 +98,22 @@ for ( $i = 1; $i <= 4; $i++ ) {
                         <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'contacto' ) ) ); ?>" class="footer__nav-link">Contáctanos</a>
                     </nav>
                 </div>
+
                 <div class="footer__nav-col">
                     <p class="footer__nav-titulo">Info</p>
                     <nav>
                         <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'legal' ) ) ); ?>" class="footer__nav-link">Legal</a>
                         <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'privacidad' ) ) ); ?>" class="footer__nav-link">Privacidad</a>
                         <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'cookies' ) ) ); ?>" class="footer__nav-link">Cookies</a>
-                        <!-- <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'compras' ) ) ); ?>" class="footer__nav-link">Compras</a>
-                        <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'devoluciones' ) ) ); ?>" class="footer__nav-link">Devoluciones</a> -->
                     </nav>
                 </div>
+
             </div>
 
         </div>
 
     </div>
 
-    <!-- BLOQUE INFERIOR -->
     <div class="footer__bottom">
         <p class="footer__copyright">© ILBA International <?php echo date( 'Y' ); ?>. Todos los derechos reservados</p>
         <div class="footer__creditos-wrapper">
@@ -131,14 +126,10 @@ for ( $i = 1; $i <= 4; $i++ ) {
             </div>
         </div>
     </div>
-    <!-- Botón flotante WhatsApp -->
-<a href="https://wa.me/34679789560"
-   class="footer__whatsapp"
-   target="_blank"
-   rel="noopener noreferrer"
-   aria-label="Contactar por WhatsApp">
-    <img src="<?= esc_url( get_stylesheet_directory_uri() . '/images/whatsicon2.png' ) ?>" alt="WhatsApp">
-</a>
+
+    <a href="https://wa.me/34679789560" class="footer__whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+        <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/images/whatsicon2.png' ); ?>" alt="WhatsApp">
+    </a>
 
 </footer>
 
