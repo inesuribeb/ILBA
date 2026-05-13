@@ -10,13 +10,7 @@ $solo_clientes = get_field( 'ev_solo_clientes' );
 $img_1         = get_field( 'ev_img_1' );
 ?>
 
-<div class="ev-modal" id="ev-modal">
-
-    <button type="button" class="ev-modal__close" aria-label="Cerrar información">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-        </svg>
-    </button>
+<div class="ev-modal">
 
     <?php if ( $img_1 ) : ?>
         <div class="ev-modal__imagen">
@@ -35,7 +29,7 @@ $img_1         = get_field( 'ev_img_1' );
         <?php endif; ?>
 
         <?php if ( $horario ) : ?>
-            <p class="ev-modal__horario"><?php echo esc_html( $horario ); ?></p>
+            <p class="ev-modal__horario"> <?php echo esc_html( $horario ); ?></p>
         <?php endif; ?>
 
         <?php if ( $solo_clientes ) : ?>
@@ -44,7 +38,3 @@ $img_1         = get_field( 'ev_img_1' );
     </div>
 
 </div>
-
-<button type="button" class="ev-modal-toggle" id="ev-modal-toggle" aria-label="Mostrar información del evento">
-    + Info
-</button>

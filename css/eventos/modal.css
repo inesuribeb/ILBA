@@ -2,7 +2,7 @@
    Eventos — Modal
    ============================================= */
 
-/* .ev-modal {
+   /* .ev-modal {
     position: fixed;
     bottom: 32px;
     left: 32px;
@@ -15,14 +15,12 @@
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     overflow: hidden;
-    height: 160px;
-
+    width: 30%;
 }
-
 
 .ev-modal__imagen {
     flex-shrink: 0;
-    align-self: stretch;
+    width: 30%;
     aspect-ratio: 4 / 5;
     overflow: hidden;
 }
@@ -35,11 +33,12 @@
 }
 
 .ev-modal__info {
+    flex: 1;
     padding: 20px 25px;
-    min-width: 250px;
     display: flex;
     flex-direction: column;
     gap: 4px;
+    min-width: 0;
 }
 
 .ev-modal__lugar {
@@ -64,22 +63,39 @@
     color: var(--dark-color);
 }
 
-
-
-@media (max-width: 1024px) {
+@media ( max-width: 1024px ) {
 
     .ev-modal {
-        bottom: 24px;
+        bottom: 20px;
         left: 24px;
         right: 24px;
-        height: 170px;
+        width: auto;
     }
 
     .ev-modal__info {
-        min-width: 0;
-        flex: 1;
         padding: 16px 20px;
+        gap: 1px;
+
     }
+
+
+    .ev-modal__lugar {
+        font-size: 16px;
+    }
+    
+    .ev-modal__fecha,
+    .ev-modal__horario {
+        margin: 0;
+        font-size: 14px;
+        color: var(--dark-color);
+    }
+    
+    .ev-modal__clientes {
+        margin: 8px 0 0 0;
+        font-size: 13px;
+        color: var(--dark-color);
+    }
+
 } */
 
 
@@ -150,11 +166,60 @@
     color: var(--dark-color);
 }
 
-@media ( max-width: 1024px ) {
+/* Botón close — solo móvil */
+.ev-modal__close {
+    display: none;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: transparent;
+    border: none;
+    padding: 6px;
+    cursor: pointer;
+    color: var(--dark-color);
+    z-index: 2;
+    line-height: 0;
+}
+
+.ev-modal__close svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Botón flotante "+ Info" — solo móvil */
+.ev-modal-toggle {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    left: 24px;
+    z-index: 50;
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: none;
+    cursor: pointer;
+    font-family: var(--serif);
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: var(--dark-color);
+}
+
+/* Estado oculto del modal (solo móvil) */
+.ev-modal.is-hidden {
+    display: none;
+}
+
+/* Estado visible del toggle (solo móvil) */
+.ev-modal-toggle.is-visible {
+    display: inline-block;
+}
+
+@media (max-width: 1024px) {
 
     .ev-modal {
         bottom: 20px;
-        /* bottom: 70px; */
         left: 24px;
         right: 24px;
         width: auto;
@@ -163,9 +228,7 @@
     .ev-modal__info {
         padding: 16px 20px;
         gap: 1px;
-
     }
-
 
     .ev-modal__lugar {
         font-size: 16px;
@@ -184,4 +247,23 @@
         color: var(--dark-color);
     }
 
+    /* Mostrar el botón close solo en móvil */
+    .ev-modal__close {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* En desktop, ignoramos las clases JS — modal siempre visible, toggle nunca */
+@media (min-width: 1025px) {
+    .ev-modal,
+    .ev-modal.is-hidden {
+        display: flex !important;
+    }
+
+    .ev-modal-toggle,
+    .ev-modal-toggle.is-visible {
+        display: none !important;
+    }
 }
