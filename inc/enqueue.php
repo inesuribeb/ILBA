@@ -122,7 +122,7 @@ function ilba_enqueue_assets() {
     }
 
     // --- Páginas legales ---
-    if ( is_page( array( 'privacidad', 'aviso-legal', 'cookies' ) ) ) {
+    if ( is_page( array( 'privacidad', 'legal', 'cookies' ) ) ) {
         wp_enqueue_style( 'ilba-legal', $uri . '/css/legal/legal.css', array(), filemtime( $dir . '/css/legal/legal.css' ) );
     }
 }
