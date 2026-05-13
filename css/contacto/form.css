@@ -304,7 +304,48 @@ a.ct-info__valor:hover {
     stroke: var(--light-color);
 }
 
+/* =============================================
+   Contact Form 7 — Mensajes de validación
+   ============================================= */
 
+/* Mensaje pequeño debajo de cada campo (campo obligatorio, email inválido, etc.) */
+.ct-form-section__form .wpcf7-not-valid-tip {
+    color: var(--light-color) !important;
+    font-size: 13px;
+    margin-top: 4px;
+    letter-spacing: -0.5px;
+}
+
+/* Borde rojo del input cuando hay error → lo cambiamos al color claro */
+.ct-form-section__form .wpcf7-not-valid {
+    border-color: var(--light-color) !important;
+}
+
+/* Mensaje general al pie del formulario (success, error general) */
+.ct-form-section__form .wpcf7-response-output {
+    color: var(--light-color) !important;
+    border: 1px solid var(--light-color) !important;
+    background: transparent !important;
+    padding: 12px 16px;
+    margin-top: 16px;
+    font-size: 14px;
+    letter-spacing: -0.5px;
+}
+
+/* Mensaje de éxito (cuando el formulario se envía bien) */
+.ct-form-section__form .wpcf7 form.sent .wpcf7-response-output {
+    color: var(--light-color) !important;
+    border-color: var(--light-color) !important;
+}
+
+/* Mensaje de error general (problema al enviar, validación, spam) */
+.ct-form-section__form .wpcf7 form.invalid .wpcf7-response-output,
+.ct-form-section__form .wpcf7 form.unaccepted .wpcf7-response-output,
+.ct-form-section__form .wpcf7 form.failed .wpcf7-response-output,
+.ct-form-section__form .wpcf7 form.spam .wpcf7-response-output {
+    color: var(--light-color) !important;
+    border-color: var(--light-color) !important;
+}
 
 
 
