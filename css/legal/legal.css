@@ -1,0 +1,72 @@
+/* =============================================
+   Páginas legales (privacidad, aviso legal, cookies)
+   ============================================= */
+
+   .page-legal,
+   body.page-template-default.page main {
+       max-width: 800px;
+       margin: 0 auto;
+       padding: 6rem 1.5rem 4rem;
+       color: var(--dark-color);
+       line-height: 1.7;
+   }
+   
+   .page-legal h1,
+   body.page main h1 {
+       font-family: var(--serif);
+       font-size: clamp(2rem, 4vw, 2.75rem);
+       font-weight: 400;
+       margin-bottom: 3rem;
+       letter-spacing: -0.01em;
+   }
+   
+   .page-legal h2,
+   body.page main h2 {
+       font-family: var(--serif);
+       font-size: 1.25rem;
+       font-weight: 500;
+       margin-top: 2.5rem;
+       margin-bottom: 1rem;
+       letter-spacing: -0.005em;
+   }
+   
+   .page-legal p,
+   body.page main p {
+       font-size: 1rem;
+       margin-bottom: 1rem;
+   }
+   
+   .page-legal ul,
+   body.page main ul {
+       padding-left: 1.25rem;
+       margin-bottom: 1.25rem;
+   }
+   
+   .page-legal ul li,
+   body.page main ul li {
+       margin-bottom: 0.4rem;
+   }
+   
+   .page-legal a,
+   body.page main a {
+       color: var(--dark-color);
+       text-decoration: underline;
+       text-underline-offset: 3px;
+   }
+   
+   .page-legal a:hover,
+   body.page main a:hover {
+       opacity: 0.7;
+   }
+   
+   @media (max-width: 600px) {
+       .page-legal,
+       body.page-template-default.page main {
+           padding: 4rem 1.25rem 3rem;
+       }
+   
+       .page-legal h1,
+       body.page main h1 {
+           margin-bottom: 2rem;
+       }
+   }

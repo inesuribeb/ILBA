@@ -117,8 +117,13 @@ function ilba_enqueue_assets() {
     }
 
     // --- 404 ---
-if ( is_404() ) {
-    wp_enqueue_style( 'ilba-404', $uri . '/css/404/404.css', array(), filemtime( $dir . '/css/404/404.css' ) );
-}
+    if ( is_404() ) {
+        wp_enqueue_style( 'ilba-404', $uri . '/css/404/404.css', array(), filemtime( $dir . '/css/404/404.css' ) );
+    }
+
+    // --- Páginas legales ---
+    if ( is_page( array( 'privacidad', 'aviso-legal', 'cookies' ) ) ) {
+        wp_enqueue_style( 'ilba-legal', $uri . '/css/legal/legal.css', array(), filemtime( $dir . '/css/legal/legal.css' ) );
+    }
 }
 add_action( 'wp_enqueue_scripts', 'ilba_enqueue_assets' );
