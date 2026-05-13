@@ -88,16 +88,29 @@ add_filter( 'wpcf7_form_elements', function( $html ) {
     return $html;
 });
 
-// --- CF7: validación custom del campo 'momento' (acepta cualquier valor seleccionado) ---
-// Como las opciones se inyectan dinámicamente desde ACF, CF7 no las conoce y rechaza la validación.
-add_filter( 'wpcf7_validate_select*', function( $result, $tag ) {
-    if ( $tag->name === 'momento' ) {
-        $value = isset( $_POST['momento'] ) ? sanitize_text_field( $_POST['momento'] ) : '';
+// --- CF7: validación custom del campo 'momento' ---
+// Acepta cualquier valor (las opciones se inyectan dinámicamente vía ACF)
+add_filter( 'wpcf7_validate_select*', 'ilba_validar_momento', 20, 2 );
+add_filter( 'wpcf7_validate_select',  'ilba_validar_momento', 20, 2 );
 
-        if ( empty( $value ) ) {
-            $result->invalidate( $tag, wpcf7_get_message( 'invalid_required' ) );
-        }
-        // Si hay valor, se acepta como válido sin comparar con la lista original del shortcode
+function ilba_validar_momento( $result, $tag ) {
+    $tag = new WPCF7_FormTag( $tag );
+
+    if ( $tag->name !== 'momento' ) {
+        return $result;
     }
+
+    $value = isset( $_POST['momento'] ) ? sanitize_text_field( wp_unslash( $_POST['momento'] ) ) : '';
+
+    // Limpiamos cualquier error previo de este campo
+    if ( method_exists( $result, 'remove_error' ) ) {
+        $result->remove_error( $tag->name );
+    }
+
+    // Solo invalidamos si está vacío (campo obligatorio)
+    if ( $tag->is_required() && empty( $value ) ) {
+        $result->invalidate( $tag, wpcf7_get_message( 'invalid_required' ) );
+    }
+
     return $result;
-}, 20, 2 );
+}
