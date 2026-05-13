@@ -87,10 +87,11 @@ for ( $i = 1; $i <= 4; $i++ ) {
                 <div class="footer__nav-col">
                     <p class="footer__nav-titulo">Tratamientos</p>
                     <nav>
-                    <a href="<?= esc_url( home_url( 'beauty_medical/beauty-facial/' ) ) ?>" class="footer__nav-link">Beauty</a>
-                    <a href="<?= esc_url( home_url( 'beauty_medical/medical-faciales/' ) ) ?>" class="footer__nav-link">Medical</a>
-                        <!-- <a href="#" class="footer__nav-link">Salud</a>
-                        <a href="#" class="footer__nav-link">Wellness</a> -->
+                    <a href="<?= esc_url( home_url( 'beauty/beauty-facial/' ) ) ?>" class="footer__nav-link">Estética facial</a>
+                    <a href="<?= esc_url( home_url( 'beauty/beauty-corporal/' ) ) ?>" class="footer__nav-link">Estética corporal</a>
+                    <a href="<?= esc_url( home_url( 'medical/medical-faciales/' ) ) ?>" class="footer__nav-link">Faciales médicos</a>
+                    <a href="<?= esc_url( home_url( 'medical/medical-corporales/' ) ) ?>" class="footer__nav-link">Faciales médicos</a>
+    <a href="<?= esc_url( home_url( 'aparatologia/' ) ) ?>" class="footer__nav-link">Aparatología</a>
                     </nav>
                 </div>
                 <div class="footer__nav-col">
@@ -98,6 +99,7 @@ for ( $i = 1; $i <= 4; $i++ ) {
                     <nav>
                         <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'somos' ) ) ); ?>" class="footer__nav-link">Somos</a>
                         <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'eventos' ) ) ); ?>" class="footer__nav-link">Nuestros eventos</a>
+                        <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'contacto' ) ) ); ?>" class="footer__nav-link">Contáctanos</a>
                     </nav>
                 </div>
                 <div class="footer__nav-col">

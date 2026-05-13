@@ -112,5 +112,10 @@ function ilba_enqueue_assets() {
     if ( is_post_type_archive( 'protocolos' ) || is_post_type_archive( 'servicios' ) || is_post_type_archive( 'aparatologia' ) ) {
         wp_enqueue_style( 'ilba-archive-grids', $uri . '/css/archives/archive-grids.css', array(), filemtime( $dir . '/css/archives/archive-grids.css' ) );
     }
+
+    // --- 404 ---
+if ( is_404() ) {
+    wp_enqueue_style( 'ilba-404', $uri . '/css/404/404.css', array(), filemtime( $dir . '/css/404/404.css' ) );
+}
 }
 add_action( 'wp_enqueue_scripts', 'ilba_enqueue_assets' );
