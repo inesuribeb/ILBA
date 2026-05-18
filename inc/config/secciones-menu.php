@@ -25,18 +25,17 @@ function ilba_get_secciones_menu() {
             'post_status' => 'publish',
             'numberposts' => 1,
         ) );
-        if ( $post ) {
+
+        $imagenes_protocolos[ $key ] = $dir . 'wellness.PNG'; // imagen por defecto
+
+        if ( $post && function_exists( 'get_field' ) ) {
             $img = get_field( 'pr_imagen_hero', $post[0]->ID );
             if ( $img ) {
                 $imagenes_protocolos[ $key ] = is_array( $img ) ? $img['url'] : $img;
-            } else {
-                $imagenes_protocolos[ $key ] = $dir . 'wellness.PNG';
             }
-        } else {
-            $imagenes_protocolos[ $key ] = $dir . 'wellness.PNG';
         }
     }
-    
+
     return array(
 
         'beauty' => array(
