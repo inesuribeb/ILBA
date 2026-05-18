@@ -15,8 +15,8 @@ add_action( 'wp_enqueue_scripts', function() {
 /**
  * Cargar CPTs
  */
-// require_once get_stylesheet_directory() . '/inc/cpt/_load-cpts.php';
-// require_once get_stylesheet_directory() . '/inc/acf/_load-acf.php';
+require_once get_stylesheet_directory() . '/inc/cpt/_load-cpts.php';
+require_once get_stylesheet_directory() . '/inc/acf/_load-acf.php';
 
 require_once get_stylesheet_directory() . '/inc/config/secciones-menu.php';
 
