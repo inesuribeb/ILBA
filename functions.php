@@ -81,7 +81,6 @@ add_filter( 'wpcf7_form_elements', function( $html ) {
 
     $opciones = implode( '', $preguntas );
 
-    // Inyectamos las opciones en el select HTML normal (no en el de CF7)
     $html = preg_replace(
         '/(<select[^>]*id="pr-form-select-momento"[^>]*>)(.*?)(<\/select>)/s',
         '$1<option value="" disabled selected>¿En qué momento estás?*</option>' . $opciones . '$3',
@@ -90,9 +89,3 @@ add_filter( 'wpcf7_form_elements', function( $html ) {
 
     return $html;
 });
-
-// --- CF7: validación custom del campo 'momento' ---
-// Acepta cualquier valor (las opciones se inyectan dinámicamente vía ACF)
-
-
-
