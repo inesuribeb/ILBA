@@ -234,6 +234,16 @@
     }
 } */
 
+.pr-form__hidden-input,
+input.pr-form__hidden-input,
+.wpcf7-form input.pr-form__hidden-input {
+    position: absolute !important;
+    left: -9999px !important;
+    width: 1px !important;
+    height: 1px !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
 
 
 @media ( max-width: 1024px ) {

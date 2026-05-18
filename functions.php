@@ -67,6 +67,7 @@ add_filter( 'post_type_link', 'ilba_beauty_medical_permalink', 10, 2 );
 
 
 // --- CF7: opciones dinámicas ACF en formulario de protocolos ---
+// --- CF7: opciones dinámicas ACF en formulario de protocolos ---
 add_filter( 'wpcf7_form_elements', function( $html ) {
     if ( ! is_singular( 'protocolos' ) ) return $html;
 
@@ -79,8 +80,10 @@ add_filter( 'wpcf7_form_elements', function( $html ) {
     if ( empty( $preguntas ) ) return $html;
 
     $opciones = implode( '', $preguntas );
+
+    // Inyectamos las opciones en el select HTML normal (no en el de CF7)
     $html = preg_replace(
-        '/(<select[^>]*name="momento"[^>]*>)(.*?)(<\/select>)/s',
+        '/(<select[^>]*id="pr-form-select-momento"[^>]*>)(.*?)(<\/select>)/s',
         '$1<option value="" disabled selected>¿En qué momento estás?*</option>' . $opciones . '$3',
         $html
     );
@@ -90,27 +93,6 @@ add_filter( 'wpcf7_form_elements', function( $html ) {
 
 // --- CF7: validación custom del campo 'momento' ---
 // Acepta cualquier valor (las opciones se inyectan dinámicamente vía ACF)
-add_filter( 'wpcf7_validate_select*', 'ilba_validar_momento', 20, 2 );
-add_filter( 'wpcf7_validate_select',  'ilba_validar_momento', 20, 2 );
 
-function ilba_validar_momento( $result, $tag ) {
-    $tag = new WPCF7_FormTag( $tag );
 
-    if ( $tag->name !== 'momento' ) {
-        return $result;
-    }
 
-    $value = isset( $_POST['momento'] ) ? sanitize_text_field( wp_unslash( $_POST['momento'] ) ) : '';
-
-    // Limpiamos cualquier error previo de este campo
-    if ( method_exists( $result, 'remove_error' ) ) {
-        $result->remove_error( $tag->name );
-    }
-
-    // Solo invalidamos si está vacío (campo obligatorio)
-    if ( $tag->is_required() && empty( $value ) ) {
-        $result->invalidate( $tag, wpcf7_get_message( 'invalid_required' ) );
-    }
-
-    return $result;
-}
