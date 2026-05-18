@@ -75,7 +75,7 @@ function ilba_get_secciones_menu() {
             'titulo'      => 'Medical',
             'descripcion' => 'Tratamientos médico-estéticos faciales, corporales y capilares con tecnología de vanguardia.',
             'imagen'      => $dir . 'medical2.jpg',
-            'imagen_sv'   => $dir . 'medical.jpg',
+            'imagen_sv'   => $dir . 'AmenuMedical.webp',
             'url'         => '#',
             'columnas'    => array(
                 array(
@@ -112,7 +112,7 @@ function ilba_get_secciones_menu() {
             'titulo'      => 'Salud',
             'descripcion' => 'Servicios médicos especializados para tu bienestar integral.',
             'imagen'      => $dir . 'salud.jpg',
-            'imagen_sv'   => $dir . 'salud.jpg',
+            'imagen_sv'   => $dir . 'AmenuSalud.webp',
             'url'         => '#',
             'filas'       => array(
                 array(
@@ -152,6 +152,11 @@ function ilba_get_secciones_menu() {
                         'url'    => '/servicios/psicologia/',
                         'items'  => array(),
                     ),
+                    array(
+                        'titulo' => 'Traumatología',
+                        'url'    => '/servicios/traumatologia/',
+                        'items'  => array(),
+                    ),
                 ),
             ),
         ),
@@ -160,7 +165,7 @@ function ilba_get_secciones_menu() {
             'titulo'      => 'Wellness',
             'descripcion' => 'Protocolos personalizados para cada etapa de tu vida.',
             'imagen'      => $dir . 'wellness4.png',
-            'imagen_sv'   => $dir . 'wellness.PNG',
+            'imagen_sv'   => $dir . 'AmenuWellness.webp',
             'url'         => '#',
             'tipo'        => 'wellness',
             'protocolos'  => array(
