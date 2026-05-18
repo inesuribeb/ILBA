@@ -3,11 +3,6 @@
  * Somos component: Equipo
  */
 
-// Verificamos que ACF está listo antes de seguir
-if ( ! function_exists( 'get_field' ) || ! did_action( 'acf/init' ) ) {
-    return;
-}
-
 $todos = get_posts( array(
     'post_type'      => 'equipo_medico',
     'posts_per_page' => -1,
@@ -24,62 +19,49 @@ $todos = get_posts( array(
 
 if ( empty( $todos ) ) return;
 
-// --- Orden definido por la clínica ---
-$orden_definido = array(
-    'maite hormaza',
-    'itxaso galán',
-    'itxaso galan',
-    'june blanco',
-    'marta diez',
-    'marta díez',
-    'nerea martin',
-    'nerea martín',
-    'patricia quiroga',
-    'idoia romo',
-    'begoña gabiola',
-    'laura santa maría',
-    'laura santa maria',
-    'agurtzane otaola',
-    'katerine romero',
-    'miriam santos',
-    'maría ibarra',
-    'maria ibarra',
-    'alexandra salamea',
-    'estizen gordon',
-    'uxue miguez',
-    'uxue míguez',
-    'sandra rivera',
+// --- Ordenar: Maite primero, Itxaso segundo, luego por categoría y alfabético ---
+$primeras  = array();
+$sanitaria = array();
+$enfermera = array();
+$administrativa = array();
+$tecnica   = array();
+$resto     = array();
+
+$orden_fijas = array( 'maite hormaza', 'itxaso galan' );
+
+foreach ( $todos as $miembro ) {
+    $nombre_lower = strtolower( $miembro->post_title );
+    $categoria    = get_field( 'em_categoria', $miembro->ID );
+
+    if ( str_contains( $nombre_lower, 'maite hormaza' ) ) {
+        $primeras[0] = $miembro;
+    } elseif ( str_contains( $nombre_lower, 'itxaso galan' ) || str_contains( $nombre_lower, 'itxaso galán' ) ) {
+        $primeras[1] = $miembro;
+    } elseif ( $categoria === 'sanitaria' ) {
+        $sanitaria[] = $miembro;
+    } elseif ( $categoria === 'enfermera' ) {
+        $enfermera[] = $miembro;
+    } elseif ( $categoria === 'administrativa' ) {
+        $administrativa[] = $miembro;
+    } elseif ( $categoria === 'tecnica' ) {
+        $tecnica[] = $miembro;
+    } else {
+        $resto[] = $miembro;
+    }
+}
+
+ksort( $primeras );
+
+$miembros = array_merge(
+    array_values( $primeras ),
+    $sanitaria,
+    $enfermera,
+    $administrativa,
+    $tecnica,
+    $resto
 );
 
-usort( $todos, function( $a, $b ) use ( $orden_definido ) {
-    $nombre_a = strtolower( $a->post_title );
-    $nombre_b = strtolower( $b->post_title );
-
-    $pos_a = PHP_INT_MAX;
-    $pos_b = PHP_INT_MAX;
-
-    foreach ( $orden_definido as $i => $nombre ) {
-        if ( str_contains( $nombre_a, $nombre ) ) {
-            $pos_a = $i;
-            break;
-        }
-    }
-
-    foreach ( $orden_definido as $i => $nombre ) {
-        if ( str_contains( $nombre_b, $nombre ) ) {
-            $pos_b = $i;
-            break;
-        }
-    }
-
-    if ( $pos_a !== PHP_INT_MAX && $pos_b !== PHP_INT_MAX ) return $pos_a - $pos_b;
-    if ( $pos_a !== PHP_INT_MAX ) return -1;
-    if ( $pos_b !== PHP_INT_MAX ) return 1;
-
-    return strcmp( $nombre_a, $nombre_b );
-} );
-
-$miembros = $todos;
+if ( empty( $miembros ) ) return;
 ?>
 
 <section class="somos-equipo">
