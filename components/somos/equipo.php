@@ -3,6 +3,11 @@
  * Somos component: Equipo
  */
 
+// Verificamos que ACF está listo antes de seguir
+if ( ! function_exists( 'get_field' ) || ! did_action( 'acf/init' ) ) {
+    return;
+}
+
 $todos = get_posts( array(
     'post_type'      => 'equipo_medico',
     'posts_per_page' => -1,
