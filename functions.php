@@ -33,6 +33,12 @@ add_filter( 'body_class', function( $classes ) {
             $classes[] = 'page-id-' . $page->ID;     // id (WordPress ya lo añade, pero por si acaso)
         }
     }
+
+    // Footer oscuro en single protocolos
+    if ( is_singular( 'protocolos' ) ) {
+        $classes[] = 'single-protocolos-dark';
+    }
+    
     return $classes;
 });
 

@@ -5,10 +5,13 @@
 .footer {
     display: flex;
     flex-direction: column;
-    padding: 48px 24px 24px;
     justify-content: space-between;
     height: 100vh;
-    margin-top: 10vh;
+    /* padding: 48px 24px 24px; */
+    /* margin-top: 10vh; */
+    margin-top: 0;
+    padding: 0px 24px 24px;
+    padding-top: calc(10vh + 48px);
     box-sizing: border-box;
     /* border-top: 1px solid var(--dark-color); */
 }
@@ -474,3 +477,30 @@
 
 
 
+/* single-protocolos */
+
+
+
+.single-protocolos-dark .footer__logo,
+.single-protocolos-dark .footer__descripcion,
+.single-protocolos-dark .footer__link,
+.single-protocolos-dark .footer__direccion,
+.single-protocolos-dark .footer__horario,
+.single-protocolos-dark .footer__nav-titulo,
+.single-protocolos-dark .footer__nav-link,
+.single-protocolos-dark .footer__copyright,
+.single-protocolos-dark .footer__creditos {
+    color: var(--light-color);
+}
+.single-protocolos-dark .footer__top-izq,
+.single-protocolos-dark .footer__contacto {
+    border-top-color: var(--light-color);
+}
+.single-protocolos-dark .footer__descripcion-wrapper,
+.single-protocolos-dark .footer__nav,
+.single-protocolos-dark .footer__bottom {
+    border-top-color: rgba(255,255,255,0.2);
+}
+.single-protocolos-dark .footer {
+    background: #000;
+}

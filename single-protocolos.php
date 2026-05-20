@@ -13,7 +13,5 @@ get_header();
     <?php // get_template_part( 'components/protocolos/formulario' ); ?>
 </main>
  
-<?php wp_footer(); ?>
-</body>
-</html>
+<?php get_footer(); ?>
  
