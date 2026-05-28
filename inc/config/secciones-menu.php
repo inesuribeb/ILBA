@@ -77,8 +77,8 @@ function ilba_get_secciones_menu() {
         'medical' => array(
             'titulo'      => 'Medical',
             'descripcion' => 'Tratamientos médico-estéticos faciales, corporales y capilares con tecnología de vanguardia.',
-            'imagen'      => $dir . 'medical2.jpg',
-            'imagen_sv'   => $dir . 'AmenuMedical.webp',
+            'imagen'      => $dir . 'cambioheader.webp',
+            'imagen_sv'   => $dir . 'cambiocarru.webp',
             'url'         => '#',
             'columnas'    => array(
                 array(
