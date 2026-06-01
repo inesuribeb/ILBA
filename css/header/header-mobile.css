@@ -16,7 +16,6 @@
     .header-mobile {
         display: flex;
         flex-direction: row;
-        /* align-items: center; */
         align-items: flex-start;
         justify-content: space-between;
         padding: 24px 24px;
@@ -66,7 +65,7 @@
         text-decoration: none;
         line-height: 1;
         letter-spacing: -5px;
-        transform: translateY(-10px); /* ajusta este valor */
+        transform: translateY(-10px);
     display: inline-block;
     }
 
@@ -79,23 +78,7 @@
     }
 
 
-    /* Light en home (sobre hero) */
-    /* .home .header-mobile__logo-link,
-    .home .header-mobile__menu-btn,
-    .home .header-mobile__menu-label {
-        color: var(--light-color);
-    }
-    .home .header-mobile__der {
-        border-color: var(--light-color);
-    }
-    .home .header-mobile.menu-abierto .header-mobile__logo-link,
-    .home .header-mobile.menu-abierto .header-mobile__menu-btn,
-    .home .header-mobile.menu-abierto .header-mobile__menu-label {
-        color: var(--dark-color);
-    }
-    .home .header-mobile.menu-abierto .header-mobile__der {
-        border-color: var(--dark-color);
-    } */
+
 
     .header-mobile--light-hero .header-mobile__logo-link,
     .header-mobile--light-hero .header-mobile__menu-btn,
