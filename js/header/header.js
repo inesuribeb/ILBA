@@ -117,4 +117,18 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(somosHero);
     }
 
+    // --- Header light cuando el hero de servicios es visible (solo nav der) ---
+    if (document.body.classList.contains('single-servicios')) {
+        const svHero = document.querySelector('.sv-hero');
+        if (svHero) {
+            const observer = new IntersectionObserver(
+                ([entry]) => {
+                    header.classList.toggle('header--light-sv', entry.isIntersecting);
+                },
+                { threshold: 0 }
+            );
+            observer.observe(svHero);
+        }
+    }
+
 });
