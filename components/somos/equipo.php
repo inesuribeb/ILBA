@@ -33,6 +33,7 @@ $orden_definido = array(
     'idoia romo',
     'rosa mora',
     'laura san martin',
+    'laura san martín',
     'begoña gabiola',
     'laura santa maría',
     'laura santa maria',
