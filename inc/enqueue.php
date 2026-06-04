@@ -125,5 +125,25 @@ function ilba_enqueue_assets() {
     if ( is_page( array( 'privacidad', 'legal', 'cookies' ) ) ) {
         wp_enqueue_style( 'ilba-legal', $uri . '/css/legal/legal.css', array(), filemtime( $dir . '/css/legal/legal.css' ) );
     }
+
+
+    if ( function_exists( 'is_shop' ) ) {
+
+        // --- Tienda (archivo) ---
+        if ( is_shop() || is_product_category() || is_product_tag() ) {
+            wp_enqueue_style( 'ilba-shop-archive', $uri . '/css/shop/archive/archive.css', array(), filemtime( $dir . '/css/shop/archive/archive.css' ) );
+            wp_enqueue_style( 'ilba-shop-card', $uri . '/css/shop/archive/card.css', array(), filemtime( $dir . '/css/shop/archive/card.css' ) );
+            wp_enqueue_style( 'ilba-shop-filter', $uri . '/css/shop/archive/filtrado.css', array(), filemtime( $dir . '/css/shop/archive/filtrado.css' ) );
+            wp_enqueue_script( 'ilba-shop-vista',  $uri . '/js/shop/archive/vista.js',     array(), filemtime( $dir . '/js/shop/archive/vista.js' ), true );
+            wp_enqueue_script( 'ilba-shop-filter-js',  $uri . '/js/shop/archive/filter.js',     array(), filemtime( $dir . '/js/shop/archive/filter.js' ), true );
+        }
+    
+        // --- Tienda (single product) ---
+        if ( is_product() ) {
+            wp_enqueue_style( 'ilba-shop-single', $uri . '/css/shop/single/single.css', array(), filemtime( $dir . '/css/shop/single/single.css' ) );
+        }
+    
+    }
 }
+
 add_action( 'wp_enqueue_scripts', 'ilba_enqueue_assets' );

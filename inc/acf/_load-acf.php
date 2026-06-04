@@ -27,3 +27,6 @@ require_once get_stylesheet_directory() . '/inc/acf/somos/fields-somos.php';
 
 /*CONTACTO*/
 require_once get_stylesheet_directory() . '/inc/acf/contacto/fields-contacto.php';
+
+/*PRODUCTO*/
+require_once get_stylesheet_directory() . '/inc/acf/product/fields-product.php';

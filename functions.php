@@ -95,3 +95,22 @@ add_filter( 'wpcf7_form_elements', function( $html ) {
 
     return $html;
 });
+
+
+// --- WooCommerce: templates personalizados ---
+
+add_filter( 'template_include', 'ilba_woo_templates', 99 );
+
+function ilba_woo_templates( $template ) {
+    if ( ! function_exists( 'is_shop' ) ) return $template;
+
+    if ( is_shop() || is_product_category() || is_product_tag() ) {
+        $custom = get_stylesheet_directory() . '/woocommerce/archive-product.php';
+        if ( file_exists( $custom ) ) return $custom;
+    }
+    if ( is_product() ) {
+        $custom = get_stylesheet_directory() . '/woocommerce/single-product.php';
+        if ( file_exists( $custom ) ) return $custom;
+    }
+    return $template;
+}

@@ -1,0 +1,83 @@
+/* =============================================
+   Shop Filtrado
+   ============================================= */
+
+   .shop-filtrado {
+    padding-right: 0rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.shop-filtrado__lista {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+
+.shop-filtrado__link {
+    font-size: 16px;
+    letter-spacing: -0.5px;
+    color: var(--dark-color);
+    text-decoration: none;
+    padding: 0px 0;
+    display: block;
+    /* font-weight: 500; */
+    transition: opacity 0.2s ease;
+}
+
+.shop-filtrado__link:hover {
+    opacity: 0.5;
+}
+
+/* --- Acordeón --- */
+
+.shop-filtrado__acordeon-trigger {
+    background: none;
+    border: none;
+    padding: 2px 0;
+    font-family: inherit;
+    font-size: 16px;
+    letter-spacing: -0.5px;
+    color: var(--dark-color);
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.shop-filtrado__acordeon-trigger svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    transition: transform 0.25s ease;
+}
+
+.shop-filtrado__acordeon-trigger.is-open svg {
+    transform: rotate( 180deg );
+}
+
+.shop-filtrado__acordeon-lista {
+    list-style: none;
+    margin: 0;
+    padding: 0rem 0 1rem 1.5rem;
+    display: none;
+    flex-direction: column;
+    gap: 0px;
+    margin-top: 4px;
+}
+
+.shop-filtrado__acordeon-item .shop-filtrado__link {
+    font-size: 15px;
+}
+
+.shop-filtrado__acordeon-lista.is-open {
+    display: flex;
+}
+
