@@ -147,3 +147,29 @@
     margin-top: -0.4rem;
 
 }
+
+
+
+@media ( max-width: 1024px ) {
+
+    .shop-grid__card-titulo a {
+        font-size: 13px;
+    }
+
+    .shop-grid__card-precio {
+        font-size: 13px;
+    }
+
+    .shop-grid__card-marca {
+        font-size: 13px;
+        margin-top: -0.1rem;
+    }
+
+    .shop-grid__card .shop-grid__card-titulo {
+        line-height: 0.65;
+    }
+
+    .shop-grid__card-info {
+        padding-top: 0.4rem;
+    }
+}

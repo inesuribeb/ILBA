@@ -3,40 +3,38 @@
    ============================================= */
 
    .page-tienda {
-    padding: 48px 0 48px 24px;
-    padding-top: 35vh;
-}
-
-/* --- Wrapper: fila en desktop --- */
-
-.shop-grid-wrapper {
     display: flex;
     flex-direction: row;
+    padding: 48px 0 48px 24px;
+    padding-top: 35vh;
     gap: 2rem;
-    border-top: 1px solid #e0e0e0;
-    padding-top: 0.8rem;
 }
 
-/* --- Columna filtrado (15%) --- */
+/* --- Filtrado (15%) --- */
 
-.shop-filtrado-col {
+.shop-filtrado {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
     width: 15%;
     flex-shrink: 0;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 1rem;
     align-self: flex-start;
     position: sticky;
     top: 70px;
 }
 
-/* --- Columna grid (resto) --- */
+/* --- Header del grid --- */
 
-.shop-grid-main {
-    flex: 1;
+.shop-grid-wrapper {
     display: flex;
     flex-direction: column;
+    flex: 1;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 0.8rem;
     padding-right: 24px;
 }
-
-/* --- Header del grid --- */
 
 .shop-grid__header {
     display: flex;
@@ -87,6 +85,7 @@
     transition: left 0.25s ease;
 }
 
+/* Posiciones del círculo */
 .shop-grid__vista-track[data-vista="izquierda"] .shop-grid__vista-circulo { left: 0; }
 .shop-grid__vista-track[data-vista="centro"]    .shop-grid__vista-circulo { left: calc(50% - 5px); }
 .shop-grid__vista-track[data-vista="derecha"]   .shop-grid__vista-circulo { left: calc(100% - 10px); }
@@ -99,11 +98,13 @@
     row-gap: 2rem;
 }
 
+/* --- Variantes de vista --- */
+
 .shop-grid--8 { grid-template-columns: repeat( 8, 1fr ); }
 .shop-grid--4 { grid-template-columns: repeat( 4, 1fr ); }
 .shop-grid--2 { grid-template-columns: repeat( 2, 1fr ); }
 
-/* --- Trigger (oculto en desktop) --- */
+/* --- Trigger filtrado (oculto en desktop) --- */
 
 .shop-grid__filtro-trigger {
     display: none;
@@ -112,61 +113,11 @@
 @media ( max-width: 1024px ) {
 
     .page-tienda {
-        padding: 40px 24px 40px 24px;
-        padding-top: 18vh;
-    }
-
-    .shop-grid-wrapper {
         flex-direction: column;
-        gap: 0;
-        border-top: none;
-        padding-top: 0;
-        position: relative;
+        padding: 40px 24px 40px 24px;
     }
 
-    /* Columna filtrado oculta en móvil por defecto */
-    /* .shop-filtrado-col {
-        display: none;
-        position: absolute;
-        top: 3.5rem;
-        left: 0;
-        right: 0;
-        width: 100%;
-        background: var(--light-color);
-        z-index: 100;
-        padding: 1rem 0;
-        box-sizing: border-box;
-    }
-
-    .shop-filtrado-col.is-open {
-        display: block;
-    } */
-
-    .shop-filtrado-col {
-        display: none;
-        position: absolute;
-        top: 3.5rem;
-        left: 0;
-        right: 0;
-        width: 100%;
-        min-height: calc( 100vh - 3.5rem );
-        background: var(--light-color);
-        z-index: 100;
-        padding: 1rem 0;
-        box-sizing: border-box;
-    }
-    
-    .shop-filtrado-col.is-open {
-        display: block;
-    }
-
-    .shop-grid-main {
-        padding-right: 0;
-        border-top: 1px solid var(--dark-color);
-        padding-top: 0.5rem;
-    }
-
-    /* Trigger visible en móvil */
+    /* Botón trigger */
     .shop-grid__filtro-trigger {
         display: inline-flex;
         align-items: center;
@@ -176,42 +127,55 @@
         margin-right: 0.4rem;
         cursor: pointer;
         color: var(--dark-color);
+        transition: transform 0.25s ease;
     }
 
     .shop-grid__filtro-trigger svg {
-        width: 22px;
-        height: 22px;
-        transition: transform 0.25s ease;
+        width: 18px;
+        height: 18px;
     }
 
     .shop-grid__filtro-trigger[aria-expanded="true"] svg {
         transform: rotate( 45deg );
     }
 
+    /* Filtrado como modal */
+    .shop-filtrado {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: var(--light-color);
+        z-index: 200;
+        padding: 48px 24px 24px 24px;
+        overflow-y: auto;
+        width: 100%;
+        border-top: none;
+    }
+
+    .shop-filtrado.is-open {
+        display: flex;
+    }
+
+    .shop-grid-wrapper {
+        padding-right: 0;
+        border-top: none;
+    }
+
+    .shop-grid {
+        width: 100%;
+        padding-right: 0;
+        border-top: none;
+    }
+
+    /* Vista oculta en móvil */
     .shop-grid__vista {
         display: none;
     }
 
+    /* Grid fijo 2 columnas en móvil */
     .shop-grid--8,
     .shop-grid--4,
     .shop-grid--2 {
-        padding-top: 2rem;
         grid-template-columns: repeat( 2, 1fr );
-    }
-
-    .shop-grid__titulo {
-        font-size: 1.4rem;
-        letter-spacing: -1px;
-        /* border-bottom: 1px solid #e0e0e0; */
-    }
-
-    /* .shop-grid-wrapper {
-        border-top: 1px solid var(--dark-color);
-        padding-top: 0.6rem;
-    } */
-
-    .shop-grid__header {
-        padding-bottom: 0.5rem;
-        border-bottom: 1px solid #e0e0e0;
     }
 }

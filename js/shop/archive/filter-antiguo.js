@@ -22,17 +22,17 @@ document.addEventListener( 'DOMContentLoaded', function() {
 
     // --- Modal filtrado móvil ---
     const modalTrigger = document.querySelector( '.shop-grid__filtro-trigger' );
-    const filtradoCol  = document.querySelector( '.shop-filtrado-col' );
+    const filtrado     = document.querySelector( '.shop-filtrado' );
 
-    if ( modalTrigger && filtradoCol ) {
+    if ( modalTrigger && filtrado ) {
         modalTrigger.addEventListener( 'click', function() {
-            const isOpen = filtradoCol.classList.contains( 'is-open' );
+            const isOpen = filtrado.classList.contains( 'is-open' );
 
             if ( isOpen ) {
-                filtradoCol.classList.remove( 'is-open' );
+                filtrado.classList.remove( 'is-open' );
                 modalTrigger.setAttribute( 'aria-expanded', 'false' );
             } else {
-                filtradoCol.classList.add( 'is-open' );
+                filtrado.classList.add( 'is-open' );
                 modalTrigger.setAttribute( 'aria-expanded', 'true' );
             }
         } );
