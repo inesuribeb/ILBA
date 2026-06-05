@@ -1,26 +1,34 @@
 document.addEventListener( 'DOMContentLoaded', function() {
 
-    const track  = document.querySelector( '.shop-grid__vista-track' );
-    const grid   = document.querySelector( '.shop-grid' );
+    const track = document.querySelector( '.shop-grid__vista-track' );
+    const grid  = document.querySelector( '.shop-grid' );
 
     if ( ! track || ! grid ) return;
 
-    const estados = [ 'izquierda', 'centro', 'derecha' ];
-    const clases  = {
+    const clases = {
         izquierda: 'shop-grid--8',
         centro:    'shop-grid--4',
         derecha:   'shop-grid--2',
     };
 
-    track.addEventListener( 'click', function() {
-        const actual   = track.dataset.vista;
-        const indice   = estados.indexOf( actual );
-        const siguiente = estados[ ( indice + 1 ) % estados.length ];
+    track.addEventListener( 'click', function( e ) {
+        const rect   = track.getBoundingClientRect();
+        const clickX = e.clientX - rect.left;
+        const tercio = rect.width / 3;
 
-        track.dataset.vista = siguiente;
+        let vista;
+        if ( clickX < tercio ) {
+            vista = 'izquierda';
+        } else if ( clickX < tercio * 2 ) {
+            vista = 'centro';
+        } else {
+            vista = 'derecha';
+        }
+
+        track.dataset.vista = vista;
 
         Object.values( clases ).forEach( c => grid.classList.remove( c ) );
-        grid.classList.add( clases[ siguiente ] );
+        grid.classList.add( clases[ vista ] );
     } );
 
 } );

@@ -64,7 +64,7 @@
 .shop-grid__vista-track {
     position: relative;
     width: 80px;
-    height: 2px;
+    height: 1px;
     background-color: var(--dark-color);
     cursor: pointer;
 }
