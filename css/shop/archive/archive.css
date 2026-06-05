@@ -43,6 +43,9 @@
 
 .shop-grid__titulo {
     margin: 0;
+    font-family: var(--sans-serif);
+    font-size: 1.9rem;
+    letter-spacing: -1.5px;
 }
 
 /* --- Toggle vista --- */
