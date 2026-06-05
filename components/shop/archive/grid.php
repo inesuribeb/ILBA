@@ -71,12 +71,31 @@ $productos = new WP_Query( $args );
                     </div>
 
                     <div class="shop-grid__card-info">
+                        <div class="line1">
                         <h3 class="shop-grid__card-titulo">
                             <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                         </h3>
                         <span class="shop-grid__card-precio">
                             <?php echo $product->get_price_html(); ?>
                         </span>
+                        </div>
+                        <div class="line2">
+    <?php
+    $terms = get_the_terms( get_the_ID(), 'product_cat' );
+    $marca = '';
+    if ( $terms && ! is_wp_error( $terms ) ) {
+        foreach ( $terms as $term ) {
+            $padre = get_term( $term->parent, 'product_cat' );
+            if ( $padre && ! is_wp_error( $padre ) && $padre->slug === 'marca' ) {
+                $marca = $term->name;
+                break;
+            }
+        }
+    }
+    if ( $marca ) : ?>
+        <span class="shop-grid__card-marca"><?php echo esc_html( $marca ); ?></span>
+    <?php endif; ?>
+</div>
                     </div>
 
                 </article>
