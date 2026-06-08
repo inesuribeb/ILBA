@@ -165,6 +165,11 @@
         display: block;
     }
 
+    .shop-filtrado-col {
+        border-top: 1px solid transparent;
+
+    }
+
     .shop-grid-main {
         padding-right: 0;
         border-top: 1px solid var(--dark-color);
@@ -202,6 +207,7 @@
     .shop-grid--2 {
         padding-top: 2rem;
         grid-template-columns: repeat( 2, 1fr );
+        /* border-top: none; */
     }
 
     .shop-grid__titulo {
