@@ -1,0 +1,20 @@
+/* =============================================
+   Producto single — Intro
+   ============================================= */
+
+   .producto-intro {
+    display: flex;
+    flex-direction: column;
+}
+
+.producto-intro__top {
+    display: flex;
+    flex-direction: column;
+}
+
+.producto-intro__info {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 1.5rem;
+}

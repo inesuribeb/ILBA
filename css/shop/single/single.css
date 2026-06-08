@@ -1,0 +1,25 @@
+.page-producto {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.producto__layout {
+    display: flex;
+    flex-direction: column;
+}
+
+.producto__col-izq {
+    display: flex;
+    flex-direction: row;
+}
+
+.producto__col-izq > * {
+    flex: 1;
+}
+
+.producto__relacionados {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}

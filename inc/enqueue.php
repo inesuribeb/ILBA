@@ -138,10 +138,18 @@ function ilba_enqueue_assets() {
             wp_enqueue_script( 'ilba-shop-filter-js',  $uri . '/js/shop/archive/filter.js',     array(), filemtime( $dir . '/js/shop/archive/filter.js' ), true );
         }
     
+
         // --- Tienda (single product) ---
-        if ( is_product() ) {
-            wp_enqueue_style( 'ilba-shop-single', $uri . '/css/shop/single/single.css', array(), filemtime( $dir . '/css/shop/single/single.css' ) );
-        }
+if ( is_product() ) {
+    wp_enqueue_style( 'ilba-shop-single',        $uri . '/css/shop/single/single.css',       array(), filemtime( $dir . '/css/shop/single/single.css' ) );
+    wp_enqueue_style( 'ilba-shop-intro',         $uri . '/css/shop/single/intro.css',        array(), filemtime( $dir . '/css/shop/single/intro.css' ) );
+    wp_enqueue_style( 'ilba-shop-carousel',      $uri . '/css/shop/single/carousel.css',     array(), filemtime( $dir . '/css/shop/single/carousel.css' ) );
+    wp_enqueue_style( 'ilba-shop-descripcion',   $uri . '/css/shop/single/descripcion.css',  array(), filemtime( $dir . '/css/shop/single/descripcion.css' ) );
+    wp_enqueue_style( 'ilba-shop-details',       $uri . '/css/shop/single/details.css',      array(), filemtime( $dir . '/css/shop/single/details.css' ) );
+    wp_enqueue_style( 'ilba-shop-relacionados',  $uri . '/css/shop/single/relacionados.css', array(), filemtime( $dir . '/css/shop/single/relacionados.css' ) );
+    wp_enqueue_style( 'ilba-shop-card',         $uri . '/css/shop/archive/card.css',         array(),                      filemtime( $dir . '/css/shop/archive/card.css' ) );
+
+}
     
     }
 }

@@ -173,3 +173,19 @@
         padding-top: 0.4rem;
     }
 }
+
+
+
+
+
+.producto-relacionados__grid .shop-grid__card-titulo a {
+    font-size: 14px;
+}
+
+.producto-relacionados__grid .shop-grid__card-precio {
+    font-size: 14px;
+}
+
+.producto-relacionados__grid .shop-grid__card-marca {
+    font-size: 13px;
+}
