@@ -46,7 +46,7 @@ $tamano = get_field( 'producto_tamano' );
 
     </div>
 
-    <div class="producto-intro__cta">
+    <!-- <div class="producto-intro__cta">
     <?php
     global $product;
     echo sprintf(
@@ -59,6 +59,12 @@ $tamano = get_field( 'producto_tamano' );
         esc_attr( $product->get_id() ),
         esc_html( $product->single_add_to_cart_text() )
     ); ?>
+</div> -->
+
+<div class="producto-intro__cta">
+    <button class="single_add_to_cart_button" disabled>
+        Próximamente
+    </button>
 </div>
 
 </div>

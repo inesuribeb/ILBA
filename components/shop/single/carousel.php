@@ -14,9 +14,11 @@ $todas            = array_filter( array_merge( array( $imagen_principal ), $gale
 
 <div class="producto-carousel">
 
+<div class="producto-carousel__main-wrapper">
     <div class="producto-carousel__main">
         <?php echo wp_get_attachment_image( $imagen_principal, 'large', false, array( 'class' => 'producto-carousel__img-main' ) ); ?>
     </div>
+</div>
 
     <?php if ( ! empty( $todas ) ) : ?>
         <div class="producto-carousel__thumbs">

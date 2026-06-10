@@ -16,6 +16,7 @@ require_once get_stylesheet_directory() . '/inc/acf/home/fields-home-clinica.php
 require_once get_stylesheet_directory() . '/inc/acf/home/fields-home-conocenos.php';
 require_once get_stylesheet_directory() . '/inc/acf/home/fields-home-marcas.php';
 require_once get_stylesheet_directory() . '/inc/acf/home/fields-home-servicios.php';
+require_once get_stylesheet_directory() . '/inc/acf/home/fields-home-tienda.php';
 require_once get_stylesheet_directory() . '/inc/acf/home/fields-home-img-video.php';
 
 

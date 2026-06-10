@@ -25,9 +25,12 @@ function ilba_enqueue_assets() {
         wp_enqueue_style( 'ilba-conocenos',          $uri . '/css/home/section-conocenos.css',  array(), filemtime( $dir . '/css/home/section-conocenos.css' ) );
         wp_enqueue_style( 'ilba-marcas',             $uri . '/css/home/section-marcas.css',     array(), filemtime( $dir . '/css/home/section-marcas.css' ) );
         wp_enqueue_style( 'ilba-img-video',          $uri . '/css/home/section-img-video.css',  array(), filemtime( $dir . '/css/home/section-img-video.css' ) );
+        wp_enqueue_style( 'ilba-nuestra-coleccion',          $uri . '/css/home/section-nuestra-coleccion.css',  array(), filemtime( $dir . '/css/home/section-nuestra-coleccion.css' ) );
+
 
         wp_enqueue_script( 'ilba-sticky-tag',      $uri . '/js/home/sticky-tag.js',      array(), filemtime( $dir . '/js/home/sticky-tag.js' ),      true );
         wp_enqueue_script( 'ilba-cards-servicios', $uri . '/js/home/cards-servicios.js', array(), filemtime( $dir . '/js/home/cards-servicios.js' ), true );
+        wp_enqueue_script( 'ilba-cards-coleccion', $uri . '/js/home/cards-coleccion.js', array(), filemtime( $dir . '/js/home/cards-coleccion.js' ), true );
     }
 
     // --- Beauty & Medical ---
@@ -148,7 +151,8 @@ if ( is_product() ) {
     wp_enqueue_style( 'ilba-shop-details',       $uri . '/css/shop/single/details.css',      array(), filemtime( $dir . '/css/shop/single/details.css' ) );
     wp_enqueue_style( 'ilba-shop-relacionados',  $uri . '/css/shop/single/relacionados.css', array(), filemtime( $dir . '/css/shop/single/relacionados.css' ) );
     wp_enqueue_style( 'ilba-shop-card',         $uri . '/css/shop/archive/card.css',         array(),                      filemtime( $dir . '/css/shop/archive/card.css' ) );
-
+    wp_enqueue_script( 'ilba-shop-details-js',   $uri . '/js/shop/single/details.js',        array(), filemtime( $dir . '/js/shop/single/details.js' ), true );
+    wp_enqueue_script( 'ilba-shop-carousel-js', $uri . '/js/shop/single/carousel.js', array(), filemtime( $dir . '/js/shop/single/carousel.js' ), true );
 }
     
     }

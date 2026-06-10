@@ -63,7 +63,7 @@ function ilba_get_secciones_menu() {
                         array( 'titulo' => 'Evolvex',                  'url' => $ap . 'evolvex/' ),
                         array( 'titulo' => 'Indiba CT8',               'url' => $ap . 'indiba-ct8/' ),
                         array( 'titulo' => 'Forma',                    'url' => $ap . 'forma-inmode/' ),
-                        array( 'titulo' => 'Linfopress Evolution Pro', 'url' => $ap . 'linfopress-evolution-pro/' ),
+                        // array( 'titulo' => 'Linfopress Evolution Pro', 'url' => $ap . 'linfopress-evolution-pro/' ),
                     ),
                 ),
                 array(

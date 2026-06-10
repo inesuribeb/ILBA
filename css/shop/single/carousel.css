@@ -1,14 +1,15 @@
-/* =============================================
-   Producto single — Carousel
-   ============================================= */
-
-   .producto-carousel {
+.producto-carousel {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    /* height: 100%; */
 }
 
-/* --- Imagen principal --- */
+.producto-carousel__main-wrapper {
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+}
 
 .producto-carousel__main {
     width: 100%;
@@ -24,16 +25,15 @@
     display: block;
 }
 
-/* --- Thumbs en fila --- */
-
-.producto-carousel__thumbs {
-    display: flex;
-    flex-direction: row;
+/* .producto-carousel__thumbs {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat( 4, 1fr );
     gap: 0.5rem;
+    flex-shrink: 0;
 }
 
 .producto-carousel__thumb {
-    flex: 1;
     aspect-ratio: 4 / 5;
     overflow: hidden;
     background-color: white;
@@ -52,4 +52,67 @@
     height: 100%;
     object-fit: contain;
     display: block;
+} */
+
+.producto-carousel__thumbs {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex-shrink: 0;
+}
+
+.producto-carousel__thumb {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    background-color: white;
+    /* cursor: pointer; */
+    /* opacity: 0.5; */
+    /* transition: opacity 0.2s ease; */
+}
+
+/* .producto-carousel__thumb.is-active,
+.producto-carousel__thumb:hover {
+    opacity: 1;
+} */
+
+.producto-carousel__thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.producto-carousel__main-wrapper {
+    display: none;
+}
+
+
+@media ( max-width: 1024px ) {
+
+    .producto-carousel__main-wrapper {
+        display: block;
+        width: 100%;
+    }
+
+    .producto-carousel__thumbs {
+        flex-direction: row;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+        padding: 0px 24px 6px 24px;
+    }
+
+    .producto-carousel__thumbs::-webkit-scrollbar {
+        display: none;
+    }
+
+    .producto-carousel__thumb {
+        flex-shrink: 0;
+        height: 150px;
+        width: auto;
+        aspect-ratio: 4 / 5;
+    }
 }
