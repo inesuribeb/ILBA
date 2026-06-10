@@ -40,6 +40,51 @@ $args = array(
 );
 
 $productos = new WP_Query( $args );
+
+// Orden de marcas
+$orden_marcas = array(
+    'skinceuticals',
+    'biologique-recherche',
+    'medik8',
+    'perricone-md',
+    'belevels',
+    'colorescience',
+    'massada',
+);
+
+// Función para obtener el slug de la marca de un producto
+function ilba_get_marca_slug( $post_id ) {
+    $terms = get_the_terms( $post_id, 'product_cat' );
+    if ( $terms && ! is_wp_error( $terms ) ) {
+        foreach ( $terms as $term ) {
+            $padre = get_term( $term->parent, 'product_cat' );
+            if ( $padre && ! is_wp_error( $padre ) && $padre->slug === 'marca' ) {
+                return $term->slug;
+            }
+        }
+    }
+    return '';
+}
+
+// Reordenar los posts
+if ( $productos->have_posts() ) {
+    $posts_array = $productos->posts;
+
+    usort( $posts_array, function( $a, $b ) use ( $orden_marcas ) {
+        $marca_a = ilba_get_marca_slug( $a->ID );
+        $marca_b = ilba_get_marca_slug( $b->ID );
+
+        $pos_a = array_search( $marca_a, $orden_marcas );
+        $pos_b = array_search( $marca_b, $orden_marcas );
+
+        $pos_a = $pos_a === false ? 999 : $pos_a;
+        $pos_b = $pos_b === false ? 999 : $pos_b;
+
+        return $pos_a - $pos_b;
+    } );
+
+    $productos->posts = $posts_array;
+}
 ?>
 
 <div class="shop-grid-wrapper">
@@ -69,10 +114,11 @@ $productos = new WP_Query( $args );
 
         <section class="shop-grid shop-grid--4">
 
-            <?php if ( $productos->have_posts() ) : ?>
-                <?php while ( $productos->have_posts() ) : $productos->the_post();
+            <?php if ( ! empty( $productos->posts ) ) : ?>
+                <?php foreach ( $productos->posts as $post ) :
+                    setup_postdata( $post );
                     global $product;
-                    $product = wc_get_product( get_the_ID() );
+                    $product = wc_get_product( $post->ID );
                 ?>
                     <article class="shop-grid__card">
 
@@ -93,7 +139,7 @@ $productos = new WP_Query( $args );
                             </div>
                             <div class="line2">
                                 <?php
-                                $terms = get_the_terms( get_the_ID(), 'product_cat' );
+                                $terms = get_the_terms( $post->ID, 'product_cat' );
                                 $marca = '';
                                 if ( $terms && ! is_wp_error( $terms ) ) {
                                     foreach ( $terms as $term ) {
@@ -111,7 +157,7 @@ $productos = new WP_Query( $args );
                         </div>
 
                     </article>
-                <?php endwhile; ?>
+                <?php endforeach; ?>
                 <?php wp_reset_postdata(); ?>
 
             <?php else : ?>
