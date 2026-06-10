@@ -4,7 +4,9 @@
  * Archivo: components/home/section-tienda.php
  */
 
-if ( ! get_field( 'home_tienda_visible' ) ) return;
+ if ( ! get_field( 'home_tienda_visible' ) ) {
+    return;
+}
 
 $tag         = get_field( 'home_tienda_tag' );
 $titulo      = get_field( 'home_tienda_titulo' );
