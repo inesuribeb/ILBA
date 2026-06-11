@@ -123,6 +123,10 @@
         padding-top: 18vh;
     }
 
+    .shop-grid {
+        column-gap: 0.5rem;
+    }
+
     .shop-grid-wrapper {
         flex-direction: column;
         gap: 0;
