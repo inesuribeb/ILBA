@@ -60,7 +60,9 @@
 }
 
 .header__nav-izq {
-    visibility: hidden;
+    /* visibility: hidden; */
+    visibility: visible;
+
 }
 
 
@@ -113,6 +115,9 @@
 .header--light-home .header__nav-der .header__nav-link {
     color: var(--light-color);
 }
+.header--light-home .header__nav-izq .header__nav-link {
+    color: var(--light-color);
+}
 
 .header--light-home .header__logo-link {
     color: var(--light-color);
@@ -130,6 +135,9 @@
 
 /* Servicios: solo nav der en blanco, logo dark */
 .header--light-sv .header__nav-der .header__nav-link {
+    color: var(--light-color);
+}
+.header--light-sv .header__nav-izq .header__nav-link {
     color: var(--light-color);
 }
 

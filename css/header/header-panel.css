@@ -213,3 +213,70 @@
 .header__panel-wellness-link:hover {
     opacity: 0.5;
 }
+
+
+
+
+
+
+
+
+
+
+
+/* --- Panel Tienda --- */
+
+.header__panel-nav--tienda {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0;
+}
+
+.header__panel-tienda-col {
+    flex: 0 0 33.333%;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.header__panel-tienda-todo {
+    font-size: 15px;
+    color: var(--dark-color);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    transition: opacity 0.2s ease;
+}
+
+.header__panel-tienda-todo:hover {
+    opacity: 0.5;
+}
+
+.header__panel-tienda-label {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #aaa;
+    letter-spacing: -1px;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.header__panel-tienda-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.header__panel-tienda-link {
+    font-size: 15px;
+    color: var(--dark-color);
+    text-decoration: none;
+    letter-spacing: -1px;
+    padding-top: 4px;
+    transition: opacity 0.2s ease;
+}
+
+.header__panel-tienda-link:hover {
+    opacity: 0.5;
+}

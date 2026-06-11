@@ -6,9 +6,8 @@
 $secciones    = ilba_get_secciones_menu();
 $contacto_url = get_permalink( get_page_by_path( 'contacto' ) );
 $somos_url    = get_permalink( get_page_by_path( 'somos' ) );
-
-$evento_url = get_post_type_archive_link( 'eventos' );
-
+$evento_url   = get_post_type_archive_link( 'eventos' );
+$panel_tienda = function_exists( 'ilba_get_panel_tienda' ) ? ilba_get_panel_tienda() : null;
 ?>
 
 <header class="header-mobile">
@@ -34,6 +33,16 @@ $evento_url = get_post_type_archive_link( 'eventos' );
         <div class="header-mobile__panel-1 is-active">
             <div class="header-mobile__panel-scroll">
                 <nav class="header-mobile__nav">
+
+                    <div class="header-mobile__nav-item">
+                        <button class="header-mobile__nav-btn" data-seccion="tienda">
+                            Tienda
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                            </svg>
+                        </button>
+                    </div>
+
                     <?php foreach ( $secciones as $key => $seccion ) : ?>
                         <div class="header-mobile__nav-item">
                             <button class="header-mobile__nav-btn" data-seccion="<?php echo esc_attr( $key ); ?>">
@@ -44,6 +53,7 @@ $evento_url = get_post_type_archive_link( 'eventos' );
                             </button>
                         </div>
                     <?php endforeach; ?>
+
                 </nav>
 
                 <div class="header-mobile__imagen">
@@ -56,6 +66,52 @@ $evento_url = get_post_type_archive_link( 'eventos' );
                 </div>
             </div>
         </div>
+
+        <!-- Panel 2: Tienda -->
+        <?php if ( $panel_tienda ) : ?>
+            <div class="header-mobile__panel-2" data-panel-2="tienda">
+                <div class="header-mobile__panel-2-header">
+                    <button class="header-mobile__back-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                        </svg>
+                        Tienda
+                    </button>
+                </div>
+                <div class="header-mobile__panel-scroll">
+
+                    <nav class="header-mobile__nav">
+
+                        <div class="header-mobile__nav-item">
+                            <a href="<?php echo esc_url( $panel_tienda['tienda_url'] ); ?>" class="header-mobile__nav-btn">
+                                Comprar todo
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                </svg>
+                            </a>
+                        </div>
+
+                        <?php if ( ! empty( $panel_tienda['tipo_piel_items'] ) ) : ?>
+                            <div class="header-mobile__nav-item header-mobile__nav-item--titulo">
+                                <span class="header-mobile__nav-label">Por necesidad</span>
+                            </div>
+                            <?php foreach ( $panel_tienda['tipo_piel_items'] as $item ) : ?>
+                                <div class="header-mobile__nav-item">
+                                    <a href="<?php echo esc_url( $item['url'] ); ?>" class="header-mobile__nav-btn">
+                                        <?php echo esc_html( $item['titulo'] ); ?>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
+
+                    </nav>
+
+                </div>
+            </div>
+        <?php endif; ?>
 
         <!-- Paneles 2: uno por sección -->
         <?php foreach ( $secciones as $key => $seccion ) : ?>

@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Panel hover ---
     const secciones = document.querySelectorAll('.header__nav-link--seccion');
-    const paneles = document.querySelectorAll('.header__panel');
+    const paneles   = document.querySelectorAll('.header__panel');
 
     let closeTimeout = null;
 
@@ -59,9 +59,27 @@ document.addEventListener('DOMContentLoaded', () => {
         panel.addEventListener('mouseleave', closePanel);
     });
 
+    // --- Panel tienda ---
+    const tiendaLink  = document.querySelector('.header__nav-izq .header__nav-link');
+    const panelTienda = document.querySelector('.header__panel--tienda');
+
+    if ( tiendaLink && panelTienda ) {
+        tiendaLink.addEventListener('mouseenter', () => {
+            clearTimeout(closeTimeout);
+            paneles.forEach(p => p.classList.remove('is-open'));
+            panelTienda.classList.add('is-open');
+            header.classList.add('panel-open');
+        });
+
+        tiendaLink.addEventListener('mouseleave', closePanel);
+
+        panelTienda.addEventListener('mouseenter', () => clearTimeout(closeTimeout));
+        panelTienda.addEventListener('mouseleave', closePanel);
+    }
+
     // --- Wellness: cambio de imagen en hover ---
     const wellnessLinks = document.querySelectorAll('.header__panel-wellness-link');
-    const wellnessImg = document.querySelector('.header__panel-wellness-img');
+    const wellnessImg   = document.querySelector('.header__panel-wellness-img');
 
     if (wellnessImg) {
         const defaultSrc = wellnessImg.src;

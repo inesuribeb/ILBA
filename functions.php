@@ -19,6 +19,8 @@ require_once get_stylesheet_directory() . '/inc/cpt/_load-cpts.php';
 require_once get_stylesheet_directory() . '/inc/acf/_load-acf.php';
 
 require_once get_stylesheet_directory() . '/inc/config/secciones-menu.php';
+require_once get_stylesheet_directory() . '/inc/config/panel-tienda.php';
+
 
 require_once get_stylesheet_directory() . '/inc/enqueue.php';
 
