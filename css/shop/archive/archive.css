@@ -184,15 +184,37 @@
 
     } */
 
-    .shop-grid-main {
-        padding-right: 0px;
+    .shop-grid {
+        column-gap: 0rem;
+        row-gap: 0rem;
     }
+
+    .shop-grid-wrapper {
+        flex-direction: column;
+        gap: 0;
+        border-top: none;
+        padding-top: 0;
+        position: relative;
+    }
+    
+    .shop-grid-main {
+        padding-right: 0 !important;
+        padding-left: 0;
+        border-top: 1px solid var(--dark-color);
+        padding-top: 0.5rem;
+    }
+
+    /* .shop-grid-main {
+        padding-right: 0 !important;
+        padding-left: 0;
+    } */
 
     .shop-grid--8,
     .shop-grid--4,
     .shop-grid--2 {
         width: 100%;
         column-gap: 0.5rem;
+        row-gap: 2rem;
         box-sizing: border-box;
         padding-top: 2rem;
         grid-template-columns: repeat( 2, 1fr );
