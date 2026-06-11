@@ -97,11 +97,8 @@ $panel_tienda = function_exists( 'ilba_get_panel_tienda' ) ? ilba_get_panel_tien
                             </div>
                             <?php foreach ( $panel_tienda['tipo_piel_items'] as $item ) : ?>
                                 <div class="header-mobile__nav-item">
-                                    <a href="<?php echo esc_url( $item['url'] ); ?>" class="header-mobile__nav-btn">
+                                    <a href="<?php echo esc_url( $item['url'] ); ?>" class="header-mobile__nav-link">
                                         <?php echo esc_html( $item['titulo'] ); ?>
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-                                        </svg>
                                     </a>
                                 </div>
                             <?php endforeach; ?>
