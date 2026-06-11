@@ -5,6 +5,8 @@
    .shop-grid__card {
     display: flex;
     flex-direction: column;
+    box-sizing: border-box;
+    width: 100%;
 }
 
 /* --- Imagen (4/5) --- */
