@@ -24,8 +24,8 @@
     <nav class="header__nav">
 
         <div class="header__nav-izq">
-        <a href="<?php echo esc_url( wc_get_page_permalink( 'shop' ) ); ?>" class="header__nav-link">
-        Tienda [<?php echo function_exists( 'WC' ) && WC()->cart ? WC()->cart->get_cart_contents_count() : '0'; ?>]
+            <a href="<?php echo esc_url( wc_get_page_permalink( 'shop' ) ); ?>" class="header__nav-link">
+                Tienda
             </a>
         </div>
 
@@ -40,11 +40,17 @@
                 </a>
             <?php endforeach; ?>
             <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'somos' ) ) ); ?>" class="header__nav-link">
-    Somos
-</a>
-            <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'contacto' ) ) ); ?>" class="header__nav-link">
-                Contáctanos
+                Somos
             </a>
+            <!-- <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'contacto' ) ) ); ?>" class="header__nav-link">
+                Contáctanos
+            </a> -->
+            <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'contacto' ) ) ); ?>" class="header__nav-link header__nav-link--contacto">
+    Contáctanos
+</a>
+            <a href="#" class="header__nav-link header__nav-link--carrito" id="abrir-modal-carrito">
+    Carrito [<span class="carrito-count"><?php echo function_exists( 'WC' ) && WC()->cart ? WC()->cart->get_cart_contents_count() : '0'; ?></span>]
+</a>
         </div>
 
     </nav>
@@ -176,8 +182,11 @@
         </div>
     <?php endif; ?>
 
+    <!-- <?php get_template_part( 'components/shop/modal/modal-carrito' ); ?> -->
+
 
 </header>
 
+<?php get_template_part( 'components/shop/modal/modal-carrito' ); ?>
 
 <?php get_template_part( 'header-mobile' ); ?>

@@ -16,11 +16,21 @@ $panel_tienda = function_exists( 'ilba_get_panel_tienda' ) ? ilba_get_panel_tien
             ILBA
         </a>
     </div>
-    <div class="header-mobile__der">
+    <!-- <div class="header-mobile__der">
         <button class="header-mobile__menu-btn" aria-expanded="false">
             <span class="header-mobile__menu-label">Menú</span>
         </button>
-    </div>
+    </div> -->
+    <div class="header-mobile__der">
+    <?php if ( function_exists( 'WC' ) && WC()->cart ) : ?>
+        <a href="#" class="header-mobile__carrito-btn" id="abrir-modal-carrito-mobile">
+            <?php echo WC()->cart->get_cart_contents_count(); ?>
+        </a>
+    <?php endif; ?>
+    <button class="header-mobile__menu-btn" aria-expanded="false">
+        <span class="header-mobile__menu-label">Menú</span>
+    </button>
+</div>
 </header>
 
 <!-- Menú: capa única -->

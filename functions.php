@@ -21,7 +21,6 @@ require_once get_stylesheet_directory() . '/inc/acf/_load-acf.php';
 require_once get_stylesheet_directory() . '/inc/config/secciones-menu.php';
 require_once get_stylesheet_directory() . '/inc/config/panel-tienda.php';
 
-
 require_once get_stylesheet_directory() . '/inc/enqueue.php';
 
 add_filter( 'show_admin_bar', '__return_false' );
@@ -31,12 +30,11 @@ add_filter( 'body_class', function( $classes ) {
     if ( is_page() ) {
         $page = get_queried_object();
         if ( $page ) {
-            $classes[] = 'page-' . $page->post_name; // slug
-            $classes[] = 'page-id-' . $page->ID;     // id (WordPress ya lo añade, pero por si acaso)
+            $classes[] = 'page-' . $page->post_name;
+            $classes[] = 'page-id-' . $page->ID;
         }
     }
 
-    // Footer oscuro en single protocolos
     if ( is_singular( 'protocolos' ) ) {
         $classes[] = 'single-protocolos-dark';
     }
@@ -75,7 +73,7 @@ add_filter( 'post_type_link', 'ilba_beauty_medical_permalink', 10, 2 );
 
 
 // --- CF7: opciones dinámicas ACF en formulario de protocolos ---
-// --- CF7: opciones dinámicas ACF en formulario de protocolos ---
+
 add_filter( 'wpcf7_form_elements', function( $html ) {
     if ( ! is_singular( 'protocolos' ) ) return $html;
 
@@ -101,8 +99,6 @@ add_filter( 'wpcf7_form_elements', function( $html ) {
 
 // --- WooCommerce: templates personalizados ---
 
-add_filter( 'template_include', 'ilba_woo_templates', 99 );
-
 function ilba_woo_templates( $template ) {
     if ( ! function_exists( 'is_shop' ) ) return $template;
 
@@ -116,3 +112,56 @@ function ilba_woo_templates( $template ) {
     }
     return $template;
 }
+add_filter( 'template_include', 'ilba_woo_templates', 99 );
+
+
+// --- WooCommerce: cart y checkout ---
+
+function ilba_woo_cart_checkout_templates( $template ) {
+    if ( ! function_exists( 'is_cart' ) ) return $template;
+
+    if ( is_cart() ) {
+        $custom = get_stylesheet_directory() . '/woocommerce/cart/cart.php';
+        if ( file_exists( $custom ) ) return $custom;
+    }
+    if ( is_checkout() ) {
+        $custom = get_stylesheet_directory() . '/woocommerce/checkout/checkout.php';
+        if ( file_exists( $custom ) ) return $custom;
+    }
+    return $template;
+}
+add_filter( 'template_include', 'ilba_woo_cart_checkout_templates', 99 );
+
+// --- WooCommerce: actualizar fragmentos del carrito ---
+// add_filter( 'woocommerce_add_to_cart_fragments', function( $fragments ) {
+
+
+//     $fragments['a#abrir-modal-carrito'] = '<a href="#" class="header__nav-link header__nav-link--carrito" id="abrir-modal-carrito">Carrito [<span class="carrito-count">' . WC()->cart->get_cart_contents_count() . '</span>]</a>';
+//     ob_start();
+//     get_template_part( 'components/shop/modal/modal-carrito' );
+//     $fragments['#modal-carrito'] = ob_get_clean();
+
+//     return $fragments;
+// } );
+add_filter( 'woocommerce_add_to_cart_fragments', function( $fragments ) {
+
+    $fragments['a#abrir-modal-carrito'] = '<a href="#" class="header__nav-link header__nav-link--carrito" id="abrir-modal-carrito">Carrito [<span class="carrito-count">' . WC()->cart->get_cart_contents_count() . '</span>]</a>';
+    $fragments['a#abrir-modal-carrito-mobile'] = '<a href="#" class="header-mobile__carrito-btn" id="abrir-modal-carrito-mobile">' . WC()->cart->get_cart_contents_count() . '</a>';
+
+    ob_start();
+    get_template_part( 'components/shop/modal/modal-carrito' );
+    $html = ob_get_clean();
+
+    // Forzar que el modal siempre se renderice cerrado
+    $html = str_replace( 'class="modal-carrito is-open"', 'class="modal-carrito"', $html );
+    $html = str_replace( 'aria-hidden="false"', 'aria-hidden="true"', $html );
+
+    $fragments['#modal-carrito'] = $html;
+
+    return $fragments;
+} );
+
+// --- WooCommerce: quitar avisos de añadido/eliminado del carrito ---
+add_filter( 'wc_add_to_cart_message_html', '__return_empty_string' );
+remove_action( 'woocommerce_cart_item_removed', 'woocommerce_cart_item_removed_notice' );
+add_filter( 'woocommerce_cart_item_removed_notice_type', '__return_empty_string' );

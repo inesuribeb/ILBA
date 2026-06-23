@@ -24,8 +24,8 @@
     <nav class="header__nav">
 
         <div class="header__nav-izq">
-        <a href="<?php echo esc_url( wc_get_page_permalink( 'shop' ) ); ?>" class="header__nav-link">
-        Tienda [<?php echo function_exists( 'WC' ) && WC()->cart ? WC()->cart->get_cart_contents_count() : '0'; ?>]
+            <a href="<?php echo esc_url( wc_get_page_permalink( 'shop' ) ); ?>" class="header__nav-link">
+                Tienda
             </a>
         </div>
 
@@ -40,11 +40,14 @@
                 </a>
             <?php endforeach; ?>
             <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'somos' ) ) ); ?>" class="header__nav-link">
-    Somos
-</a>
+                Somos
+            </a>
             <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'contacto' ) ) ); ?>" class="header__nav-link">
                 Contáctanos
             </a>
+            <a href="#" class="header__nav-link header__nav-link--carrito" id="abrir-modal-carrito">
+    Carrito [<span class="carrito-count"><?php echo function_exists( 'WC' ) && WC()->cart ? WC()->cart->get_cart_contents_count() : '0'; ?></span>]
+</a>
         </div>
 
     </nav>
@@ -142,7 +145,43 @@
         </div>
     <?php endforeach; ?>
 
-</header>
+    <!-- Panel Tienda -->
+    <?php
+    $panel_tienda = function_exists( 'ilba_get_panel_tienda' ) ? ilba_get_panel_tienda() : null;
+    if ( $panel_tienda ) : ?>
+        <div class="header__panel header__panel--tienda" data-panel="tienda">
 
+            <div class="header__panel-nav header__panel-nav--tienda">
+
+                <div class="header__panel-tienda-col">
+                    <a href="<?php echo esc_url( $panel_tienda['tienda_url'] ); ?>" class="header__panel-tienda-todo">
+                        Comprar todo
+                    </a>
+                </div>
+
+                <div class="header__panel-tienda-col">
+                    <span class="header__panel-tienda-label">Por necesidad</span>
+                    <div class="header__panel-tienda-links">
+                        <?php foreach ( $panel_tienda['tipo_piel_items'] as $item ) : ?>
+                            <a href="<?php echo esc_url( $item['url'] ); ?>" class="header__panel-tienda-link">
+                                <?php echo esc_html( $item['titulo'] ); ?>
+                            </a>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="header__panel-imagen">
+                <img src="<?php echo esc_url( $panel_tienda['imagen'] ); ?>" alt="Tienda">
+            </div>
+
+        </div>
+    <?php endif; ?>
+
+    <?php get_template_part( 'components/shop/modal/modal-carrito' ); ?>
+
+
+</header>
 
 <?php get_template_part( 'header-mobile' ); ?>

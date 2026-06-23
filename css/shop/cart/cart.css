@@ -1,0 +1,426 @@
+/* =============================================
+   Cart
+   ============================================= */
+
+   .page-cart {
+    padding: 18vh 12px 80px 12px;
+}
+
+/* --- Layout --- */
+
+.cart-layout {
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+    align-items: flex-start;
+}
+
+.cart-layout__items {
+    flex: 1;
+}
+
+.cart-layout__resumen {
+    width: 35%;
+    flex-shrink: 0;
+    position: sticky;
+    top: 70px;
+}
+
+/* --- Título --- */
+
+.cart__titulo {
+    margin: 0 0 1.5rem 0;
+    font-family: var(--sans-serif);
+    font-size: 1.2rem;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 1rem;
+}
+
+/* --- Tabla --- */
+
+.shop_table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    letter-spacing: -0.3px;
+}
+
+.shop_table th {
+    text-align: left;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid #e0e0e0;
+    font-weight: 400;
+    font-size: 13px;
+    opacity: 0.6;
+    text-transform: uppercase;
+    letter-spacing: -0.3px;
+}
+
+.shop_table td {
+    padding: 1rem 0;
+    border-bottom: 1px solid #e0e0e0;
+    vertical-align: middle;
+}
+
+/* --- Thumbnail --- */
+
+.product-thumbnail img {
+    width: 80px;
+    height: 100px;
+    object-fit: contain;
+    display: block;
+    background-color: white;
+}
+
+/* --- Nombre --- */
+
+.product-name a {
+    text-decoration: none;
+    color: var(--dark-color);
+    font-size: 14px;
+    letter-spacing: -0.5px;
+    text-transform: uppercase;
+}
+
+/* --- Cantidad --- */
+
+.quantity input {
+    width: 50px;
+    border: 1px solid #e0e0e0;
+    padding: 0.4rem 0.5rem;
+    font-family: inherit;
+    font-size: 14px;
+    text-align: center;
+    background: transparent;
+    outline: none;
+    border-radius: 0;
+    -webkit-appearance: none;
+}
+
+/* --- Eliminar --- */
+
+.product-remove a {
+    font-size: 18px;
+    color: var(--dark-color);
+    text-decoration: none;
+    opacity: 0.4;
+    transition: opacity 0.2s ease;
+}
+
+.product-remove a:hover {
+    opacity: 1;
+}
+
+/* --- Acciones --- */
+
+.actions {
+    padding-top: 1.5rem !important;
+    border-bottom: none !important;
+}
+
+.actions .button {
+    background: none;
+    border: 1px solid #e0e0e0;
+    padding: 0.5rem 1.5rem;
+    font-family: inherit;
+    font-size: 14px;
+    color: var(--dark-color);
+    cursor: pointer;
+    letter-spacing: -0.3px;
+    transition: border-color 0.2s ease;
+}
+
+.actions .button:hover {
+    border-color: var(--dark-color);
+}
+
+/* --- Resumen / totales --- */
+
+.cart_totals h2 {
+    margin: 0 0 1rem 0;
+    font-family: var(--sans-serif);
+    font-size: 1.2rem;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 1rem;
+}
+
+.cart_totals table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.cart_totals table th,
+.cart_totals table td {
+    padding: 0.6rem 0;
+    border-bottom: 1px solid #e0e0e0;
+    text-align: left;
+}
+
+.cart_totals table tr:last-child th,
+.cart_totals table tr:last-child td {
+    border-bottom: none;
+    font-size: 16px;
+    padding-top: 1rem;
+}
+
+.wc-proceed-to-checkout .checkout-button {
+    display: block;
+    width: 100%;
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    border: none;
+    padding: 1rem;
+    font-family: inherit;
+    font-size: 16px;
+    letter-spacing: -0.5px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+    margin-top: 1.5rem;
+    box-sizing: border-box;
+    /* border-radius: none !important;
+    padding: 0px; */
+}
+
+.wc-proceed-to-checkout .checkout-button:hover {
+    opacity: 0.8;
+}
+
+/* --- Responsive --- */
+
+/* @media ( max-width: 1024px ) {
+
+    .page-cart {
+        padding: 10vh 0px 60px 0px;
+        box-sizing: border-box;
+    }
+
+    .cart-layout {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 0 12px;
+    }
+
+    .cart-layout__resumen {
+        width: 100%;
+        position: static;
+    }
+
+    .shop_table thead {
+        display: none;
+    }
+
+    .shop_table,
+    .shop_table tbody,
+    .shop_table tr,
+    .shop_table td {
+        display: block;
+        width: 100%;
+    }
+
+    .shop_table tr {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        align-items: flex-start;
+        padding: 1rem 0;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    .product-thumbnail {
+        flex-shrink: 0;
+        width: 80px;
+    }
+
+    .product-name {
+        flex: 1;
+    }
+
+    .product-price,
+    .product-subtotal {
+        display: none;
+    }
+
+    .product-remove {
+        flex-shrink: 0;
+    }
+
+    .product-quantity {
+        display: none;
+    }
+
+    .shop_table td::before {
+        display: none;
+    }
+
+    .actions tr {
+        display: block;
+        border-bottom: none;
+    }
+} */
+@media (max-width: 1024px) {
+
+    .page-cart {
+        padding: 10vh 0px 60px 0px;
+        box-sizing: border-box;
+    }
+
+    .cart-layout {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 0 12px;
+    }
+
+    .cart-layout__resumen {
+        width: 100%;
+        position: static;
+    }
+
+    .cart-layout__items {
+        width: 100%;
+    }
+
+
+    /* --- Reset tabla completo --- */
+
+    .shop_table thead {
+        display: none;
+    }
+
+    .shop_table,
+    .shop_table tbody {
+        display: block;
+        width: 100%;
+    }
+
+    /* Fila = flex row */
+    .shop_table tr.cart_item {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 1rem;
+        align-items: flex-start;
+        padding: 1.5rem 0;
+        border-bottom: 1px solid #e0e0e0;
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    /* .woocommerce-cart-form__cart-item cart_item {
+        width: 100% !important;
+    } */
+
+    /* Imagen */
+    .shop_table tr.cart_item td.product-thumbnail {
+        display: block !important;
+        flex-shrink: 0 !important;
+        width: 80px !important;
+        aspect-ratio: 4 / 5;
+        overflow: hidden;
+        background-color: white;
+        padding: 0 !important;
+        border: none !important;
+        background-color: transparent !important;
+
+    }
+
+    .shop_table tr.cart_item td.product-thumbnail img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: contain;
+        display: block;
+    }
+
+    /* Nombre */
+    .shop_table tr.cart_item td.product-name {
+        display: block !important;
+        flex: 1 !important;
+        padding: 0 !important;
+        border: none !important;
+        min-width: 0;
+        font-size: 14px;
+        letter-spacing: -0.5px;
+        text-align: left !important;
+        background-color: transparent !important;
+
+    }
+
+    /* Precio */
+    .shop_table tr.cart_item td.product-price {
+        display: block !important;
+        flex-shrink: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        font-size: 14px;
+        letter-spacing: -0.5px;
+    }
+
+    /* Eliminar */
+    .shop_table tr.cart_item td.product-remove {
+        display: block !important;
+        flex-shrink: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        margin-top: -5px;
+        /* background-color: transparent !important; */
+
+    }
+
+    /* Ocultar */
+    .shop_table tr.cart_item td.product-quantity,
+    .shop_table tr.cart_item td.product-subtotal {
+        display: none !important;
+        /* background-color: transparent !important; */
+
+    }
+
+    /* Fila acciones */
+    .shop_table tr:not(.cart_item) {
+        display: block;
+        border-bottom: none;
+    }
+
+    .shop_table td.actions {
+        display: block;
+        padding: 0;
+        border: none;
+        background-color: transparent !important;
+
+
+    }
+
+    .shop_table td::before {
+        display: none;
+        background-color: transparent !important;
+
+    }
+
+    .cart_totals table td,
+.cart_totals table th {
+    background: transparent !important;
+}
+
+/* .cart_totals table th {
+    display: table-cell !important;
+    text-align: left;
+} */
+.cart_totals table tr {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center;
+    width: 100%;
+}
+
+.cart_totals table th,
+.cart_totals table td {
+    display: block !important;
+    background: transparent !important;
+    border: none !important; /* si quieres quitarlos del td/th y dejarlo solo en el tr */
+}
+}

@@ -12,6 +12,8 @@ function ilba_enqueue_assets() {
     wp_enqueue_style( 'ilba-header',        $uri . '/css/header/header.css',        array(), filemtime( $dir . '/css/header/header.css' ) );
     wp_enqueue_style( 'ilba-header-mobile', $uri . '/css/header/header-mobile.css', array(), filemtime( $dir . '/css/header/header-mobile.css' ) );
     wp_enqueue_style( 'ilba-header-panel',  $uri . '/css/header/header-panel.css',  array(), filemtime( $dir . '/css/header/header-panel.css' ) );
+    wp_enqueue_style( 'ilba-modal-carrito', $uri . '/css/shop/modal/modal-carrito.css', array(), filemtime( $dir . '/css/shop/modal/modal-carrito.css' ) );
+    wp_enqueue_script( 'ilba-modal-carrito', $uri . '/js/shop/modal/modal-carrito.js', array( 'jquery' ), filemtime( $dir . '/js/shop/modal/modal-carrito.js' ), true );
     wp_enqueue_style( 'ilba-footer',        $uri . '/css/footer/footer.css',        array(), filemtime( $dir . '/css/footer/footer.css' ) );
     wp_enqueue_script( 'ilba-header',        $uri . '/js/header/header.js',        array(), filemtime( $dir . '/js/header/header.js' ),        true );
     wp_enqueue_script( 'ilba-header-mobile', $uri . '/js/header/header-mobile.js', array(), filemtime( $dir . '/js/header/header-mobile.js' ), true );
@@ -153,6 +155,16 @@ if ( is_product() ) {
     wp_enqueue_style( 'ilba-shop-card',         $uri . '/css/shop/archive/card.css',         array(),                      filemtime( $dir . '/css/shop/archive/card.css' ) );
     wp_enqueue_script( 'ilba-shop-details-js',   $uri . '/js/shop/single/details.js',        array(), filemtime( $dir . '/js/shop/single/details.js' ), true );
     wp_enqueue_script( 'ilba-shop-carousel-js', $uri . '/js/shop/single/carousel.js', array(), filemtime( $dir . '/js/shop/single/carousel.js' ), true );
+}
+
+// --- Checkout ---
+if ( is_checkout() ) {
+    wp_enqueue_style( 'ilba-shop-checkout', $uri . '/css/shop/checkout/checkout.css', array(), filemtime( $dir . '/css/shop/checkout/checkout.css' ) );
+}
+
+// --- Cart ---
+if ( is_cart() ) {
+    wp_enqueue_style( 'ilba-shop-cart', $uri . '/css/shop/cart/cart.css', array(), filemtime( $dir . '/css/shop/cart/cart.css' ) );
 }
     
     }

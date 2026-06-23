@@ -60,11 +60,41 @@ $tamano = get_field( 'producto_tamano' );
         esc_html( $product->single_add_to_cart_text() )
     ); ?>
 </div> -->
-
 <div class="producto-intro__cta">
+<?php
+global $product;
+$product_id    = $product->get_id();
+$en_carrito    = false;
+
+foreach ( WC()->cart->get_cart() as $item ) {
+    if ( $item['product_id'] == $product_id ) {
+        $en_carrito = true;
+        break;
+    }
+}
+
+if ( $en_carrito ) : ?>
+    <button class="single_add_to_cart_button" disabled>
+        Ya en el carrito
+    </button>
+<?php else : ?>
+    <?php echo sprintf(
+        '<form class="cart" action="%s" method="post">
+            <input type="hidden" name="quantity" value="1">
+            <input type="hidden" name="add-to-cart" value="%s">
+            <button type="submit" class="single_add_to_cart_button button alt">%s</button>
+        </form>',
+        esc_url( $product->add_to_cart_url() ),
+        esc_attr( $product_id ),
+        esc_html( $product->single_add_to_cart_text() )
+    ); ?>
+<?php endif; ?>
+</div>
+
+<!-- <div class="producto-intro__cta">
     <button class="single_add_to_cart_button" disabled>
         Próximamente
     </button>
-</div>
+</div> -->
 
 </div>

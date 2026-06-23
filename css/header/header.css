@@ -149,3 +149,53 @@
 .header--light-sv:hover .header__logo-link {
     color: var(--dark-color);
 }
+
+
+.header__nav-link--carrito .carrito-count {
+    display: inline-block;
+    min-width: 1.5ch;
+    text-align: center;
+}
+
+.header__nav-link--carrito {
+    color: inherit;
+}
+
+.header__nav-link--carrito .carrito-count {
+    display: inline-block;
+    min-width: 1.5ch;
+    text-align: center;
+    color: inherit;
+}
+
+
+
+.header__nav-link--contacto {
+    border: 1px solid var(--dark-color);
+    padding: 6px 14px;
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+
+.header--light-bm .header__nav-link--contacto,
+.header--light-home .header__nav-link--contacto,
+.header--light-sv .header__nav-link--contacto {
+    border-color: var(--light-color);
+}
+
+.header--light-bm:hover .header__nav-link--contacto,
+.header--light-home:hover .header__nav-link--contacto,
+.header--light-sv:hover .header__nav-link--contacto,
+.header:hover .header__nav-link--contacto {
+    border-color: var(--dark-color);
+}
+
+.page-contacto .header__nav-link--contacto,
+.single-protocolos .header__nav-link--contacto {
+    border-color: var(--light-color);
+}
+
+.page-contacto .header-mobile.menu-abierto .header__nav-link--contacto,
+.single-protocolos .header-mobile.menu-abierto .header__nav-link--contacto {
+    border-color: var(--dark-color);
+}

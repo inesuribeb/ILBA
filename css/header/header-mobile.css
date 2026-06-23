@@ -43,6 +43,15 @@
         border-right: 1px solid var(--dark-color);
     }
 
+    .header-mobile__carrito-btn {
+        font-size: 17px;
+        color: var(--dark-color);
+        text-decoration: none;
+        padding: 8px 16px;
+        border-right: 1px solid var(--dark-color);
+        font-family: inherit;
+    }
+
     .header-mobile__menu-btn {
         background: none;
         border: none;
@@ -89,6 +98,25 @@
     .header-mobile--light-hero .header-mobile__der {
         border-color: var(--light-color);
     }
+
+
+    /**/
+    .page-contacto .header-mobile__carrito-btn,
+.single-protocolos .header-mobile__carrito-btn {
+    color: var(--light-color);
+    border-right-color: var(--light-color);
+}
+
+.page-contacto .header-mobile.menu-abierto .header-mobile__carrito-btn,
+.single-protocolos .header-mobile.menu-abierto .header-mobile__carrito-btn {
+    color: var(--dark-color);
+    border-right-color: var(--dark-color);
+}
+
+.header-mobile--light-hero .header-mobile__carrito-btn {
+    color: var(--light-color);
+    border-right-color: var(--light-color);
+}
 }
 
 

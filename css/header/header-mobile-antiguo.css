@@ -361,3 +361,22 @@
 
 
 
+
+
+.header-mobile__tienda-link {
+    font-size: 17px;
+    color: var(--dark-color);
+    text-decoration: none;
+    padding: 8px 16px;
+    border-right: 1px solid var(--dark-color);
+}
+
+.header-mobile__nav-label {
+    font-size: 14px;
+    text-transform: none;
+    color: #aaa;
+    letter-spacing: -0.5px;
+    display: block;
+    padding: 36px 0 0px 0;
+    border-bottom: none;
+}
