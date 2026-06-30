@@ -31,3 +31,8 @@ require_once get_stylesheet_directory() . '/inc/acf/contacto/fields-contacto.php
 
 /*PRODUCTO*/
 require_once get_stylesheet_directory() . '/inc/acf/product/fields-product.php';
+
+/*CENTROS*/
+require_once get_stylesheet_directory() . '/inc/acf/centros/fields-centros-portada.php';
+require_once get_stylesheet_directory() . '/inc/acf/centros/fields-centros-clinica.php';
+require_once get_stylesheet_directory() . '/inc/acf/centros/fields-centros-formulario.php';
