@@ -131,6 +131,14 @@ function ilba_enqueue_assets() {
         wp_enqueue_style( 'ilba-legal', $uri . '/css/legal/legal.css', array(), filemtime( $dir . '/css/legal/legal.css' ) );
     }
 
+    // --- Centros (single) ---
+if ( is_singular( 'centro' ) ) {
+    wp_enqueue_style( 'ilba-ce-portada',    $uri . '/css/centros/portada.css',    array(), filemtime( $dir . '/css/centros/portada.css' ) );
+    wp_enqueue_style( 'ilba-ce-servicios',  $uri . '/css/centros/servicios.css',  array(), filemtime( $dir . '/css/centros/servicios.css' ) );
+    wp_enqueue_style( 'ilba-ce-clinica',    $uri . '/css/centros/clinica.css',    array(), filemtime( $dir . '/css/centros/clinica.css' ) );
+    wp_enqueue_style( 'ilba-ce-formulario', $uri . '/css/centros/formulario.css', array(), filemtime( $dir . '/css/centros/formulario.css' ) );
+}
+
 
     if ( function_exists( 'is_shop' ) ) {
 

@@ -1,8 +1,8 @@
 /* =============================================
-   Somos — La Clínica
+   Centros — La Clínica
    ============================================= */
 
-   .somos-clinica {
+   .ce-clinica {
     display: flex;
     flex-direction: row;
     gap: 2rem;
@@ -13,7 +13,7 @@
 
 /* --- Columna tag (15%) --- */
 
-.somos-clinica__col-tag {
+.ce-clinica__col-tag {
     width: 15%;
     flex-shrink: 0;
     border-top: 1px solid #e0e0e0;
@@ -23,14 +23,14 @@
     position: relative;
 }
 
-.somos-clinica__tag {
+.ce-clinica__tag {
     font-size: 22px;
     letter-spacing: -1px;
 }
 
 /* --- Columna principal (85%) --- */
 
-.somos-clinica__col-main {
+.ce-clinica__col-main {
     width: 85%;
     border-top: 1px solid #e0e0e0;
     padding-top: 1rem;
@@ -41,7 +41,7 @@
 
 /* --- Fotos scroll horizontal nativo --- */
 
-.somos-clinica__fotos {
+.ce-clinica__fotos {
     display: flex;
     flex-direction: row;
     gap: 1rem;
@@ -52,33 +52,30 @@
     cursor: grab;
 }
 
-.somos-clinica__fotos::-webkit-scrollbar {
+.ce-clinica__fotos::-webkit-scrollbar {
     display: none;
 }
 
-.somos-clinica__fotos:active {
+.ce-clinica__fotos:active {
     cursor: grabbing;
 }
 
-.somos-clinica__foto {
+.ce-clinica__foto {
     flex-shrink: 0;
     height: 100%;
     overflow: hidden;
 }
 
-.somos-clinica__foto img {
+.ce-clinica__foto img {
     height: 100%;
     width: auto;
     object-fit: cover;
     display: block;
 }
 
-
-
-
 @media ( max-width: 1024px ) {
 
-    .somos-clinica {
+    .ce-clinica {
         flex-direction: column;
         height: auto;
         padding: 40px 0 40px 24px;
@@ -86,34 +83,34 @@
         overflow: hidden;
     }
 
-    .somos-clinica__col-tag {
+    .ce-clinica__col-tag {
         width: 100%;
     }
 
-    .somos-clinica__tag {
+    .ce-clinica__tag {
         font-size: 20px;
     }
 
-    .somos-clinica__col-main {
+    .ce-clinica__col-main {
         width: 100%;
         height: 50vh;
         overflow: hidden;
         border-top: none;
     }
 
-    .somos-clinica__fotos {
+    .ce-clinica__fotos {
         -webkit-overflow-scrolling: touch;
         scroll-snap-type: x proximity;
         scroll-behavior: smooth;
     }
 
-    .somos-clinica__foto {
+    .ce-clinica__foto {
         scroll-snap-align: start;
         width: auto;
         flex-shrink: 0;
     }
 
-    .somos-clinica__foto img {
+    .ce-clinica__foto img {
         height: 100%;
         width: auto;
         object-fit: cover;
