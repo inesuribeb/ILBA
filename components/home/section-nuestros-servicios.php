@@ -22,7 +22,9 @@ $secciones = ilba_get_secciones_menu();
 
         <div class="home-servicios__cards-wrapper">
             <div class="home-servicios__cards">
-                <?php foreach ( $secciones as $key => $seccion ) : ?>
+                <?php foreach ( $secciones as $key => $seccion ) :
+                    if ( $key === 'somos' ) continue;
+                ?>
                     <div class="home-servicios__card">
                         <div class="home-servicios__card-top">
                             <h3 class="home-servicios__card-titulo">
