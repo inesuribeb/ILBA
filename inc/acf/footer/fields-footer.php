@@ -10,40 +10,101 @@ acf_add_local_field_group( array(
     'title'  => 'Footer - Campos',
     'fields' => array(
 
-        // --- EMAIL ---
+        // =============================================
+        // BILBAO
+        // =============================================
         array(
-            'key'   => 'field_footer_email',
+            'key'     => 'field_footer_msg_bilbao',
+            'label'   => '',
+            'name'    => '',
+            'type'    => 'message',
+            'message' => '<h3>— Bilbao —</h3>',
+        ),
+
+        array(
+            'key'   => 'field_footer_bilbao_email',
             'label' => 'Email',
-            'name'  => 'footer_email',
+            'name'  => 'footer_bilbao_email',
             'type'  => 'email',
         ),
 
-        // --- TELÉFONO ---
         array(
-            'key'   => 'field_footer_telefono',
+            'key'   => 'field_footer_bilbao_telefono',
             'label' => 'Teléfono',
-            'name'  => 'footer_telefono',
+            'name'  => 'footer_bilbao_telefono',
             'type'  => 'text',
         ),
 
-        // --- DIRECCIÓN ---
         array(
-            'key'          => 'field_footer_direccion',
+            'key'          => 'field_footer_bilbao_direccion',
             'label'        => 'Dirección',
-            'name'         => 'footer_direccion',
+            'name'         => 'footer_bilbao_direccion',
             'type'         => 'textarea',
             'rows'         => 3,
             'instructions' => 'Los saltos de línea se respetarán en el frontend.',
         ),
 
-        // --- HORARIO ---
         array(
-            'key'          => 'field_footer_horario',
+            'key'          => 'field_footer_bilbao_horario',
             'label'        => 'Horario',
-            'name'         => 'footer_horario',
+            'name'         => 'footer_bilbao_horario',
             'type'         => 'textarea',
             'rows'         => 3,
             'instructions' => 'Los saltos de línea se respetarán en el frontend.',
+        ),
+
+        // =============================================
+        // DONOSTI
+        // =============================================
+        array(
+            'key'     => 'field_footer_msg_donosti',
+            'label'   => '',
+            'name'    => '',
+            'type'    => 'message',
+            'message' => '<h3>— Donosti —</h3>',
+        ),
+
+        array(
+            'key'   => 'field_footer_donosti_email',
+            'label' => 'Email',
+            'name'  => 'footer_donosti_email',
+            'type'  => 'email',
+        ),
+
+        array(
+            'key'   => 'field_footer_donosti_telefono',
+            'label' => 'Teléfono',
+            'name'  => 'footer_donosti_telefono',
+            'type'  => 'text',
+        ),
+
+        array(
+            'key'          => 'field_footer_donosti_direccion',
+            'label'        => 'Dirección',
+            'name'         => 'footer_donosti_direccion',
+            'type'         => 'textarea',
+            'rows'         => 3,
+            'instructions' => 'Los saltos de línea se respetarán en el frontend.',
+        ),
+
+        array(
+            'key'          => 'field_footer_donosti_horario',
+            'label'        => 'Horario',
+            'name'         => 'footer_donosti_horario',
+            'type'         => 'textarea',
+            'rows'         => 3,
+            'instructions' => 'Los saltos de línea se respetarán en el frontend.',
+        ),
+
+        // =============================================
+        // GENERAL
+        // =============================================
+        array(
+            'key'     => 'field_footer_msg_general',
+            'label'   => '',
+            'name'    => '',
+            'type'    => 'message',
+            'message' => '<h3>— General —</h3>',
         ),
 
         // --- DESCRIPCIÓN ---

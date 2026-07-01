@@ -25,9 +25,6 @@ for ( $i = 1; $i <= 4; $i++ ) {
         $rrss[] = array( 'nombre' => $nombre, 'link' => $link );
     }
 }
-
-$centro_bilbao  = get_posts( array( 'name' => 'bilbao',  'post_type' => 'centro', 'numberposts' => 1 ) );
-$centro_donosti = get_posts( array( 'name' => 'donosti', 'post_type' => 'centro', 'numberposts' => 1 ) );
 ?>
 
 <footer class="footer">
@@ -126,12 +123,6 @@ $centro_donosti = get_posts( array( 'name' => 'donosti', 'post_type' => 'centro'
                         <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'somos' ) ) ); ?>" class="footer__nav-link">Somos</a>
                         <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'eventos' ) ) ); ?>" class="footer__nav-link">Nuestros eventos</a>
                         <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'contacto' ) ) ); ?>" class="footer__nav-link">Contáctanos</a>
-                        <?php if ( $centro_bilbao ) : ?>
-                            <a href="<?php echo esc_url( get_permalink( $centro_bilbao[0]->ID ) ); ?>" class="footer__nav-link">Centro Bilbao</a>
-                        <?php endif; ?>
-                        <?php if ( $centro_donosti ) : ?>
-                            <a href="<?php echo esc_url( get_permalink( $centro_donosti[0]->ID ) ); ?>" class="footer__nav-link">Centro Donosti</a>
-                        <?php endif; ?>
                     </nav>
                 </div>
 
