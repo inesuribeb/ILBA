@@ -87,6 +87,7 @@ function ilba_enqueue_assets() {
         wp_enqueue_style( 'ilba-somos-equipo',  $uri . '/css/somos/equipo.css',  array(), filemtime( $dir . '/css/somos/equipo.css' ) );
         wp_enqueue_style( 'ilba-somos-clinica', $uri . '/css/somos/clinica.css', array(), filemtime( $dir . '/css/somos/clinica.css' ) );
         wp_enqueue_style( 'ilba-somos-prensa',  $uri . '/css/somos/prensa.css',  array(), filemtime( $dir . '/css/somos/prensa.css' ) );
+        wp_enqueue_style( 'ilba-nuestras-clinicas-somos',          $uri . '/css/somos/section-nuestras-clinicas-2.css',  array(), filemtime( $dir . '/css/somos/section-nuestras-clinicas-2.css' ) );
 
         wp_enqueue_script( 'ilba-somos-vermas', $uri . '/js/somos/somos.js', array(), filemtime( $dir . '/js/somos/somos.js' ), true );
     }
