@@ -366,6 +366,51 @@ a.ct-info__valor:hover {
 
 
 
+
+
+
+
+/* --- RGPD acceptance CF7 --- */
+
+.ct-form-section__form .wpcf7-acceptance {
+    display: block;
+}
+
+.ct-form-section__form .wpcf7-acceptance .wpcf7-list-item {
+    margin: 0;
+}
+
+.ct-form-section__form .wpcf7-acceptance label {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.ct-form-section__form .wpcf7-acceptance input[type="checkbox"] {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    margin-top: 2px;
+    accent-color: var(--light-color);
+    cursor: pointer;
+    border: none;
+    padding: 0;
+}
+
+.ct-form-section__form .wpcf7-list-item-label {
+    font-size: 13px;
+    color: rgba(224, 224, 224, 0.6);
+    letter-spacing: -0.5px;
+    line-height: 1.4;
+}
+
+
+
+
+
+
 @media ( max-width: 1024px ) {
 
     .ct-form-section__info {

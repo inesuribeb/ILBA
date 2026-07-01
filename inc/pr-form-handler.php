@@ -26,6 +26,10 @@ function ilba_pr_enviar_formulario() {
         wp_send_json_error( array( 'mensaje' => 'Por favor, rellena todos los campos obligatorios.' ) );
     }
 
+    if ( empty( $_POST['rgpd'] ) ) {
+        wp_send_json_error( array( 'mensaje' => 'Debes aceptar la política de privacidad.' ) );
+    }
+
     // --- Construir email ---
     $email_dest = 'info@ilbainternational.com';
     $asunto     = "Nueva valoración personalizada — {$protocolo}";

@@ -73,6 +73,14 @@ $preguntas = array_filter( array( $pregunta_1, $pregunta_2, $pregunta_3, $pregun
                 <textarea name="mensaje" placeholder="Mensaje" rows="5"></textarea>
             </div>
 
+            <!-- RGPD -->
+            <div class="pr-form__rgpd">
+                <label class="pr-form__rgpd-label">
+                    <input type="checkbox" name="rgpd" required>
+                    <span>Acepto la <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'privacidad' ) ) ); ?>" target="_blank" rel="noopener noreferrer">política de privacidad</a> y el tratamiento de mis datos para la gestión de mi consulta.</span>
+                </label>
+            </div>
+
             <!-- Submit -->
             <button type="submit" class="pr-form__submit">Enviar</button>
 
