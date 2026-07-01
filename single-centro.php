@@ -7,6 +7,7 @@ get_header();
 ?>
 
 <main id="main" class="single-centro">
+<?php get_template_part( 'components/centros/modal-info' ); ?>
     <?php get_template_part( 'components/centros/portada' ); ?>
     <?php get_template_part( 'components/centros/servicios' ); ?>
     <?php get_template_part( 'components/centros/clinica' ); ?>
