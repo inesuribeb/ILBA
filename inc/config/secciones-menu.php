@@ -43,7 +43,7 @@ function ilba_get_secciones_menu() {
 
     $img_bilbao  = $centro_bilbao  ? get_the_post_thumbnail_url( $centro_bilbao[0]->ID,  'large' ) : $dir . 'wellness.PNG';
     $img_donosti = $centro_donosti ? get_the_post_thumbnail_url( $centro_donosti[0]->ID, 'large' ) : $dir . 'wellness.PNG';
-    $img_eventos = $dir . 'wellness.PNG'; // reemplaza con imagen de eventos cuando la tengas
+    $img_eventos = $dir . 'eventors.webp'; // reemplaza con imagen de eventos cuando la tengas
 
     return array(
 
