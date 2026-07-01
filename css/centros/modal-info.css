@@ -324,14 +324,20 @@
 @media (max-width: 1024px) {
 
     .ce-modal {
-        bottom: 20px;
+        bottom: 12px;
         left: 24px;
         right: 24px;
-        width: auto;
+        /* width: auto; */
+        width: fit-content;
+        /* max-width: calc(100vw - 48px); */
+    }
+
+    .ce-modal__imagen {
+        display: none;
     }
 
     .ce-modal__info {
-        padding: 16px 20px;
+        padding: 16px 60px 16px 20px;
     }
 
     .ce-modal__titulo {

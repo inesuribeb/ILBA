@@ -138,6 +138,7 @@ if ( is_singular( 'centro' ) ) {
     wp_enqueue_style( 'ilba-ce-clinica',    $uri . '/css/centros/clinica.css',    array(), filemtime( $dir . '/css/centros/clinica.css' ) );
     wp_enqueue_style( 'ilba-ce-formulario', $uri . '/css/centros/formulario.css', array(), filemtime( $dir . '/css/centros/formulario.css' ) );
     wp_enqueue_style( 'ilba-ce-modal', $uri . '/css/centros/modal-info.css', array(), filemtime( $dir . '/css/centros/modal-info.css' ) );
+    wp_enqueue_script( 'ilba-ce-modal', $uri . '/js/centros/modal-info.js', array(), filemtime( $dir . '/js/centros/modal-info.js' ), true );
 
 }
 
