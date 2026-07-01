@@ -1,0 +1,165 @@
+/* =============================================
+   Centros — Formulario
+   ============================================= */
+
+   .ce-formulario {
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+    padding: 30px 24px 100px 24px;
+    box-sizing: border-box;
+    /* background: var(--dark-color); */
+}
+
+/* --- Col izquierda: info --- */
+
+.ce-formulario__col-info {
+    /* flex: 1; */
+    flex: 2;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-top: 140px;
+}
+
+.ce-formulario__titulo {
+    margin: 0;
+    font-family: var(--serif);
+    font-size: 42px;
+    letter-spacing: -2px;
+    color: var(--dark-color);
+    line-height: 1.1;
+}
+
+.ce-formulario__descripcion {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--dark-color);
+    opacity: 0.7;
+    max-width: 400px;
+}
+
+/* --- Col derecha: form --- */
+
+.ce-formulario__col-form {
+    /* flex: 1; */
+    flex: 3;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    padding-top: 140px;
+}
+
+.ce-formulario__form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+/* --- Fila nombre + apellido --- */
+
+.ce-formulario__fila {
+    display: flex;
+    flex-direction: row;
+    gap: 0.75rem;
+}
+
+.ce-formulario__fila .ce-formulario__campo {
+    flex: 1;
+}
+
+/* --- Inputs --- */
+
+.ce-formulario__campo input,
+.ce-formulario__campo textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--dark-color);
+    background: transparent;
+    font-size: 15px;
+    color: var(--light-color);
+    letter-spacing: -1px;
+    outline: none;
+    font-family: inherit;
+    border-radius: 0;
+    -webkit-appearance: none;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease;
+}
+
+.ce-formulario__campo input::placeholder,
+.ce-formulario__campo textarea::placeholder {
+    color: rgba(98, 98, 98, 0.884);
+}
+
+.ce-formulario__campo textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* --- Submit --- */
+
+.ce-formulario__submit {
+    width: 100%;
+    padding: 10px;
+    background: var(--dark-color);
+    color: var(--light-color);
+    border: none;
+    font-size: 15px;
+    letter-spacing: -1px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    border-radius: 0;
+}
+
+.ce-formulario__submit:hover {
+    opacity: 0.85;
+}
+
+.ce-formulario__submit:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* --- Respuesta --- */
+
+.ce-formulario__respuesta {
+    margin: 0;
+    font-size: 14px;
+    letter-spacing: -0.5px;
+    color: var(--dark-color);
+    min-height: 20px;
+}
+
+/* --- Móvil --- */
+
+@media ( max-width: 1024px ) {
+
+    .ce-formulario {
+        flex-direction: column;
+        padding: 60px 24px;
+        gap: 2rem;
+    }
+
+    .ce-formulario__col-info,
+    .ce-formulario__col-form {
+        padding-top: 0;
+    }
+/* 
+    .ce-formulario__col-form {
+        order: -1;
+    } */
+
+    .ce-formulario__titulo {
+        font-size: 28px;
+    }
+
+    .ce-formulario__fila {
+        flex-direction: column;
+    }
+}

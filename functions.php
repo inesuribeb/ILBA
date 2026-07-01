@@ -23,6 +23,9 @@ require_once get_stylesheet_directory() . '/inc/config/panel-tienda.php';
 
 require_once get_stylesheet_directory() . '/inc/enqueue.php';
 
+require_once get_stylesheet_directory() . '/inc/form-handler-centros.php';
+
+
 add_filter( 'show_admin_bar', '__return_false' );
 
 

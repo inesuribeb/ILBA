@@ -144,6 +144,9 @@ if ( is_singular( 'centro' ) ) {
     
     wp_enqueue_script( 'ilba-ce-portada', $uri . '/js/centros/portada.js', array(), filemtime( $dir . '/js/centros/portada.js' ), true );
     wp_enqueue_script( 'ilba-ce-sticky-services', $uri . '/js/centros/sticky-services.js', array(), filemtime( $dir . '/js/centros/sticky-services.js' ), true );
+    wp_enqueue_script( 'ilba-ce-formulario', $uri . '/js/centros/formulario.js', array(), filemtime( $dir . '/js/centros/formulario.js' ), true );
+    
+    wp_localize_script( 'ilba-ce-formulario', 'ilba_ajax', array( 'url' => admin_url( 'admin-ajax.php' ) ) );
 
 }
 
