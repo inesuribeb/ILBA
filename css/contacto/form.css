@@ -6,7 +6,9 @@
     display: flex;
     flex-direction: row;
     gap: 4rem;
-    padding: 140px 60px 80px 60px;
+    /* padding: 140px 60px 80px 60px; */
+    padding: 0px 60px 80px 60px;
+
     box-sizing: border-box;
 }
 
@@ -16,6 +18,7 @@
     flex: 1;
     display: flex;
     flex-direction: column;
+    padding-top: 108px;
 }
 
 .ct-info__item {
@@ -25,6 +28,18 @@
     padding: 7px 0;
     border-bottom: 1px solid #e0e0e08d;
     /* border-bottom: 1px solid var(--light-color); */
+}
+.ct-info__centro {
+    margin-bottom: 2rem;
+}
+
+.ct-info__centro-titulo {
+    font-size: 20px;
+    letter-spacing: -1px;
+    margin: 0 0 0px 0;
+    color: var(--light-color);
+    border-bottom: 1px solid var(--light-color);
+    padding-bottom: 1px;
 }
 
 .ct-info__item:first-child {
@@ -61,6 +76,8 @@ a.ct-info__valor:hover {
 
 .ct-form-section__form {
     flex: 1;
+    padding-top: 140px;
+
 }
 
 .ct-form-section__form .wpcf7-form {
@@ -351,10 +368,20 @@ a.ct-info__valor:hover {
 
 @media ( max-width: 1024px ) {
 
+    .ct-form-section__info {
+        padding-top: 40px;
+    }
+
     .ct-form-section {
         flex-direction: column;
-        padding: 60px 24px 60px 24px;
+        padding: 0px 24px 60px 24px;
         gap: 3rem;
+    }
+
+    .ct-form-section__form {
+        flex: 1;
+        padding-top: 10px;
+    
     }
 
     .ct-form-section__form {
