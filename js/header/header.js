@@ -148,5 +148,18 @@ document.addEventListener('DOMContentLoaded', () => {
             observer.observe(svHero);
         }
     }
+    // --- Header light cuando el hero de centros es visible ---
+if (document.body.classList.contains('single-centro')) {
+    const ceHero = document.querySelector('.ce-hero');
+    if (ceHero) {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                header.classList.toggle('header--light-bm', entry.isIntersecting);
+            },
+            { threshold: 0 }
+        );
+        observer.observe(ceHero);
+    }
+}
 
 });

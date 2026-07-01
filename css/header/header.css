@@ -199,3 +199,13 @@
 .single-protocolos .header-mobile.menu-abierto .header__nav-link--contacto {
     border-color: var(--dark-color);
 }
+
+
+/* .single-centro .header__nav-link,
+.single-centro .header__logo-link {
+    color: var(--light-color);
+}
+
+.single-centro .header__nav-link--contacto {
+    border-color: var(--light-color);
+} */
