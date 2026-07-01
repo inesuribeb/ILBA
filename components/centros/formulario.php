@@ -8,6 +8,7 @@ $descripcion = get_field( 'ce_formulario_descripcion' );
 $email_dest  = get_field( 'ce_formulario_email' );
 $nonce       = wp_create_nonce( 'ce_formulario_nonce' );
 $centro_id   = get_the_ID();
+$privacidad_url = get_permalink( get_page_by_path( 'privacidad' ) );
 ?>
 
 <section class="ce-formulario" id="ce-formulario">
@@ -32,30 +33,27 @@ $centro_id   = get_the_ID();
 
             <div class="ce-formulario__fila">
                 <div class="ce-formulario__campo">
-                    <input type="text"
-                           name="nombre"
-                           placeholder="Nombre*"
-                           required>
+                    <input type="text" name="nombre" placeholder="Nombre*" required>
                 </div>
                 <div class="ce-formulario__campo">
-                    <input type="text"
-                           name="apellido"
-                           placeholder="Apellidos*"
-                           required>
+                    <input type="text" name="apellido" placeholder="Apellidos*" required>
                 </div>
             </div>
 
             <div class="ce-formulario__campo">
-                <input type="email"
-                       name="email"
-                       placeholder="Email*"
-                       required>
+                <input type="email" name="email" placeholder="Email*" required>
             </div>
 
             <div class="ce-formulario__campo">
-                <textarea name="mensaje"
-                          placeholder="Mensaje"
-                          rows="5"></textarea>
+                <textarea name="mensaje" placeholder="Mensaje" rows="5"></textarea>
+            </div>
+
+            <!-- RGPD -->
+            <div class="ce-formulario__rgpd">
+                <label class="ce-formulario__rgpd-label">
+                    <input type="checkbox" name="rgpd" required>
+                    <span>Acepto la <a href="<?php echo esc_url( $privacidad_url ); ?>" target="_blank" rel="noopener noreferrer">política de privacidad</a> y el tratamiento de mis datos para la gestión de mi consulta.</span>
+                </label>
             </div>
 
             <button type="submit" class="ce-formulario__submit">Enviar</button>
