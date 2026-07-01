@@ -10,7 +10,7 @@ $nonce       = wp_create_nonce( 'ce_formulario_nonce' );
 $centro_id   = get_the_ID();
 ?>
 
-<section class="ce-formulario">
+<section class="ce-formulario" id="ce-formulario">
 
     <div class="ce-formulario__col-info">
         <?php if ( $titulo ) : ?>
