@@ -1,0 +1,164 @@
+/* =============================================
+   Centros — Servicios
+   ============================================= */
+
+   .ce-servicios {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    padding: 48px 0 48px 24px;
+}
+
+/* --- Columna nav izquierda (15%) --- */
+
+.ce-servicios__col-nav {
+    width: 15%;
+    flex-shrink: 0;
+    border-top: 1.5px solid #e0e0e0;
+    padding-top: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.ce-servicios__nav-link {
+    /* font-size: 16px;
+    letter-spacing: -1px; */
+    font-size: 22px;
+    letter-spacing: -1px;
+    color: rgba(0, 0, 0, 0.4);
+    text-decoration: none;
+    padding: 2px 0;
+    transition: color 0.2s ease;
+}
+
+.ce-servicios__nav-link:hover,
+.ce-servicios__nav-link.is-active {
+    color: var(--dark-color);
+}
+
+/* --- Columna principal (85%) --- */
+
+.ce-servicios__col-main {
+    width: 85%;
+    border-top: 1.5px solid #e0e0e0;
+    padding-top: 1rem;
+    padding-right: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+/* --- Grupo --- */
+
+.ce-servicios__grupo {
+    padding-bottom: 48px;
+}
+
+.ce-servicios__grupo + .ce-servicios__grupo {
+    border-top: 1px solid #e0e0e0;
+    padding-top: 48px;
+}
+
+/* --- Grid de cards --- */
+
+.ce-servicios__cards {
+    display: grid;
+    grid-template-columns: repeat( 3, 1fr );
+    gap: 1rem;
+}
+
+/* --- Card --- */
+
+.ce-servicios__card {
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    display: block;
+}
+
+.ce-servicios__card-img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    background-color: var(--dark-color);
+}
+
+.ce-servicios__card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.ce-servicios__card:hover .ce-servicios__card-img img {
+    transform: scale(1.03);
+}
+
+/* Overlay para cards con imagen */
+.ce-servicios__card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease;
+    pointer-events: none;
+}
+
+.ce-servicios__card:hover::after {
+    background: rgba(0, 0, 0, 0.35);
+}
+
+/* Cards sin imagen: sin overlay */
+.ce-servicios__card--sin-imagen::after {
+    display: none;
+}
+
+/* Título centrado sobre la card */
+.ce-servicios__card-titulo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    color: var(--light-color);
+    font-family: var(--serif);
+    font-size: 22px;
+    letter-spacing: -0.5px;
+    text-align: center;
+    width: 80%;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* --- Móvil --- */
+
+@media ( max-width: 1024px ) {
+
+    .ce-servicios {
+        flex-direction: column;
+        padding: 40px 0 40px 24px;
+        gap: 1rem;
+    }
+
+    .ce-servicios__col-nav {
+        width: 100%;
+        flex-direction: row;
+        gap: 1.5rem;
+    }
+
+    .ce-servicios__col-main {
+        width: 100%;
+        border-top: none;
+        padding-right: 24px;
+    }
+
+    .ce-servicios__cards {
+        grid-template-columns: repeat( 2, 1fr );
+    }
+
+    .ce-servicios__card-titulo {
+        font-size: 16px;
+    }
+}
