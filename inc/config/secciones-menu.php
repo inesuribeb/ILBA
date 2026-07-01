@@ -192,7 +192,9 @@ function ilba_get_secciones_menu() {
 
         'somos' => array(
             'titulo'      => 'Somos',
+            'descripcion' => '',
             'imagen'      => $dir . 'recepcionChicas.webp',
+            'imagen_sv'   => $dir . 'recepcionChicas.webp',
             'url'         => '/somos/',
             'tipo'        => 'wellness',
             'label'       => 'Sobre ILBA',

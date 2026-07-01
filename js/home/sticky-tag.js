@@ -1,4 +1,4 @@
-document.querySelectorAll('.home-clinica, .home-servicios, .home-conocenos, .home-tienda').forEach(section => {
+document.querySelectorAll('.home-clinica, .home-servicios, .home-conocenos, .home-tienda, .home-nuestras-clinicas').forEach(section => {
     const tag = section.querySelector('[class$="__col-tag"]');
     if ( ! tag ) return;
 

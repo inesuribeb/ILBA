@@ -28,6 +28,7 @@ function ilba_enqueue_assets() {
         wp_enqueue_style( 'ilba-marcas',             $uri . '/css/home/section-marcas.css',     array(), filemtime( $dir . '/css/home/section-marcas.css' ) );
         wp_enqueue_style( 'ilba-img-video',          $uri . '/css/home/section-img-video.css',  array(), filemtime( $dir . '/css/home/section-img-video.css' ) );
         wp_enqueue_style( 'ilba-nuestra-coleccion',          $uri . '/css/home/section-nuestra-coleccion.css',  array(), filemtime( $dir . '/css/home/section-nuestra-coleccion.css' ) );
+        wp_enqueue_style( 'ilba-nuestras-clinicas',          $uri . '/css/home/section-nuestras-clinicas.css',  array(), filemtime( $dir . '/css/home/section-nuestras-clinicas.css' ) );
 
 
         wp_enqueue_script( 'ilba-sticky-tag',      $uri . '/js/home/sticky-tag.js',      array(), filemtime( $dir . '/js/home/sticky-tag.js' ),      true );

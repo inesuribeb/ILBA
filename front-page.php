@@ -20,7 +20,9 @@ get_header();
     <?php get_template_part( 'components/home/section-nuestras-marcas' ); ?>
  
     <?php get_template_part( 'components/home/section-nuestra-coleccion' ); ?>
- 
+
+    <?php get_template_part( 'components/home/section-nuestras-clinicas' ); ?>
+
     <?php get_template_part( 'components/home/section-img-video' ); ?>
  
 </main>
