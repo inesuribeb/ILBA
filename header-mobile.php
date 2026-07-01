@@ -16,21 +16,16 @@ $panel_tienda = function_exists( 'ilba_get_panel_tienda' ) ? ilba_get_panel_tien
             ILBA
         </a>
     </div>
-    <!-- <div class="header-mobile__der">
+    <div class="header-mobile__der">
+        <?php if ( function_exists( 'WC' ) && WC()->cart ) : ?>
+            <a href="#" class="header-mobile__carrito-btn" id="abrir-modal-carrito-mobile">
+                <?php echo WC()->cart->get_cart_contents_count(); ?>
+            </a>
+        <?php endif; ?>
         <button class="header-mobile__menu-btn" aria-expanded="false">
             <span class="header-mobile__menu-label">Menú</span>
         </button>
-    </div> -->
-    <div class="header-mobile__der">
-    <?php if ( function_exists( 'WC' ) && WC()->cart ) : ?>
-        <a href="#" class="header-mobile__carrito-btn" id="abrir-modal-carrito-mobile">
-            <?php echo WC()->cart->get_cart_contents_count(); ?>
-        </a>
-    <?php endif; ?>
-    <button class="header-mobile__menu-btn" aria-expanded="false">
-        <span class="header-mobile__menu-label">Menú</span>
-    </button>
-</div>
+    </div>
 </header>
 
 <!-- Menú: capa única -->
@@ -53,7 +48,10 @@ $panel_tienda = function_exists( 'ilba_get_panel_tienda' ) ? ilba_get_panel_tien
                         </button>
                     </div>
 
-                    <?php foreach ( $secciones as $key => $seccion ) : ?>
+                    <?php foreach ( $secciones as $key => $seccion ) :
+                        // Somos no aparece en el panel 1, solo en el bottom
+                        if ( $key === 'somos' ) continue;
+                    ?>
                         <div class="header-mobile__nav-item">
                             <button class="header-mobile__nav-btn" data-seccion="<?php echo esc_attr( $key ); ?>">
                                 <?php echo esc_html( $seccion['titulo'] ); ?>
@@ -67,7 +65,9 @@ $panel_tienda = function_exists( 'ilba_get_panel_tienda' ) ? ilba_get_panel_tien
                 </nav>
 
                 <div class="header-mobile__imagen">
-                    <?php foreach ( $secciones as $key => $seccion ) : ?>
+                    <?php foreach ( $secciones as $key => $seccion ) :
+                        if ( $key === 'somos' ) continue;
+                    ?>
                         <img src="<?php echo esc_url( $seccion['imagen'] ); ?>"
                              alt="<?php echo esc_html( $seccion['titulo'] ); ?>"
                              class="header-mobile__imagen-item"
@@ -89,9 +89,7 @@ $panel_tienda = function_exists( 'ilba_get_panel_tienda' ) ? ilba_get_panel_tien
                     </button>
                 </div>
                 <div class="header-mobile__panel-scroll">
-
                     <nav class="header-mobile__nav">
-
                         <div class="header-mobile__nav-item">
                             <a href="<?php echo esc_url( $panel_tienda['tienda_url'] ); ?>" class="header-mobile__nav-btn">
                                 Comprar todo
@@ -100,7 +98,6 @@ $panel_tienda = function_exists( 'ilba_get_panel_tienda' ) ? ilba_get_panel_tien
                                 </svg>
                             </a>
                         </div>
-
                         <?php if ( ! empty( $panel_tienda['tipo_piel_items'] ) ) : ?>
                             <div class="header-mobile__nav-item header-mobile__nav-item--titulo">
                                 <span class="header-mobile__nav-label">Por necesidad</span>
@@ -113,9 +110,7 @@ $panel_tienda = function_exists( 'ilba_get_panel_tienda' ) ? ilba_get_panel_tien
                                 </div>
                             <?php endforeach; ?>
                         <?php endif; ?>
-
                     </nav>
-
                 </div>
             </div>
         <?php endif; ?>
@@ -134,10 +129,25 @@ $panel_tienda = function_exists( 'ilba_get_panel_tienda' ) ? ilba_get_panel_tien
                 <div class="header-mobile__panel-scroll">
 
                     <?php if ( isset( $seccion['tipo'] ) && $seccion['tipo'] === 'wellness' ) : ?>
-                        <?php foreach ( $seccion['protocolos'] as $protocolo ) : ?>
+
+                        <?php // Si tiene label_url (somos), mostrar como primer enlace ?>
+                        <?php if ( ! empty( $seccion['label_url'] ) ) : ?>
                             <div class="header-mobile__nav-item">
-                                <a href="<?php echo esc_url( $protocolo['url'] ); ?>" class="header-mobile__nav-link">
-                                    Protocolo <?php echo esc_html( $protocolo['titulo'] ); ?>
+                                <a href="<?php echo esc_url( $seccion['label_url'] ); ?>" class="header-mobile__nav-link header-mobile__nav-link--titulo">
+                                    <?php echo esc_html( $seccion['label'] ); ?>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                    </svg>
+                                </a>
+                            </div>
+                        <?php endif; ?>
+
+                        <?php foreach ( $seccion['protocolos'] as $item ) : ?>
+                            <div class="header-mobile__nav-item">
+                                <a href="<?php echo esc_url( $item['url'] ); ?>" class="header-mobile__nav-link">
+                                    <?php // Prefijo "Protocolo" solo si NO tiene label_url (solo para wellness real) ?>
+                                    <?php if ( empty( $seccion['label_url'] ) ) : ?>Protocolo <?php endif; ?>
+                                    <?php echo esc_html( $item['titulo'] ); ?>
                                 </a>
                             </div>
                         <?php endforeach; ?>
@@ -193,11 +203,11 @@ $panel_tienda = function_exists( 'ilba_get_panel_tienda' ) ? ilba_get_panel_tien
 
     </div>
 
-    <!-- Bottom fijo — siempre en la misma posición -->
+    <!-- Bottom fijo -->
     <div class="header-mobile__bottom">
         <a href="<?php echo esc_url( $contacto_url ); ?>" class="header-mobile__bottom-link">Contáctanos</a>
         <a href="<?php echo esc_url( $evento_url ); ?>" class="header-mobile__bottom-link">Eventos</a>
-        <a href="<?php echo esc_url( $somos_url ); ?>" class="header-mobile__bottom-link">Somos</a>
+        <button class="header-mobile__bottom-link header-mobile__bottom-btn" data-seccion="somos">Somos</button>
     </div>
 
 </div>

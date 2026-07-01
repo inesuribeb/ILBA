@@ -9,6 +9,7 @@ function ilba_get_secciones_menu() {
     $ap  = '/aparatologia/';
     $bm  = '/beauty_medical/';
 
+    // --- Imágenes protocolos ---
     $slugs_protocolos = array(
         'maternidad'     => 'protocolo-maternidad',
         'oncologico'     => 'protocolo-oncologico',
@@ -26,7 +27,7 @@ function ilba_get_secciones_menu() {
             'numberposts' => 1,
         ) );
 
-        $imagenes_protocolos[ $key ] = $dir . 'wellness.PNG'; // imagen por defecto
+        $imagenes_protocolos[ $key ] = $dir . 'wellness.PNG';
 
         if ( $post && function_exists( 'get_field' ) ) {
             $img = get_field( 'pr_imagen_hero', $post[0]->ID );
@@ -35,6 +36,14 @@ function ilba_get_secciones_menu() {
             }
         }
     }
+
+    // --- Imágenes centros (featured image) ---
+    $centro_bilbao  = get_posts( array( 'name' => 'bilbao',  'post_type' => 'centro', 'post_status' => 'publish', 'numberposts' => 1 ) );
+    $centro_donosti = get_posts( array( 'name' => 'donosti', 'post_type' => 'centro', 'post_status' => 'publish', 'numberposts' => 1 ) );
+
+    $img_bilbao  = $centro_bilbao  ? get_the_post_thumbnail_url( $centro_bilbao[0]->ID,  'large' ) : $dir . 'wellness.PNG';
+    $img_donosti = $centro_donosti ? get_the_post_thumbnail_url( $centro_donosti[0]->ID, 'large' ) : $dir . 'wellness.PNG';
+    $img_eventos = $dir . 'wellness.PNG'; // reemplaza con imagen de eventos cuando la tengas
 
     return array(
 
@@ -63,7 +72,6 @@ function ilba_get_secciones_menu() {
                         array( 'titulo' => 'Evolvex',                  'url' => $ap . 'evolvex/' ),
                         array( 'titulo' => 'Indiba CT8',               'url' => $ap . 'indiba-ct8/' ),
                         array( 'titulo' => 'Forma',                    'url' => $ap . 'forma-inmode/' ),
-                        // array( 'titulo' => 'Linfopress Evolution Pro', 'url' => $ap . 'linfopress-evolution-pro/' ),
                     ),
                 ),
                 array(
@@ -167,36 +175,32 @@ function ilba_get_secciones_menu() {
         'wellness' => array(
             'titulo'      => 'Wellness',
             'descripcion' => 'Protocolos personalizados para cada etapa de tu vida.',
-            'imagen'      => $dir . 'wellness4.png',
+            'imagen'      => $dir . 'wellness.webp',
             'imagen_sv'   => $dir . 'AmenuWellness.webp',
             'url'         => '#',
             'tipo'        => 'wellness',
+            'label'       => 'Protocolos',
+            'label_url'   => '',
             'protocolos'  => array(
-                array(
-                    'titulo' => 'Maternidad',
-                    'url'    => '/protocolos/protocolo-maternidad/',
-                    'imagen' => $imagenes_protocolos['maternidad'],
-                ),
-                array(
-                    'titulo' => 'Oncológico',
-                    'url'    => '/protocolos/protocolo-oncologico/',
-                    'imagen' => $imagenes_protocolos['oncologico'],
-                ),
-                array(
-                    'titulo' => 'Peso saludable',
-                    'url'    => '/protocolos/protocolo-peso-saludable/',
-                    'imagen' => $imagenes_protocolos['peso-saludable'],
-                ),
-                array(
-                    'titulo' => 'Menopausia',
-                    'url'    => '/protocolos/protocolo-menopausia/',
-                    'imagen' => $imagenes_protocolos['menopausia'],
-                ),
-                array(
-                    'titulo' => 'Longevidad',
-                    'url'    => '/protocolos/protocolo-longevidad/',
-                    'imagen' => $imagenes_protocolos['longevidad'],
-                ),
+                array( 'titulo' => 'Maternidad',     'url' => '/protocolos/protocolo-maternidad/',     'imagen' => $imagenes_protocolos['maternidad'] ),
+                array( 'titulo' => 'Oncológico',     'url' => '/protocolos/protocolo-oncologico/',     'imagen' => $imagenes_protocolos['oncologico'] ),
+                array( 'titulo' => 'Peso saludable', 'url' => '/protocolos/protocolo-peso-saludable/', 'imagen' => $imagenes_protocolos['peso-saludable'] ),
+                array( 'titulo' => 'Menopausia',     'url' => '/protocolos/protocolo-menopausia/',     'imagen' => $imagenes_protocolos['menopausia'] ),
+                array( 'titulo' => 'Longevidad',     'url' => '/protocolos/protocolo-longevidad/',     'imagen' => $imagenes_protocolos['longevidad'] ),
+            ),
+        ),
+
+        'somos' => array(
+            'titulo'      => 'Somos',
+            'imagen'      => $dir . 'recepcionChicas.webp',
+            'url'         => '/somos/',
+            'tipo'        => 'wellness',
+            'label'       => 'Sobre ILBA',
+            'label_url'   => '/somos/',
+            'protocolos'  => array(
+                array( 'titulo' => 'Centro Bilbao',   'url' => '/centro/bilbao/',  'imagen' => $img_bilbao ),
+                array( 'titulo' => 'Centro Donosti',  'url' => '/centro/donosti/', 'imagen' => $img_donosti ),
+                array( 'titulo' => 'Nuestros eventos','url' => '/eventos/',        'imagen' => $img_eventos ),
             ),
         ),
 

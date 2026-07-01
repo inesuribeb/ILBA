@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Prevenir clic en secciones sin página ---
     secciones.forEach(link => {
         link.addEventListener('click', (e) => {
-            e.preventDefault();
+            if ( link.getAttribute('href') === '#' ) e.preventDefault();
         });
     });
 
@@ -77,23 +77,24 @@ document.addEventListener('DOMContentLoaded', () => {
         panelTienda.addEventListener('mouseleave', closePanel);
     }
 
-    // --- Wellness: cambio de imagen en hover ---
-    const wellnessLinks = document.querySelectorAll('.header__panel-wellness-link');
-    const wellnessImg   = document.querySelector('.header__panel-wellness-img');
+    // --- Imagen dinámica en hover — scoped por panel ---
+    // Funciona para Wellness, Somos, y cualquier panel con esta estructura
+    paneles.forEach(panel => {
+        const links = panel.querySelectorAll('.header__panel-wellness-link');
+        const img   = panel.querySelector('.header__panel-wellness-img');
+        if ( !img || !links.length ) return;
 
-    if (wellnessImg) {
-        const defaultSrc = wellnessImg.src;
+        const defaultSrc = img.src;
 
-        wellnessLinks.forEach(link => {
+        links.forEach(link => {
             link.addEventListener('mouseenter', () => {
-                const img = link.dataset.imagen;
-                if (img) wellnessImg.src = img;
+                if ( link.dataset.imagen ) img.src = link.dataset.imagen;
             });
             link.addEventListener('mouseleave', () => {
-                wellnessImg.src = defaultSrc;
+                img.src = defaultSrc;
             });
         });
-    }
+    });
 
     // --- Header light cuando el hero BM es visible (todo blanco) ---
     const hero = document.querySelector('.bm-hero');
@@ -107,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(hero);
     }
 
-    // --- Header light cuando el hero de home es visible (solo nav der) ---
+    // --- Header light cuando el hero de home es visible ---
     if (document.body.classList.contains('home')) {
         header.classList.add('header--light-home');
 
@@ -123,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // --- Header light cuando el hero de somos es visible (todo blanco) ---
+    // --- Header light cuando el hero de somos es visible ---
     const somosHero = document.querySelector('.somos-hero');
     if (somosHero) {
         const observer = new IntersectionObserver(
@@ -135,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(somosHero);
     }
 
-    // --- Header light cuando el hero de servicios es visible (solo nav der) ---
+    // --- Header light cuando el hero de servicios es visible ---
     if (document.body.classList.contains('single-servicios')) {
         const svHero = document.querySelector('.sv-hero');
         if (svHero) {
@@ -148,18 +149,19 @@ document.addEventListener('DOMContentLoaded', () => {
             observer.observe(svHero);
         }
     }
+
     // --- Header light cuando el hero de centros es visible ---
-if (document.body.classList.contains('single-centro')) {
-    const ceHero = document.querySelector('.ce-hero');
-    if (ceHero) {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                header.classList.toggle('header--light-bm', entry.isIntersecting);
-            },
-            { threshold: 0 }
-        );
-        observer.observe(ceHero);
+    if (document.body.classList.contains('single-centro')) {
+        const ceHero = document.querySelector('.ce-hero');
+        if (ceHero) {
+            const observer = new IntersectionObserver(
+                ([entry]) => {
+                    header.classList.toggle('header--light-bm', entry.isIntersecting);
+                },
+                { threshold: 0 }
+            );
+            observer.observe(ceHero);
+        }
     }
-}
 
 });

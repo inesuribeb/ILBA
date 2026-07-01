@@ -39,15 +39,13 @@
                     <?php echo esc_html( $seccion['titulo'] ); ?>
                 </a>
             <?php endforeach; ?>
-            <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'somos' ) ) ); ?>" class="header__nav-link">
-                Somos
-            </a>
-            <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'contacto' ) ) ); ?>" class="header__nav-link">
+
+            <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'contacto' ) ) ); ?>" class="header__nav-link header__nav-link--contacto">
                 Contáctanos
             </a>
             <a href="#" class="header__nav-link header__nav-link--carrito" id="abrir-modal-carrito">
-    Carrito [<span class="carrito-count"><?php echo function_exists( 'WC' ) && WC()->cart ? WC()->cart->get_cart_contents_count() : '0'; ?></span>]
-</a>
+                Carrito [<span class="carrito-count"><?php echo function_exists( 'WC' ) && WC()->cart ? WC()->cart->get_cart_contents_count() : '0'; ?></span>]
+            </a>
         </div>
 
     </nav>
@@ -58,15 +56,25 @@
 
             <?php if ( isset( $seccion['tipo'] ) && $seccion['tipo'] === 'wellness' ) : ?>
 
-                <!-- Panel Wellness -->
+                <!-- Panel tipo Wellness -->
                 <div class="header__panel-nav header__panel-nav--wellness">
-                    <span class="header__panel-wellness-label">Protocolos</span>
+
+                    <?php if ( ! empty( $seccion['label_url'] ) ) : ?>
+                        <a href="<?php echo esc_url( $seccion['label_url'] ); ?>" class="header__panel-wellness-label header__panel-wellness-label--link">
+                            <?php echo esc_html( $seccion['label'] ); ?>
+                        </a>
+                    <?php else : ?>
+                        <span class="header__panel-wellness-label">
+                            <?php echo esc_html( $seccion['label'] ); ?>
+                        </span>
+                    <?php endif; ?>
+
                     <div class="header__panel-wellness-links">
-                        <?php foreach ( $seccion['protocolos'] as $protocolo ) : ?>
-                            <a href="<?php echo esc_url( $protocolo['url'] ); ?>"
+                        <?php foreach ( $seccion['protocolos'] as $item ) : ?>
+                            <a href="<?php echo esc_url( $item['url'] ); ?>"
                                class="header__panel-wellness-link"
-                               data-imagen="<?php echo esc_url( $protocolo['imagen'] ); ?>">
-                                <?php echo esc_html( $protocolo['titulo'] ); ?>
+                               data-imagen="<?php echo esc_url( $item['imagen'] ); ?>">
+                                <?php echo esc_html( $item['titulo'] ); ?>
                             </a>
                         <?php endforeach; ?>
                     </div>
@@ -74,7 +82,7 @@
 
                 <div class="header__panel-imagen">
                     <img src="<?php echo esc_url( $seccion['imagen'] ); ?>"
-                         alt="Wellness"
+                         alt="<?php echo esc_html( $seccion['titulo'] ); ?>"
                          class="header__panel-wellness-img">
                 </div>
 
@@ -179,9 +187,8 @@
         </div>
     <?php endif; ?>
 
-    <?php get_template_part( 'components/shop/modal/modal-carrito' ); ?>
-
-
 </header>
+
+<?php get_template_part( 'components/shop/modal/modal-carrito' ); ?>
 
 <?php get_template_part( 'header-mobile' ); ?>

@@ -200,7 +200,7 @@
     width: 100%;
     background: none;
     border: none;
-    padding: 16px 0;
+    padding: 12px 0;
     font-size: 20px;
     color: var(--dark-color);
     font-family: inherit;
@@ -407,4 +407,51 @@
     display: block;
     padding: 36px 0 0px 0;
     border-bottom: none;
+}
+
+
+/* =============================================
+   Header Mobile — Somos bottom btn + panel 2
+   ============================================= */
+
+/* Somos: resetear estilos de button para que iguale a los <a> del bottom */
+.header-mobile__bottom-btn {
+    background: none;
+    border: none;
+    font-family: inherit;
+    cursor: pointer;
+    padding: 0;
+}
+
+/* Panel 2 Somos: "Sobre ILBA" como título con flecha */
+.header-mobile__panel-2[data-panel-2="somos"] .header-mobile__nav-link--titulo {
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    color: var(--dark-color);
+    text-decoration: none;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.header-mobile__panel-2[data-panel-2="somos"] .header-mobile__nav-link--titulo svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+/* Panel 2 Somos: centros y eventos como links normales */
+.header-mobile__panel-2[data-panel-2="somos"] .header-mobile__nav-link {
+    font-size: 20px;
+    padding: 12px 0;
+    color: var(--dark-color);
+    display: block;
+    text-decoration: none;
+    border-bottom: 1px solid #e0e0e0;
+    transition: opacity 0.2s ease;
+}
+
+.header-mobile__panel-2[data-panel-2="somos"] .header-mobile__nav-link:hover {
+    opacity: 0.5;
 }

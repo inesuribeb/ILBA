@@ -25,11 +25,14 @@ function ilba_get_secciones_menu() {
             'post_status' => 'publish',
             'numberposts' => 1,
         ) );
-        if ( $post ) {
+
+        $imagenes_protocolos[ $key ] = $dir . 'wellness.PNG'; // imagen por defecto
+
+        if ( $post && function_exists( 'get_field' ) ) {
             $img = get_field( 'pr_imagen_hero', $post[0]->ID );
-            $imagenes_protocolos[ $key ] = $img ? $img['url'] : $dir . 'wellness.PNG';
-        } else {
-            $imagenes_protocolos[ $key ] = $dir . 'wellness.PNG';
+            if ( $img ) {
+                $imagenes_protocolos[ $key ] = is_array( $img ) ? $img['url'] : $img;
+            }
         }
     }
 
@@ -60,7 +63,7 @@ function ilba_get_secciones_menu() {
                         array( 'titulo' => 'Evolvex',                  'url' => $ap . 'evolvex/' ),
                         array( 'titulo' => 'Indiba CT8',               'url' => $ap . 'indiba-ct8/' ),
                         array( 'titulo' => 'Forma',                    'url' => $ap . 'forma-inmode/' ),
-                        array( 'titulo' => 'Linfopress Evolution Pro', 'url' => $ap . 'linfopress-evolution-pro/' ),
+                        // array( 'titulo' => 'Linfopress Evolution Pro', 'url' => $ap . 'linfopress-evolution-pro/' ),
                     ),
                 ),
                 array(
@@ -74,8 +77,8 @@ function ilba_get_secciones_menu() {
         'medical' => array(
             'titulo'      => 'Medical',
             'descripcion' => 'Tratamientos médico-estéticos faciales, corporales y capilares con tecnología de vanguardia.',
-            'imagen'      => $dir . 'medical2.jpg',
-            'imagen_sv'   => $dir . 'AmenuMedical.webp',
+            'imagen'      => $dir . 'cambioheader.webp',
+            'imagen_sv'   => $dir . 'cambiocarru.webp',
             'url'         => '#',
             'columnas'    => array(
                 array(
