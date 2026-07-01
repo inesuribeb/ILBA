@@ -22,8 +22,6 @@
 }
 
 .ce-servicios__nav-link {
-    /* font-size: 16px;
-    letter-spacing: -1px; */
     font-size: 22px;
     letter-spacing: -1px;
     color: rgba(0, 0, 0, 0.4);
@@ -53,11 +51,25 @@
 
 .ce-servicios__grupo {
     padding-bottom: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .ce-servicios__grupo + .ce-servicios__grupo {
     border-top: 1px solid #e0e0e0;
     padding-top: 48px;
+}
+
+/* --- Título del grupo: oculto en desktop, visible en móvil --- */
+
+.ce-servicios__grupo-titulo {
+    display: none;
+    margin: 0;
+    font-size: 20px;
+    /* text-transform: uppercase; */
+    letter-spacing: -0.05em;
+    color: var(--dark-color);
 }
 
 /* --- Grid de cards --- */
@@ -142,20 +154,53 @@
         gap: 1rem;
     }
 
+    /* Nav izquierda: oculto en móvil */
     .ce-servicios__col-nav {
-        width: 100%;
-        flex-direction: row;
-        gap: 1.5rem;
+        display: none;
+    }
+
+    /* Título del grupo: visible en móvil */
+    .ce-servicios__grupo-titulo {
+        display: block;
     }
 
     .ce-servicios__col-main {
         width: 100%;
+        border-top: 1.5px solid #e0e0e0;
+        padding-top: 0.75rem;
+        padding-right: 0;
+        gap: 32px;
+    }
+
+    .ce-servicios__grupo {
+        overflow: hidden;
+    }
+
+    .ce-servicios__grupo + .ce-servicios__grupo {
         border-top: none;
-        padding-right: 24px;
+        padding-top: 0;
     }
 
     .ce-servicios__cards {
-        grid-template-columns: repeat( 2, 1fr );
+        display: flex;
+        flex-direction: row;
+        grid-template-columns: unset;
+        gap: 0.75rem;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding-right: 24px;
+    }
+
+    .ce-servicios__cards::-webkit-scrollbar {
+        display: none;
+    }
+
+    .ce-servicios__card {
+        flex: 0 0 75%;
+        scroll-snap-align: start;
     }
 
     .ce-servicios__card-titulo {

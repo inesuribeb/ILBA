@@ -53,6 +53,7 @@ $salud_query = new WP_Query( array(
         <!-- Beauty -->
         <?php if ( $beauty_query->have_posts() ) : ?>
             <div class="ce-servicios__grupo" id="ce-servicios-beauty">
+                <p class="ce-servicios__grupo-titulo">Beauty</p>
                 <div class="ce-servicios__cards">
                     <?php while ( $beauty_query->have_posts() ) : $beauty_query->the_post();
                         $thumb        = get_the_post_thumbnail_url( get_the_ID(), 'large' );
@@ -76,6 +77,7 @@ $salud_query = new WP_Query( array(
         <!-- Medical -->
         <?php if ( $medical_query->have_posts() ) : ?>
             <div class="ce-servicios__grupo" id="ce-servicios-medical">
+                <p class="ce-servicios__grupo-titulo">Medical</p>
                 <div class="ce-servicios__cards">
                     <?php while ( $medical_query->have_posts() ) : $medical_query->the_post();
                         $thumb        = get_the_post_thumbnail_url( get_the_ID(), 'large' );
@@ -99,6 +101,7 @@ $salud_query = new WP_Query( array(
         <!-- Salud -->
         <?php if ( $salud_query->have_posts() ) : ?>
             <div class="ce-servicios__grupo" id="ce-servicios-salud">
+                <p class="ce-servicios__grupo-titulo">Salud</p>
                 <div class="ce-servicios__cards">
                     <?php while ( $salud_query->have_posts() ) : $salud_query->the_post();
                         $thumb = get_the_post_thumbnail_url( get_the_ID(), 'large' );
