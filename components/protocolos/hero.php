@@ -6,7 +6,6 @@
 $titulo       = get_field( 'pr_titulo' );
 $subtitulo    = get_field( 'pr_subtitulo' );
 $img_hero     = get_field( 'pr_imagen_hero' );
-$contacto_url = get_permalink( get_page_by_path( 'contacto' ) );
 
 $slugs_nav = array(
     'Maternidad'     => 'protocolo-maternidad',
@@ -31,8 +30,6 @@ foreach ( $slugs_nav as $titulo_nav => $slug ) {
 }
 
 $current_url = get_permalink( get_the_ID() );
-
-
 ?>
 
 <section class="pr-hero">
@@ -71,9 +68,7 @@ $current_url = get_permalink( get_the_ID() );
                 <h1 class="pr-hero__titulo"><?php echo esc_html( $titulo ); ?></h1>
             <?php endif; ?>
 
-            <?php // TODO: descomentar cuando el formulario esté listo ?>
-            <?php // <a href="#pr-formulario" class="pr-hero__cta">Pide cita</a> ?>
-            <a href="<?php echo esc_url( $contacto_url ); ?>" class="pr-hero__cta">
+            <a href="#pr-formulario" class="pr-hero__cta">
                 Pide cita
             </a>
         </div>
@@ -101,9 +96,7 @@ $current_url = get_permalink( get_the_ID() );
     </div>
 
     <!-- CTA fijo abajo móvil -->
-    <?php // TODO: descomentar cuando el formulario esté listo ?>
-    <?php // <a href="#pr-formulario" class="pr-hero__cta-movil">Pide cita</a> ?>
-    <a href="<?php echo esc_url( $contacto_url ); ?>" class="pr-hero__cta-movil">
+    <a href="#pr-formulario" class="pr-hero__cta-movil">
         Pide cita
     </a>
 

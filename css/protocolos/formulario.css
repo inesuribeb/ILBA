@@ -2,277 +2,237 @@
    Protocolos — Formulario
    ============================================= */
 
-   .pr-formulario {
+   .pr-form-section {
     display: flex;
     flex-direction: row;
-    gap: 80px;
-    padding: 80px 60px 80px 60px;
-    align-items: flex-start;
-    background-color: black;
+    gap: 4rem;
+    padding: 0px 24px 80px 24px;
+    box-sizing: border-box;
+    background: black;
 }
 
-/* --- Izquierda --- */
+/* --- Col izquierda: info --- */
 
-.pr-formulario__izq {
-    flex: 1;
+.pr-form-section__info {
+    flex: 2;
     display: flex;
     flex-direction: column;
-    gap: 24px;
-    padding-top: 8px;
+    gap: 1.5rem;
+    padding-top: 108px;
 }
 
-.pr-formulario__titulo {
+.pr-form-section__titulo {
     margin: 0;
-    font-size: 32px;
+    font-family: var(--serif);
+    font-size: 36px;
     letter-spacing: -2px;
-    font-weight: 400;
-    /* color: var(--dark-color); */
     color: var(--light-color);
-
-    line-height: 1.2;
-    font-family: var(--sans-serif);
+    line-height: 1.1;
 }
 
-.pr-formulario__descripcion {
+.pr-form-section__descripcion {
     margin: 0;
-    font-size: 18px;
-    line-height: 1.4;
-    /* color: var(--dark-color); */
+    font-size: 15px;
+    line-height: 1.5;
     color: var(--light-color);
-    max-width: 450px;
-    letter-spacing: -1px;
+    opacity: 0.7;
+    letter-spacing: -0.5px;
 }
 
+/* --- Col derecha: form --- */
 
-
-
-
-
-/* --- Derecha: form --- */
-
-/* .pr-formulario__der {
-    flex: 1;
+.pr-form-section__form {
+    flex: 3;
+    padding-top: 108px;
 }
+
 .pr-form {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
 }
-.pr-form__row {
+
+/* --- Fila nombre + apellido --- */
+
+.pr-form__fila {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     gap: 0.75rem;
 }
-.pr-form__row--dos {
-    gap: 0.75rem;
-}
-.pr-form__input,
-.pr-form__select,
-.pr-form__textarea {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid var(--dark-color);
-    background: transparent;
-    font-size: 15px;
-    letter-spacing: -1px;
-    color: var(--light-color);
-    outline: none;
-    font-family: inherit;
-    transition: border-color 0.2s ease;
-    border-radius: 0;
-    -webkit-appearance: none;
-}
-.pr-form__input::placeholder,
-.pr-form__textarea::placeholder {
-    color: #c9c9c9;
-}
-.pr-form__select {
-    cursor: pointer;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23333' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 16px center;
-    padding-right: 40px;
-}
-.pr-form__textarea {
-    resize: vertical;
-    min-height: 160px;
-}
-.pr-form__submit {
-    width: 100%;
-    padding: 8px;
-    background: #2d2d2d;
-    color: #fff;
-    border: none;
-    font-size: 15px;
-    font-family: inherit;
-    cursor: pointer;
-    transition: background 0.2s ease;
-    border-top: none;
-    letter-spacing: -1px;
 
-}
-.pr-form__submit:hover {
-    background: #111;
-} */
-/* --- Derecha: form --- */
-
-.pr-formulario__der {
+.pr-form__fila .pr-form__campo {
     flex: 1;
 }
 
-.pr-formulario__der .wpcf7-form {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-}
+/* --- Inputs --- */
 
-.pr-formulario__der .ct-form__row {
-    display: flex;
-    flex-direction: row;
-    gap: 0.75rem;
-}
-
-.pr-formulario__der .wpcf7-form-control-wrap {
-    width: 100%;
-}
-
-.pr-formulario__der .wpcf7-text,
-.pr-formulario__der .wpcf7-email,
-.pr-formulario__der .wpcf7-select,
-.pr-formulario__der .wpcf7-textarea {
+.pr-form__campo input,
+.pr-form__campo textarea {
     width: 100%;
     padding: 8px;
-    border: 1px solid var(--dark-color);
+    border: 1px solid var(--light-color);
     background: transparent;
     font-size: 15px;
-    letter-spacing: -1px;
     color: var(--light-color);
+    letter-spacing: -1px;
     outline: none;
     font-family: inherit;
-    transition: border-color 0.2s ease;
     border-radius: 0;
     -webkit-appearance: none;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease;
 }
 
-.pr-formulario__der .wpcf7-text::placeholder,
-.pr-formulario__der .wpcf7-email::placeholder,
-.pr-formulario__der .wpcf7-textarea::placeholder {
-    color: #c9c9c9;
+.pr-form__campo input::placeholder,
+.pr-form__campo textarea::placeholder {
+    color: rgba(224, 224, 224, 0.55);
 }
 
-.pr-formulario__der .wpcf7-select {
-    cursor: pointer;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23333' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 16px center;
-    padding-right: 40px;
-}
-
-.pr-formulario__der .wpcf7-textarea {
+.pr-form__campo textarea {
     resize: vertical;
-    min-height: 160px;
+    min-height: 120px;
 }
 
-.pr-formulario__der .wpcf7-submit {
+/* --- Select custom --- */
+
+.pr-select-wrapper {
+    position: relative;
+    border: 1px solid var(--light-color);
+    cursor: pointer;
+    user-select: none;
+}
+
+.pr-select-trigger {
+    padding: 8px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+    letter-spacing: -1px;
+    /* color: rgba(224, 224, 224, 0.876) !important; */
+    /* color: var(--light-color); */
+    color: rgba(224, 224, 224, 0.799);
+}
+
+.pr-select-trigger,
+.pr-select-trigger span {
+    color: rgba(224, 224, 224, 0.75);
+}
+
+.pr-select-wrapper.has-value .pr-select-trigger {
+    color: var(--light-color);
+}
+
+.pr-select-trigger svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+    color: var(--light-color);
+    stroke: var(--light-color);
+}
+
+.pr-select-wrapper.is-open .pr-select-trigger svg {
+    transform: rotate(180deg);
+}
+
+.pr-select-options {
+    display: none;
+    flex-direction: column;
+    border: 1px solid var(--light-color);
+    position: absolute;
+    top: calc( 100% - 1px );
+    left: -1px;
+    right: -1px;
+    /* background: var(--dark-color); */
+    background: black;
+    z-index: 10;
+}
+
+.pr-select-wrapper.is-open .pr-select-options {
+    display: flex;
+}
+
+.pr-select-option {
+    padding: 8px 12px;
+    font-size: 15px;
+    color: var(--light-color);
+    letter-spacing: -1px;
+    border-bottom: 1px solid rgba(224, 224, 224, 0.2);
+    transition: opacity 0.2s ease;
+}
+
+.pr-select-option:last-child {
+    border-bottom: none;
+}
+
+.pr-select-option:hover {
+    opacity: 0.6;
+}
+
+.pr-select-option.is-selected {
+    font-weight: 500;
+}
+
+/* --- Submit --- */
+
+.pr-form__submit {
     width: 100%;
-    padding: 8px;
-    background: #2d2d2d;
-    color: #fff;
+    padding: 10px;
+    background: var(--light-color);
+    color: var(--dark-color);
     border: none;
     font-size: 15px;
+    letter-spacing: -1px;
     font-family: inherit;
     cursor: pointer;
-    transition: background 0.2s ease;
-    letter-spacing: -1px;
+    transition: opacity 0.2s ease;
+    border-radius: 0;
 }
 
-.pr-formulario__der .wpcf7-submit:hover {
-    background: #111;
+.pr-form__submit:hover {
+    opacity: 0.85;
 }
 
-
-
-/* @media ( max-width: 1024px ) {
-
-    .pr-formulario {
-        flex-direction: column;
-        padding: 60px 24px;
-        gap: 40px;
-    }
-
-    .pr-form__row {
-        flex-direction: column;
-        gap: 0.75rem;
-    }
-
-    .pr-formulario__izq,
-    .pr-formulario__der {
-        flex: none;
-        width: 100%;
-    }
-
-    .pr-formulario__descripcion {
-        font-size: 16px;
-        max-width: none;
-    }
-
-    .pr-form__row--dos {
-        flex-direction: column;
-        gap: 0.75rem;
-    }
-
-    .pr-form__row--dos .pr-form__input:first-child {
-        border-right: 1px solid var(--dark-color);
-        border-bottom: 1px solid var(--dark-color);
-    }
-
-    .pr-form__input,
-    .pr-form__select,
-    .pr-form__textarea {
-        box-sizing: border-box;
-    }
-} */
-
-.pr-form__hidden-input,
-input.pr-form__hidden-input,
-.wpcf7-form input.pr-form__hidden-input {
-    position: absolute !important;
-    left: -9999px !important;
-    width: 1px !important;
-    height: 1px !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
+.pr-form__submit:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 
+/* --- Respuesta --- */
+
+.pr-form__respuesta {
+    margin: 0;
+    font-size: 14px;
+    letter-spacing: -0.5px;
+    color: var(--light-color);
+    min-height: 20px;
+}
+
+/* --- Móvil --- */
 
 @media ( max-width: 1024px ) {
 
-    .pr-formulario {
+    .pr-form-section {
         flex-direction: column;
         padding: 60px 24px;
-        gap: 40px;
+        gap: 2rem;
     }
 
-    .pr-formulario__izq,
-    .pr-formulario__der {
-        flex: none;
-        width: 100%;
+    .pr-form-section__info,
+    .pr-form-section__form {
+        padding-top: 0;
     }
 
-    .pr-formulario__descripcion {
-        font-size: 16px;
-        max-width: none;
+    /* .pr-form-section__form {
+        order: -1;
+    } */
+
+    .pr-form-section__titulo {
+        font-size: 26px;
     }
 
-    .pr-formulario__der .ct-form__row {
+    .pr-form__fila {
         flex-direction: column;
-    }
-
-    .pr-formulario__der .wpcf7-text,
-    .pr-formulario__der .wpcf7-email,
-    .pr-formulario__der .wpcf7-select,
-    .pr-formulario__der .wpcf7-textarea {
-        box-sizing: border-box;
     }
 }

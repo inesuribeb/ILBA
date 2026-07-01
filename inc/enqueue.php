@@ -69,6 +69,9 @@ function ilba_enqueue_assets() {
         wp_enqueue_style( 'ilba-pr-formulario', $uri . '/css/protocolos/formulario.css', array(), filemtime( $dir . '/css/protocolos/formulario.css' ) );
 
         wp_enqueue_script( 'ilba-pr-desplegable', $uri . '/js/protocolos/desplegable.js', array(), filemtime( $dir . '/js/protocolos/desplegable.js' ), true );
+        wp_enqueue_script( 'ilba-pr-formulario', $uri . '/js/protocolos/formulario.js',   array(), filemtime( $dir . '/js/protocolos/formulario.js' ),   true );
+        wp_localize_script( 'ilba-pr-formulario', 'ilba_ajax', array( 'url' => admin_url( 'admin-ajax.php' ) ) );
+
     }
 
     // --- Aparatología ---
