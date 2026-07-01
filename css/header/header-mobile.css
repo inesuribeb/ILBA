@@ -455,3 +455,17 @@
 .header-mobile__panel-2[data-panel-2="somos"] .header-mobile__nav-link:hover {
     opacity: 0.5;
 }
+
+
+
+
+
+/* .single-centro .header-mobile__carrito-btn {
+    color: var(--light-color);
+    border-right-color: var(--light-color);
+}
+
+.single-centro .header-mobile.menu-abierto .header-mobile__carrito-btn {
+    color: var(--dark-color);
+    border-right-color: var(--dark-color);
+} */

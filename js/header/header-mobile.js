@@ -26,7 +26,7 @@
 //         }
 //     });
 
-//     document.querySelectorAll( '.header-mobile__nav-btn[data-seccion]' ).forEach( navBtn => {
+//     document.querySelectorAll( '.header-mobile__nav-btn[data-seccion], .header-mobile__bottom-btn[data-seccion]' ).forEach( navBtn => {
 //         navBtn.addEventListener( 'click', () => {
 //             const key    = navBtn.dataset.seccion;
 //             const panel2 = document.querySelector( `.header-mobile__panel-2[data-panel-2="${key}"]` );
@@ -76,6 +76,7 @@
 //     }
 
 // } );
+
 
 
 document.addEventListener( 'DOMContentLoaded', () => {
@@ -142,7 +143,7 @@ document.addEventListener( 'DOMContentLoaded', () => {
         }, 2000 );
     }
 
-    // --- Light header solo sobre la hero ---
+    // --- Light header solo sobre la hero de home ---
     const hero = document.querySelector( '.home-hero' );
 
     if ( hero ) {
@@ -158,6 +159,24 @@ document.addEventListener( 'DOMContentLoaded', () => {
         );
 
         observer.observe( hero );
+    }
+
+    // --- Light header solo sobre la portada de centros ---
+    const ceHero = document.querySelector( '.ce-hero' );
+
+    if ( ceHero ) {
+        const observer = new IntersectionObserver(
+            ( entries ) => {
+                entries.forEach( entry => {
+                    if ( ! menu.classList.contains( 'is-open' ) ) {
+                        headerMobile.classList.toggle( 'header-mobile--light-hero', entry.isIntersecting );
+                    }
+                });
+            },
+            { threshold: 0.1 }
+        );
+
+        observer.observe( ceHero );
     }
 
 } );
