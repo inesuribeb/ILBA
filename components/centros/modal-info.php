@@ -8,11 +8,17 @@ $thumb_id  = get_post_thumbnail_id();
 
 if ( ! $modal ) return;
 
+// $titulo    = $modal['titulo']    ?? '';
+// $email     = $modal['email']     ?? '';
+// $telefono  = $modal['telefono']  ?? '';
+// $direccion = $modal['direccion'] ?? '';
+// $maps_url  = $direccion ? 'https://www.google.com/maps/search/' . urlencode( $direccion ) : '';
+// $thumb     = $thumb_id ? wp_get_attachment_image_src( $thumb_id, 'medium' ) : null;
+
 $titulo    = $modal['titulo']    ?? '';
 $email     = $modal['email']     ?? '';
 $telefono  = $modal['telefono']  ?? '';
-$direccion = $modal['direccion'] ?? '';
-$maps_url  = $direccion ? 'https://www.google.com/maps/search/' . urlencode( $direccion ) : '';
+$maps_url  = $modal['direccion'] ?? '';
 $thumb     = $thumb_id ? wp_get_attachment_image_src( $thumb_id, 'medium' ) : null;
 ?>
 
