@@ -9,7 +9,7 @@
                 <h3 class="popup-global__titulo">Tenemos un descuento para ti</h3>
 
                 <div class="popup-global__contenido">
-                    <p>Abrimos tienda online. Te queremos dar la bienvenida con un 10% de descuento en tu primera compra. Utiliza el código TIENDA10 al finalizar tu pedido y empieza a cuidar de ti con un pequeño regalo por nuestra parte.</p>
+                    <p>Abrimos tienda online. Te queremos dar la bienvenida con un <strong>10% de descuento</strong> en tu primera compra. Utiliza el <strong>código TIENDA10</strong> al finalizar tu pedido y empieza a cuidar de ti con un pequeño regalo por nuestra parte.</p>
                 </div>
 
                 <a class="popup-global__boton" href="/tienda">Ver tienda</a>

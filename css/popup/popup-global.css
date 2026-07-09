@@ -123,6 +123,10 @@
     letter-spacing: -0.5px;
 }
 
+.popup-global__contenido strong {
+    font-weight: bold;
+}
+
 .popup-global__boton {
     display: inline-block;
     align-self: center;
