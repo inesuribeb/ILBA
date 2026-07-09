@@ -18,6 +18,10 @@ function ilba_enqueue_assets() {
     wp_enqueue_script( 'ilba-header',        $uri . '/js/header/header.js',        array(), filemtime( $dir . '/js/header/header.js' ),        true );
     wp_enqueue_script( 'ilba-header-mobile', $uri . '/js/header/header-mobile.js', array(), filemtime( $dir . '/js/header/header-mobile.js' ), true );
 
+        // --- Popup global (todas las páginas) ---
+    wp_enqueue_style( 'ilba-popup-global',  $uri . '/css/popup/popup-global.css', array(), filemtime( $dir . '/css/popup/popup-global.css' ) );
+    wp_enqueue_script( 'ilba-popup-global', $uri . '/js/popup/popup-global.js',   array(), filemtime( $dir . '/js/popup/popup-global.js' ),   true );
+    
 
     // --- Home ---
     if ( is_front_page() ) {

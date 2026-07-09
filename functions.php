@@ -169,3 +169,9 @@ add_filter( 'woocommerce_add_to_cart_fragments', function( $fragments ) {
 add_filter( 'wc_add_to_cart_message_html', '__return_empty_string' );
 remove_action( 'woocommerce_cart_item_removed', 'woocommerce_cart_item_removed_notice' );
 add_filter( 'woocommerce_cart_item_removed_notice_type', '__return_empty_string' );
+
+
+function ilba_popup_global() {
+    get_template_part('parts/popup-global');
+}
+add_action('wp_footer', 'ilba_popup_global');
