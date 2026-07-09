@@ -19,13 +19,25 @@
     background: rgba(0, 0, 0, 0.3);
 }
 
+/* .popup-global__box {
+    position: relative;
+    z-index: 1;
+    background: var(--light-color);
+    width: 65%;
+    height: 70vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0);
+    animation: popup-global-in 0.3s ease;
+    display: flex;
+} */
+
 .popup-global__box {
     position: relative;
     z-index: 1;
     background: var(--light-color);
-    /* max-width: 820px; */
     width: 65%;
-    height: 70vh;
+    max-width: 835px; 
+    aspect-ratio: 815 / 530;
     overflow-y: auto;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0);
     animation: popup-global-in 0.3s ease;
@@ -133,9 +145,13 @@
 
 /* --- Responsive --- */
 
+/* --- Responsive --- */
+
 @media (max-width: 768px) {
     .popup-global__box {
+        aspect-ratio: unset;
         max-width: 90%;
+        width: 90%;
         height: auto;
         max-height: 90vh;
     }
