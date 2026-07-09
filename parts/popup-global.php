@@ -1,8 +1,14 @@
+
+
 <div id="popup-global" class="popup-global" hidden>
     <div class="popup-global__overlay"></div>
 
     <div class="popup-global__box">
-        <button class="popup-global__close" aria-label="Cerrar">&times;</button>
+        <button class="popup-global__close" aria-label="Cerrar">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+</svg>
+        </button>
 
         <div class="popup-global__wrapper">
             <div class="popup-global__col popup-global__col--texto">
