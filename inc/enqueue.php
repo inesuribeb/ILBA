@@ -160,6 +160,7 @@ if ( is_singular( 'centro' ) ) {
 
     if ( function_exists( 'is_shop' ) ) {
 
+        
         // --- Tienda (archivo) ---
         if ( is_shop() || is_product_category() || is_product_tag() || is_tax( 'pack' ) ) {
             wp_enqueue_style( 'ilba-shop-archive', $uri . '/css/shop/archive/archive.css', array(), filemtime( $dir . '/css/shop/archive/archive.css' ) );
