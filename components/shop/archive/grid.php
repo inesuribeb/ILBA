@@ -24,20 +24,52 @@ if ( is_tax( 'product_cat' ) ) {
             'terms'    => $term_actual->term_id,
         ),
     );
+
+} elseif ( is_tax( 'pack' ) ) {
+
+    $term_actual = get_queried_object();
+    $titulo_grid = esc_html( $term_actual->name );
+
+    $tax_query = array(
+        array(
+            'taxonomy' => 'pack',
+            'field'    => 'term_id',
+            'terms'    => $term_actual->term_id,
+        ),
+    );
+
 }
 
-$args = array(
-    'post_type'      => 'product',
-    'posts_per_page' => -1,
-    'post_status'    => 'publish',
-    'tax_query'      => $tax_query,
-    'meta_query'     => array(
-        array(
-            'key'   => '_stock_status',
-            'value' => 'instock',
+$ids_destacados = isset( $_GET['ids'] ) ? array_map( 'intval', explode( ',', sanitize_text_field( wp_unslash( $_GET['ids'] ) ) ) ) : array();
+
+if ( ! empty( $ids_destacados ) ) {
+
+    $titulo_grid = 'Selección destacada';
+
+    $args = array(
+        'post_type'      => 'product',
+        'posts_per_page' => count( $ids_destacados ),
+        'post_status'    => 'publish',
+        'post__in'       => $ids_destacados,
+        'orderby'        => 'post__in', // respeta el orden que pases en la URL
+    );
+
+} else {
+
+    $args = array(
+        'post_type'      => 'product',
+        'posts_per_page' => -1,
+        'post_status'    => 'publish',
+        'tax_query'      => $tax_query,
+        'meta_query'     => array(
+            array(
+                'key'   => '_stock_status',
+                'value' => 'instock',
+            ),
         ),
-    ),
-);
+    );
+
+}
 
 $productos = new WP_Query( $args );
 
@@ -66,8 +98,8 @@ function ilba_get_marca_slug( $post_id ) {
     return '';
 }
 
-// Reordenar los posts
-if ( $productos->have_posts() ) {
+// Reordenar los posts (solo cuando no hay selección fija por IDs)
+if ( empty( $ids_destacados ) && $productos->have_posts() ) {
     $posts_array = $productos->posts;
 
     usort( $posts_array, function( $a, $b ) use ( $orden_marcas ) {

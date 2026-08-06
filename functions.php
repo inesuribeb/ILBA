@@ -175,3 +175,39 @@ function ilba_popup_global() {
     get_template_part('parts/popup-global');
 }
 add_action('wp_footer', 'ilba_popup_global');
+
+add_action( 'init', function() {
+    register_taxonomy( 'pack', 'product', array(
+        'label'             => 'Packs',
+        'hierarchical'      => false,
+        'public'            => true,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'show_in_nav_menus' => false,
+        'show_in_rest'      => true,
+        'rewrite'           => array( 'slug' => 'pack' ),
+    ) );
+});
+
+add_action( 'init', function() {
+    $packs = array(
+        'Antimanchas'                         => 'antimanchas',
+        'Rosácea y piel sensible'              => 'rosacea-y-piel-sensible',
+        'Hidratación intensa y reparación'     => 'hidratacion-intensa-y-reparacion',
+        'Acné activo'                          => 'acne-activo',
+        'Reafirmación y firmeza'               => 'reafirmacion-y-firmeza',
+        'Luminosidad y efecto glow'            => 'luminosidad-y-efecto-glow',
+        'Piel grasa y poro dilatado'           => 'piel-grasa-y-poro-dilatado',
+        'Primeras arrugas'                     => 'primeras-arrugas',
+        'Post tratamiento médico-estético'     => 'post-tratamiento-medico-estetico',
+        'Piel seca y nutrición intensa'        => 'piel-seca-y-nutricion-intensa',
+        'Piel Madura'                          => 'piel-madura',
+        'Piel apagada con textura irregular'   => 'piel-apagada-con-textura-irregular',
+    );
+
+    foreach ( $packs as $nombre => $slug ) {
+        if ( ! term_exists( $slug, 'pack' ) ) {
+            wp_insert_term( $nombre, 'pack', array( 'slug' => $slug ) );
+        }
+    }
+}, 20 ); // después de register_taxonomy
