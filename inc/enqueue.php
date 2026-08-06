@@ -161,7 +161,7 @@ if ( is_singular( 'centro' ) ) {
     if ( function_exists( 'is_shop' ) ) {
 
         // --- Tienda (archivo) ---
-        if ( is_shop() || is_product_category() || is_product_tag() ) {
+        if ( is_shop() || is_product_category() || is_product_tag() || is_tax( 'pack' ) ) {
             wp_enqueue_style( 'ilba-shop-archive', $uri . '/css/shop/archive/archive.css', array(), filemtime( $dir . '/css/shop/archive/archive.css' ) );
             wp_enqueue_style( 'ilba-shop-card', $uri . '/css/shop/archive/card.css', array(), filemtime( $dir . '/css/shop/archive/card.css' ) );
             wp_enqueue_style( 'ilba-shop-filter', $uri . '/css/shop/archive/filtrado.css', array(), filemtime( $dir . '/css/shop/archive/filtrado.css' ) );
