@@ -179,7 +179,7 @@ add_action('wp_footer', 'ilba_popup_global');
 add_action( 'init', function() {
     register_taxonomy( 'pack', 'product', array(
         'label'             => 'Packs',
-        'hierarchical'      => false,
+        'hierarchical'      => true,
         'public'            => true,
         'show_ui'           => true,
         'show_admin_column' => true,
