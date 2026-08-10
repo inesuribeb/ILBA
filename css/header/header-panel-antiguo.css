@@ -1,0 +1,282 @@
+/* =============================================
+   Header — Panel desplegable
+   ============================================= */
+   .header__panel,
+   .header__panel-nav,
+   .header__panel-imagen {
+       box-sizing: border-box;
+   }
+   
+   .header__panel {
+       display: none;
+       position: absolute;
+       top: 100%;
+       left: 0;
+       right: 0;
+       background: var(--light-color);
+       flex-direction: row;
+       justify-content: space-between;
+       z-index: 99;
+   }
+   
+   .header__panel.is-open {
+       display: flex;
+   }
+   
+   /* --- Nav izquierda --- */
+   
+   .header__panel-nav {
+       /* flex: 1; */
+       flex: 0 0 60%;
+   
+       display: flex;
+       flex-direction: column;
+       padding: 48px 24px;
+       gap: 0;
+   }
+   
+   .header__panel-fila {
+       display: flex;
+       flex-direction: row;
+       width: 100%;
+       gap: 0;
+   }
+   
+   .header__panel-fila+.header__panel-fila {
+       border-top: 1px solid #e0e0e0;
+       margin-top: 32px;
+       padding-top: 32px;
+   }
+   
+   .header__panel-columna {
+       flex: 0 0 33.333%;
+       display: flex;
+       flex-direction: column;
+       gap: 16px;
+   }
+   
+   .header__panel-col-titulo {
+       font-size: 16px;
+       text-transform: uppercase;
+       color: var(--dark-color);
+       text-decoration: none;
+       font-weight: 400;
+       letter-spacing: -1px;
+       display: flex;
+       align-items: center;
+       gap: 3px;
+   
+   }
+   
+   
+   .header__panel-col-titulo:hover {
+       opacity: 0.5;
+   }
+   
+   
+   .header__panel-col-titulo svg {
+       width: 14px;
+       height: 14px;
+       flex-shrink: 0;
+   }
+   
+   .header__panel-items {
+       list-style: none;
+       margin: 0;
+       padding: 0;
+       display: flex;
+       flex-direction: column;
+       gap: 0px;
+   }
+   
+   .header__panel-items li {
+       margin: 0;
+       padding: 0;
+   }
+   
+   .header__panel-item-link {
+       font-size: 15px;
+       color: var(--dark-color);
+       text-decoration: none;
+       transition: opacity 0.2s ease;
+       letter-spacing: -1px;
+       opacity: 0.5;
+       ;
+   
+   }
+   
+   .header__panel-item-link:hover {
+       opacity: 1;
+   }
+   
+   /* --- Imagen derecha --- */
+   
+   .header__panel-imagen {
+       flex: 0 0 40%;
+       overflow: hidden;
+       padding: 48px 24px 24px 0;
+   }
+   
+   .header__panel-imagen img {
+       width: 100%;
+       aspect-ratio: 4 / 3;
+       object-fit: cover;
+       display: block;
+   }
+   
+   /* --- Nav links --- */
+   
+   .header__nav {
+       flex: 0 0 82%;
+       display: flex;
+       flex-direction: row;
+       align-items: center;
+       justify-content: space-between;
+   }
+   
+   .header__nav-izq {
+       display: flex;
+       align-items: center;
+   }
+   
+   .header__nav-der {
+       display: flex;
+       flex-direction: row;
+       align-items: center;
+       gap: 2rem;
+   }
+   
+   .header__nav-link--seccion {
+       cursor: default;
+   }
+   
+   .header__nav-link {
+       font-size: 15px;
+       color: var(--dark-color);
+       text-decoration: none;
+       transition: opacity 0.2s ease;
+       font-weight: 500;
+       letter-spacing: -1px;
+   
+   }
+   
+   .header__nav-link:hover {
+       opacity: 0.5;
+   }
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   /* --- Wellness --- */
+   
+   .header__panel-nav--wellness {
+       display: flex;
+       flex-direction: row;
+       align-items: flex-start;
+       gap: 0;
+   }
+   
+   .header__panel-wellness-label {
+       flex: 0 0 33.333%;
+       font-size: 14px;
+       text-transform: uppercase;
+       color: #aaa;
+       font-weight: 500;
+       padding-top: 0px;
+       letter-spacing: -1px;
+   
+   }
+   
+   .header__panel-wellness-links {
+       flex: 1;
+       display: flex;
+       flex-direction: column;
+       gap: 0px;
+   }
+   
+   .header__panel-wellness-link {
+       font-size: 15px;
+       padding-top: 4px;
+       color: var(--dark-color);
+       text-decoration: none;
+       transition: opacity 0.2s ease;
+       display: block;
+       letter-spacing: -1px;
+   
+   }
+   
+   .header__panel-wellness-link:hover {
+       opacity: 0.5;
+   }
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   /* --- Panel Tienda --- */
+   
+   .header__panel-nav--tienda {
+       display: flex;
+       flex-direction: row;
+       align-items: flex-start;
+       gap: 0;
+   }
+   
+   .header__panel-tienda-col {
+       flex: 0 0 33.333%;
+       display: flex;
+       flex-direction: column;
+       gap: 0;
+   }
+   
+   .header__panel-tienda-todo {
+       font-size: 15px;
+       color: var(--dark-color);
+       text-decoration: none;
+       text-transform: uppercase;
+       letter-spacing: -1px;
+       transition: opacity 0.2s ease;
+   }
+   
+   .header__panel-tienda-todo:hover {
+       opacity: 0.5;
+   }
+   
+   .header__panel-tienda-label {
+       font-size: 14px;
+       text-transform: uppercase;
+       color: #aaa;
+       letter-spacing: -1px;
+       display: block;
+       margin-bottom: 4px;
+   }
+   
+   .header__panel-tienda-links {
+       display: flex;
+       flex-direction: column;
+       gap: 0;
+   }
+   
+   .header__panel-tienda-link {
+       font-size: 15px;
+       color: var(--dark-color);
+       text-decoration: none;
+       letter-spacing: -1px;
+       padding-top: 4px;
+       transition: opacity 0.2s ease;
+   }
+   
+   .header__panel-tienda-link:hover {
+       opacity: 0.5;
+   }

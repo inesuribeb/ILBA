@@ -27,5 +27,7 @@ function ilba_get_panel_tienda() {
         'tienda_url'      => function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'shop' ) : '/tienda/',
         'tipo_piel_items' => $tipo_piel_items,
         'imagen'          => get_stylesheet_directory_uri() . '/images/menu/skin_new.webp',
+        'cta_texto'       => 'Marca destacada: Skinceuticals',
+        'cta_url'         => '/product-category/marca/skinceuticals/',
     );
 }

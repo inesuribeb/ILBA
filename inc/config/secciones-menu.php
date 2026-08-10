@@ -53,6 +53,8 @@ function ilba_get_secciones_menu() {
             'imagen'      => $dir . 'beauty_nueva.webp',
             'imagen_sv'   => $dir . 'beauty.PNG',
             'url'         => '#',
+            'cta_texto'   => '',
+    'cta_url'     => $bm . '',
             'columnas'    => array(
                 array(
                     'titulo' => 'Tratamientos faciales',
@@ -88,6 +90,8 @@ function ilba_get_secciones_menu() {
             'imagen'      => $dir . 'cambioheader.webp',
             'imagen_sv'   => $dir . 'cambiocarru.webp',
             'url'         => '#',
+            'cta_texto'   => 'Nuestro tratamiento estrella: Thermage',
+    'cta_url'     => $ap . 'thermage-by-soltan-medical/',
             'columnas'    => array(
                 array(
                     'titulo' => 'Tratamientos faciales',
@@ -125,6 +129,8 @@ function ilba_get_secciones_menu() {
             'imagen'      => $dir . 'salud.jpg',
             'imagen_sv'   => $dir . 'AmenuSalud.webp',
             'url'         => '#',
+            'cta_texto'   => 'Servicio de ginecología',
+    'cta_url'     => '/servicios/ginecologia/',
             'filas'       => array(
                 array(
                     array(

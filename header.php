@@ -147,8 +147,18 @@
                 </div>
 
                 <div class="header__panel-imagen">
-                    <img src="<?php echo esc_url( $seccion['imagen'] ); ?>"
-                         alt="<?php echo esc_html( $seccion['titulo'] ); ?>">
+                    <?php if ( ! empty( $seccion['cta_texto'] ) && ! empty( $seccion['cta_url'] ) ) : ?>
+                        <a href="<?php echo esc_url( $seccion['cta_url'] ); ?>" class="header__panel-imagen-cta">
+                            <img src="<?php echo esc_url( $seccion['imagen'] ); ?>"
+                                 alt="<?php echo esc_html( $seccion['titulo'] ); ?>">
+                            <span class="header__panel-imagen-cta-texto">
+                                <?php echo esc_html( $seccion['cta_texto'] ); ?>
+                            </span>
+                        </a>
+                    <?php else : ?>
+                        <img src="<?php echo esc_url( $seccion['imagen'] ); ?>"
+                             alt="<?php echo esc_html( $seccion['titulo'] ); ?>">
+                    <?php endif; ?>
                 </div>
 
             <?php endif; ?>
@@ -184,7 +194,16 @@
             </div>
 
             <div class="header__panel-imagen">
-                <img src="<?php echo esc_url( $panel_tienda['imagen'] ); ?>" alt="Tienda">
+                <?php if ( ! empty( $panel_tienda['cta_texto'] ) && ! empty( $panel_tienda['cta_url'] ) ) : ?>
+                    <a href="<?php echo esc_url( $panel_tienda['cta_url'] ); ?>" class="header__panel-imagen-cta">
+                        <img src="<?php echo esc_url( $panel_tienda['imagen'] ); ?>" alt="Tienda">
+                        <span class="header__panel-imagen-cta-texto">
+                            <?php echo esc_html( $panel_tienda['cta_texto'] ); ?>
+                        </span>
+                    </a>
+                <?php else : ?>
+                    <img src="<?php echo esc_url( $panel_tienda['imagen'] ); ?>" alt="Tienda">
+                <?php endif; ?>
             </div>
 
         </div>

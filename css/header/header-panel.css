@@ -124,6 +124,72 @@
     display: block;
 }
 
+/* --- Card CTA sobre la imagen (beauty, medical, salud, tienda) --- */
+
+.header__panel-imagen-cta {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.header__panel-imagen-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.35);
+    pointer-events: none;
+}
+
+/* .header__panel-imagen-cta-texto {
+    position: absolute;
+    left: 50%;
+    bottom: 16px;
+    transform: translateX(-50%);
+    padding: 8px 16px;
+    width: max-content;
+    max-width: calc(100% - 24px);
+    border: 1px solid var(--light-color);
+    box-sizing: border-box;
+    color: var(--light-color);
+    text-align: center;
+    font-size: 15px;
+    letter-spacing: -1px;
+    pointer-events: none;
+    font-family: var(--serif);
+    text-transform: uppercase;
+} */
+
+.header__panel-imagen-cta-texto {
+    position: absolute;
+    left: 50%;
+    bottom: 16px;
+    transform: translateX(-50%);
+    padding: 8px 16px;
+    width: max-content;
+    max-width: calc(100% - 24px);
+    border: 1px solid var(--light-color);
+    box-sizing: border-box;
+    color: var(--light-color);
+    text-align: center;
+    font-size: 15px;
+    letter-spacing: -1px;
+    pointer-events: none;
+    font-family: var(--serif);
+    text-transform: uppercase;
+    background-color: transparent;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.header__panel-imagen-cta:hover .header__panel-imagen-cta-texto {
+    background-color: var(--light-color);
+    color: var(--dark-color);
+}
 /* --- Nav links --- */
 
 .header__nav {
