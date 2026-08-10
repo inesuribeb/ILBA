@@ -26,6 +26,6 @@ function ilba_get_panel_tienda() {
     return array(
         'tienda_url'      => function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'shop' ) : '/tienda/',
         'tipo_piel_items' => $tipo_piel_items,
-        'imagen'          => get_stylesheet_directory_uri() . '/images/menu/tienda.webp',
+        'imagen'          => get_stylesheet_directory_uri() . '/images/menu/skin_new.webp',
     );
 }
