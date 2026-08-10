@@ -79,6 +79,19 @@ for ( $i = 1; $i <= 7; $i++ ) {
                     </a>
                 <?php endforeach; ?>
             </div>
+
+            <div class="home-tienda__nav">
+                <button type="button" class="home-tienda__nav-arrow home-tienda__nav-arrow--prev" aria-label="Anterior">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+                    </svg>
+                </button>
+                <button type="button" class="home-tienda__nav-arrow home-tienda__nav-arrow--next" aria-label="Siguiente">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                    </svg>
+                </button>
+            </div>
         </div>
 
     </div>

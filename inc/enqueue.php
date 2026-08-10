@@ -38,6 +38,7 @@ function ilba_enqueue_assets() {
         wp_enqueue_script( 'ilba-sticky-tag',      $uri . '/js/home/sticky-tag.js',      array(), filemtime( $dir . '/js/home/sticky-tag.js' ),      true );
         wp_enqueue_script( 'ilba-cards-servicios', $uri . '/js/home/cards-servicios.js', array(), filemtime( $dir . '/js/home/cards-servicios.js' ), true );
         wp_enqueue_script( 'ilba-cards-coleccion', $uri . '/js/home/cards-coleccion.js', array(), filemtime( $dir . '/js/home/cards-coleccion.js' ), true );
+        wp_enqueue_script( 'ilba-nav-tienda',      $uri . '/js/home/function-nav-tienda.js', array(), filemtime( $dir . '/js/home/function-nav-tienda.js' ), true );
     }
 
     // --- Beauty & Medical ---
