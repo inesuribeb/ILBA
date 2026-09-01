@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const header = document.querySelector('.header');
     if (!header) return;
 
-    // --- Scroll ---
     let ticking = false;
 
     window.addEventListener('scroll', () => {
@@ -19,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- Panel hover ---
     const secciones = document.querySelectorAll('.header__nav-link--seccion');
     const paneles   = document.querySelectorAll('.header__panel');
 
@@ -40,7 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 150);
     };
 
-    // --- Prevenir clic en secciones sin página ---
     secciones.forEach(link => {
         link.addEventListener('click', (e) => {
             if ( link.getAttribute('href') === '#' ) e.preventDefault();
@@ -59,7 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
         panel.addEventListener('mouseleave', closePanel);
     });
 
-    // --- Panel tienda ---
     const tiendaLink  = document.querySelector('.header__nav-izq .header__nav-link');
     const panelTienda = document.querySelector('.header__panel--tienda');
 
@@ -77,8 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
         panelTienda.addEventListener('mouseleave', closePanel);
     }
 
-    // --- Imagen dinámica en hover — scoped por panel ---
-    // Funciona para Wellness, Somos, y cualquier panel con esta estructura
+
     paneles.forEach(panel => {
         const links = panel.querySelectorAll('.header__panel-wellness-link');
         const img   = panel.querySelector('.header__panel-wellness-img');
@@ -96,7 +91,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- Header light cuando el hero BM es visible (todo blanco) ---
     const hero = document.querySelector('.bm-hero');
     if (hero) {
         const observer = new IntersectionObserver(
@@ -124,7 +118,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // --- Header light cuando el hero de somos es visible ---
     const somosHero = document.querySelector('.somos-hero');
     if (somosHero) {
         const observer = new IntersectionObserver(
@@ -136,7 +129,6 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(somosHero);
     }
 
-    // --- Header light cuando el hero de servicios es visible ---
     if (document.body.classList.contains('single-servicios')) {
         const svHero = document.querySelector('.sv-hero');
         if (svHero) {
@@ -150,7 +142,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // --- Header light cuando el hero de centros es visible ---
     if (document.body.classList.contains('single-centro')) {
         const ceHero = document.querySelector('.ce-hero');
         if (ceHero) {

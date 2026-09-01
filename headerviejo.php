@@ -24,8 +24,8 @@
     <nav class="header__nav">
 
         <div class="header__nav-izq">
-            <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'tienda' ) ) ); ?>" class="header__nav-link">
-                Tienda [<?php echo function_exists( 'WC' ) && WC()->cart ? WC()->cart->get_cart_contents_count() : '0'; ?>]
+            <a href="<?php echo esc_url( wc_get_page_permalink( 'shop' ) ); ?>" class="header__nav-link">
+                Tienda
             </a>
         </div>
 
@@ -39,8 +39,12 @@
                     <?php echo esc_html( $seccion['titulo'] ); ?>
                 </a>
             <?php endforeach; ?>
-            <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'contacto' ) ) ); ?>" class="header__nav-link">
+
+            <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'contacto' ) ) ); ?>" class="header__nav-link header__nav-link--contacto">
                 Contáctanos
+            </a>
+            <a href="#" class="header__nav-link header__nav-link--carrito" id="abrir-modal-carrito">
+                Carrito [<span class="carrito-count"><?php echo function_exists( 'WC' ) && WC()->cart ? WC()->cart->get_cart_contents_count() : '0'; ?></span>]
             </a>
         </div>
 
@@ -50,15 +54,80 @@
     <?php foreach ( $secciones as $key => $seccion ) : ?>
         <div class="header__panel" data-panel="<?php echo esc_attr( $key ); ?>">
 
-            <div class="header__panel-nav">
+            <?php if ( isset( $seccion['tipo'] ) && $seccion['tipo'] === 'wellness' ) : ?>
 
-                <?php if ( isset( $seccion['filas'] ) ) : ?>
-                    <?php foreach ( $seccion['filas'] as $fila ) : ?>
+                <!-- Panel tipo Wellness -->
+                <div class="header__panel-nav header__panel-nav--wellness">
+
+                    <?php if ( ! empty( $seccion['label_url'] ) ) : ?>
+                        <a href="<?php echo esc_url( $seccion['label_url'] ); ?>" class="header__panel-wellness-label header__panel-wellness-label--link">
+                            <?php echo esc_html( $seccion['label'] ); ?>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                            </svg>
+                        </a>
+                    <?php else : ?>
+                        <span class="header__panel-wellness-label">
+                            <?php echo esc_html( $seccion['label'] ); ?>
+                        </span>
+                    <?php endif; ?>
+
+                    <div class="header__panel-wellness-links">
+                        <?php foreach ( $seccion['protocolos'] as $item ) : ?>
+                            <a href="<?php echo esc_url( $item['url'] ); ?>"
+                               class="header__panel-wellness-link"
+                               data-imagen="<?php echo esc_url( $item['imagen'] ); ?>">
+                                <?php echo esc_html( $item['titulo'] ); ?>
+                            </a>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+
+                <div class="header__panel-imagen">
+                    <img src="<?php echo esc_url( $seccion['imagen'] ); ?>"
+                         alt="<?php echo esc_html( $seccion['titulo'] ); ?>"
+                         class="header__panel-wellness-img">
+                </div>
+
+            <?php else : ?>
+
+                <div class="header__panel-nav">
+                    <?php if ( isset( $seccion['filas'] ) ) : ?>
+                        <?php foreach ( $seccion['filas'] as $fila ) : ?>
+                            <div class="header__panel-fila">
+                                <?php foreach ( $fila as $columna ) : ?>
+                                    <div class="header__panel-columna">
+                                        <a href="<?php echo esc_url( $columna['url'] ); ?>" class="header__panel-col-titulo">
+                                            <?php echo esc_html( $columna['titulo'] ); ?>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                            </svg>
+                                        </a>
+                                        <?php if ( ! empty( $columna['items'] ) ) : ?>
+                                            <ul class="header__panel-items">
+                                                <?php foreach ( $columna['items'] as $item ) : ?>
+                                                    <li>
+                                                        <a href="<?php echo esc_url( $item['url'] ); ?>" class="header__panel-item-link">
+                                                            <?php echo esc_html( $item['titulo'] ); ?>
+                                                        </a>
+                                                    </li>
+                                                <?php endforeach; ?>
+                                            </ul>
+                                        <?php endif; ?>
+                                    </div>
+                                <?php endforeach; ?>
+                            </div>
+                        <?php endforeach; ?>
+
+                    <?php else : ?>
                         <div class="header__panel-fila">
-                            <?php foreach ( $fila as $columna ) : ?>
+                            <?php foreach ( $seccion['columnas'] as $columna ) : ?>
                                 <div class="header__panel-columna">
                                     <a href="<?php echo esc_url( $columna['url'] ); ?>" class="header__panel-col-titulo">
                                         <?php echo esc_html( $columna['titulo'] ); ?>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                        </svg>
                                     </a>
                                     <?php if ( ! empty( $columna['items'] ) ) : ?>
                                         <ul class="header__panel-items">
@@ -74,39 +143,74 @@
                                 </div>
                             <?php endforeach; ?>
                         </div>
-                    <?php endforeach; ?>
+                    <?php endif; ?>
+                </div>
 
-                <?php else : ?>
-                    <div class="header__panel-fila">
-                        <?php foreach ( $seccion['columnas'] as $columna ) : ?>
-                            <div class="header__panel-columna">
-                                <a href="<?php echo esc_url( $columna['url'] ); ?>" class="header__panel-col-titulo">
-                                    <?php echo esc_html( $columna['titulo'] ); ?>
-                                </a>
-                                <?php if ( ! empty( $columna['items'] ) ) : ?>
-                                    <ul class="header__panel-items">
-                                        <?php foreach ( $columna['items'] as $item ) : ?>
-                                            <li>
-                                                <a href="<?php echo esc_url( $item['url'] ); ?>" class="header__panel-item-link">
-                                                    <?php echo esc_html( $item['titulo'] ); ?>
-                                                </a>
-                                            </li>
-                                        <?php endforeach; ?>
-                                    </ul>
-                                <?php endif; ?>
-                            </div>
-                        <?php endforeach; ?>
-                    </div>
-                <?php endif; ?>
+                <div class="header__panel-imagen">
+                    <?php if ( ! empty( $seccion['cta_texto'] ) && ! empty( $seccion['cta_url'] ) ) : ?>
+                        <a href="<?php echo esc_url( $seccion['cta_url'] ); ?>" class="header__panel-imagen-cta">
+                            <img src="<?php echo esc_url( $seccion['imagen'] ); ?>"
+                                 alt="<?php echo esc_html( $seccion['titulo'] ); ?>">
+                            <span class="header__panel-imagen-cta-texto">
+                                <?php echo esc_html( $seccion['cta_texto'] ); ?>
+                            </span>
+                        </a>
+                    <?php else : ?>
+                        <img src="<?php echo esc_url( $seccion['imagen'] ); ?>"
+                             alt="<?php echo esc_html( $seccion['titulo'] ); ?>">
+                    <?php endif; ?>
+                </div>
 
-            </div>
-
-            <div class="header__panel-imagen">
-                <img src="<?php echo esc_url( $seccion['imagen'] ); ?>"
-                     alt="<?php echo esc_html( $seccion['titulo'] ); ?>">
-            </div>
+            <?php endif; ?>
 
         </div>
     <?php endforeach; ?>
 
+    <!-- Panel Tienda -->
+    <?php
+    $panel_tienda = function_exists( 'ilba_get_panel_tienda' ) ? ilba_get_panel_tienda() : null;
+    if ( $panel_tienda ) : ?>
+        <div class="header__panel header__panel--tienda" data-panel="tienda">
+
+            <div class="header__panel-nav header__panel-nav--tienda">
+
+                <div class="header__panel-tienda-col">
+                    <a href="<?php echo esc_url( $panel_tienda['tienda_url'] ); ?>" class="header__panel-tienda-todo">
+                        Comprar todo
+                    </a>
+                </div>
+
+                <div class="header__panel-tienda-col">
+                    <span class="header__panel-tienda-label">Por necesidad</span>
+                    <div class="header__panel-tienda-links">
+                        <?php foreach ( $panel_tienda['tipo_piel_items'] as $item ) : ?>
+                            <a href="<?php echo esc_url( $item['url'] ); ?>" class="header__panel-tienda-link">
+                                <?php echo esc_html( $item['titulo'] ); ?>
+                            </a>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="header__panel-imagen">
+                <?php if ( ! empty( $panel_tienda['cta_texto'] ) && ! empty( $panel_tienda['cta_url'] ) ) : ?>
+                    <a href="<?php echo esc_url( $panel_tienda['cta_url'] ); ?>" class="header__panel-imagen-cta">
+                        <img src="<?php echo esc_url( $panel_tienda['imagen'] ); ?>" alt="Tienda">
+                        <span class="header__panel-imagen-cta-texto">
+                            <?php echo esc_html( $panel_tienda['cta_texto'] ); ?>
+                        </span>
+                    </a>
+                <?php else : ?>
+                    <img src="<?php echo esc_url( $panel_tienda['imagen'] ); ?>" alt="Tienda">
+                <?php endif; ?>
+            </div>
+
+        </div>
+    <?php endif; ?>
+
 </header>
+
+<?php get_template_part( 'components/shop/modal/modal-carrito' ); ?>
+
+<?php get_template_part( 'header-mobile' ); ?>

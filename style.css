@@ -41,6 +41,11 @@ html {
     color: var(--dark-color);
 }
 
+.header__logo-link svg,
+.header__logo-link svg * {
+    color: inherit;
+}
+
 :root {
     font-synthesis: none;
     text-rendering: optimizeLegibility;

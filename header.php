@@ -15,11 +15,21 @@
 
 <header class="header">
 
-    <div class="header__logo">
+    <!-- <div class="header__logo">
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="header__logo-link">
             ILBA
         </a>
-    </div>
+    </div> -->
+    <div class="header__logo">
+    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="header__logo-link">
+        <?php
+        $logo_path = get_stylesheet_directory() . '/images/logo_ilba.svg';
+        if ( file_exists( $logo_path ) ) {
+            echo file_get_contents( $logo_path );
+        }
+        ?>
+    </a>
+</div>
 
     <nav class="header__nav">
 
