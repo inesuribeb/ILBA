@@ -67,7 +67,7 @@
         align-items: center;
     }
 
-    .header-mobile__logo-link {
+    /* .header-mobile__logo-link {
         font-family: var(--serif);
         font-size: 60px;
         color: var(--dark-color);
@@ -76,7 +76,33 @@
         letter-spacing: -5px;
         transform: translateY(-10px);
     display: inline-block;
+    } */
+    .header-mobile__logo-link {
+        display: inline-block;
+        color: var(--dark-color);
+        /* transform: translateY(-10px); */
     }
+    
+    .header-mobile__logo-link svg {
+        width: 130px; /* ajusta a ojo el tamaño que quieras en mobile */
+        height: auto;
+        display: block;
+        color: inherit;
+    }
+    
+    .header-mobile__logo-link svg,
+    .header-mobile__logo-link svg * {
+        color: inherit;
+    }
+
+
+
+
+
+
+
+
+
 
     .header-mobile__der {
         display: flex;

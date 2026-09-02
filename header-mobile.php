@@ -11,11 +11,21 @@ $panel_tienda = function_exists( 'ilba_get_panel_tienda' ) ? ilba_get_panel_tien
 ?>
 
 <header class="header-mobile">
-    <div class="header-mobile__logo">
+    <!-- <div class="header-mobile__logo">
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="header-mobile__logo-link">
             ILBA
         </a>
-    </div>
+    </div> -->
+    <div class="header-mobile__logo">
+    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="header-mobile__logo-link">
+        <?php
+        $logo_path = get_stylesheet_directory() . '/images/logo_ilba.svg';
+        if ( file_exists( $logo_path ) ) {
+            echo file_get_contents( $logo_path );
+        }
+        ?>
+    </a>
+</div>
     <div class="header-mobile__der">
         <?php if ( function_exists( 'WC' ) && WC()->cart ) : ?>
             <a href="#" class="header-mobile__carrito-btn" id="abrir-modal-carrito-mobile">
