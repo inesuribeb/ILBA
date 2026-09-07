@@ -34,6 +34,25 @@ acf_add_local_field_group( array(
             'display_format' => 'd/m/Y',
             'return_format'  => 'd/m/Y',
         ),
+
+        // array(
+        //     'key'   => 'field_ev_fecha',
+        //     'label' => 'Fecha inicio',
+        //     'name'  => 'ev_fecha',
+        //     'type'  => 'date_picker',
+        //     'display_format' => 'd/m/Y',
+        //     'return_format'  => 'Ymd',
+        // ),
+        // array(
+        //     'key'   => 'field_ev_fecha_fin',
+        //     'label' => 'Fecha fin (opcional)',
+        //     'name'  => 'ev_fecha_fin',
+        //     'type'  => 'date_picker',
+        //     'display_format' => 'd/m/Y',
+        //     'return_format'  => 'Ymd',
+        //     'instructions' => 'Déjalo vacío si el evento es de un solo día.',
+        // ),
+
         array(
             'key'   => 'field_ev_horario',
             'label' => 'Horario',

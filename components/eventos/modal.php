@@ -5,6 +5,9 @@
 
 $lugar         = get_field( 'ev_lugar' );
 $fecha         = get_field( 'ev_fecha' );
+// $fecha_inicio  = get_field( 'ev_fecha' );
+// $fecha_fin     = get_field( 'ev_fecha_fin' );
+$fecha_texto   = ev_formatear_fecha_evento( $fecha_inicio, $fecha_fin );
 $horario       = get_field( 'ev_horario' );
 $solo_clientes = get_field( 'ev_solo_clientes' );
 $img_1         = get_field( 'ev_img_1' );
@@ -33,6 +36,7 @@ $img_1         = get_field( 'ev_img_1' );
         <?php if ( $fecha ) : ?>
             <p class="ev-modal__fecha"><?php echo esc_html( $fecha ); ?></p>
         <?php endif; ?>
+
 
         <?php if ( $horario ) : ?>
             <p class="ev-modal__horario"><?php echo esc_html( $horario ); ?></p>
