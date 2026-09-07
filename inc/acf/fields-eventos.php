@@ -87,6 +87,12 @@ acf_add_local_field_group( array(
             'message' => '<h3>— Intro —</h3>',
         ),
         array(
+            'key'   => 'field_ev_subtitulo_intro',
+            'label' => 'Subtítulo',
+            'name'  => 'ev_subtitulo_intro',
+            'type'  => 'text',
+        ),
+        array(
             'key'   => 'field_ev_descripcion',
             'label' => 'Descripción',
             'name'  => 'ev_descripcion',

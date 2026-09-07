@@ -9,6 +9,10 @@ $img_intro   = get_field( 'ev_img_intro' );
 
 <section class="ev-intro">
 
+<?php if ( $subtitulo ) : ?>
+        <h2 class="ev-intro__subtitulo"><?php echo esc_html( $subtitulo ); ?></h2>
+    <?php endif; ?>
+
     <?php if ( $descripcion ) : ?>
         <p class="ev-intro__descripcion"><?php echo nl2br( wp_kses_post( $descripcion ) ); ?></p>    <?php endif; ?>
 
