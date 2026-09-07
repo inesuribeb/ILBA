@@ -3,6 +3,7 @@
  * Eventos component: Intro
  */
 
+$subtitulo   = get_field( 'ev_subtitulo_intro' );
 $descripcion = get_field( 'ev_descripcion' );
 $img_intro   = get_field( 'ev_img_intro' );
 ?>
@@ -14,7 +15,8 @@ $img_intro   = get_field( 'ev_img_intro' );
     <?php endif; ?>
 
     <?php if ( $descripcion ) : ?>
-        <p class="ev-intro__descripcion"><?php echo nl2br( wp_kses_post( $descripcion ) ); ?></p>    <?php endif; ?>
+        <p class="ev-intro__descripcion"><?php echo nl2br( wp_kses_post( $descripcion ) ); ?></p>  
+          <?php endif; ?>
 
     <?php if ( $img_intro ) : ?>
         <div class="ev-intro__imagen">
