@@ -4,6 +4,7 @@
  */
 
 $subtitulo_1  = get_field( 'ev_subtitulo_1' );
+$descripcion_1 = get_field( 'ev_descripcion_1' );
 $img_1        = get_field( 'ev_img_1' );
 $img_2        = get_field( 'ev_img_2' );
 $subtitulo_2  = get_field( 'ev_subtitulo_2' );
@@ -15,6 +16,10 @@ $contacto_url = get_permalink( get_page_by_path( 'contacto' ) );
 
     <?php if ( $subtitulo_1 ) : ?>
         <h2 class="ev-seccion2__subtitulo"><?php echo esc_html( $subtitulo_1 ); ?></h2>
+    <?php endif; ?>
+
+    <?php if ( $descripcion_1 ) : ?>
+        <p class="ev-seccion2__descripcion"><?php echo nl2br( wp_kses_post( $descripcion_1 ) ); ?></p>
     <?php endif; ?>
 
     <?php if ( $img_1 || $img_2 ) : ?>

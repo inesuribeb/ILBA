@@ -125,6 +125,13 @@ acf_add_local_field_group( array(
             'type'  => 'text',
         ),
         array(
+            'key'   => 'field_ev_descripcion_1',
+            'label' => 'Descripción 1',
+            'name'  => 'ev_descripcion_1',
+            'type'  => 'textarea',
+            'rows'  => 4,
+        ),
+        array(
             'key'           => 'field_ev_img_1',
             'label'         => 'Imagen 1',
             'name'          => 'ev_img_1',
