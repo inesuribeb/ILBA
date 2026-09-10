@@ -14,7 +14,7 @@ $cta2_link  = get_field( 'home_hero_cta2_link' );
 $img_movil = get_field( 'home_hero_img_movil' );
 ?>
 
-<section class="home-hero<?php echo $img_movil ? ' home-hero--tiene-movil' : ''; ?>">
+<section class="home-hero">
 
     <?php if ( $tipo === 'dos_mitades' ) : ?>
 
@@ -49,13 +49,6 @@ $img_movil = get_field( 'home_hero_img_movil' );
             <?php endif; ?>
         </div>
 
-    <?php endif; ?>
-
-    <?php if ( $img_movil ) : ?>
-        <div class="home-hero__bg home-hero__bg--movil">
-            <img src="<?php echo esc_url( $img_movil['url'] ); ?>"
-                 alt="<?php echo esc_attr( $img_movil['alt'] ); ?>">
-        </div>
     <?php endif; ?>
 
     <div class="home-hero__overlay"></div>

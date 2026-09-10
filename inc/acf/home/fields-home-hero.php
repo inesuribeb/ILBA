@@ -36,6 +36,17 @@ acf_add_local_field_group( array(
             'required'      => 1,
         ),
 
+                // Imagen móvil (opcional, sustituye el fondo en breakpoint móvil)
+array(
+    'key'           => 'field_home_hero_img_movil',
+    'label'         => 'Imagen móvil (opcional)',
+    'name'          => 'home_hero_img_movil',
+    'type'          => 'image',
+    'return_format' => 'array',
+    'preview_size'  => 'medium',
+    'instructions'  => 'Si se sube, sustituye la imagen de fondo en móvil, independientemente del tipo de fondo elegido arriba.',
+),
+
         // Imagen izquierda — solo si dos_mitades
         array(
             'key'           => 'field_home_hero_img_izq',
@@ -94,6 +105,8 @@ acf_add_local_field_group( array(
                 ),
             ),
         ),
+
+
 
         // Título
         array(
