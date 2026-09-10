@@ -114,7 +114,7 @@ array(
             'label'    => 'Título',
             'name'     => 'home_hero_titulo',
             'type'     => 'text',
-            'required' => 1,
+            // 'required' => 1,
         ),
 
         // CTA 1
