@@ -1,6 +1,6 @@
 
 
-<div id="popup-global" class="popup-global" hidden>
+<!-- <div id="popup-global" class="popup-global" hidden>
     <div class="popup-global__overlay"></div>
 
     <div class="popup-global__box">
@@ -23,6 +23,34 @@
 
             <div class="popup-global__col popup-global__col--img">
                 <img class="popup-global__img" src="<?php echo esc_url( get_stylesheet_directory_uri() . '/images/menu/tienda.webp' ); ?>" alt="">
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<div id="popup-global" class="popup-global" hidden>
+    <div class="popup-global__overlay"></div>
+
+    <div class="popup-global__box">
+        <button class="popup-global__close" aria-label="Cerrar">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+</svg>
+        </button>
+
+        <div class="popup-global__wrapper">
+            <div class="popup-global__col popup-global__col--texto">
+                <h3 class="popup-global__titulo">Somos patrocinadores VIP en el Zinemaldi.</h3>
+
+                <div class="popup-global__contenido">
+                    <p>Este año, ILBA International forma parte del Zinemaldia como patrocinador VIP. Una colaboración que nos acerca a uno de los grandes encuentros culturales de la ciudad y que compartiremos dentro y fuera del Festival.</p>
+                </div>
+
+                <a class="popup-global__boton" href="/eventos/ilba-international-x-zinemaldia/">Sorpresas en Zinemaldia →</a>
+            </div>
+
+            <div class="popup-global__col popup-global__col--img">
+                <img class="popup-global__img" src="<?php echo esc_url( get_stylesheet_directory_uri() . '/images/web2.webp' ); ?>" alt="">
             </div>
         </div>
     </div>
