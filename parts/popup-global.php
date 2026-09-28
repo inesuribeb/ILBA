@@ -1,6 +1,6 @@
 
 
-<!-- <div id="popup-global" class="popup-global" hidden>
+<div id="popup-global" class="popup-global" hidden>
     <div class="popup-global__overlay"></div>
 
     <div class="popup-global__box">
@@ -26,9 +26,9 @@
             </div>
         </div>
     </div>
-</div> -->
+</div>
 
-<div id="popup-global" class="popup-global" hidden>
+<!-- <div id="popup-global" class="popup-global" hidden>
     <div class="popup-global__overlay"></div>
 
     <div class="popup-global__box">
@@ -54,4 +54,4 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
