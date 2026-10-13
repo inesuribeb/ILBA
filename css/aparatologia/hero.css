@@ -36,6 +36,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+}
+
+.ap-hero__sede {
+    padding: 1px 10px;
+    letter-spacing: -0.5px;
+    border: 1px solid var(--dark-color);
+    font-size: 14px;
 }
 
 .ap-hero__titulo {

@@ -10,6 +10,24 @@ acf_add_local_field_group( array(
     'title'  => 'Aparatología - Campos',
     'fields' => array(
 
+        // --- SEDE ---
+array(
+    'key'           => 'field_ap_sede',
+    'label'         => 'Disponible en',
+    'name'          => 'ap_sede',
+    'type'          => 'button_group',
+    'choices'       => array(
+        'ambas'   => 'Bilbao y Donosti',
+        'bilbao'  => 'Solo Bilbao',
+        'donosti' => 'Solo Donosti',
+    ),
+    'default_value' => 'ambas',
+    'allow_null'    => 0,
+    'layout'        => 'horizontal',
+    'return_format' => 'value',
+    'instructions'  => 'Por defecto en ambas sedes. Cambiar solo si el aparato está en una única sede.',
+),
+
         // --- TÍTULO ---
         array(
             'key'      => 'field_ap_titulo',
