@@ -60,6 +60,7 @@ function ilba_get_secciones_menu() {
                     'titulo' => 'Tratamientos faciales',
                     'url'    => $bm . 'beauty-facial/',
                     'items'  => array(
+                        array( 'titulo' => 'Aura',                          'url' => $ap . 'aura/' ),
                         array( 'titulo' => 'Observ de Silton',              'url' => $ap . 'observ-de-silton/' ),
                         array( 'titulo' => 'Aquapure',                      'url' => $ap . 'aquapure/' ),
                         array( 'titulo' => 'Forma',                         'url' => $ap . 'forma-inmode/' ),
