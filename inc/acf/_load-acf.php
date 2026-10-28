@@ -8,7 +8,6 @@ require_once get_stylesheet_directory() . '/inc/acf/fields-protocolos.php';
 require_once get_stylesheet_directory() . '/inc/acf/fields-aparatologia.php';
 require_once get_stylesheet_directory() . '/inc/acf/fields-eventos.php';
 require_once get_stylesheet_directory() . '/inc/acf/fields-equipo-medico.php';
-require_once get_stylesheet_directory() . '/inc/acf/fields-tratamientos.php';
 
 
 /*HOME*/
@@ -37,3 +36,6 @@ require_once get_stylesheet_directory() . '/inc/acf/product/fields-product.php';
 require_once get_stylesheet_directory() . '/inc/acf/centros/fields-centros-portada.php';
 require_once get_stylesheet_directory() . '/inc/acf/centros/fields-centros-clinica.php';
 require_once get_stylesheet_directory() . '/inc/acf/centros/fields-centros-formulario.php';
+
+/*TRATAMIENTOS*/
+require_once get_stylesheet_directory() . '/inc/acf/tratamientos/fields-tratamientos.php';
