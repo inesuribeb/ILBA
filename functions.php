@@ -187,7 +187,7 @@ add_filter( 'woocommerce_cart_item_removed_notice_type', '__return_empty_string'
 function ilba_popup_global() {
     get_template_part('parts/popup-global');
 }
-add_action('wp_footer', 'ilba_popup_global');
+// add_action('wp_footer', 'ilba_popup_global');
 
 add_action( 'init', function() {
     register_taxonomy( 'pack', 'product', array(
