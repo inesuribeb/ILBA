@@ -40,22 +40,11 @@ add_action( 'acf/init', function() {
                 'return_format' => 'value',
             ),
             array(
-                'key'   => 'field_tr_duracion',
-                'label' => 'Duración',
-                'name'  => 'tr_duracion',
-                'type'  => 'text',
+                'key'         => 'field_tr_duracion',
+                'label'       => 'Duración',
+                'name'        => 'tr_duracion',
+                'type'        => 'text',
                 'placeholder' => 'Ej: 60 min',
-            ),
-            array(
-                'key'           => 'field_tr_tecnologia',
-                'label'         => 'Tecnología',
-                'name'          => 'tr_tecnologia',
-                'type'          => 'post_object',
-                'post_type'     => array( 'aparatologia' ),
-                'multiple'      => 1,
-                'allow_null'    => 1,
-                'return_format' => 'object',
-                'ui'            => 1,
             ),
             array(
                 'key'           => 'field_tr_centros',
@@ -71,6 +60,52 @@ add_action( 'acf/init', function() {
                 'layout'        => 'horizontal',
                 'return_format' => 'value',
             ),
+
+            // --- Tecnología ---
+            array(
+                'key'   => 'field_tr_tab_tecnologia',
+                'label' => 'Tecnología',
+                'type'  => 'tab',
+            ),
+            array(
+                'key'           => 'field_tr_tecnologia',
+                'label'         => 'Tecnología (aparatología)',
+                'name'          => 'tr_tecnologia',
+                'type'          => 'post_object',
+                'post_type'     => array( 'aparatologia' ),
+                'multiple'      => 1,
+                'allow_null'    => 1,
+                'return_format' => 'object',
+                'ui'            => 1,
+            ),
+            array(
+                'key'           => 'field_tr_marcas',
+                'label'         => 'Marcas',
+                'name'          => 'tr_marcas',
+                'type'          => 'taxonomy',
+                'taxonomy'      => 'product_cat',
+                'field_type'    => 'multi_select',
+                'allow_null'    => 1,
+                'add_term'      => 0,
+                'save_terms'    => 0,
+                'load_terms'    => 0,
+                'return_format' => 'object',
+                'instructions'  => 'Enlazan a la tienda filtrada por esa marca.',
+            ),
+
+            // Otras tecnologías (3 x nombre + url)
+            array(
+                'key'     => 'field_tr_otras_tec_msg',
+                'label'   => 'Otras tecnologías',
+                'type'    => 'message',
+                'message' => 'Hasta 3. La URL es opcional.',
+            ),
+            array( 'key' => 'field_tr_otra_tec_1_nombre', 'label' => 'Otra tecnología 1 — Nombre', 'name' => 'tr_otra_tec_1_nombre', 'type' => 'text', 'wrapper' => array( 'width' => '50' ) ),
+            array( 'key' => 'field_tr_otra_tec_1_url',    'label' => 'Otra tecnología 1 — URL',    'name' => 'tr_otra_tec_1_url',    'type' => 'url',  'wrapper' => array( 'width' => '50' ) ),
+            array( 'key' => 'field_tr_otra_tec_2_nombre', 'label' => 'Otra tecnología 2 — Nombre', 'name' => 'tr_otra_tec_2_nombre', 'type' => 'text', 'wrapper' => array( 'width' => '50' ) ),
+            array( 'key' => 'field_tr_otra_tec_2_url',    'label' => 'Otra tecnología 2 — URL',    'name' => 'tr_otra_tec_2_url',    'type' => 'url',  'wrapper' => array( 'width' => '50' ) ),
+            array( 'key' => 'field_tr_otra_tec_3_nombre', 'label' => 'Otra tecnología 3 — Nombre', 'name' => 'tr_otra_tec_3_nombre', 'type' => 'text', 'wrapper' => array( 'width' => '50' ) ),
+            array( 'key' => 'field_tr_otra_tec_3_url',    'label' => 'Otra tecnología 3 — URL',    'name' => 'tr_otra_tec_3_url',    'type' => 'url',  'wrapper' => array( 'width' => '50' ) ),
 
             // --- Keywords ---
             array(
@@ -97,12 +132,12 @@ add_action( 'acf/init', function() {
                 'type'  => 'text',
             ),
             array(
-                'key'          => 'field_tr_intro',
-                'label'        => 'Intro',
-                'name'         => 'tr_intro',
-                'type'         => 'textarea',
-                'rows'         => 4,
-                'new_lines'    => '',
+                'key'       => 'field_tr_intro',
+                'label'     => 'Intro',
+                'name'      => 'tr_intro',
+                'type'      => 'textarea',
+                'rows'      => 4,
+                'new_lines' => '',
             ),
             array(
                 'key'           => 'field_tr_hero_img',
@@ -140,4 +175,15 @@ add_action( 'acf/init', function() {
         'style'      => 'default',
     ) );
 
+} );
+
+/**
+ * Marcas: mostrar solo las subcategorías de "Marca"
+ */
+add_filter( 'acf/fields/taxonomy/query/key=field_tr_marcas', function( $args ) {
+    $marca = get_term_by( 'slug', 'marca', 'product_cat' );
+    if ( $marca ) {
+        $args['child_of'] = $marca->term_id;
+    }
+    return $args;
 } );
