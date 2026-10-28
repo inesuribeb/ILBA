@@ -12,7 +12,7 @@ add_action( 'acf/init', function() {
         'title'  => 'Tratamientos',
         'fields' => array(
 
-            // --- Datos generales ---
+            // --- General ---
             array(
                 'key'   => 'field_tr_tab_general',
                 'label' => 'General',
@@ -60,25 +60,16 @@ add_action( 'acf/init', function() {
                 'layout'        => 'horizontal',
                 'return_format' => 'value',
             ),
-            array(
-                'key'           => 'field_tr_img_card',
-                'label'         => 'Img card',
-                'name'          => 'tr_img_card',
-                'type'          => 'image',
-                'instructions'  => 'Formato vertical 4:5 (por ejemplo, 1080 × 1350 px).',
-                'return_format' => 'array',
-                'preview_size'  => 'medium',
-            ),
 
-            // --- Tecnología ---
+            // --- Tecnologías ---
             array(
                 'key'   => 'field_tr_tab_tecnologia',
-                'label' => 'Tecnología',
+                'label' => 'Tecnologías',
                 'type'  => 'tab',
             ),
             array(
                 'key'           => 'field_tr_tecnologia',
-                'label'         => 'Tecnología (aparatología)',
+                'label'         => 'Aparatologías relacionadas',
                 'name'          => 'tr_tecnologia',
                 'type'          => 'post_object',
                 'post_type'     => array( 'aparatologia' ),
@@ -89,7 +80,7 @@ add_action( 'acf/init', function() {
             ),
             array(
                 'key'           => 'field_tr_marcas',
-                'label'         => 'Marcas',
+                'label'         => 'Marcas relacionadas',
                 'name'          => 'tr_marcas',
                 'type'          => 'taxonomy',
                 'taxonomy'      => 'product_cat',
@@ -116,11 +107,40 @@ add_action( 'acf/init', function() {
             array( 'key' => 'field_tr_otra_tec_3_nombre', 'label' => 'Otra tecnología 3 — Nombre', 'name' => 'tr_otra_tec_3_nombre', 'type' => 'text', 'wrapper' => array( 'width' => '50' ) ),
             array( 'key' => 'field_tr_otra_tec_3_url',    'label' => 'Otra tecnología 3 — URL',    'name' => 'tr_otra_tec_3_url',    'type' => 'url',  'wrapper' => array( 'width' => '50' ) ),
 
-            // --- Keywords ---
+            // --- Solo en card ---
             array(
-                'key'   => 'field_tr_tab_keywords',
-                'label' => 'Keywords',
+                'key'   => 'field_tr_tab_card',
+                'label' => 'Solo en card',
                 'type'  => 'tab',
+            ),
+            array(
+                'key'           => 'field_tr_img_card',
+                'label'         => 'Img card',
+                'name'          => 'tr_img_card',
+                'type'          => 'image',
+                'instructions'  => 'Formato vertical 4:5 (por ejemplo, 1080 × 1350 px).',
+                'return_format' => 'array',
+                'preview_size'  => 'medium',
+            ),
+
+            // Etiquetas (hasta 4)
+            array(
+                'key'     => 'field_tr_etiquetas_msg',
+                'label'   => 'Etiquetas',
+                'type'    => 'message',
+                'message' => 'Hasta 4.',
+            ),
+            array( 'key' => 'field_tr_etiqueta_1', 'label' => 'Etiqueta 1', 'name' => 'tr_etiqueta_1', 'type' => 'text', 'wrapper' => array( 'width' => '25' ) ),
+            array( 'key' => 'field_tr_etiqueta_2', 'label' => 'Etiqueta 2', 'name' => 'tr_etiqueta_2', 'type' => 'text', 'wrapper' => array( 'width' => '25' ) ),
+            array( 'key' => 'field_tr_etiqueta_3', 'label' => 'Etiqueta 3', 'name' => 'tr_etiqueta_3', 'type' => 'text', 'wrapper' => array( 'width' => '25' ) ),
+            array( 'key' => 'field_tr_etiqueta_4', 'label' => 'Etiqueta 4', 'name' => 'tr_etiqueta_4', 'type' => 'text', 'wrapper' => array( 'width' => '25' ) ),
+
+            // Keywords (hasta 5)
+            array(
+                'key'     => 'field_tr_keywords_msg',
+                'label'   => 'Keywords',
+                'type'    => 'message',
+                'message' => 'Hasta 5.',
             ),
             array( 'key' => 'field_tr_keyword_1', 'label' => 'Keyword 1', 'name' => 'tr_keyword_1', 'type' => 'text' ),
             array( 'key' => 'field_tr_keyword_2', 'label' => 'Keyword 2', 'name' => 'tr_keyword_2', 'type' => 'text' ),
