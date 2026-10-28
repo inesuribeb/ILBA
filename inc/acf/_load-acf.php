@@ -8,6 +8,7 @@ require_once get_stylesheet_directory() . '/inc/acf/fields-protocolos.php';
 require_once get_stylesheet_directory() . '/inc/acf/fields-aparatologia.php';
 require_once get_stylesheet_directory() . '/inc/acf/fields-eventos.php';
 require_once get_stylesheet_directory() . '/inc/acf/fields-equipo-medico.php';
+require_once get_stylesheet_directory() . '/inc/acf/fields-tratamientos.php';
 
 
 /*HOME*/
