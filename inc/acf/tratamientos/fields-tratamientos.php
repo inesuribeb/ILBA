@@ -60,6 +60,15 @@ add_action( 'acf/init', function() {
                 'layout'        => 'horizontal',
                 'return_format' => 'value',
             ),
+            array(
+                'key'           => 'field_tr_img_card',
+                'label'         => 'Img card',
+                'name'          => 'tr_img_card',
+                'type'          => 'image',
+                'instructions'  => 'Formato vertical 4:5 (por ejemplo, 1080 × 1350 px).',
+                'return_format' => 'array',
+                'preview_size'  => 'medium',
+            ),
 
             // --- Tecnología ---
             array(
