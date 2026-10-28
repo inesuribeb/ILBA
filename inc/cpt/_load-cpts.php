@@ -9,5 +9,5 @@ require_once get_stylesheet_directory() . '/inc/cpt/aparatologia.php';
 require_once get_stylesheet_directory() . '/inc/cpt/eventos.php';
 require_once get_stylesheet_directory() . '/inc/cpt/equipo-medico.php';
 require_once get_stylesheet_directory() . '/inc/cpt/centros.php';
-
+require_once get_stylesheet_directory() . '/inc/cpt/tratamientos.php';
  
