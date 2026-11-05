@@ -33,8 +33,11 @@ add_action( 'acf/init', function() {
                 'choices'       => array(
                     'beauty-facial'    => 'Beauty facial',
                     'beauty-corporal'  => 'Beauty corporal',
+                    'beauty-micropigmentacion' => 'Beauty micropigmentación',
                     'medical-facial'   => 'Medical facial',
                     'medical-corporal' => 'Medical corporal',
+                    'medical-tricologia'       => 'Medical tricología',
+
                 ),
                 'layout'        => 'vertical',
                 'return_format' => 'value',
