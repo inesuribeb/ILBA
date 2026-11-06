@@ -1,6 +1,6 @@
 
 
-<div id="popup-global" class="popup-global" hidden>
+<!-- <div id="popup-global" class="popup-global" hidden>
     <div class="popup-global__overlay"></div>
 
     <div class="popup-global__box">
@@ -26,9 +26,9 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
-<!-- <div id="popup-global" class="popup-global" hidden>
+<div id="popup-global" class="popup-global" hidden>
     <div class="popup-global__overlay"></div>
 
     <div class="popup-global__box">
@@ -40,18 +40,18 @@
 
         <div class="popup-global__wrapper">
             <div class="popup-global__col popup-global__col--texto">
-                <h3 class="popup-global__titulo">Somos patrocinadores VIP en el Zinemaldi.</h3>
+                <h3 class="popup-global__titulo">Nuevo tratamiento: lifting facial, cuello y escote</h3>
 
                 <div class="popup-global__contenido">
-                    <p>Este año, ILBA International forma parte del Zinemaldia como patrocinador VIP. Una colaboración que nos acerca a uno de los grandes encuentros culturales de la ciudad y que compartiremos dentro y fuera del Festival.</p>
+                    <p>La tensión y el estrés dejan huella en tu rostro. Combinamos Kobido, masaje muscular profundo y radiofrecuencia INDIBA para liberar tensiones y devolver firmeza al rostro, cuello y escote. Un placer sensorial con resultados visibles.</p>
                 </div>
 
-                <a class="popup-global__boton" href="/eventos/ilba-international-x-zinemaldia/">Sorpresas en Zinemaldia →</a>
+                <a class="popup-global__boton" href="/beauty/beauty-facial/">Descúbrelo aquí →</a>
             </div>
 
             <div class="popup-global__col popup-global__col--img">
-                <img class="popup-global__img" src="<?php echo esc_url( get_stylesheet_directory_uri() . '/images/web2.webp' ); ?>" alt="">
+                <img class="popup-global__img" src="<?php echo esc_url( get_stylesheet_directory_uri() . '/images/cuello_y_escote.webp' ); ?>" alt="">
             </div>
         </div>
     </div>
-</div> -->
+</div>
