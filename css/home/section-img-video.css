@@ -71,8 +71,11 @@
 }
 
 .home-img-video__cta:hover {
-    background-color: #ffffff;
-    color: #1a1a1a;
+    /* background-color: #ffffff; */
+    /* background-color: var(--light-combination);
+    color: #1a1a1a; */
+    background-color: #1a1a1a;
+    color: var(--light-combination);
 }
 
 @media ( max-width: 1024px ) {
