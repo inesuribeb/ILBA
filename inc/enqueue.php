@@ -8,6 +8,10 @@ function ilba_enqueue_assets() {
     $dir = get_stylesheet_directory();
     $uri = get_stylesheet_directory_uri();
 
+    // --- Global ---
+wp_enqueue_style( 'ilba-banner-fijo', $uri . '/css/global/banner-fijo.css', array(), filemtime( $dir . '/css/global/banner-fijo.css' ) );
+
+
     // --- Header y footer (todas las páginas) ---
     wp_enqueue_style( 'ilba-header',        $uri . '/css/header/header.css',        array(), filemtime( $dir . '/css/header/header.css' ) );
     wp_enqueue_style( 'ilba-header-mobile', $uri . '/css/header/header-mobile.css', array(), filemtime( $dir . '/css/header/header-mobile.css' ) );
@@ -199,5 +203,6 @@ if ( is_cart() ) {
     
     }
 }
+
 
 add_action( 'wp_enqueue_scripts', 'ilba_enqueue_assets' );

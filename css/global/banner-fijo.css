@@ -1,0 +1,23 @@
+.banner-fijo {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    padding: 0.5rem 1rem;
+    background-color: var(--burgundy);
+    color: var(--light-color);
+    text-align: center;
+}
+
+.banner-fijo__text {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--light-color);
+    letter-spacing: -0.05px;
+}
+
+/* Para que el banner no tape el final del footer */
+body {
+    padding-bottom: var(--banner-fijo-h, 3rem);
+}
