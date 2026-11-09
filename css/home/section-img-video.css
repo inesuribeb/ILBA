@@ -155,7 +155,7 @@
         width: 100%;
         gap: 1.25rem;
         padding: 3.5rem 2rem;
-        --bf-fade: 3rem;
+        --bf-fade: 4rem;
     }
 
     .home-img-video__title {
