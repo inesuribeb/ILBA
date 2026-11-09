@@ -64,6 +64,34 @@ acf_add_local_field_group( array(
             ),
         ),
 
+        // Título (opcional)
+        array(
+            'key'   => 'field_home_iv_titulo',
+            'label' => 'Título',
+            'name'  => 'home_iv_titulo',
+            'type'  => 'text',
+        ),
+
+        // Texto (opcional)
+        array(
+            'key'       => 'field_home_iv_texto',
+            'label'     => 'Texto',
+            'name'      => 'home_iv_texto',
+            'type'      => 'textarea',
+            'rows'      => 4,
+            'new_lines' => 'br',
+        ),
+
+        // CTA (opcional)
+        array(
+            'key'           => 'field_home_iv_cta',
+            'label'         => 'CTA',
+            'name'          => 'home_iv_cta',
+            'type'          => 'link',
+            'return_format' => 'array',
+            'instructions'  => 'Texto del botón y enlace.',
+        ),
+
     ),
 
     'location' => array(

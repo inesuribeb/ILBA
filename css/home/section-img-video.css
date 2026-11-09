@@ -3,6 +3,7 @@
    ============================================= */
 
    .home-img-video {
+    position: relative; /* NUEVO: referencia para el contenido superpuesto */
     width: 100%;
     height: 100vh;
     overflow: hidden;
@@ -15,6 +16,64 @@
     display: block;
 }
 
+/* NUEVO: contenido superpuesto y centrado */
+.home-img-video__content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem;
+    color: #ffffff;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.2); /* velo para legibilidad, ajústalo o quítalo */
+    /* background-color: aliceblue; */
+}
+
+.bf-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 4rem;
+        background-color: var(--light-combination);
+
+}
+
+.home-img-video__title {
+    max-width: 20ch;
+    margin: 0;
+    font-family: var(--serif);
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 400;
+    line-height: 1.05;
+    text-transform: uppercase;
+}
+
+.home-img-video__text {
+    max-width: 45ch;
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+.home-img-video__cta {
+    padding: 0.75em 2.5em;
+    border: 1px solid currentColor;
+    color: inherit;
+    font-size: 0.9rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.home-img-video__cta:hover {
+    background-color: #ffffff;
+    color: #1a1a1a;
+}
 
 @media ( max-width: 1024px ) {
     .home-img-video {
