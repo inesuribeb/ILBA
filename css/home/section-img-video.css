@@ -31,7 +31,7 @@
     /* background-color: rgba(0, 0, 0, 0.2);  */
 }
 
-.bf-content {
+/* .bf-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -39,8 +39,41 @@
     gap: 1.5rem;
     padding: 4rem;
         background-color: var(--light-combination);
+        background-color: var(--burgundy);
 
+} */
+
+.bf-content {
+    position: relative;
+    isolation: isolate; /* el ::before queda detrás del texto, sin salirse de este bloque */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 6.5rem;
+
+    --bf-fade: 7rem; /* ancho del degradado */
 }
+
+.bf-content::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-color: var(--burgundy);
+
+    /* Degradado vertical × horizontal → funde los 4 bordes */
+    -webkit-mask-image:
+        linear-gradient(to bottom, transparent, #000 var(--bf-fade), #000 calc(100% - var(--bf-fade)), transparent),
+        linear-gradient(to right,  transparent, #000 var(--bf-fade), #000 calc(100% - var(--bf-fade)), transparent);
+    -webkit-mask-composite: source-in;
+            mask-image:
+        linear-gradient(to bottom, transparent, #000 var(--bf-fade), #000 calc(100% - var(--bf-fade)), transparent),
+        linear-gradient(to right,  transparent, #000 var(--bf-fade), #000 calc(100% - var(--bf-fade)), transparent);
+            mask-composite: intersect;
+}
+
 
 .home-img-video__title {
     max-width: 20ch;
@@ -50,6 +83,7 @@
     font-weight: 400;
     line-height: 1.05;
     text-transform: uppercase;
+    color: var(--light-color);
 }
 
 .home-img-video__text {
@@ -57,12 +91,14 @@
     margin: 0;
     font-size: 1rem;
     line-height: 1.4;
+    color: var(--light-color);
 }
 
 .home-img-video__cta {
     padding: 0.75em 2.5em;
     border: 1px solid currentColor;
     color: inherit;
+    color: var(--light-color);
     font-size: 0.9rem;
     text-decoration: none;
     text-transform: uppercase;
@@ -74,7 +110,8 @@
     /* background-color: var(--light-combination);
     color: #1a1a1a; */
     background-color: #1a1a1a;
-    color: var(--light-combination);
+    background-color: var(--light-combination);
+    color: var(--burgundy);
 }
 
 @media ( max-width: 1024px ) {
