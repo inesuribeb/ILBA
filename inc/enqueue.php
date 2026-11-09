@@ -46,7 +46,9 @@ function ilba_enqueue_assets() {
         wp_enqueue_style( 'ilba-bm-hero',        $uri . '/css/beauty-medical/hero.css',        array(), filemtime( $dir . '/css/beauty-medical/hero.css' ) );
         wp_enqueue_style( 'ilba-bm-info',        $uri . '/css/beauty-medical/info.css',        array(), filemtime( $dir . '/css/beauty-medical/info.css' ) );
         wp_enqueue_style( 'ilba-bm-tratamientos', $uri . '/css/beauty-medical/tratamientos.css', array(), filemtime( $dir . '/css/beauty-medical/tratamientos.css' ) );
-
+        wp_enqueue_style( 'ilba-bm-tratamientos-grid', $uri . '/css/beauty-medical/tratamiento-grid.css', array(), filemtime( $dir . '/css/beauty-medical/tratamiento-grid.css' ) );
+        wp_enqueue_style( 'ilba-bm-tratamiento-card', $uri . '/css/beauty-medical/components/tratamiento-card.css', array( 'ilba-bm-tratamientos-grid' ), filemtime( $dir . '/css/beauty-medical/components/tratamiento-card.css' ) );
+      
         wp_enqueue_script( 'ilba-bm-sticky-img', $uri . '/js/beauty-medical/sticky-img.js', array(), filemtime( $dir . '/js/beauty-medical/sticky-img.js' ), true );
     }
 

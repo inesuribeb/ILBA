@@ -12,9 +12,12 @@ get_header();
  
     <?php get_template_part( 'components/beauty-medical/hero' ); ?>
  
-    <?php get_template_part( 'components/beauty-medical/info' ); ?>
+    <!-- <?php get_template_part( 'components/beauty-medical/info' ); ?>
  
-    <?php get_template_part( 'components/beauty-medical/tratamientos' ); ?>
+    <?php get_template_part( 'components/beauty-medical/tratamientos' ); ?> -->
+
+
+    <?php get_template_part( 'components/beauty-medical/tratamientos-grid' ); ?> 
  
 </main>
  

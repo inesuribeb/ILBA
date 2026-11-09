@@ -1,0 +1,138 @@
+/* ==========================================================================
+   Tratamiento card
+   ========================================================================== */
+
+   .tratamiento-card {
+    --tc-bg:        #b6bfc8;
+    --tc-text:      #1a1a1a;
+    --tc-muted:     #7d8791;
+    --tc-tag-bg:    #ffffff;
+    --tc-border:    #1a1a1a;
+    /* --tc-pad:       clamp(1rem, 2.5vw, 1.5rem); */
+    --tc-pad: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    background-color: var(--tc-bg);
+    color: var(--tc-text);
+}
+
+.tratamiento-card,
+.tratamiento-card *,
+.tratamiento-card *::before,
+.tratamiento-card *::after {
+    box-sizing: border-box;
+}
+
+.tratamiento-card__link {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: var(--tc-pad);
+    color: inherit;
+    text-decoration: none;
+}
+
+.tratamiento-card__link:focus-visible {
+    outline: 2px solid var(--tc-text);
+    outline-offset: 3px;
+}
+
+/* --- Media --- */
+
+.tratamiento-card__media {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.tratamiento-card__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.tratamiento-card__link:hover .tratamiento-card__img {
+    transform: scale(1.03);
+}
+
+/* --- Tags (etiquetas + keywords) --- */
+
+.tratamiento-card__tags {
+    position: absolute;
+    left: 0.75rem;
+    right: 0.75rem;
+    bottom: 0.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.tratamiento-card__tag {
+    padding: 0.5em 1.25em;
+    background-color: var(--tc-tag-bg);
+    font-size: 0.875rem;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+/* --- Body --- */
+
+.tratamiento-card__body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 1.75rem;
+    /* gap: rem; */
+
+    padding-top: 2.5rem;
+}
+
+.tratamiento-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+}
+
+.tratamiento-card__title {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    font-family: var(--serif);
+}
+
+.tratamiento-card__duracion {
+    flex-shrink: 0;
+    color: var(--tc-muted);
+    font-size: 0.9rem;
+    letter-spacing: -0.01em;
+
+}
+
+/* --- CTA --- */
+
+.tratamiento-card__cta {
+    display: block;
+    margin-top: auto;
+    padding: 0.5em;
+    border: 1px solid var(--tc-border);
+    font-size: 0.9rem;
+    text-align: center;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tratamiento-card__link:hover .tratamiento-card__cta {
+    background-color: var(--tc-text);
+    color: var(--tc-bg);
+}

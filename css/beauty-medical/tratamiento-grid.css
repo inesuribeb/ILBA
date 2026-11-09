@@ -1,0 +1,36 @@
+/* ==========================================================================
+   Tratamientos grid
+   ========================================================================== */
+
+   .tratamientos-grid {
+    --tg-gap:    clamp(1rem, 2vw, 1.5rem);
+    --tg-gutter: clamp(1rem, 4vw, 3rem);
+
+    padding: clamp(3rem, 6vw, 6rem) var(--tg-gutter);
+}
+
+.tratamientos-grid__list {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--tg-gap);
+}
+
+/* --- Responsive --- */
+
+@media (max-width: 1280px) {
+    .tratamientos-grid__list {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 960px) {
+    .tratamientos-grid__list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .tratamientos-grid__list {
+        grid-template-columns: 1fr;
+    }
+}
