@@ -8,6 +8,7 @@ function ilba_enqueue_assets() {
     $dir = get_stylesheet_directory();
     $uri = get_stylesheet_directory_uri();
 
+
     // --- Global ---
 wp_enqueue_style( 'ilba-banner-fijo', $uri . '/css/global/banner-fijo.css', array(), filemtime( $dir . '/css/global/banner-fijo.css' ) );
 
