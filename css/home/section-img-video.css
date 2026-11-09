@@ -118,6 +118,21 @@
     .home-img-video {
         height: 70vh;
     }
+}
+
+@media ( max-width: 768px ) {
+    .home-img-video {
+        height: 70vh;
+    }
+}
+
+
+
+
+@media ( max-width: 1024px ) {
+    .home-img-video {
+        height: 70vh;
+    }
 
     .bf-content {
         padding: 4.5rem;
@@ -127,8 +142,9 @@
 
 @media ( max-width: 768px ) {
     .home-img-video {
-        height: auto;
-        min-height: 70vh;
+        /* height: auto;
+        min-height: 70vh; */
+        height: 70vh;
     }
 
     .home-img-video__content {
