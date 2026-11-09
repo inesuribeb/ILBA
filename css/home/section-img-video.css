@@ -118,10 +118,39 @@
     .home-img-video {
         height: 70vh;
     }
+
+    .bf-content {
+        padding: 4.5rem;
+        --bf-fade: 5rem;
+    }
 }
 
 @media ( max-width: 768px ) {
     .home-img-video {
-        height: 70vh;
+        height: auto;
+        min-height: 70vh;
+    }
+
+    .home-img-video__content {
+        padding: 1rem;
+    }
+
+    .bf-content {
+        width: 100%;
+        gap: 1.25rem;
+        padding: 3.5rem 2rem;
+        --bf-fade: 3rem;
+    }
+
+    .home-img-video__title {
+        font-size: clamp(1.75rem, 8vw, 2.5rem);
+    }
+
+    .home-img-video__text {
+        font-size: 0.95rem;
+    }
+
+    .home-img-video__cta {
+        padding: 0.75em 2em;
     }
 }
