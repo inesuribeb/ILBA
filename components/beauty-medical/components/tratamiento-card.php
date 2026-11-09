@@ -27,7 +27,7 @@ $tags = array_unique( $tags );
 ?>
 
 <article class="tratamiento-card">
-    <a class="tratamiento-card__link" href="<?php echo esc_url( get_permalink( $post_id ) ); ?>">
+    <div class="tratamiento-card__link">
 
         <div class="tratamiento-card__media">
             <?php if ( $img ) : ?>
@@ -49,14 +49,18 @@ $tags = array_unique( $tags );
 
         <div class="tratamiento-card__body">
             <div class="tratamiento-card__header">
-                <h3 class="tratamiento-card__title"><?php echo esc_html( $nombre ); ?></h3>
+                <h3 class="tratamiento-card__title">
+                    <a class="tratamiento-card__title-link" href="<?php echo esc_url( get_permalink( $post_id ) ); ?>">
+                        <?php echo esc_html( $nombre ); ?>
+                    </a>
+                </h3>
                 <?php if ( $duracion ) : ?>
                     <span class="tratamiento-card__duracion"><?php echo esc_html( $duracion ); ?></span>
                 <?php endif; ?>
             </div>
 
-            <span class="tratamiento-card__cta">Más información</span>
+            <a class="tratamiento-card__cta" href="<?php echo esc_url( home_url( '/contacto/' ) ); ?>">Más información</a>
         </div>
 
-    </a>
+    </div>
 </article>

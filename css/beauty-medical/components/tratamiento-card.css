@@ -11,6 +11,7 @@
     /* --tc-pad:       clamp(1rem, 2.5vw, 1.5rem); */
     --tc-pad: 1rem;
 
+    position: relative; /* NUEVO: referencia para el enlace estirado */
     display: flex;
     flex-direction: column;
     background-color: var(--tc-bg);
@@ -111,6 +112,19 @@
     font-family: var(--serif);
 }
 
+/* NUEVO: el enlace del título cubre toda la card */
+.tratamiento-card__title-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.tratamiento-card__title-link::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
 .tratamiento-card__duracion {
     flex-shrink: 0;
     color: var(--tc-muted);
@@ -122,6 +136,10 @@
 /* --- CTA --- */
 
 .tratamiento-card__cta {
+    position: relative;     /* NUEVO */
+    z-index: 2;             /* NUEVO: por encima del enlace del título */
+    color: inherit;         /* NUEVO: ahora es un <a> */
+    text-decoration: none;  /* NUEVO */
     display: block;
     margin-top: auto;
     padding: 0.5em;
