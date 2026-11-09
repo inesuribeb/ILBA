@@ -13,6 +13,11 @@ $nombre   = get_field( 'tr_nombre', $post_id ) ?: get_the_title( $post_id );
 $duracion = get_field( 'tr_duracion', $post_id );
 $img      = get_field( 'tr_img_card', $post_id );
 
+$url_contacto = home_url( '/contacto/' );
+// De momento la card entera va a contacto.
+// Para que vaya al tratamiento: $url_card = get_permalink( $post_id );
+$url_card = $url_contacto;
+
 // Etiquetas (hasta 4) + Keywords (hasta 5) → se muestran juntas sobre la foto
 $tags = array();
 for ( $i = 1; $i <= 4; $i++ ) {
@@ -50,7 +55,7 @@ $tags = array_unique( $tags );
         <div class="tratamiento-card__body">
             <div class="tratamiento-card__header">
                 <h3 class="tratamiento-card__title">
-                    <a class="tratamiento-card__title-link" href="<?php echo esc_url( get_permalink( $post_id ) ); ?>">
+                    <a class="tratamiento-card__title-link" href="<?php echo esc_url( $url_card ); ?>">
                         <?php echo esc_html( $nombre ); ?>
                     </a>
                 </h3>
@@ -59,7 +64,7 @@ $tags = array_unique( $tags );
                 <?php endif; ?>
             </div>
 
-            <a class="tratamiento-card__cta" href="<?php echo esc_url( home_url( '/contacto/' ) ); ?>">Más información</a>
+            <a class="tratamiento-card__cta" href="<?php echo esc_url( $url_contacto ); ?>">Más información</a>
         </div>
 
     </div>
