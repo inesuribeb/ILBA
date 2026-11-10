@@ -169,7 +169,7 @@ $centro_donosti = get_posts( array( 'name' => 'donosti', 'post_type' => 'centro'
 
 </footer>
 
-<!-- <?php get_template_part( 'components/global/banner-fijo' ); ?> -->
+<?php get_template_part( 'components/global/banner-fijo' ); ?>
 
 
 <?php wp_footer(); ?>
