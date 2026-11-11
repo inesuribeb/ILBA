@@ -74,6 +74,6 @@ html {
 
 
 /* Para que el banner no tape el final del footer */
-body {
+/* body {
     padding-bottom: var(--banner-fijo-h, 3rem);
-}
+} */

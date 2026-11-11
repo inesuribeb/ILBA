@@ -6,16 +6,18 @@
     --tc-bg:        #b6bfc8;
     --tc-text:      #1a1a1a;
     --tc-muted:     #7d8791;
-    --tc-tag-bg:    #ffffff;
+    --tc-tag-bg:    #ffffffb2;
     --tc-border:    #1a1a1a;
-    /* --tc-pad:       clamp(1rem, 2.5vw, 1.5rem); */
-    --tc-pad: 1rem;
+    --tc-pad:       0.7rem;
+    --light-combination: #CBD0D3;
+    --contrast-combination: #58615C;
 
-    position: relative; /* NUEVO: referencia para el enlace estirado */
+    position: relative; /* referencia para el enlace estirado */
     display: flex;
     flex-direction: column;
-    background-color: var(--tc-bg);
-    color: var(--tc-text);
+    background-color: var(--light-combination);
+    color: var(--dark-color);
+    border: 0.75px solid var(--tc-border);
 }
 
 .tratamiento-card,
@@ -29,7 +31,8 @@
     display: flex;
     flex-direction: column;
     flex: 1;
-    padding: var(--tc-pad);
+    /* padding: var(--tc-pad); */
+    padding: 0.7rem;
     color: inherit;
     text-decoration: none;
 }
@@ -45,7 +48,7 @@
     position: relative;
     aspect-ratio: 4 / 5;
     overflow: hidden;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: var(--light-combination);
 }
 
 .tratamiento-card__img {
@@ -54,6 +57,8 @@
     height: 100%;
     object-fit: cover;
     transition: transform 0.6s ease;
+    border: 0.75px solid var(--tc-border);
+
 }
 
 .tratamiento-card__link:hover .tratamiento-card__img {
@@ -69,7 +74,7 @@
     bottom: 0.75rem;
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 0.3rem;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -78,7 +83,7 @@
 .tratamiento-card__tag {
     padding: 0.5em 1.25em;
     background-color: var(--tc-tag-bg);
-    font-size: 0.875rem;
+    font-size: 0.9rem;
     line-height: 1.2;
     white-space: nowrap;
 }
@@ -89,10 +94,8 @@
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    gap: 1.75rem;
-    /* gap: rem; */
-
-    padding-top: 2.5rem;
+    gap: 2rem;
+    padding-top: 1.5rem;
 }
 
 .tratamiento-card__header {
@@ -104,20 +107,24 @@
 
 .tratamiento-card__title {
     margin: 0;
-    font-size: 1rem;
+    font-family: var(--serif);
+    font-size: 1.2rem;
     font-weight: 400;
     line-height: 1.1;
     letter-spacing: -0.02em;
     text-transform: uppercase;
-    font-family: var(--serif);
 }
 
-/* NUEVO: el enlace del título cubre toda la card */
+/* El * del style.css le pone la sans directamente al <a>,
+   así que hay que forzar que herede del h3 */
 .tratamiento-card__title-link {
     color: inherit;
+    font-family: inherit;
+    font-weight: inherit;
     text-decoration: none;
 }
 
+/* El enlace del título cubre toda la card */
 .tratamiento-card__title-link::after {
     content: '';
     position: absolute;
@@ -129,28 +136,28 @@
     flex-shrink: 0;
     color: var(--tc-muted);
     font-size: 0.9rem;
-    letter-spacing: -0.01em;
-
+    letter-spacing: -0.03em;
 }
 
 /* --- CTA --- */
 
 .tratamiento-card__cta {
-    position: relative;     /* NUEVO */
-    z-index: 2;             /* NUEVO: por encima del enlace del título */
-    color: inherit;         /* NUEVO: ahora es un <a> */
-    text-decoration: none;  /* NUEVO */
+    position: relative;
+    z-index: 2; /* por encima del enlace del título */
     display: block;
     margin-top: auto;
     padding: 0.5em;
     border: 1px solid var(--tc-border);
-    font-size: 0.9rem;
+    color: inherit;
+    font-size: 0.8rem;
     text-align: center;
     text-transform: uppercase;
+    text-decoration: none;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .tratamiento-card__link:hover .tratamiento-card__cta {
-    background-color: var(--tc-text);
-    color: var(--tc-bg);
+    background-color: var(--contrast-combination);
+    color: var(--light-combination);
+    border: 1px solid var(--contrast-combination);
 }
