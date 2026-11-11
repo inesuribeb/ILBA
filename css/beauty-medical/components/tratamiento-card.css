@@ -209,30 +209,29 @@
    ========================================================================== */
 
 /* Móvil: grid a 2 columnas → card de ~160–180px */
-@media (max-width: 767px) {
+/* @media (max-width: 767px) {
     .tratamiento-card {
         --tc-s: 0.72;
         --tc-gap-top: 0.6rem;
         --tc-gap-body: 0.5rem;
-    }
+    } */
 
 
 
     /* Título y duración apilados: en esta anchura no caben en línea */
-    .tratamiento-card__header {
+    /* .tratamiento-card__header {
         flex-direction: column;
         align-items: flex-start;
         gap: 0.25rem;
     }
 
-    /* Máximo 3 tags para no tapar la foto */
     .tratamiento-card__tag:nth-child(n + 4) {
         display: none;
     }
-}
+} */
 
 /* Móviles estrechos (≤ 389px: iPhone SE, mini…) */
-@media (max-width: 389px) {
+/* @media (max-width: 389px) {
     .tratamiento-card {
         --tc-s: 0.62;
     }
@@ -240,4 +239,4 @@
     .tratamiento-card__tag:nth-child(n + 3) {
         display: none;
     }
-}
+} */
