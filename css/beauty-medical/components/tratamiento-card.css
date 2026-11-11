@@ -8,13 +8,31 @@
     --tc-muted:     #7d8791;
     --tc-tag-bg:    #ffffffb2;
     --tc-border:    #1a1a1a;
-    --tc-pad:       0.7rem;
+    --tc-promo-bg:   #fce1e0;
+    --tc-promo-text: #d0392e;
     --light-combination: #CBD0D3;
     --contrast-combination: #58615C;
+
+    /* Escala de la card: en móvil solo cambia este valor */
+    --tc-s: 1;
+
+    /* Tamaños derivados de la escala */
+    --tc-pad:      calc(0.7rem * var(--tc-s));
+    --tc-inset:    calc(0.75rem * var(--tc-s));   /* separación de promo y tags respecto a la foto */
+    --tc-gap-body: calc(2rem * var(--tc-s));
+    --tc-gap-top:  calc(1.5rem * var(--tc-s));
+
+    /* Tipografía: escala proporcional con suelo de legibilidad */
+    --tc-fs-title: max(calc(1.2rem * var(--tc-s)), 0.875rem);
+    --tc-fs-dur:   max(calc(0.9rem * var(--tc-s)), 0.75rem);
+    --tc-fs-tag:   max(calc(0.9rem * var(--tc-s)), 0.6875rem);
+    --tc-fs-promo: max(calc(0.75rem * var(--tc-s)), 0.625rem);
+    --tc-fs-cta:   max(calc(0.8rem * var(--tc-s)), 0.6875rem);
 
     position: relative; /* referencia para el enlace estirado */
     display: flex;
     flex-direction: column;
+    min-width: 0; /* evita que el contenido desborde la columna del grid */
     background-color: var(--light-combination);
     color: var(--dark-color);
     border: 0.75px solid var(--tc-border);
@@ -31,8 +49,7 @@
     display: flex;
     flex-direction: column;
     flex: 1;
-    /* padding: var(--tc-pad); */
-    padding: 0.7rem;
+    padding: var(--tc-pad);
     color: inherit;
     text-decoration: none;
 }
@@ -58,34 +75,57 @@
     object-fit: cover;
     transition: transform 0.6s ease;
     border: 0.75px solid var(--tc-border);
-
 }
 
 .tratamiento-card__link:hover .tratamiento-card__img {
     transform: scale(1.03);
 }
 
+/* --- Promo (arriba a la derecha) --- */
+
+.tratamiento-card__promo {
+    position: absolute;
+    top: var(--tc-inset);
+    right: var(--tc-inset);
+    max-width: calc(100% - var(--tc-inset) * 2);
+    padding: 0.4em 0.9em;
+    border-radius: 999px;
+    background-color: var(--tc-promo-bg);
+    color: var(--tc-promo-text);
+    font-size: var(--tc-fs-promo);
+    line-height: 1;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    pointer-events: none; /* no bloquea el clic de la card */
+}
+
 /* --- Tags (etiquetas + keywords) --- */
 
 .tratamiento-card__tags {
     position: absolute;
-    left: 0.75rem;
-    right: 0.75rem;
-    bottom: 0.75rem;
+    left: var(--tc-inset);
+    right: var(--tc-inset);
+    bottom: var(--tc-inset);
     display: flex;
     flex-wrap: wrap;
-    gap: 0.3rem;
+    gap: calc(0.3rem * var(--tc-s));
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
 .tratamiento-card__tag {
+    max-width: 100%;
     padding: 0.5em 1.25em;
     background-color: var(--tc-tag-bg);
-    font-size: 0.9rem;
+    font-size: var(--tc-fs-tag);
     line-height: 1.2;
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* --- Body --- */
@@ -94,25 +134,27 @@
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    gap: 2rem;
-    padding-top: 1.5rem;
+    gap: var(--tc-gap-body);
+    padding-top: var(--tc-gap-top);
 }
 
 .tratamiento-card__header {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    gap: 1rem;
+    gap: calc(1rem * var(--tc-s));
 }
 
 .tratamiento-card__title {
     margin: 0;
     font-family: var(--serif);
-    font-size: 1.2rem;
+    font-size: var(--tc-fs-title);
     font-weight: 400;
     line-height: 1.1;
     letter-spacing: -0.02em;
     text-transform: uppercase;
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
 
 /* El * del style.css le pone la sans directamente al <a>,
@@ -135,7 +177,7 @@
 .tratamiento-card__duracion {
     flex-shrink: 0;
     color: var(--tc-muted);
-    font-size: 0.9rem;
+    font-size: var(--tc-fs-dur);
     letter-spacing: -0.03em;
 }
 
@@ -149,7 +191,7 @@
     padding: 0.5em;
     border: 1px solid var(--tc-border);
     color: inherit;
-    font-size: 0.8rem;
+    font-size: var(--tc-fs-cta);
     text-align: center;
     text-transform: uppercase;
     text-decoration: none;
@@ -160,4 +202,42 @@
     background-color: var(--contrast-combination);
     color: var(--light-combination);
     border: 1px solid var(--contrast-combination);
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+/* Móvil: grid a 2 columnas → card de ~160–180px */
+@media (max-width: 767px) {
+    .tratamiento-card {
+        --tc-s: 0.72;
+        --tc-gap-top: 0.6rem;
+        --tc-gap-body: 0.5rem;
+    }
+
+
+
+    /* Título y duración apilados: en esta anchura no caben en línea */
+    .tratamiento-card__header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+
+    /* Máximo 3 tags para no tapar la foto */
+    .tratamiento-card__tag:nth-child(n + 4) {
+        display: none;
+    }
+}
+
+/* Móviles estrechos (≤ 389px: iPhone SE, mini…) */
+@media (max-width: 389px) {
+    .tratamiento-card {
+        --tc-s: 0.62;
+    }
+
+    .tratamiento-card__tag:nth-child(n + 3) {
+        display: none;
+    }
 }

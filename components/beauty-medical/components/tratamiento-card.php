@@ -4,6 +4,9 @@
  *
  * Uso:
  * get_template_part( 'components/beauty-medical/tratamiento-card', null, array( 'post_id' => get_the_ID() ) );
+ *
+ * Opcional: pasar 'promo' en $args para cambiar o vaciar la etiqueta de promoción.
+ * get_template_part( '...', null, array( 'post_id' => get_the_ID(), 'promo' => '' ) );
  */
 
 $post_id = ! empty( $args['post_id'] ) ? (int) $args['post_id'] : get_the_ID();
@@ -12,6 +15,10 @@ if ( ! $post_id ) return;
 $nombre   = get_field( 'tr_nombre', $post_id ) ?: get_the_title( $post_id );
 $duracion = get_field( 'tr_duracion', $post_id );
 $img      = get_field( 'tr_img_card', $post_id );
+
+// Etiqueta de promoción (arriba a la derecha de la imagen).
+// Vacía = no se muestra.
+$promo = isset( $args['promo'] ) ? trim( (string) $args['promo'] ) : 'Black Friday −20%';
 
 $url_contacto = home_url( '/contacto/' );
 // De momento la card entera va a contacto.
@@ -41,6 +48,10 @@ $tags = array_unique( $tags );
                     'alt'     => esc_attr( $img['alt'] ?: $nombre ),
                     'loading' => 'lazy',
                 ) ); ?>
+            <?php endif; ?>
+
+            <?php if ( $promo !== '' ) : ?>
+                <span class="tratamiento-card__promo"><?php echo esc_html( $promo ); ?></span>
             <?php endif; ?>
 
             <?php if ( $tags ) : ?>
