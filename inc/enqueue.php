@@ -46,6 +46,12 @@ wp_enqueue_style( 'ilba-banner-fijo', $uri . '/css/global/banner-fijo.css', arra
         wp_enqueue_script( 'ilba-nav-tienda',      $uri . '/js/home/function-nav-tienda.js', array(), filemtime( $dir . '/js/home/function-nav-tienda.js' ), true );
     }
 
+     // --- Tratamientos (archivo) ---
+     if ( is_post_type_archive( 'tratamientos' ) ) {
+        wp_enqueue_style( 'ilba-tratamiento-card', $uri . '/css/beauty-medical/components/tratamiento-card.css', array(), filemtime( $dir . '/css/beauty-medical/components/tratamiento-card.css' ) );
+        wp_enqueue_style( 'ilba-tratamientos', $uri . '/css/tratamientos/tratamientos.css', array(), filemtime( $dir . '/css/tratamientos/tratamientos.css' ) );
+    }
+
     // --- Beauty & Medical ---
     if ( is_singular( 'beauty_medical' ) ) {
         wp_enqueue_style( 'ilba-bm-hero',        $uri . '/css/beauty-medical/hero.css',        array(), filemtime( $dir . '/css/beauty-medical/hero.css' ) );

@@ -1,0 +1,56 @@
+/* =============================================
+   Tratamientos — Archivo
+   ============================================= */
+
+   .tratamientos-archive {
+    padding: 15rem 1.5rem;
+}
+
+.tratamientos-archive__title {
+    margin: 0 0 3rem;
+    font-family: var(--serif);
+    font-weight: 300;
+}
+
+.tratamientos-archive__group + .tratamientos-archive__group {
+    margin-top: 4rem;
+}
+
+.tratamientos-archive__group-title {
+    margin: 0 0 1.5rem;
+    font-family: var(--serif);
+    font-size: 1.25rem;
+    font-weight: 300;
+    /* text-transform: uppercase; */
+    letter-spacing: -0.03em;
+    scroll-margin-top: 6rem; /* para que el header fijo no tape el ancla */
+}
+
+
+.tratamientos-archive__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    /* gap: var(--tg-gap); */
+    gap: 0.75rem;
+}
+
+
+
+
+@media (max-width: 1280px) {
+    .tratamientos-archive__grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 960px) {
+    .tratamientos-archive__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .tratamientos-archive__grid {
+        grid-template-columns: 1fr;
+    }
+}

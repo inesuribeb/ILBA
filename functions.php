@@ -226,3 +226,15 @@ add_action( 'init', function() {
     }
 }, 20 ); // después de register_taxonomy
 
+
+
+
+// add_filter( 'template_include', function( $template ) {
+//     if ( is_post_type_archive( 'tratamientos' ) ) {
+//         wp_die(
+//             'Plantilla usada: ' . $template . '<br>' .
+//             'archive-tratamientos.php encontrado en: ' . ( locate_template( 'archive-tratamientos.php' ) ?: 'NO ENCONTRADO' )
+//         );
+//     }
+//     return $template;
+// }, 999 );
