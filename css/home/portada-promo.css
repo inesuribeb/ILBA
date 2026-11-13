@@ -93,7 +93,9 @@
 
 @media ( max-width: 768px ) {
     .home-promo {
-        height: 88vh; /* igual que el hero en móvil */
+        /* height: 88vh;  */
+        height: 95vh; 
+
     }
 
     .home-promo__content {
