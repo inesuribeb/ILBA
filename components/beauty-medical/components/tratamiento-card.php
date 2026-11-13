@@ -20,7 +20,7 @@ $img      = get_field( 'tr_img_card', $post_id );
 // Vacía = no se muestra.
 $promo = isset( $args['promo'] ) ? trim( (string) $args['promo'] ) : 'Black Friday −20%';
 
-$url_contacto = home_url( '/contacto/' );
+$url_contacto = home_url( '/black-friday/' );
 // De momento la card entera va a contacto.
 // Para que vaya al tratamiento: $url_card = get_permalink( $post_id );
 $url_card = $url_contacto;
@@ -75,7 +75,7 @@ $tags = array_unique( $tags );
                 <?php endif; ?>
             </div>
 
-            <a class="tratamiento-card__cta" href="<?php echo esc_url( $url_contacto ); ?>">Más información</a>
+            <a class="tratamiento-card__cta" href="<?php echo esc_url( $url_contacto ); ?>">Solicitar mi 20%</a>
         </div>
 
     </div>
