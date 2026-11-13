@@ -1,5 +1,7 @@
 /* =============================================
    Home — Portada Promo
+   Título + CTAs y degradado inferior usan las clases del hero
+   (.home-hero__overlay, .home-hero__content, .home-hero__cta…) → estilos en hero.css
    ============================================= */
 
    .home-promo {
@@ -25,6 +27,7 @@
     align-items: center;
     padding: 2rem;
     text-align: center;
+    pointer-events: none; /* no tapa los clics de los CTAs del hero */
 }
 
 /* Caja burdeos con los 4 bordes fundidos */
@@ -37,6 +40,7 @@
     align-items: center;
     gap: 1.5rem;
     padding: 6.5rem;
+    pointer-events: auto;
 
     --promo-fade: 7rem; /* ancho del degradado */
 }
@@ -94,6 +98,7 @@
 
     .home-promo__content {
         padding: 1rem;
+        padding-bottom: 35%; /* sube la caja para dejar sitio a título + CTAs abajo */
     }
 
     .home-promo__box {

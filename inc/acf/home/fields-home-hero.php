@@ -230,15 +230,6 @@ array(
             'name'     => 'home_hero_titulo',
             'type'     => 'text',
             // 'required' => 1,
-            'conditional_logic' => array(
-                array(
-                    array(
-                        'field'    => 'field_home_hero_tipo',
-                        'operator' => '!=',
-                        'value'    => 'promo',
-                    ),
-                ),
-            ),
         ),
 
         // CTA 1
@@ -277,15 +268,6 @@ array(
     'name'         => 'home_hero_cta1_texto',
     'type'         => 'text',
     'instructions' => 'Deja vacío si no quieres mostrar este CTA.',
-    'conditional_logic' => array(
-        array(
-            array(
-                'field'    => 'field_home_hero_tipo',
-                'operator' => '!=',
-                'value'    => 'promo',
-            ),
-        ),
-    ),
 ),
 array(
     'key'          => 'field_home_hero_cta1_link',
@@ -293,15 +275,6 @@ array(
     'name'         => 'home_hero_cta1_link',
     'type'         => 'text',
     'instructions' => 'Escribe solo el slug, sin barras. Ej: beauty, protocolos/hidrafacial',
-    'conditional_logic' => array(
-        array(
-            array(
-                'field'    => 'field_home_hero_tipo',
-                'operator' => '!=',
-                'value'    => 'promo',
-            ),
-        ),
-    ),
 ),
 
 // CTA 2
@@ -311,15 +284,6 @@ array(
     'name'         => 'home_hero_cta2_texto',
     'type'         => 'text',
     'instructions' => 'Deja vacío si no quieres mostrar este CTA.',
-    'conditional_logic' => array(
-        array(
-            array(
-                'field'    => 'field_home_hero_tipo',
-                'operator' => '!=',
-                'value'    => 'promo',
-            ),
-        ),
-    ),
 ),
 array(
     'key'          => 'field_home_hero_cta2_link',
@@ -327,15 +291,6 @@ array(
     'name'         => 'home_hero_cta2_link',
     'type'         => 'text',
     'instructions' => 'Escribe solo el slug, sin barras. Ej: beauty, protocolos/hidrafacial',
-    'conditional_logic' => array(
-        array(
-            array(
-                'field'    => 'field_home_hero_tipo',
-                'operator' => '!=',
-                'value'    => 'promo',
-            ),
-        ),
-    ),
 ),
 
     ),
