@@ -1,6 +1,9 @@
 <?php
 /**
  * Contacto component: Form
+ *
+ * Info de centros (ACF de la página Contacto) + formulario CF7.
+ * Acepta $args['shortcode'] para usar otro formulario (p. ej. page-black-friday.php).
  */
 
 $contacto_id = get_page_by_path( 'contacto' )->ID ?? 0;
@@ -125,7 +128,7 @@ $donosti_ig_url    = get_field( 'ct_donosti_instagram_url',    $contacto_id );
     </div>
 
     <div class="ct-form-section__form">
-        <?php echo do_shortcode( '[contact-form-7 id="a0f7dbf" title="Contact form 1"]' ); ?>
+        <?php echo do_shortcode( $args['shortcode'] ?? '[contact-form-7 id="a0f7dbf" title="Contact form 1"]' ); ?>
     </div>
 
 </section>
