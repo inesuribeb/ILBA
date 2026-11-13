@@ -15,6 +15,7 @@
     font-size: 0.9rem;
     color: var(--light-color);
     letter-spacing: -0.05px;
+    line-height: 1.2;
 }
 
 /* Para que el banner no tape el final del footer */
