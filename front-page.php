@@ -9,7 +9,14 @@ get_header();
  
 <main id="main" class="home">
  
-    <?php get_template_part( 'components/home/hero' ); ?>
+<?php // get_template_part( 'components/home/hero' ); ?>    <?php
+    // Portada: hero normal o Portada Promo, según "Tipo de fondo" en ACF
+    if ( get_field( 'home_hero_tipo' ) === 'promo' ) {
+        get_template_part( 'components/home/portada-promo' );
+    } else {
+        get_template_part( 'components/home/hero' );
+    }
+    ?>
  
     <?php get_template_part( 'components/home/section-nuestros-servicios' ); ?>
  

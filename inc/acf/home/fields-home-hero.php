@@ -1,6 +1,8 @@
 <?php
 /**
  * ACF Fields: Home
+ *
+ * home_hero_tipo = 'promo' → front-page.php pinta components/home/portada-promo.php
  */
 
 if ( function_exists( 'acf_add_local_field_group' ) ) :
@@ -30,6 +32,7 @@ acf_add_local_field_group( array(
             'choices'       => array(
                 'dos_mitades'       => 'Dos imágenes (50% / 50%)',
                 'pantalla_completa' => 'Una imagen a pantalla completa',
+                'promo'             => 'Portada Promo',
             ),
             'default_value' => 'dos_mitades',
             'layout'        => 'horizontal',
@@ -45,6 +48,15 @@ array(
     'return_format' => 'array',
     'preview_size'  => 'medium',
     'instructions'  => 'Si se sube, sustituye la imagen de fondo en móvil, independientemente del tipo de fondo elegido arriba.',
+    'conditional_logic' => array(
+        array(
+            array(
+                'field'    => 'field_home_hero_tipo',
+                'operator' => '!=',
+                'value'    => 'promo',
+            ),
+        ),
+    ),
 ),
 
         // Imagen izquierda — solo si dos_mitades
@@ -108,6 +120,109 @@ array(
 
 
 
+        // =============================================
+        // PORTADA PROMO — solo si home_hero_tipo = promo
+        // =============================================
+        array(
+            'key'           => 'field_home_promo_media_tipo',
+            'label'         => 'Promo — Fondo',
+            'name'          => 'home_promo_media_tipo',
+            'type'          => 'radio',
+            'choices'       => array(
+                'imagen' => 'Imagen',
+                'video'  => 'Vídeo',
+            ),
+            'default_value' => 'imagen',
+            'layout'        => 'horizontal',
+            'conditional_logic' => array(
+                array(
+                    array(
+                        'field'    => 'field_home_hero_tipo',
+                        'operator' => '==',
+                        'value'    => 'promo',
+                    ),
+                ),
+            ),
+        ),
+        array(
+            'key'           => 'field_home_promo_imagen',
+            'label'         => 'Promo — Imagen',
+            'name'          => 'home_promo_imagen',
+            'type'          => 'image',
+            'return_format' => 'array',
+            'preview_size'  => 'medium',
+            'conditional_logic' => array(
+                array(
+                    array(
+                        'field'    => 'field_home_hero_tipo',
+                        'operator' => '==',
+                        'value'    => 'promo',
+                    ),
+                    array(
+                        'field'    => 'field_home_promo_media_tipo',
+                        'operator' => '==',
+                        'value'    => 'imagen',
+                    ),
+                ),
+            ),
+        ),
+        array(
+            'key'           => 'field_home_promo_video',
+            'label'         => 'Promo — Vídeo',
+            'name'          => 'home_promo_video',
+            'type'          => 'file',
+            'return_format' => 'array',
+            'mime_types'    => 'mp4,webm',
+            'instructions'  => 'MP4 o WebM. Se reproduce en bucle, sin sonido.',
+            'conditional_logic' => array(
+                array(
+                    array(
+                        'field'    => 'field_home_hero_tipo',
+                        'operator' => '==',
+                        'value'    => 'promo',
+                    ),
+                    array(
+                        'field'    => 'field_home_promo_media_tipo',
+                        'operator' => '==',
+                        'value'    => 'video',
+                    ),
+                ),
+            ),
+        ),
+        array(
+            'key'      => 'field_home_promo_titulo',
+            'label'    => 'Promo — Título',
+            'name'     => 'home_promo_titulo',
+            'type'     => 'text',
+            'conditional_logic' => array(
+                array(
+                    array(
+                        'field'    => 'field_home_hero_tipo',
+                        'operator' => '==',
+                        'value'    => 'promo',
+                    ),
+                ),
+            ),
+        ),
+        array(
+            'key'       => 'field_home_promo_texto',
+            'label'     => 'Promo — Texto',
+            'name'      => 'home_promo_texto',
+            'type'      => 'textarea',
+            'rows'      => 3,
+            'new_lines' => '',
+            'instructions' => 'Los saltos de línea se respetan.',
+            'conditional_logic' => array(
+                array(
+                    array(
+                        'field'    => 'field_home_hero_tipo',
+                        'operator' => '==',
+                        'value'    => 'promo',
+                    ),
+                ),
+            ),
+        ),
+
         // Título
         array(
             'key'      => 'field_home_hero_titulo',
@@ -115,6 +230,15 @@ array(
             'name'     => 'home_hero_titulo',
             'type'     => 'text',
             // 'required' => 1,
+            'conditional_logic' => array(
+                array(
+                    array(
+                        'field'    => 'field_home_hero_tipo',
+                        'operator' => '!=',
+                        'value'    => 'promo',
+                    ),
+                ),
+            ),
         ),
 
         // CTA 1
@@ -153,6 +277,15 @@ array(
     'name'         => 'home_hero_cta1_texto',
     'type'         => 'text',
     'instructions' => 'Deja vacío si no quieres mostrar este CTA.',
+    'conditional_logic' => array(
+        array(
+            array(
+                'field'    => 'field_home_hero_tipo',
+                'operator' => '!=',
+                'value'    => 'promo',
+            ),
+        ),
+    ),
 ),
 array(
     'key'          => 'field_home_hero_cta1_link',
@@ -160,6 +293,15 @@ array(
     'name'         => 'home_hero_cta1_link',
     'type'         => 'text',
     'instructions' => 'Escribe solo el slug, sin barras. Ej: beauty, protocolos/hidrafacial',
+    'conditional_logic' => array(
+        array(
+            array(
+                'field'    => 'field_home_hero_tipo',
+                'operator' => '!=',
+                'value'    => 'promo',
+            ),
+        ),
+    ),
 ),
 
 // CTA 2
@@ -169,6 +311,15 @@ array(
     'name'         => 'home_hero_cta2_texto',
     'type'         => 'text',
     'instructions' => 'Deja vacío si no quieres mostrar este CTA.',
+    'conditional_logic' => array(
+        array(
+            array(
+                'field'    => 'field_home_hero_tipo',
+                'operator' => '!=',
+                'value'    => 'promo',
+            ),
+        ),
+    ),
 ),
 array(
     'key'          => 'field_home_hero_cta2_link',
@@ -176,6 +327,15 @@ array(
     'name'         => 'home_hero_cta2_link',
     'type'         => 'text',
     'instructions' => 'Escribe solo el slug, sin barras. Ej: beauty, protocolos/hidrafacial',
+    'conditional_logic' => array(
+        array(
+            array(
+                'field'    => 'field_home_hero_tipo',
+                'operator' => '!=',
+                'value'    => 'promo',
+            ),
+        ),
+    ),
 ),
 
     ),

@@ -1,0 +1,113 @@
+/* =============================================
+   Home — Portada Promo
+   ============================================= */
+
+   .home-promo {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.home-promo__media {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Contenido superpuesto y centrado */
+.home-promo__content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    text-align: center;
+}
+
+/* Caja burdeos con los 4 bordes fundidos */
+.home-promo__box {
+    position: relative;
+    isolation: isolate; /* el ::before queda detrás del texto */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 6.5rem;
+
+    --promo-fade: 7rem; /* ancho del degradado */
+}
+
+.home-promo__box::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-color: var(--burgundy);
+
+    /* Degradado vertical × horizontal → funde los 4 bordes */
+    -webkit-mask-image:
+        linear-gradient(to bottom, transparent, #000 var(--promo-fade), #000 calc(100% - var(--promo-fade)), transparent),
+        linear-gradient(to right,  transparent, #000 var(--promo-fade), #000 calc(100% - var(--promo-fade)), transparent);
+    -webkit-mask-composite: source-in;
+            mask-image:
+        linear-gradient(to bottom, transparent, #000 var(--promo-fade), #000 calc(100% - var(--promo-fade)), transparent),
+        linear-gradient(to right,  transparent, #000 var(--promo-fade), #000 calc(100% - var(--promo-fade)), transparent);
+            mask-composite: intersect;
+}
+
+.home-promo__titulo {
+    max-width: 20ch;
+    margin: 0;
+    font-family: var(--serif);
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 400;
+    line-height: 1.05;
+    text-transform: uppercase;
+    color: var(--light-color);
+}
+
+.home-promo__texto {
+    max-width: 45ch;
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.4;
+    color: var(--light-color);
+}
+
+/* --- Responsive --- */
+
+@media ( max-width: 1024px ) {
+    .home-promo__box {
+        padding: 4.5rem;
+        --promo-fade: 5rem;
+    }
+}
+
+@media ( max-width: 768px ) {
+    .home-promo {
+        height: 88vh; /* igual que el hero en móvil */
+    }
+
+    .home-promo__content {
+        padding: 1rem;
+    }
+
+    .home-promo__box {
+        width: 100%;
+        gap: 1.25rem;
+        padding: 3.5rem 2rem;
+        --promo-fade: 4rem;
+    }
+
+    .home-promo__titulo {
+        font-size: clamp(1.75rem, 8vw, 2.5rem);
+    }
+
+    .home-promo__texto {
+        font-size: 0.95rem;
+    }
+}

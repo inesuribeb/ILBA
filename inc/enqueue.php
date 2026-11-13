@@ -38,7 +38,7 @@ wp_enqueue_style( 'ilba-banner-fijo', $uri . '/css/global/banner-fijo.css', arra
         wp_enqueue_style( 'ilba-img-video',          $uri . '/css/home/section-img-video.css',  array(), filemtime( $dir . '/css/home/section-img-video.css' ) );
         wp_enqueue_style( 'ilba-nuestra-coleccion',          $uri . '/css/home/section-nuestra-coleccion.css',  array(), filemtime( $dir . '/css/home/section-nuestra-coleccion.css' ) );
         wp_enqueue_style( 'ilba-nuestras-clinicas',          $uri . '/css/home/section-nuestras-clinicas.css',  array(), filemtime( $dir . '/css/home/section-nuestras-clinicas.css' ) );
-
+        wp_enqueue_style( 'ilba-portada-promo', $uri . '/css/home/portada-promo.css', array(), filemtime( $dir . '/css/home/portada-promo.css' ) );
 
         wp_enqueue_script( 'ilba-sticky-tag',      $uri . '/js/home/sticky-tag.js',      array(), filemtime( $dir . '/js/home/sticky-tag.js' ),      true );
         wp_enqueue_script( 'ilba-cards-servicios', $uri . '/js/home/cards-servicios.js', array(), filemtime( $dir . '/js/home/cards-servicios.js' ), true );
