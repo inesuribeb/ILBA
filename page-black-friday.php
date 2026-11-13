@@ -6,8 +6,9 @@
 
 get_header();
 
-// ID de la imagen en la Biblioteca de medios (lo ves en la URL al editarla: post=123)
-$foto_id = 123;
+// Misma foto que la página Contacto (ACF ct_foto)
+$contacto_id = get_page_by_path( 'contacto' )->ID ?? 0;
+$foto        = get_field( 'ct_foto', $contacto_id );
 ?>
 
 <main id="main" class="page-contacto">
@@ -16,9 +17,12 @@ $foto_id = 123;
     <section class="ct-intro">
 
         <div class="ct-intro__foto-wrapper">
-            <div class="ct-intro__foto">
-                <?php echo wp_get_attachment_image( $foto_id, 'full' ); ?>
-            </div>
+            <?php if ( $foto ) : ?>
+                <div class="ct-intro__foto">
+                    <img src="<?php echo esc_url( $foto['url'] ); ?>"
+                         alt="<?php echo esc_attr( $foto['alt'] ); ?>">
+                </div>
+            <?php endif; ?>
         </div>
 
         <div class="ct-intro__content">
