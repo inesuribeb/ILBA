@@ -43,6 +43,11 @@ add_filter( 'body_class', function( $classes ) {
     if ( is_singular( 'protocolos' ) ) {
         $classes[] = 'single-protocolos-dark';
     }
+
+    // Black Friday hereda los estilos de Contacto (fondo, footer…)
+    if ( is_page( 'black-friday' ) ) {
+        $classes[] = 'page-contacto';
+    }
     
     return $classes;
 });
@@ -225,16 +230,3 @@ add_action( 'init', function() {
         }
     }
 }, 20 ); // después de register_taxonomy
-
-
-
-
-// add_filter( 'template_include', function( $template ) {
-//     if ( is_post_type_archive( 'tratamientos' ) ) {
-//         wp_die(
-//             'Plantilla usada: ' . $template . '<br>' .
-//             'archive-tratamientos.php encontrado en: ' . ( locate_template( 'archive-tratamientos.php' ) ?: 'NO ENCONTRADO' )
-//         );
-//     }
-//     return $template;
-// }, 999 );
