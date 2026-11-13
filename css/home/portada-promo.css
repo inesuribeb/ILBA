@@ -82,6 +82,29 @@
     color: var(--light-color);
 }
 
+
+
+
+
+
+.home-promo__texto a {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+    transition: opacity 0.2s ease;
+}
+
+.home-promo__texto a:hover {
+    opacity: 0.7;
+}
+
+
+
+
+
+
+
 /* --- Responsive --- */
 
 @media ( max-width: 1024px ) {

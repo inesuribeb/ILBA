@@ -57,7 +57,9 @@ $cta2_link  = get_field( 'home_hero_cta2_link' );
                 <?php endif; ?>
 
                 <?php if ( $promo_texto ) : ?>
-                    <p class="home-promo__texto"><?php echo nl2br( esc_html( $promo_texto ) ); ?></p>
+                    <p class="home-promo__texto"><?php echo nl2br( wp_kses( $promo_texto, array(
+                        'a' => array( 'href' => array(), 'target' => array(), 'rel' => array() ),
+                    ) ) ); ?></p>
                 <?php endif; ?>
 
             </div>
