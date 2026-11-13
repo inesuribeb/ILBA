@@ -114,14 +114,22 @@ wp_enqueue_style( 'ilba-banner-fijo', $uri . '/css/global/banner-fijo.css', arra
     }
 
     // --- Contacto ---
-    if ( is_page( 'contacto' ) ) {
+    // if ( is_page( 'contacto' ) ) {
+    //     wp_enqueue_style( 'ilba-ct-contacto', $uri . '/css/contacto/contacto.css', array(), filemtime( $dir . '/css/contacto/contacto.css' ) );
+    //     wp_enqueue_style( 'ilba-ct-intro',    $uri . '/css/contacto/intro.css',    array(), filemtime( $dir . '/css/contacto/intro.css' ) );
+    //     wp_enqueue_style( 'ilba-ct-form',     $uri . '/css/contacto/form.css',     array(), filemtime( $dir . '/css/contacto/form.css' ) );
+
+    //     wp_enqueue_script( 'ilba-ct-contactform', $uri . '/js/contacto/contactform.js', array(), filemtime( $dir . '/js/contacto/contactform.js' ), true );
+    // }
+
+    if ( is_page( 'contacto' ) || is_page_template( 'page-contacto-promo.php' ) ) {
         wp_enqueue_style( 'ilba-ct-contacto', $uri . '/css/contacto/contacto.css', array(), filemtime( $dir . '/css/contacto/contacto.css' ) );
         wp_enqueue_style( 'ilba-ct-intro',    $uri . '/css/contacto/intro.css',    array(), filemtime( $dir . '/css/contacto/intro.css' ) );
         wp_enqueue_style( 'ilba-ct-form',     $uri . '/css/contacto/form.css',     array(), filemtime( $dir . '/css/contacto/form.css' ) );
 
         wp_enqueue_script( 'ilba-ct-contactform', $uri . '/js/contacto/contactform.js', array(), filemtime( $dir . '/js/contacto/contactform.js' ), true );
     }
-
+    
     // --- Eventos (single) ---
     if ( is_singular( 'eventos' ) ) {
         wp_enqueue_style( 'ilba-ev-layout',   $uri . '/css/eventos/layout.css',   array(), filemtime( $dir . '/css/eventos/layout.css' ) );
