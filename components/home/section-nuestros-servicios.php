@@ -6,6 +6,7 @@
 $tag       = get_field( 'home_servicios_tag' );
 $titulo    = get_field( 'home_servicios_titulo' );
 $secciones = ilba_get_secciones_menu();
+$i         = 0;
 ?>
 
 <section class="home-servicios" id="home-servicios">
@@ -24,8 +25,15 @@ $secciones = ilba_get_secciones_menu();
             <div class="home-servicios__cards">
                 <?php foreach ( $secciones as $key => $seccion ) :
                     if ( $key === 'somos' ) continue;
+                    $i++;
+
+                    $link    = get_field( "home_servicios_card_{$i}_link" );
+                    $card_el = $link ? 'a' : 'div';
+                    $classes = 'home-servicios__card' . ( $link ? ' home-servicios__card--link' : '' );
                 ?>
-                    <div class="home-servicios__card">
+                    <<?php echo $card_el; ?> class="<?php echo esc_attr( $classes ); ?>"
+                        <?php if ( $link ) : ?>href="<?php echo esc_url( $link ); ?>"<?php endif; ?>>
+
                         <div class="home-servicios__card-top">
                             <h3 class="home-servicios__card-titulo">
                                 <?php echo esc_html( $seccion['titulo'] ); ?>
@@ -42,7 +50,8 @@ $secciones = ilba_get_secciones_menu();
                                      alt="<?php echo esc_attr( $seccion['titulo'] ); ?>">
                             <?php endif; ?>
                         </div>
-                    </div>
+
+                    </<?php echo $card_el; ?>>
                 <?php endforeach; ?>
             </div>
         </div>

@@ -11,7 +11,8 @@ function ilba_enqueue_assets() {
 
     // --- Global ---
 wp_enqueue_style( 'ilba-banner-fijo', $uri . '/css/global/banner-fijo.css', array(), filemtime( $dir . '/css/global/banner-fijo.css' ) );
-
+wp_enqueue_style( 'ilba-cursor-follower',  $uri . '/css/global/cursor-follower.css', array(), filemtime( $dir . '/css/global/cursor-follower.css' ) );
+wp_enqueue_script( 'ilba-cursor-follower', $uri . '/js/global/cursor-follower.js',   array(), filemtime( $dir . '/js/global/cursor-follower.js' ),   true );
 
     // --- Header y footer (todas las páginas) ---
     wp_enqueue_style( 'ilba-header',        $uri . '/css/header/header.css',        array(), filemtime( $dir . '/css/header/header.css' ) );

@@ -190,3 +190,10 @@
         margin-top: 50px;
     }
 }
+
+
+.home-servicios__card--link {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}

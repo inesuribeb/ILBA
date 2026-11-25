@@ -230,3 +230,15 @@ add_action( 'init', function() {
         }
     }
 }, 20 ); // después de register_taxonomy
+
+
+
+
+// Lazito que sigue al cursor
+// add_action( 'wp_footer', function () {
+// 	printf(
+// 		'<img class="cursor-follower" src="%s" alt="" aria-hidden="true" width="32" height="32" decoding="async">',
+//         esc_url( get_stylesheet_directory_uri() . '/images/ilba_navidad_piruleta.webp' )
+
+// 	);
+// } );
