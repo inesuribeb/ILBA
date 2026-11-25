@@ -51,7 +51,7 @@ function ilba_get_secciones_menu() {
             'titulo'      => 'Beauty',
             'descripcion' => 'Tratamientos de belleza facial, corporal y micropigmentación para realzar tu mejor versión.',
             'imagen'      => $dir . 'beauty_nueva.webp',
-            'imagen_sv'   => $dir . 'beauty.PNG',
+            'imagen_sv'   => $dir . 'beauty_nueva.webp',
             'url'         => '#',
             'cta_texto'   => '',
     'cta_url'     => $bm . '',
